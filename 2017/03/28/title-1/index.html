@@ -1,0 +1,998 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="一直想有一个属于自己的博客，前段时间看到HEXO+GitHub傻瓜式搭建，就利用周末花了俩天时间搭建了一个自己的博客。花俩天时间是因为走了太多弯路~搞了太多错误，在这里把流程梳理一下，希望大家不要像我一样走弯路，顺便填入第一篇博客0.0，没有基础的同学也可以利用它搭建自己的博客，我觉得博客不一定要写技术，用来当做自己的私人空间也是很不错的。这里特别感谢Chasen’s ，帮我解决了好多问题。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HEXO+GitHub搭建个人博客">
+<meta property="og:url" content="http:\\hexin.life/2017/03/28/title-1/index.html">
+<meta property="og:site_name" content="dayDream's blog">
+<meta property="og:description" content="一直想有一个属于自己的博客，前段时间看到HEXO+GitHub傻瓜式搭建，就利用周末花了俩天时间搭建了一个自己的博客。花俩天时间是因为走了太多弯路~搞了太多错误，在这里把流程梳理一下，希望大家不要像我一样走弯路，顺便填入第一篇博客0.0，没有基础的同学也可以利用它搭建自己的博客，我觉得博客不一定要写技术，用来当做自己的私人空间也是很不错的。这里特别感谢Chasen’s ，帮我解决了好多问题。">
+<meta property="og:image" content="http://i1.piimg.com/567571/f11f62b5f567f034.png">
+<meta property="og:image" content="http://i2.muimg.com/567571/9d667d081fc1c3b3.png">
+<meta property="og:image" content="http://i4.buimg.com/567571/241888e67827ea3e.png">
+<meta property="og:image" content="http://i2.muimg.com/567571/2841bb7050ab8a1a.png">
+<meta property="og:image" content="http://i2.muimg.com/567571/ff8cffca9cb304a6.png">
+<meta property="og:image" content="http://i4.buimg.com/567571/26dca9ec927dae3e.png">
+<meta property="og:image" content="http://i2.muimg.com/567571/42e1a5a0bfa86767.png">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/0060lm7Tgy1fe2sakgczdj30f103t74e.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/0060lm7Tgy1fe2rtqy319j30jj05paar.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/0060lm7Tgy1fe2rtqy15pj30tx0cjjsr.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/0060lm7Tgy1fe2sgxkqvvj30fn051mxg.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/0060lm7Tgy1fe2rpumoeuj30iv0d5tal.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0060lm7Tgy1fe2rpulywmj30io09pwfe.jpg">
+<meta property="og:image" content="http://i2.muimg.com/567571/767faa63e5360b89.png">
+<meta property="og:image" content="http://i2.muimg.com/567571/deb80ae44a521f7e.png">
+<meta property="og:updated_time" content="2017-03-31T16:28:50.321Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HEXO+GitHub搭建个人博客">
+<meta name="twitter:description" content="一直想有一个属于自己的博客，前段时间看到HEXO+GitHub傻瓜式搭建，就利用周末花了俩天时间搭建了一个自己的博客。花俩天时间是因为走了太多弯路~搞了太多错误，在这里把流程梳理一下，希望大家不要像我一样走弯路，顺便填入第一篇博客0.0，没有基础的同学也可以利用它搭建自己的博客，我觉得博客不一定要写技术，用来当做自己的私人空间也是很不错的。这里特别感谢Chasen’s ，帮我解决了好多问题。">
+<meta name="twitter:image" content="http://i1.piimg.com/567571/f11f62b5f567f034.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http:\\hexin.life/2017/03/28/title-1/"/>
+
+
+
+
+
+  <title> HEXO+GitHub搭建个人博客 | dayDream's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">dayDream's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">那些一起做的白日梦，你还记得么</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http:\\hexin.life/2017/03/28/title-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="dayDream">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/右右.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="dayDream's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                HEXO+GitHub搭建个人博客
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-28T23:15:03+08:00">
+                2017-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/2017/03/28/title-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>   一直想有一个属于自己的博客，前段时间看到HEXO+GitHub傻瓜式搭建，就利用周末花了俩天时间搭建了一个自己的博客。花俩天时间是因为走了太多弯路~搞了太多错误，在这里把流程梳理一下，希望大家不要像我一样走弯路，顺便填入第一篇博客0.0，没有基础的同学也可以利用它搭建自己的博客，我觉得博客不一定要写技术，用来当做自己的私人空间也是很不错的。这里特别感谢<a href="http://chasen-g.cn/" target="_blank" rel="external">Chasen’s </a>，帮我解决了好多问题。<br><a id="more"></a></p>
+<hr>
+<h2 id="关于HEXO"><a href="#关于HEXO" class="headerlink" title=" 关于HEXO "></a><em> 关于HEXO </em></h2><blockquote>
+<p>hexo是一款基于<a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a>的静态博客框架，可以生成静态文件并且一键部署到github<br>pages上，并且他可以使用markdown(一款编辑器)来编写文章，十分简单。</p>
+</blockquote>
+<h2 id="搭建前环境准备"><a href="#搭建前环境准备" class="headerlink" title=" 搭建前环境准备 "></a> 搭建前环境准备 </h2><blockquote>
+<p>安装<a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a>(正是因为了解到了node.js才下定决心学前端的)<br>进入官网，他会自动提取你的电脑型号，有俩个版本下载，左边的是稳定版，右边的是一直更新的前沿版，我们这里随便选择一个就好了，我个人喜欢新鲜事物，就选择了右边的</p>
+<p><img src="http://i1.piimg.com/567571/f11f62b5f567f034.png" alt="这里写图片描述"></p>
+<p>直接下载即可，只有13MB大小，然后一路默认安装就好了<br>安装好以后按 win+r 打开运行输入CMD（开始栏输入CMD也一样）<br>输入 node -v<br>输出版本号即安装成功，我这里是以前装好的v7.6.0版本<br><img src="http://i2.muimg.com/567571/9d667d081fc1c3b3.png" alt="这里写图片描述"></p>
+</blockquote>
+<h2 id="接下来安装git"><a href="#接下来安装git" class="headerlink" title="接下来安装git"></a><strong><em>接下来安装git</em></strong></h2><blockquote>
+<p>同上进入git  然后点击下载安装即可（30MB左右）  安装好以后右键会有</p>
+<p>git gul here<br>git bush here</p>
+<p> <img src="http://i4.buimg.com/567571/241888e67827ea3e.png" alt="这里写图片描述"><br>不懂git命令也没关系，其实我也不是很懂，跟着命令走就可以了  但是对于程序员来说还是必须要了解的   推荐几个网址吧：</p>
+<ul>
+<li><a href="https://git-scm.com/docs" target="_blank" rel="external">Git-Reference</a>(官网首选,当然是英文的)</li>
+<li><a href="http://www.bootcss.com/p/git-guide/" target="_blank" rel="external">git-简易指南</a>（中文简易指南，基本命令够用了）</li>
+<li><a href="http://opiece.me/2015/04/06/git-basic-commands/" target="_blank" rel="external">git-常用的基础命令</a></li>
+</ul>
+</blockquote>
+<h2 id="然后是编辑器sublime（可选）"><a href="#然后是编辑器sublime（可选）" class="headerlink" title="然后是编辑器sublime（可选）"></a>然后是编辑器<a href="http://www.sublimetext.com/" target="_blank" rel="external">sublime</a>（可选）</h2><blockquote>
+<p>我这里用的是<a href="http://www.sublimetext.com/" target="_blank" rel="external">sublime text3</a>，很有程序员风格的编辑器，很多插件与快捷键，特别好用，推荐一下。（中文支持不太好，用习惯就好了）。<br>不用sublime也可以，如果熟悉vim的话可以直接用git打开vim编辑<br>我对vim也不是很熟，以前上Linux课的时候用过一点，也没好好听，基本忘光了，但是就是基本的修改个属性，能达到自己需求就行，对吧。</p>
+</blockquote>
+<h2 id="注册github"><a href="#注册github" class="headerlink" title="注册github"></a><strong><em>注册<a href="https://github.com/" target="_blank" rel="external">github</a></em></strong></h2><blockquote>
+<p> 对于没有<a href="https://github.com/" target="_blank" rel="external">GitHub</a>的同学，在这里申请一个<a href="https://github.com/" target="_blank" rel="external">GitHub</a>账号吧，这个很简单，直接注册，邮箱验证就好了。<br>申请好以后新建一个自己的仓库</p>
+<p> <img src="http://i2.muimg.com/567571/2841bb7050ab8a1a.png" alt="这里写图片描述"></p>
+<p>这里注意上面俩个箭头，<strong><em>命名必须要一致，后面的名字要以github.io结尾</em></strong></p>
+<p><img src="http://i2.muimg.com/567571/ff8cffca9cb304a6.png" alt="引用块内容"></p>
+<p>我当初就因为这里搞错了（我写成了xinhe.github.io），导致一直到下面的步骤得重新来，当初不知怎么想的，实在是chiou~所以需要购买一个域名~后面再说，先把hexo与github联系起来再说</p>
+<p><img src="http://i4.buimg.com/567571/26dca9ec927dae3e.png" alt="引用块内容"></p>
+</blockquote>
+<h2 id="这里先把git与你的github联系起来"><a href="#这里先把git与你的github联系起来" class="headerlink" title="这里先把git与你的github联系起来"></a><strong><em>这里先把git与你的github联系起来</em></strong></h2><blockquote>
+<p>右键git bush here 输入命令绑定你的邮箱和名字，这里是我的~替换成自己的即可<br><img src="http://i2.muimg.com/567571/42e1a5a0bfa86767.png" alt="这里写图片描述"></p>
+</blockquote>
+<h2 id="接下来生成秘钥"><a href="#接下来生成秘钥" class="headerlink" title="接下来生成秘钥"></a><strong><em>接下来生成秘钥</em></strong></h2><blockquote>
+<p>ssh-keygen -t rsa -C “XXX@XXX.com”</p>
+<p><em>这里C是大写哦！！！</em></p>
+<p><img src="http://ww3.sinaimg.cn/large/0060lm7Tgy1fe2sakgczdj30f103t74e.jpg" alt="这里写图片描述"></p>
+<p>如图然后连续按回车即可<br>然后在#user_id/.ssh目录下会生成两个文件，id_rsa.pub和id_rsa. </p>
+<p><img src="http://ww3.sinaimg.cn/large/0060lm7Tgy1fe2rtqy319j30jj05paar.jpg" alt="我这里是默认安装的，直接在C盘用户，管理员，.SSH文件下"></p>
+<p>利用编辑器打开rsa文件，将里面的内容copy，复制在github，在SSH设置页面添加刚才的SSH文件也就是id_rsa.pub的内容即可。</p>
+<p><img src="http://ww2.sinaimg.cn/large/0060lm7Tgy1fe2rtqy15pj30tx0cjjsr.jpg" alt="在github中选择setting--&gt;ssh and GPG 添加SSH"> </p>
+<p>这里会验证一下github的密码</p>
+</blockquote>
+<p>最后来验证一下：</p>
+<blockquote>
+<p>git命令输入 ssh -T git@github.com<br>如果成功他让你输入yes然后会返回一个成功的信息<br><img src="http://ww4.sinaimg.cn/large/0060lm7Tgy1fe2sgxkqvvj30fn051mxg.jpg" alt="这里写图片描述"></p>
+</blockquote>
+<hr>
+<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>是不是觉得需要下载的东西好多啊，我开始也是这样觉得，但是为了个人博客，忍了吧，其实这里为了详细，写的比较多，比较熟悉的人可以快速浏览，直接上手，遇到问题再回过头来检查步骤，别急，马上就可以看到属于你的博客了~<em>*</em></p>
+<blockquote>
+<p>npm install hexo-cli -g<br>npm install hexo-deployer-git –save </p>
+</blockquote>
+<p>  缺少这个命令之后提交会有问题当时这里也翻了错误<br> 然后可以利用Git  一路cd 到hexo的安装目录，或者进去目录，右键git bush here  即可（命令必须在init目录下执行，否则不成功，但是也不报错） </p>
+<blockquote>
+<p>hexo init       # 初始化<br>hexo clean    #清理临时文件<br>hexo g         # 完整命令为hexo generate，生成静态文件<br>hexo s      #完整命令为hexo server，打开本地服务</p>
+</blockquote>
+<p>打开本地服务，这时候打开浏览器输入<a href="http://localhost:4000看看你博客页面吧~官方默认会有一篇hello" target="_blank" rel="external">http://localhost:4000看看你博客页面吧~官方默认会有一篇hello</a> world，当然 ，现在还只是本地的。只有你自己能看到</p>
+<h2 id="将静态页面提交到github"><a href="#将静态页面提交到github" class="headerlink" title="将静态页面提交到github"></a><strong><em>将静态页面提交到github</em></strong></h2><blockquote>
+<p>此时就用到了编辑器，打开_config.yml文件，直接拖入编辑器即可自行修改</p>
+<p>没有编辑器的同学， 可以cd(进入的意思)到hexo的文件夹下，输入vim _config.yml<br>然后直接滑到下图的位置，按键盘“a”，意思是插入文本，然后就可以修改了，修改完之后按ESC，然后按“Shif+：”，输入“wq”，意思是保存加退出，如果直接退出就输入“q”即可。</p>
+<p><img src="http://ww3.sinaimg.cn/large/0060lm7Tgy1fe2rpumoeuj30iv0d5tal.jpg" alt="这里写图片描述"><br><img src="http://ww1.sinaimg.cn/large/0060lm7Tgy1fe2rpulywmj30io09pwfe.jpg" alt="这里写图片描述">  </p>
+<p>然后修改如下：<br>将repo后面的内容改成自己的</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">      type: git</div><div class="line">      repo: git@github.com:yourself/yourself.github.io.git</div><div class="line">      branch: master</div></pre></td></tr></table></figure>
+<blockquote>
+<p>hexo d -g #组合命令，命令等同于hexo g  再 hexo d</p>
+</blockquote>
+<p>这时候输入你的github地址，例如我的是18292843691.github.io</p>
+<p>就可以看到你的博客页面了…</p>
+<h2 id="关于主题安装"><a href="#关于主题安装" class="headerlink" title="关于主题安装"></a>关于主题安装</h2><p>主题有好多种，这里我推荐<a href="http://theme-next.iissnan.com/" target="_blank" rel="external">NEXT</a>,简洁，大方，支持多语言，一句代码即可下载NEXT最新版，如果需要其他的可以上官网查找喜欢的，添加方式是一样的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/iissnan/hexo-theme-next themes/next</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>然后打开 _config.yml文件，如图找到theme修改为next即可</p>
+<p><img src="http://i2.muimg.com/567571/767faa63e5360b89.png" alt="这里写图片描述"> </p>
+<p> 我这里没有用next，因为用next的人太多了，点击进入<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">yilia</a>。</p>
+<h2 id="关于文章发布"><a href="#关于文章发布" class="headerlink" title="关于文章发布"></a>关于文章发布</h2></blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">输入hexo new &quot;title&quot;</div><div class="line">即可自动生成md文件在source/_post下</div></pre></td></tr></table></figure>
+<p><img src="http://i2.muimg.com/567571/deb80ae44a521f7e.png" alt="这里写图片描述"> </p>
+<blockquote>
+<p>然后打开你的md文件编写文章就可以了，文章需要是markdown格式，可以用markdown格式的编辑器编写，也可以找在线的markdown编辑器，例如我直接用CSDN的，也可以离线使用，支持导出为MD，HTML格式，很方便。<br>关于图片，我推荐<a href="http://jiantuku.com/" target="_blank" rel="external">极简图床</a>，简单方便。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d -g   #同步至github</div></pre></td></tr></table></figure>
+<p><strong><em>hexo 常用命令(#后为注释)</em></strong></p>
+<blockquote>
+<p>hexo init       #初始化<br>hexo clean    #清理临时文件<br>hexo g         # 完整命令为hexo generate，生成静态文件<br>hexo s      #完整命令为hexo server，打开本地服务<br>hexo d #完整命令为hexo deploy，用于将本地文件发布到github上<br>hexo new “postName” #新建文章<br>hexo new page “pageName” #新建页面<br>hexo help    #帮助</p>
+</blockquote>
+<hr>
+<p>如果文章有什么错误，感谢大神指出，好及时修改。希望同大家共同交流，进步。</p>
+<p>另外推荐几篇大神写的（我也是按照他们的教程搭建，不分先后）：</p>
+<ul>
+<li><a href="https://hexo.io/docs/" target="_blank" rel="external">HEXO官方文档</a></li>
+<li><a href="http://wiki.jikexueyuan.com/project/hexo-document/" target="_blank" rel="external">极客学院提供的中文文档</a> </li>
+<li><a href="http://chasen-g.cn/" target="_blank" rel="external">帮了我很大忙的-&gt;Chasen’s</a></li>
+<li><a href="http://ibruce.info/2013/11/22/hexo-your-blog/" target="_blank" rel="external">hexo你的博客|不如</a> </li>
+<li><a href="https://linghucong.js.org/2016/04/15/2016-04-15-hexo-github-pages-blog/" target="_blank" rel="external">手把手教你使用hexo+github搭建个人博客</a> </li>
+<li><a href="http://opiece.me/2015/04/09/hexo-guide/" target="_blank" rel="external">使用hexo搭建个人博客</a> </li>
+<li><a href="http://myzchi.com/2015/05/02/hexo-github%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B%E6%80%BB%E7%BB%93/" target="_blank" rel="external">hexo+github搭建过程总结</a> </li>
+<li><a href="http://www.zipperary.com/categories/hexo/" target="_blank" rel="external">hexo系列教程</a> </li>
+<li><a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank" rel="external">搭建一个免费的，无限流量的blog（阮一峰）</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/31/title-2/" rel="prev" title="CSS学习笔记_Placeholder及CSS_hack">
+                CSS学习笔记_Placeholder及CSS_hack <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/右右.jpg"
+               alt="dayDream" />
+          <p class="site-author-name" itemprop="name">dayDream</p>
+           
+              <p class="site-description motion-element" itemprop="description">白日梦想家</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/18292843691/18292843691.github.io" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:hexin_9508@163.com" target="_blank" title="邮箱">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  邮箱
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于HEXO"><span class="nav-number">1.</span> <span class="nav-text"> 关于HEXO </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建前环境准备"><span class="nav-number">2.</span> <span class="nav-text"> 搭建前环境准备 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接下来安装git"><span class="nav-number">3.</span> <span class="nav-text">接下来安装git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#然后是编辑器sublime（可选）"><span class="nav-number">4.</span> <span class="nav-text">然后是编辑器sublime（可选）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注册github"><span class="nav-number">5.</span> <span class="nav-text">注册github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#这里先把git与你的github联系起来"><span class="nav-number">6.</span> <span class="nav-text">这里先把git与你的github联系起来</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接下来生成秘钥"><span class="nav-number">7.</span> <span class="nav-text">接下来生成秘钥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装hexo"><span class="nav-number">8.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将静态页面提交到github"><span class="nav-number">9.</span> <span class="nav-text">将静态页面提交到github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于主题安装"><span class="nav-number">10.</span> <span class="nav-text">关于主题安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于文章发布"><span class="nav-number">11.</span> <span class="nav-text">关于文章发布</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">dayDream</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "25efdd30451e496991e3637d3c3cd1a1",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
