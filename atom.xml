@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>dayDream&#39;s blog</title>
+  <subtitle>那些一起做的白日梦，你还记得么</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http:%5C%5Chexin.life/"/>
+  <updated>2017-03-31T16:28:59.776Z</updated>
+  <id>http:\\hexin.life/</id>
+  
+  <author>
+    <name>dayDream</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CSS学习笔记_Placeholder及CSS_hack</title>
+    <link href="http:%5C%5Chexin.life/2017/03/31/title-2/"/>
+    <id>http:\\hexin.life/2017/03/31/title-2/</id>
+    <published>2017-03-31T15:09:45.000Z</published>
+    <updated>2017-03-31T16:28:59.776Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="IE8以下图片出现蓝色边框"><a href="#IE8以下图片出现蓝色边框" class="headerlink" title="IE8以下图片出现蓝色边框"></a>IE8以下图片出现蓝色边框</h1><pre><code>img{
+    border:0;  /*或者border:none;*/
+}
+</code></pre><p>#如何使文本以大写字母开头？</p>
+<pre><code>text-transform:capitalize;
+</code></pre><h1 id="强制设置为IE模式"><a href="#强制设置为IE模式" class="headerlink" title="强制设置为IE模式"></a>强制设置为IE模式</h1><pre><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot; /&gt;
+//我写的页面在IE8之下全部乱掉了，在网上搜到这个方法，用了发现好了，强制为IE渲染模式，目前还没理解这个
+</code></pre><hr>
+<a id="more"></a>
+<h1 id="IE8及以下不支持Placeholder（基于JQ）"><a href="#IE8及以下不支持Placeholder（基于JQ）" class="headerlink" title="IE8及以下不支持Placeholder（基于JQ）"></a><a href="http://www.cnblogs.com/digdeep/p/4424487.html" target="_blank" rel="external">IE8及以下不支持Placeholder</a>（基于JQ）</h1><pre><code>&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;header&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;title&gt;&lt;/title&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+     *{margin:0;padding:0;}
+    form {margin:50px;}
+    input {display:block;margin:0 0 6px 0;}
+&lt;/style&gt;
+&lt;/header&gt;
+&lt;body&gt;
+    &lt;form&gt;
+        用户名：&lt;input name=&quot;name&quot; placeholder=&quot;请输入用户名&quot;/&gt;
+        密码：&lt;input name=&quot;password&quot; placeholder=&quot;请输入登陆密码&quot;/&gt;
+    &lt;/form&gt;
+        &lt;script type=&quot;text/javascript&quot; src=&quot;jquery-1.11.1.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+        $(function(){
+            function placeholderSupport() {    // 判断浏览器是否支持 placeholder
+                return &apos;placeholder&apos; in document.createElement(&apos;input&apos;);
+            }
+
+            if(!placeholderSupport()){
+                $(document).on(&apos;focus&apos;, &apos;[placeholder]&apos;,function() {
+                    var input = $(this);
+                    if (input.val() == input.attr(&apos;placeholder&apos;)) {
+                        input.val(&apos;&apos;);
+                        input.removeClass(&apos;placeholder&apos;);
+                    }
+                });
+                $(document).on(&apos;blur&apos;, &apos;[placeholder]&apos;,function() {
+                    var input = $(this);
+                    if (input.val() == &apos;&apos; || input.val() == input.attr(&apos;placeholder&apos;)) {
+                        input.addClass(&apos;placeholder&apos;);
+                        input.val(input.attr(&apos;placeholder&apos;));
+                    }
+                });
+                $(&apos;[placeholder]&apos;).blur();
+            };
+        });
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><hr>
+<h1 id="常见CSS-hack"><a href="#常见CSS-hack" class="headerlink" title="常见CSS hack"></a>常见<a href="http://baike.baidu.com/item/css%20hack" target="_blank" rel="external">CSS hack</a></h1><p><em>不管是什么方法，书写的顺序都是firefox的写在前面，IE7的写在中间，IE6的写在最后</em><br><strong>（1）方式一 条件注释法</strong></p>
+<p> <em>只在IE下生效</em></p>
+<pre><code>&lt;!--[if IE]&gt;
+这段文字只在IE浏览器显示
+&lt;![endif]--&gt;
+</code></pre><p><em>只在IE6下生效</em></p>
+<pre><code>&lt;!--[if IE 6]&gt;
+这段文字只在IE6浏览器显示
+&lt;![endif]--&gt;
+</code></pre><p><em>只在IE6以上版本生效</em></p>
+<pre><code>&lt;!--[if gte IE 6]&gt;
+这段文字只在IE6以上(包括)版本IE浏览器显示
+&lt;![endif]--&gt;
+</code></pre><p><em>只在IE8上不生效</em></p>
+<pre><code>&lt;!--[if ! IE 8]&gt;
+这段文字在非IE8浏览器显示
+&lt;![endif]--&gt;
+</code></pre><p><em>非IE浏览器生效</em></p>
+<pre><code>&lt;!--[if !IE]&gt;
+这段文字只在非IE浏览器显示
+&lt;![endif]--&gt;
+</code></pre><p><strong>（2）方式二 类内属性前缀法</strong></p>
+<p>在标准模式中：</p>
+<ul>
+<li>“-″减号是IE6专有的hack</li>
+<li>“\9″ IE6/IE7/IE8/IE9/IE10都生效</li>
+<li>“\0″ IE8/IE9/IE10都生效，是IE8/9/10的hack</li>
+<li>“\9\0″ 只对IE9/IE10生效，是IE9/10的hack</li>
+</ul>
+<ul>
+<li>IE6能识别 *，但不能识别 !important</li>
+<li>IE7能识别 *，也能识别!important</li>
+<li>FF不能识别 *，但能识别!important,下划线_</li>
+<li>IE6支持下划线</li>
+<li>IE7和firefox均不支持下划线</li>
+</ul>
+<p><strong>（3）CSS hack方式三：选择器前缀法</strong></p>
+<pre><code>*html     //*前缀只对IE6生效
+*+html    //*+前缀只对IE7生效 
+@media screen\9{...}    //只对IE6/7生效
+@media \0screen {body { background: red; }}    //只对IE8有效
+@media \0screen\,screen\9{body { background: blue; }}    //只对IE6/7/8有效
+@media screen\0 {body { background: green; }}    //只对IE8/9/10有效
+@media screen and (min-width:0\0) {body { background: gray; }}     //只对IE9/10有效
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {body { background: orange; }}     //只对IE10有效等等
+</code></pre><p><strong>以: “ #demo {width:100px;} “为例;</strong></p>
+<pre><code>#demo {width:100px;} /*被FIREFOX,IE6,IE7执行.*/
+*html #demo {width:120px;} /*会被IE6执行,之前的定义会被后来的覆盖,所以#demo的宽度在IE6就为120px; */
+*+html #demo {width:130px;} /*会被IE7执行*/
+所以最后,#demo的宽度在三个浏览器的解释为: FIREFOX:100px; ie6:120px; ie7:130px;
+</code></pre><p><strong>IE8 最新css hack：</strong></p>
+<pre><code>&quot;\9&quot;　例:&quot;border:1px\9;&quot;    //这里的&quot;\9&quot;可以区别所有IE和FireFox.（只针对IE9 Hack）
+   &quot;\0&quot;　//IE8识别，--&gt;IE6、IE7不能.
+   &quot;*&quot;　//IE6、IE7可以识别.--&gt;IE8、FireFox不能.
+   &quot;_&quot;　//IE6可以识别&quot;_&quot;,--&gt;IE7、IE8、FireFox不能.
+</code></pre><blockquote>
+<p>Placeholder源自网上资料，点击标题即进入原网址，本人新手，没怎么用过hack，从百度百科整理一部分，作为以后查询方便，如果有什么问题，希望大神多多指点。</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;IE8以下图片出现蓝色边框&quot;&gt;&lt;a href=&quot;#IE8以下图片出现蓝色边框&quot; class=&quot;headerlink&quot; title=&quot;IE8以下图片出现蓝色边框&quot;&gt;&lt;/a&gt;IE8以下图片出现蓝色边框&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;img{
+    border:0;  /*或者border:none;*/
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;#如何使文本以大写字母开头？&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;text-transform:capitalize;
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;强制设置为IE模式&quot;&gt;&lt;a href=&quot;#强制设置为IE模式&quot; class=&quot;headerlink&quot; title=&quot;强制设置为IE模式&quot;&gt;&lt;/a&gt;强制设置为IE模式&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;meta http-equiv=&amp;quot;X-UA-Compatible&amp;quot; content=&amp;quot;IE=edge&amp;quot; /&amp;gt;
+//我写的页面在IE8之下全部乱掉了，在网上搜到这个方法，用了发现好了，强制为IE渲染模式，目前还没理解这个
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>HEXO+GitHub搭建个人博客</title>
+    <link href="http:%5C%5Chexin.life/2017/03/28/title-1/"/>
+    <id>http:\\hexin.life/2017/03/28/title-1/</id>
+    <published>2017-03-28T15:15:03.000Z</published>
+    <updated>2017-03-31T16:28:50.321Z</updated>
+    
+    <content type="html"><![CDATA[<p>   一直想有一个属于自己的博客，前段时间看到HEXO+GitHub傻瓜式搭建，就利用周末花了俩天时间搭建了一个自己的博客。花俩天时间是因为走了太多弯路~搞了太多错误，在这里把流程梳理一下，希望大家不要像我一样走弯路，顺便填入第一篇博客0.0，没有基础的同学也可以利用它搭建自己的博客，我觉得博客不一定要写技术，用来当做自己的私人空间也是很不错的。这里特别感谢<a href="http://chasen-g.cn/" target="_blank" rel="external">Chasen’s </a>，帮我解决了好多问题。<br><a id="more"></a></p>
+<hr>
+<h2 id="关于HEXO"><a href="#关于HEXO" class="headerlink" title=" 关于HEXO "></a><em> 关于HEXO </em></h2><blockquote>
+<p>hexo是一款基于<a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a>的静态博客框架，可以生成静态文件并且一键部署到github<br>pages上，并且他可以使用markdown(一款编辑器)来编写文章，十分简单。</p>
+</blockquote>
+<h2 id="搭建前环境准备"><a href="#搭建前环境准备" class="headerlink" title=" 搭建前环境准备 "></a> 搭建前环境准备 </h2><blockquote>
+<p>安装<a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a>(正是因为了解到了node.js才下定决心学前端的)<br>进入官网，他会自动提取你的电脑型号，有俩个版本下载，左边的是稳定版，右边的是一直更新的前沿版，我们这里随便选择一个就好了，我个人喜欢新鲜事物，就选择了右边的</p>
+<p><img src="http://i1.piimg.com/567571/f11f62b5f567f034.png" alt="这里写图片描述"></p>
+<p>直接下载即可，只有13MB大小，然后一路默认安装就好了<br>安装好以后按 win+r 打开运行输入CMD（开始栏输入CMD也一样）<br>输入 node -v<br>输出版本号即安装成功，我这里是以前装好的v7.6.0版本<br><img src="http://i2.muimg.com/567571/9d667d081fc1c3b3.png" alt="这里写图片描述"></p>
+</blockquote>
+<h2 id="接下来安装git"><a href="#接下来安装git" class="headerlink" title="接下来安装git"></a><strong><em>接下来安装git</em></strong></h2><blockquote>
+<p>同上进入git  然后点击下载安装即可（30MB左右）  安装好以后右键会有</p>
+<p>git gul here<br>git bush here</p>
+<p> <img src="http://i4.buimg.com/567571/241888e67827ea3e.png" alt="这里写图片描述"><br>不懂git命令也没关系，其实我也不是很懂，跟着命令走就可以了  但是对于程序员来说还是必须要了解的   推荐几个网址吧：</p>
+<ul>
+<li><a href="https://git-scm.com/docs" target="_blank" rel="external">Git-Reference</a>(官网首选,当然是英文的)</li>
+<li><a href="http://www.bootcss.com/p/git-guide/" target="_blank" rel="external">git-简易指南</a>（中文简易指南，基本命令够用了）</li>
+<li><a href="http://opiece.me/2015/04/06/git-basic-commands/" target="_blank" rel="external">git-常用的基础命令</a></li>
+</ul>
+</blockquote>
+<h2 id="然后是编辑器sublime（可选）"><a href="#然后是编辑器sublime（可选）" class="headerlink" title="然后是编辑器sublime（可选）"></a>然后是编辑器<a href="http://www.sublimetext.com/" target="_blank" rel="external">sublime</a>（可选）</h2><blockquote>
+<p>我这里用的是<a href="http://www.sublimetext.com/" target="_blank" rel="external">sublime text3</a>，很有程序员风格的编辑器，很多插件与快捷键，特别好用，推荐一下。（中文支持不太好，用习惯就好了）。<br>不用sublime也可以，如果熟悉vim的话可以直接用git打开vim编辑<br>我对vim也不是很熟，以前上Linux课的时候用过一点，也没好好听，基本忘光了，但是就是基本的修改个属性，能达到自己需求就行，对吧。</p>
+</blockquote>
+<h2 id="注册github"><a href="#注册github" class="headerlink" title="注册github"></a><strong><em>注册<a href="https://github.com/" target="_blank" rel="external">github</a></em></strong></h2><blockquote>
+<p> 对于没有<a href="https://github.com/" target="_blank" rel="external">GitHub</a>的同学，在这里申请一个<a href="https://github.com/" target="_blank" rel="external">GitHub</a>账号吧，这个很简单，直接注册，邮箱验证就好了。<br>申请好以后新建一个自己的仓库</p>
+<p> <img src="http://i2.muimg.com/567571/2841bb7050ab8a1a.png" alt="这里写图片描述"></p>
+<p>这里注意上面俩个箭头，<strong><em>命名必须要一致，后面的名字要以github.io结尾</em></strong></p>
+<p><img src="http://i2.muimg.com/567571/ff8cffca9cb304a6.png" alt="引用块内容"></p>
+<p>我当初就因为这里搞错了（我写成了xinhe.github.io），导致一直到下面的步骤得重新来，当初不知怎么想的，实在是chiou~所以需要购买一个域名~后面再说，先把hexo与github联系起来再说</p>
+<p><img src="http://i4.buimg.com/567571/26dca9ec927dae3e.png" alt="引用块内容"></p>
+</blockquote>
+<h2 id="这里先把git与你的github联系起来"><a href="#这里先把git与你的github联系起来" class="headerlink" title="这里先把git与你的github联系起来"></a><strong><em>这里先把git与你的github联系起来</em></strong></h2><blockquote>
+<p>右键git bush here 输入命令绑定你的邮箱和名字，这里是我的~替换成自己的即可<br><img src="http://i2.muimg.com/567571/42e1a5a0bfa86767.png" alt="这里写图片描述"></p>
+</blockquote>
+<h2 id="接下来生成秘钥"><a href="#接下来生成秘钥" class="headerlink" title="接下来生成秘钥"></a><strong><em>接下来生成秘钥</em></strong></h2><blockquote>
+<p>ssh-keygen -t rsa -C “XXX@XXX.com”</p>
+<p><em>这里C是大写哦！！！</em></p>
+<p><img src="http://ww3.sinaimg.cn/large/0060lm7Tgy1fe2sakgczdj30f103t74e.jpg" alt="这里写图片描述"></p>
+<p>如图然后连续按回车即可<br>然后在#user_id/.ssh目录下会生成两个文件，id_rsa.pub和id_rsa. </p>
+<p><img src="http://ww3.sinaimg.cn/large/0060lm7Tgy1fe2rtqy319j30jj05paar.jpg" alt="我这里是默认安装的，直接在C盘用户，管理员，.SSH文件下"></p>
+<p>利用编辑器打开rsa文件，将里面的内容copy，复制在github，在SSH设置页面添加刚才的SSH文件也就是id_rsa.pub的内容即可。</p>
+<p><img src="http://ww2.sinaimg.cn/large/0060lm7Tgy1fe2rtqy15pj30tx0cjjsr.jpg" alt="在github中选择setting--&gt;ssh and GPG 添加SSH"> </p>
+<p>这里会验证一下github的密码</p>
+</blockquote>
+<p>最后来验证一下：</p>
+<blockquote>
+<p>git命令输入 ssh -T git@github.com<br>如果成功他让你输入yes然后会返回一个成功的信息<br><img src="http://ww4.sinaimg.cn/large/0060lm7Tgy1fe2sgxkqvvj30fn051mxg.jpg" alt="这里写图片描述"></p>
+</blockquote>
+<hr>
+<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>是不是觉得需要下载的东西好多啊，我开始也是这样觉得，但是为了个人博客，忍了吧，其实这里为了详细，写的比较多，比较熟悉的人可以快速浏览，直接上手，遇到问题再回过头来检查步骤，别急，马上就可以看到属于你的博客了~<em>*</em></p>
+<blockquote>
+<p>npm install hexo-cli -g<br>npm install hexo-deployer-git –save </p>
+</blockquote>
+<p>  缺少这个命令之后提交会有问题当时这里也翻了错误<br> 然后可以利用Git  一路cd 到hexo的安装目录，或者进去目录，右键git bush here  即可（命令必须在init目录下执行，否则不成功，但是也不报错） </p>
+<blockquote>
+<p>hexo init       # 初始化<br>hexo clean    #清理临时文件<br>hexo g         # 完整命令为hexo generate，生成静态文件<br>hexo s      #完整命令为hexo server，打开本地服务</p>
+</blockquote>
+<p>打开本地服务，这时候打开浏览器输入<a href="http://localhost:4000看看你博客页面吧~官方默认会有一篇hello" target="_blank" rel="external">http://localhost:4000看看你博客页面吧~官方默认会有一篇hello</a> world，当然 ，现在还只是本地的。只有你自己能看到</p>
+<h2 id="将静态页面提交到github"><a href="#将静态页面提交到github" class="headerlink" title="将静态页面提交到github"></a><strong><em>将静态页面提交到github</em></strong></h2><blockquote>
+<p>此时就用到了编辑器，打开_config.yml文件，直接拖入编辑器即可自行修改</p>
+<p>没有编辑器的同学， 可以cd(进入的意思)到hexo的文件夹下，输入vim _config.yml<br>然后直接滑到下图的位置，按键盘“a”，意思是插入文本，然后就可以修改了，修改完之后按ESC，然后按“Shif+：”，输入“wq”，意思是保存加退出，如果直接退出就输入“q”即可。</p>
+<p><img src="http://ww3.sinaimg.cn/large/0060lm7Tgy1fe2rpumoeuj30iv0d5tal.jpg" alt="这里写图片描述"><br><img src="http://ww1.sinaimg.cn/large/0060lm7Tgy1fe2rpulywmj30io09pwfe.jpg" alt="这里写图片描述">  </p>
+<p>然后修改如下：<br>将repo后面的内容改成自己的</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">      type: git</div><div class="line">      repo: git@github.com:yourself/yourself.github.io.git</div><div class="line">      branch: master</div></pre></td></tr></table></figure>
+<blockquote>
+<p>hexo d -g #组合命令，命令等同于hexo g  再 hexo d</p>
+</blockquote>
+<p>这时候输入你的github地址，例如我的是18292843691.github.io</p>
+<p>就可以看到你的博客页面了…</p>
+<h2 id="关于主题安装"><a href="#关于主题安装" class="headerlink" title="关于主题安装"></a>关于主题安装</h2><p>主题有好多种，这里我推荐<a href="http://theme-next.iissnan.com/" target="_blank" rel="external">NEXT</a>,简洁，大方，支持多语言，一句代码即可下载NEXT最新版，如果需要其他的可以上官网查找喜欢的，添加方式是一样的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/iissnan/hexo-theme-next themes/next</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>然后打开 _config.yml文件，如图找到theme修改为next即可</p>
+<p><img src="http://i2.muimg.com/567571/767faa63e5360b89.png" alt="这里写图片描述"> </p>
+<p> 我这里没有用next，因为用next的人太多了，点击进入<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">yilia</a>。</p>
+<h2 id="关于文章发布"><a href="#关于文章发布" class="headerlink" title="关于文章发布"></a>关于文章发布</h2></blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">输入hexo new &quot;title&quot;</div><div class="line">即可自动生成md文件在source/_post下</div></pre></td></tr></table></figure>
+<p><img src="http://i2.muimg.com/567571/deb80ae44a521f7e.png" alt="这里写图片描述"> </p>
+<blockquote>
+<p>然后打开你的md文件编写文章就可以了，文章需要是markdown格式，可以用markdown格式的编辑器编写，也可以找在线的markdown编辑器，例如我直接用CSDN的，也可以离线使用，支持导出为MD，HTML格式，很方便。<br>关于图片，我推荐<a href="http://jiantuku.com/" target="_blank" rel="external">极简图床</a>，简单方便。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d -g   #同步至github</div></pre></td></tr></table></figure>
+<p><strong><em>hexo 常用命令(#后为注释)</em></strong></p>
+<blockquote>
+<p>hexo init       #初始化<br>hexo clean    #清理临时文件<br>hexo g         # 完整命令为hexo generate，生成静态文件<br>hexo s      #完整命令为hexo server，打开本地服务<br>hexo d #完整命令为hexo deploy，用于将本地文件发布到github上<br>hexo new “postName” #新建文章<br>hexo new page “pageName” #新建页面<br>hexo help    #帮助</p>
+</blockquote>
+<hr>
+<p>如果文章有什么错误，感谢大神指出，好及时修改。希望同大家共同交流，进步。</p>
+<p>另外推荐几篇大神写的（我也是按照他们的教程搭建，不分先后）：</p>
+<ul>
+<li><a href="https://hexo.io/docs/" target="_blank" rel="external">HEXO官方文档</a></li>
+<li><a href="http://wiki.jikexueyuan.com/project/hexo-document/" target="_blank" rel="external">极客学院提供的中文文档</a> </li>
+<li><a href="http://chasen-g.cn/" target="_blank" rel="external">帮了我很大忙的-&gt;Chasen’s</a></li>
+<li><a href="http://ibruce.info/2013/11/22/hexo-your-blog/" target="_blank" rel="external">hexo你的博客|不如</a> </li>
+<li><a href="https://linghucong.js.org/2016/04/15/2016-04-15-hexo-github-pages-blog/" target="_blank" rel="external">手把手教你使用hexo+github搭建个人博客</a> </li>
+<li><a href="http://opiece.me/2015/04/09/hexo-guide/" target="_blank" rel="external">使用hexo搭建个人博客</a> </li>
+<li><a href="http://myzchi.com/2015/05/02/hexo-github%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B%E6%80%BB%E7%BB%93/" target="_blank" rel="external">hexo+github搭建过程总结</a> </li>
+<li><a href="http://www.zipperary.com/categories/hexo/" target="_blank" rel="external">hexo系列教程</a> </li>
+<li><a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank" rel="external">搭建一个免费的，无限流量的blog（阮一峰）</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;   一直想有一个属于自己的博客，前段时间看到HEXO+GitHub傻瓜式搭建，就利用周末花了俩天时间搭建了一个自己的博客。花俩天时间是因为走了太多弯路~搞了太多错误，在这里把流程梳理一下，希望大家不要像我一样走弯路，顺便填入第一篇博客0.0，没有基础的同学也可以利用它搭建自己的博客，我觉得博客不一定要写技术，用来当做自己的私人空间也是很不错的。这里特别感谢&lt;a href=&quot;http://chasen-g.cn/&quot;&gt;Chasen’s &lt;/a&gt;，帮我解决了好多问题。&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
