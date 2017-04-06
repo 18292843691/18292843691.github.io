@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http:%5C%5Chexin.life/"/>
-  <updated>2017-04-06T10:50:08.715Z</updated>
+  <updated>2017-04-06T11:53:22.015Z</updated>
   <id>http:\\hexin.life/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http:%5C%5Chexin.life/2017/03/31/title-2/"/>
     <id>http:\\hexin.life/2017/03/31/title-2/</id>
     <published>2017-03-31T15:09:45.000Z</published>
-    <updated>2017-04-06T10:50:08.715Z</updated>
+    <updated>2017-04-06T11:53:22.015Z</updated>
     
     <content type="html"><![CDATA[<h1 id="IE8以下图片出现蓝色边框"><a href="#IE8以下图片出现蓝色边框" class="headerlink" title="IE8以下图片出现蓝色边框"></a>IE8以下图片出现蓝色边框</h1><pre><code>img{
     border:0;  /*或者border:none;*/
@@ -145,7 +145,7 @@
       <category term="hexo" scheme="http:%5C%5Chexin.life/categories/hexo/"/>
     
     
-      <category term="hexo" scheme="http:%5C%5Chexin.life/tags/hexo/"/>
+      <category term="CSS" scheme="http:%5C%5Chexin.life/tags/CSS/"/>
     
   </entry>
   
