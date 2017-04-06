@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>dayDream&#39;s blog</title>
-  <subtitle>白日梦想家</subtitle>
+  <subtitle>dayDream&#39;s blog</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http:%5C%5Chexin.life/"/>
-  <updated>2017-04-06T10:25:33.692Z</updated>
+  <updated>2017-04-06T10:50:08.715Z</updated>
   <id>http:\\hexin.life/</id>
   
   <author>
@@ -16,17 +16,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>CSS学习笔记_Placeholder及CSS_hack</title>
     <link href="http:%5C%5Chexin.life/2017/03/31/title-2/"/>
     <id>http:\\hexin.life/2017/03/31/title-2/</id>
-    <published>2017-03-31T15:09:45.563Z</published>
-    <updated>2017-04-06T10:25:33.692Z</updated>
+    <published>2017-03-31T15:09:45.000Z</published>
+    <updated>2017-04-06T10:50:08.715Z</updated>
     
-    <content type="html"><![CDATA[<hr>
-<p>title: CSS学习笔记_Placeholder及CSS_hack</p>
-<p>date: 2017-03-31 23:09:45</p>
-<p>tags: CSS<br>categories: 前端学习—</p>
-<h1 id="IE8以下图片出现蓝色边框"><a href="#IE8以下图片出现蓝色边框" class="headerlink" title="IE8以下图片出现蓝色边框"></a>IE8以下图片出现蓝色边框</h1><pre><code>img{
+    <content type="html"><![CDATA[<h1 id="IE8以下图片出现蓝色边框"><a href="#IE8以下图片出现蓝色边框" class="headerlink" title="IE8以下图片出现蓝色边框"></a>IE8以下图片出现蓝色边框</h1><pre><code>img{
     border:0;  /*或者border:none;*/
 }
 </code></pre><p>#如何使文本以大写字母开头？</p>
@@ -34,7 +30,6 @@
 </code></pre><h1 id="强制设置为IE模式"><a href="#强制设置为IE模式" class="headerlink" title="强制设置为IE模式"></a>强制设置为IE模式</h1><pre><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot; /&gt;
 //我写的页面在IE8之下全部乱掉了，在网上搜到这个方法，用了发现好了，强制为IE渲染模式，目前还没理解这个
 </code></pre><hr>
-<a id="more"></a>
 <h1 id="IE8及以下不支持Placeholder（基于JQ）"><a href="#IE8及以下不支持Placeholder（基于JQ）" class="headerlink" title="IE8及以下不支持Placeholder（基于JQ）"></a><a href="http://www.cnblogs.com/digdeep/p/4424487.html" target="_blank" rel="external">IE8及以下不支持Placeholder</a>（基于JQ）</h1><pre><code>&lt;!doctype html&gt;
 &lt;html&gt;
 &lt;header&gt;
@@ -142,21 +137,15 @@
     
     <summary type="html">
     
-      &lt;hr&gt;
-&lt;p&gt;title: CSS学习笔记_Placeholder及CSS_hack&lt;/p&gt;
-&lt;p&gt;date: 2017-03-31 23:09:45&lt;/p&gt;
-&lt;p&gt;tags: CSS&lt;br&gt;categories: 前端学习—&lt;/p&gt;
-&lt;h1 id=&quot;IE8以下图片出现蓝色边框&quot;&gt;&lt;a href=&quot;#IE8以下图片出现蓝色边框&quot; class=&quot;headerlink&quot; title=&quot;IE8以下图片出现蓝色边框&quot;&gt;&lt;/a&gt;IE8以下图片出现蓝色边框&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;img{
-    border:0;  /*或者border:none;*/
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;#如何使文本以大写字母开头？&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;text-transform:capitalize;
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;强制设置为IE模式&quot;&gt;&lt;a href=&quot;#强制设置为IE模式&quot; class=&quot;headerlink&quot; title=&quot;强制设置为IE模式&quot;&gt;&lt;/a&gt;强制设置为IE模式&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;meta http-equiv=&amp;quot;X-UA-Compatible&amp;quot; content=&amp;quot;IE=edge&amp;quot; /&amp;gt;
-//我写的页面在IE8之下全部乱掉了，在网上搜到这个方法，用了发现好了，强制为IE渲染模式，目前还没理解这个
-&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+      &lt;h1 id=&quot;IE8以下图片出现蓝色边框&quot;&gt;&lt;a href=&quot;#IE8以下图片出现蓝色边框&quot; class=&quot;headerlink&quot; title=&quot;IE8以下图片出现蓝色边框&quot;&gt;&lt;/a&gt;IE8以下图片出现蓝色边框&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;img{
+    border:0;
     
     </summary>
     
+      <category term="hexo" scheme="http:%5C%5Chexin.life/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="http:%5C%5Chexin.life/tags/hexo/"/>
     
   </entry>
   
@@ -165,9 +154,9 @@
     <link href="http:%5C%5Chexin.life/2017/03/28/title-1/"/>
     <id>http:\\hexin.life/2017/03/28/title-1/</id>
     <published>2017-03-28T15:15:03.000Z</published>
-    <updated>2017-04-06T10:24:56.402Z</updated>
+    <updated>2017-04-06T10:49:55.501Z</updated>
     
-    <content type="html"><![CDATA[<p>   一直想有一个属于自己的博客，前段时间看到HEXO+GitHub傻瓜式搭建，就利用周末花了俩天时间搭建了一个自己的博客。花俩天时间是因为走了太多弯路~搞了太多错误，在这里把流程梳理一下，希望大家不要像我一样走弯路，顺便填入第一篇博客0.0，没有基础的同学也可以利用它搭建自己的博客，我觉得博客不一定要写技术，用来当做自己的私人空间也是很不错的。这里特别感谢<a href="http://chasen-g.cn/" target="_blank" rel="external">Chasen’s </a>，帮我解决了好多问题。<br><a id="more"></a></p>
+    <content type="html"><![CDATA[<p>   一直想有一个属于自己的博客，前段时间看到HEXO+GitHub傻瓜式搭建，就利用周末花了俩天时间搭建了一个自己的博客。花俩天时间是因为走了太多弯路~搞了太多错误，在这里把流程梳理一下，希望大家不要像我一样走弯路，顺便填入第一篇博客0.0，没有基础的同学也可以利用它搭建自己的博客，我觉得博客不一定要写技术，用来当做自己的私人空间也是很不错的。这里特别感谢<a href="http://chasen-g.cn/" target="_blank" rel="external">Chasen’s </a>，帮我解决了好多问题。 </p>
 <hr>
 <h2 id="关于HEXO"><a href="#关于HEXO" class="headerlink" title=" 关于HEXO "></a><em> 关于HEXO </em></h2><blockquote>
 <p>hexo是一款基于<a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a>的静态博客框架，可以生成静态文件并且一键部署到github<br>pages上，并且他可以使用markdown(一款编辑器)来编写文章，十分简单。</p>
@@ -271,7 +260,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;   一直想有一个属于自己的博客，前段时间看到HEXO+GitHub傻瓜式搭建，就利用周末花了俩天时间搭建了一个自己的博客。花俩天时间是因为走了太多弯路~搞了太多错误，在这里把流程梳理一下，希望大家不要像我一样走弯路，顺便填入第一篇博客0.0，没有基础的同学也可以利用它搭建自己的博客，我觉得博客不一定要写技术，用来当做自己的私人空间也是很不错的。这里特别感谢&lt;a href=&quot;http://chasen-g.cn/&quot;&gt;Chasen’s &lt;/a&gt;，帮我解决了好多问题。&lt;br&gt;
+      &lt;p&gt;   一直想有一个属于自己的博客，前段时间看到HEXO+GitHub傻瓜式搭建，就利用周末花了俩天时间搭建了一个自己的博客。花俩天时间是因为走了太多弯路~搞了太多错误，在这里把流程梳理一下，希望大家不要像我一样走弯路，顺便填入第一篇博客0.0，没有基础的同学也可以利用它搭建
     
     </summary>
     
