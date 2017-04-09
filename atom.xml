@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http:%5C%5Chexin.life/"/>
-  <updated>2017-04-09T10:14:10.774Z</updated>
+  <updated>2017-04-09T10:39:15.574Z</updated>
   <id>http:\\hexin.life/</id>
   
   <author>
@@ -20,10 +20,10 @@
     <link href="http:%5C%5Chexin.life/2017/03/31/title-2/"/>
     <id>http:\\hexin.life/2017/03/31/title-2/</id>
     <published>2017-03-31T15:09:45.563Z</published>
-    <updated>2017-04-09T10:14:10.774Z</updated>
+    <updated>2017-04-09T10:39:15.574Z</updated>
     
     <content type="html"><![CDATA[<hr>
-<p>title: CSS学习笔记_Placeholder及CSS_hack</p>
+<p>title: CSS学习笔记(Placeholder及CSS_hack)</p>
 <p>date: 2017-03-31 23:09:45</p>
 <p>tags: CSS学习笔记<br>categories: CSS—</p>
 <h1 id="IE8以下图片出现蓝色边框"><a href="#IE8以下图片出现蓝色边框" class="headerlink" title="IE8以下图片出现蓝色边框"></a>IE8以下图片出现蓝色边框</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">img&#123;</div><div class="line">        <span class="attr">border</span>:<span class="number">0</span>;  <span class="comment">/*或者border:none;*/</span></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
@@ -73,10 +73,10 @@
     <summary type="html">
     
       &lt;hr&gt;
-&lt;p&gt;title: CSS学习笔记_Placeholder及CSS_hack&lt;/p&gt;
+&lt;p&gt;title: CSS学习笔记(Placeholder及CSS_hack)&lt;/p&gt;
 &lt;p&gt;date: 2017-03-31 23:09:45&lt;/p&gt;
 &lt;p&gt;tags: CSS学习笔记&lt;br&gt;categories: CSS—&lt;/p&gt;
-&lt;h1 id=&quot;IE8以下图片出现蓝
+&lt;h1 id=&quot;IE8以下图片出现
     
     </summary>
     
