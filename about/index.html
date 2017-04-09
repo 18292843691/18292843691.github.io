@@ -1,2 +1,103 @@
-<p>&lt;!DOCTYPE html&gt;</p>
-<html lang="en"><br><br><head><br>    <meta charset="UTF-8"><br>    <title></title><br>    <style type="text/css"><br>    .aboutme {<br>        width: 450px;<br>        height: 250px;<br>        background: url(yy.jpg) no-repeat -2px -120px;<br>        margin: 200px auto;<br>        border: 3px solid #fff;<br>        box-shadow: 0 1px 5px rgba(0, 0, 0, .1), 0 1px 20px rgba(0, 0, 0, .4) inset;<br>        position: relative;<br>    }<br><br>    .aboutme:after,<br>    .aboutme:before {<br>        content: “”;<br>        position: absolute;<br>        background: transparent;<br>        z-index: -1;<br>        top: 50%;<br>        bottom: 0px;<br>        right: 15px;<br>        left: 15px;<br>        box-shadow: 0 0 15px rgba(0, 0, 0, .4);<br>        border-radius: 25px;<br>    }<br><br>    .aboutme p {<br>        text-align: center;<br>        color: red;<br>        font-size: 28px;<br>        bottom: 20px;<br>        text-shadow: 3px 3px 5px rgba(0, 0, 0, .6);<br>    }<br>    </style><br></head><br><br><body><br>    <div class="aboutme"><br>        <p>console.log(aboutme);</p><br>    </div><br>    <script type="text/javascript"><br>    // function Aboutme(name, age, sex) {<br>    //     this.name = name;<br>    //     this.age = age;<br>    //     this.sex = sex;<br>    // }<br><br>    // Aboutme.prototype.name = function() {<br>    //     console.log(“Hello,i’m “ + this.name);<br>    // }<br><br>    // function Resume(name, age, sex, skills, project) {<br>    //     Aboutme.call(this, name, age, sex);<br>    //     this.skills = skills;<br>    //     this.project = project;<br>    // }<br><br>    // Resume.prototype = Object.create(Aboutme.prototype);<br>    // Resume.prototype.constructor = Resume;<br><br>    // var hexin = new Resume(“hexin”, “22”);<br>    var hexin = {<br>        Name: “����”,<br>        Age: “22”,<br>        Sex: “��”,<br>        Current: “student 2014-2018”,<br>        DesiredJob: “Front-end engineer”,<br>        Hobby: “coding,Basketball,�ŷ�����,E-Sports”,<br>        Skills: {<br>            HTML: “expression”,<br>            CSS: “expression”,<br>            JavaScript: “familliar”,<br>        },<br>        // tel:”18292843691”,<br>        email: “hexin_9508@163.com”,<br>        More: “waiting…”<br>    }<br><br>    for (var i in hexin) {<br>        if (hexin.hasOwnProperty(i)) {<br><br>            if ((typeof hexin[i]) == “object”) {<br>                console.log(i + “:”);<br>                for (var j in hexin[i]) {<br>                    console.log(“    “+j + “:”, hexin[i][j]);<br>                }<br>            } else {<br>                console.log(i + “:”, hexin[i]);<br>            }<br>        }<br>    }<br><br><br>    </script><br></body><br><br></html>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+    .aboutme {
+        width: 450px;
+        height: 250px;
+        background: url(yy.jpg) no-repeat -2px -120px;
+        margin: 200px auto;
+        border: 3px solid #fff;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, .1), 0 1px 20px rgba(0, 0, 0, .4) inset;
+        position: relative;
+    }
+    
+    .aboutme:after,
+    .aboutme:before {
+        content: "";
+        position: absolute;
+        background: transparent;
+        z-index: -1;
+        top: 50%;
+        bottom: 0px;
+        right: 15px;
+        left: 15px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, .4);
+        border-radius: 25px;
+    }
+    
+    .aboutme p {
+        text-align: center;
+        color: red;
+        font-size: 28px;
+        bottom: 20px;
+        text-shadow: 3px 3px 5px rgba(0, 0, 0, .6);
+    }
+    </style>
+</head>
+
+<body>
+    <div class="aboutme">
+        <p>console.log(aboutme);</p>
+    </div>
+    <script type="text/javascript">
+    // function Aboutme(name, age, sex) {
+    //     this.name = name;
+    //     this.age = age;
+    //     this.sex = sex;
+    // }
+
+    // Aboutme.prototype.name = function() {
+    //     console.log("Hello,i'm " + this.name);
+    // }
+
+    // function Resume(name, age, sex, skills, project) {
+    //     Aboutme.call(this, name, age, sex);
+    //     this.skills = skills;
+    //     this.project = project;
+    // }
+
+    // Resume.prototype = Object.create(Aboutme.prototype);
+    // Resume.prototype.constructor = Resume;
+
+    // var hexin = new Resume("hexin", "22");
+    var hexin = {
+        Name: "贺鑫",
+        Age: "22",
+        Sex: "♂",
+        Current: "student 2014-2018",
+        DesiredJob: "Front-end engineer",
+        Hobby: "coding,Basketball,古风音乐,E-Sports",
+        Skills: {
+            HTML: "expression",
+            CSS: "expression",
+            JavaScript: "familliar",
+        },
+        // tel:"18292843691",
+        email: "hexin_9508@163.com",
+        More: "waiting..."
+    }
+
+    for (var i in hexin) {
+        if (hexin.hasOwnProperty(i)) {
+
+            if ((typeof hexin[i]) == "object") {
+                console.log(i + ":");
+                for (var j in hexin[i]) {
+                    console.log("    "+j + ":", hexin[i][j]);
+                }
+            } else {
+                console.log(i + ":", hexin[i]);
+            }
+        }
+    }
+
+    
+    </script>
+</body>
+
+</html>
