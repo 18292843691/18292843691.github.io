@@ -1052,6 +1052,14 @@ pre .javascript .function {
     display: block !important;
   }
 }
+.site-nav p {
+  margin: 0 0 25px 0;
+  position: absolute;
+  right: -232px;
+  bottom: -20px;
+  font-family: cursive;
+  font-size: 19px;
+}
 .menu {
   margin-top: 20px;
   padding-left: 0;
@@ -1718,7 +1726,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: rgba(232,255,43,0.8);
+  background: rgba(255,140,111,0.8);
 }
 .links-of-blogroll {
   font-size: 13px;
