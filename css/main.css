@@ -1039,6 +1039,7 @@ pre .javascript .function {
     margin: 0 -10px;
     padding: 0 10px;
     clear: both;
+    background: rgba(245,245,245,0.8);
     border-top: 1px solid #ddd;
   }
 }
@@ -1059,6 +1060,7 @@ pre .javascript .function {
   bottom: -20px;
   font-family: cursive;
   font-size: 19px;
+  color: #999;
 }
 .menu {
   margin-top: 20px;
@@ -1729,7 +1731,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: rgba(255,127,198,0.8);
+  background: rgba(74,148,47,0.8);
 }
 .links-of-blogroll {
   font-size: 13px;
