@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http:%5C%5Chexin.life/"/>
-  <updated>2017-04-09T16:31:41.224Z</updated>
+  <updated>2017-04-09T15:55:46.824Z</updated>
   <id>http:\\hexin.life/</id>
   
   <author>
@@ -14,46 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="http:%5C%5Chexin.life/2017/04/10/title-4/"/>
-    <id>http:\\hexin.life/2017/04/10/title-4/</id>
-    <published>2017-04-09T16:29:19.992Z</published>
-    <updated>2017-04-09T16:31:41.224Z</updated>
-    
-    <content type="html"><![CDATA[<hr>
-<p>title: 白日做的梦要靠自己追</p>
-<p>date: 2000-04-9 23:09:45</p>
-<p>tags: </p>
-<h2 id="categories-随笔"><a href="#categories-随笔" class="headerlink" title="categories: 随笔"></a>categories: 随笔</h2><blockquote class="blockquote-center">白日做的梦要靠自己追</blockquote>
-
-
-<blockquote>
-<p>虽然一天都趴在电脑前学习，但是也不知道进步在哪里，上了大学才感觉到什么叫时光如梭~，真的是快，昨天仿佛才刚刚四月，看了一下时间，1/3已经过去了，还在学基础知识，同学在准备简历的时候发现我连个项目都没有…希望自己能赶上秋招（嘁、赶不上也得赶）<br>推荐个电影吧–&gt;<a href="https://movie.douban.com/subject/2133323/" target="_blank" rel="external">白日梦想家</a></p>
-<p>网名就是从这里来的，感觉特别像自己，喜欢胡思乱想，害怕去行动，大神告诉我说：”白日梦想家家的状态是不行的”。0.0但是目前没有找到的方法前行，虽然觉得自己目光短浅，眼高手低。但是现在确实我觉得至少自己在进步的路上，因为我一直觉得斯和自己的才是最好的。</p>
-<p>目标是在招聘前写俩个能拿得出手的项目，还得一个月时间刷一下笔试面试题…加油吧~</p>
-<ul>
-<li>其实只是想凑个博客数量,话说博客打开速度变慢了，是我网速不好，还是需要优化0.0~最喜欢的鼬神<br><img src="http://i2.muimg.com/567571/c5ec92ad5d39284f.jpg" alt="鼬神"></li>
-</ul>
-</blockquote>
-<hr>
-<blockquote class="blockquote-center">相信你所相信的，坚持你所坚持的</blockquote>
-
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;p&gt;title: 白日做的梦要靠自己追&lt;/p&gt;
-&lt;p&gt;date: 2000-04-9 23:09:45&lt;/p&gt;
-&lt;p&gt;tags: &lt;/p&gt;
-&lt;h2 id=&quot;categories-随笔&quot;&gt;&lt;a href=&quot;#categories-随笔&quot; class=&quot;headerlin
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>瀑布流</title>
@@ -276,6 +236,44 @@
     
     
       <category term="hexo" scheme="http:%5C%5Chexin.life/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>白日做的梦要靠自己追</title>
+    <link href="http:%5C%5Chexin.life/2000/04/10/title-4/"/>
+    <id>http:\\hexin.life/2000/04/10/title-4/</id>
+    <published>2000-04-10T15:09:45.000Z</published>
+    <updated>2017-04-09T16:34:55.135Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote class="blockquote-center">白日做的梦要靠自己追</blockquote>
+
+
+<blockquote>
+<p>虽然一天都趴在电脑前学习，但是也不知道进步在哪里，上了大学才感觉到什么叫时光如梭~，真的是快，昨天仿佛才刚刚四月，看了一下时间，1/3已经过去了，还在学基础知识，同学在准备简历的时候发现我连个项目都没有…希望自己能赶上秋招（嘁、赶不上也得赶）<br>推荐个电影吧–&gt;<a href="https://movie.douban.com/subject/2133323/" target="_blank" rel="external">白日梦想家</a></p>
+<p>网名就是从这里来的，感觉特别像自己，喜欢胡思乱想，害怕去行动，大神告诉我说：”白日梦想家家的状态是不行的”。0.0但是目前没有找到的方法前行，虽然觉得自己目光短浅，眼高手低。但是现在确实我觉得至少自己在进步的路上，因为我一直觉得斯和自己的才是最好的。</p>
+<p>目标是在招聘前写俩个能拿得出手的项目，还得一个月时间刷一下笔试面试题…加油吧~</p>
+<ul>
+<li>其实只是想凑个博客数量,顺便测测效果,话说博客打开速度变慢了，是我网速不好，还是需要优化0.0~最喜欢的鼬神<br><img src="http://i2.muimg.com/567571/c5ec92ad5d39284f.jpg" alt="鼬神"></li>
+</ul>
+</blockquote>
+<hr>
+<blockquote class="blockquote-center">相信你所相信的，坚持你所坚持的</blockquote>
+
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote class=&quot;blockquote-center&quot;&gt;白日做的梦要靠自己追&lt;/blockquote&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;虽然一天都趴在电脑前学习，但是也不知道进步在哪里，上了大学才感觉到什么叫时光如梭~，真的是快，昨天仿佛才刚刚四月，看了一
+    
+    </summary>
+    
+      <category term="随笔" scheme="http:%5C%5Chexin.life/categories/%E9%9A%8F%E7%AC%94/"/>
+    
     
   </entry>
   
