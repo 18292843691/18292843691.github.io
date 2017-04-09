@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http:%5C%5Chexin.life/"/>
-  <updated>2017-04-09T15:55:46.824Z</updated>
+  <updated>2017-04-09T16:38:49.748Z</updated>
   <id>http:\\hexin.life/</id>
   
   <author>
@@ -16,21 +16,70 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title></title>
+    <link href="http:%5C%5Chexin.life/2017/04/10/title-4/"/>
+    <id>http:\\hexin.life/2017/04/10/title-4/</id>
+    <published>2017-04-09T16:29:19.992Z</published>
+    <updated>2017-04-09T16:38:49.748Z</updated>
+    
+    <content type="html"><![CDATA[<p>—title: 白日做的梦要靠自己追<br>date: 2011-04-10 23:09:45</p>
+<p>tags:<br>categories: 随笔—</p>
+<blockquote class="blockquote-center">白日做的梦要靠自己追</blockquote>
+
+
+
+<blockquote>
+<p>虽然一天都趴在电脑前学习，但是也不知道进步在哪里，上了大学才感觉到什么叫时光如梭~，真的是快，昨天仿佛才刚刚四月，看了一下时间，1/3已经过去了，还在学基础知识，同学在准备简历的时候发现我连个项目都没有…希望自己能赶上秋招（嘁、赶不上也得赶）<br>推荐个电影吧–&gt;<a href="https://movie.douban.com/subject/2133323/" target="_blank" rel="external">白日梦想家</a></p>
+<p>网名就是从这里来的，感觉特别像自己，喜欢胡思乱想，害怕去行动，大神告诉我说：”白日梦想家家的状态是不行的”。0.0但是目前没有找到的方法前行，虽然觉得自己目光短浅，眼高手低。但是现在确实我觉得至少自己在进步的路上，因为我一直觉得斯和自己的才是最好的。</p>
+<p>目标是在招聘前写俩个能拿得出手的项目，还得一个月时间刷一下笔试面试题…加油吧~</p>
+<ul>
+<li>其实只是想凑个博客数量,顺便测测效果,话说博客打开速度变慢了，是我网速不好，还是需要优化0.0~最喜欢的鼬神<br><img src="http://i2.muimg.com/567571/c5ec92ad5d39284f.jpg" alt="鼬神"></li>
+</ul>
+</blockquote>
+<hr>
+<blockquote class="blockquote-center">相信你所相信的，坚持你所坚持的</blockquote>
+
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;—title: 白日做的梦要靠自己追&lt;br&gt;date: 2011-04-10 23:09:45&lt;/p&gt;
+&lt;p&gt;tags:&lt;br&gt;categories: 随笔—&lt;/p&gt;
+&lt;blockquote class=&quot;blockquote-center&quot;&gt;白日做的梦要靠自己追&lt;/blo
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>瀑布流</title>
     <link href="http:%5C%5Chexin.life/2017/04/09/title-3/"/>
     <id>http:\\hexin.life/2017/04/09/title-3/</id>
     <published>2017-04-09T15:09:45.000Z</published>
-    <updated>2017-04-09T15:55:46.824Z</updated>
+    <updated>2017-04-09T16:36:43.826Z</updated>
     
-    <content type="html"><![CDATA[<blockquote>
+    <content type="html"><![CDATA[<blockquote class="blockquote-center">白日做的梦要靠自己追</blockquote>
+
+
+
+
+
+<blockquote>
 <p>好久没有写博客了，学习途中经常遇到好多小问题，感觉还是动手太少了，不过感觉好多视频中老师的代码是错误的，也不知道他们是怎么运行成功的，调试+百度了好久才修正过来，不过感觉不错，<em>可能是故意的吧，为了让我们自己动手查询</em>，今天实现了一下瀑布流的布局就发在这里吧，具体的注释我都放在代码里了。</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">    &lt;html&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">    &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;</div><div class="line">    </div><div class="line">    &lt;title&gt;瀑布流&lt;/title&gt;</div><div class="line">    &lt;style type="text/css"&gt;</div><div class="line">        </div><div class="line">        *&#123;padding: 0;margin:0;&#125;</div><div class="line">        #main&#123;</div><div class="line">            position: relative;</div><div class="line">        &#125;</div><div class="line">        .pin&#123;</div><div class="line">            padding: 15px 0 0 15px;</div><div class="line">            float:left;</div><div class="line">        &#125;</div><div class="line">        .box&#123;</div><div class="line">            padding: 10px;</div><div class="line">            border:1px solid #ccc;</div><div class="line">            box-shadow: 0 0 6px #ccc;</div><div class="line">            border-radius: 5px;</div><div class="line">        &#125;</div><div class="line">        .box img&#123;</div><div class="line">            width:162px;</div><div class="line">            height:auto;</div><div class="line">        &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">    </div><div class="line">    &lt;body&gt;</div><div class="line">    &lt;div id="main"&gt;</div><div class="line">        &lt;div class="pin"&gt;</div><div class="line">            &lt;div class="box"&gt;</div><div class="line">                &lt;img src="./images/1.jpg"/&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">        &lt;!-- ...这里由于结构都一样就直接省去了 --&gt;</div><div class="line">        &lt;div class="pin"&gt;</div><div class="line">            &lt;div class="box"&gt;</div><div class="line">                &lt;img src="./images/1.jpg"/&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;script type="text/javascript"&gt;</div><div class="line">    </div><div class="line">    window.onload = function () &#123;</div><div class="line">        waterFall("main","pin");</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    //模拟从后台传来的json数据</div><div class="line">    var dataInt=&#123;'data':[&#123;'src':'1.jpg'&#125;,&#123;'src':'2.jpg'&#125;,&#123;'src':'3.jpg'&#125;,&#123;'src':'5.jpg'&#125;,&#123;'src':'5.jpg'&#125;,&#123;'src':'4.jpg'&#125;,&#123;'src':'6.jpg'&#125;,&#123;'src':'6.jpg'&#125;,&#123;'src':'16.jpg'&#125;,&#123;'src':'16.jpg'&#125;,&#123;'src':'16.jpg'&#125;,&#123;'src':'6.jpg'&#125;]&#125;;</div><div class="line">    </div><div class="line">    //瀑布流滚动加载</div><div class="line">    window.onscroll = function () &#123;</div><div class="line">        if(checkScroll())&#123;</div><div class="line">            var oParent = document.getElementById("main");</div><div class="line">            //	将后台传来的数据渲染进当前页面尾部</div><div class="line">            for( var i = 0; i &lt; dataInt.data.length; i++)&#123;</div><div class="line">                //创建最外层div</div><div class="line">                var oPin = document.createElement('div');</div><div class="line">                oPin.className = 'pin';</div><div class="line">                oParent.appendChild(oPin);</div><div class="line">                </div><div class="line">                //创建图片的盒子</div><div class="line">                var oBox = document.createElement('div');</div><div class="line">                oBox.className = 'box';</div><div class="line">                oPin.appendChild(oBox);</div><div class="line">                </div><div class="line">                //创建图片</div><div class="line">                var oImg = document.createElement('img');</div><div class="line">                oImg.src = "./images/" + dataInt.data[i].src;//获取传来的json中的图片</div><div class="line">                oBox.appendChild(oImg);</div><div class="line">            &#125;</div><div class="line">            waterFall("main","pin");  //将传入的图片进行瀑布流排序</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    //检测是否具备加载条件--&gt;当最后一个盒子出现在视线中时开始加载</div><div class="line">    function checkScroll () &#123;</div><div class="line">        //获取整个大盒子</div><div class="line">        var oParent = document.getElementById("main");</div><div class="line">        //获取所有图片</div><div class="line">        var oBoxs = getByClass(oParent,"pin");</div><div class="line">        // var oBoxs = oParent.getElementsByClassName("pin");</div><div class="line">        </div><div class="line">        //获取最后一个盒子的高度</div><div class="line">        var lastBoxH = oBoxs[oBoxs.length - 1].offsetTop ;</div><div class="line">        </div><div class="line">        //获取滚动距离</div><div class="line">        var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;</div><div class="line">        </div><div class="line">        //获取浏览器窗口的高度</div><div class="line">        // var clienHeight = document.documentElement.clientHeight;</div><div class="line">        var clientHeight = document.body.clientHeight || document.documentElement.clientHeight </div><div class="line">        console.log(scrollTop);</div><div class="line">        console.log(clientHeight);</div><div class="line">        return (lastBoxH &lt; clientHeight + scrollTop) ? true : false;  //判断滚动的高度加浏览器的高度是否高于最后一个盒子的高度，即盒子是否出现在视线中</div><div class="line">    &#125;</div><div class="line">    </div><div class="line"></div><div class="line">    function waterFall( parent, pin ) &#123;</div><div class="line">        //获取整个大盒子</div><div class="line">        var oParent = document.getElementById(parent);</div><div class="line">        //获取所有图片</div><div class="line">        var oBoxs = getByClass(oParent,"pin");</div><div class="line">        // var oBoxs = oParent.getElementsByClassName("pin");</div><div class="line">        </div><div class="line">        // 获取每个盒子的宽度</div><div class="line">        var oBoxw = oBoxs[0].offsetWidth;</div><div class="line">        </div><div class="line">        //获取每一行一共有几个盒子，用Math.floor()向下取整</div><div class="line">        var cols = Math.floor(document.documentElement.clientWidth / oBoxw);</div><div class="line">        </div><div class="line">        //设置每个图片盒子的宽度都一致并居中显示</div><div class="line">        oParent.style.cssText = "width:" + oBoxw*cols + "px; margin:0 auto;";</div><div class="line">        </div><div class="line">        //存放每一列盒子高度的数组</div><div class="line">        var boxArr = [];</div><div class="line">        for(var i = 0; i &lt; oBoxs.length; i++)&#123;</div><div class="line">            </div><div class="line">            if( i &lt; cols)&#123;//遍历盒子，将盒子的高度放入数组</div><div class="line">                boxArr.push(oBoxs[i].offsetHeight);</div><div class="line">            &#125;else&#123;</div><div class="line"></div><div class="line">                //调整下一列盒子的位置</div><div class="line">                var minH = Math.min.apply(null,boxArr);   //找到数组中的最小值--&gt;这里用apply改变this的</div><div class="line">                var minIndex = getMinIndex(boxArr,minH); // 获取高度最低的索引值</div><div class="line">                </div><div class="line">                oBoxs[i].style.position = "absolute";</div><div class="line">                oBoxs[i].style.top = minH + "px";</div><div class="line">                oBoxs[i].style.left = minIndex*oBoxw + "px";    //盒子左边的距离等于最低盒子的索引值*每一个盒子的宽度</div><div class="line">                </div><div class="line">                /* oBoxs[i].style.left = oBoxs[minIndex].offsetWidth + "px"; //--&gt;盒子左边的距离等于最低高度盒子的左边距离 */</div><div class="line"></div><div class="line">                //此时剩余盒子会绝对定位到该位置，因此我们需要去修改数组中最低的高度</div><div class="line">                boxArr[minIndex] += oBoxs[i].offsetHeight;</div><div class="line">            &#125;		</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // 获取索引值,遍历取到和最小值相等的值--&gt;数组太大可以用数据结构中的查找，二分查找听说是面试重点(简单实用吧)~</div><div class="line">    function getMinIndex ( boxArr, minH ) &#123;</div><div class="line">        for(var i = 0; i &lt; boxArr.length; i++)&#123;</div><div class="line">            if(boxArr[i] == minH)&#123;</div><div class="line">                return i;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    //获取className</div><div class="line">    function getByClass ( parent, cls ) &#123;</div><div class="line">        var oParent = document.getElementById("main");</div><div class="line">        var	oElements = oParent.getElementsByTagName("*");</div><div class="line">        var boxArr = new Array();</div><div class="line">            </div><div class="line">            for(var i = 0; i &lt; oElements.length; i++) &#123;</div><div class="line">                if(oElements[i].className == cls)&#123;</div><div class="line">                    boxArr.push(oElements[i]);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            return boxArr;</div><div class="line">    &#125;</div><div class="line">    &lt;/script&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">    &lt;/html&gt;</div></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
-      &lt;blockquote&gt;
-&lt;p&gt;好久没有写博客了，学习途中经常遇到好多小问题，感觉还是动手太少了，不过感觉好多视频中老师的代码是错误的，也不知道他们是怎么运行成功的，调试+百度了好久才修正过来，不过感觉不错，&lt;em&gt;可能是故意的吧，为了让我们自己动手查询&lt;/em&gt;，今天实现了一下
+      &lt;blockquote class=&quot;blockquote-center&quot;&gt;白日做的梦要靠自己追&lt;/blockquote&gt;
+
+
+
+
+
+&lt;blockquote&gt;
+&lt;p&gt;好久没有写博客了，学习途中经常遇到好多小问题，感觉还是动手太少了，不过感觉好多视频中老师的代码是错误的，也不知道他
     
     </summary>
     
@@ -46,9 +95,13 @@
     <link href="http:%5C%5Chexin.life/2017/03/31/title-2/"/>
     <id>http:\\hexin.life/2017/03/31/title-2/</id>
     <published>2017-03-31T15:09:45.000Z</published>
-    <updated>2017-04-09T16:01:42.484Z</updated>
+    <updated>2017-04-09T16:36:17.689Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="IE8以下图片出现蓝色边框"><a href="#IE8以下图片出现蓝色边框" class="headerlink" title="IE8以下图片出现蓝色边框"></a>IE8以下图片出现蓝色边框</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">img&#123;</div><div class="line">        <span class="attr">border</span>:<span class="number">0</span>;  <span class="comment">/*或者border:none;*/</span></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+    <content type="html"><![CDATA[<blockquote class="blockquote-center">白日做的梦要靠自己追</blockquote>
+
+
+
+<h1 id="IE8以下图片出现蓝色边框"><a href="#IE8以下图片出现蓝色边框" class="headerlink" title="IE8以下图片出现蓝色边框"></a>IE8以下图片出现蓝色边框</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">img&#123;</div><div class="line">        <span class="attr">border</span>:<span class="number">0</span>;  <span class="comment">/*或者border:none;*/</span></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
 <p>#如何使文本以大写字母开头？</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">text-transform:capitalize;</div></pre></td></tr></table></figure>
 <h1 id="强制设置为IE模式"><a href="#强制设置为IE模式" class="headerlink" title="强制设置为IE模式"></a>强制设置为IE模式</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge"</span> /&gt;</div><div class="line">    <span class="comment">//我写的页面在IE8之下全部乱掉了，在网上搜到这个方法，用了发现好了，强制为IE渲染模式</span></div></pre></td></tr></table></figure>
@@ -94,7 +147,11 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;IE8以下图片出现蓝色边框&quot;&gt;&lt;a href=&quot;#IE8以下图片出现蓝色边框&quot; class=&quot;headerlink&quot; title=&quot;IE8以下图片出现蓝色边框&quot;&gt;&lt;/a&gt;IE8以下图片出现蓝色边框&lt;/h1&gt;&lt;figure class=&quot;highlight java
+      &lt;blockquote class=&quot;blockquote-center&quot;&gt;白日做的梦要靠自己追&lt;/blockquote&gt;
+
+
+
+&lt;h1 id=&quot;IE8以下图片出现蓝色边框&quot;&gt;&lt;a href=&quot;#IE8以下图片出现蓝色边框&quot; class=&quot;headerlink&quot; title=&quot;I
     
     </summary>
     
@@ -110,9 +167,14 @@
     <link href="http:%5C%5Chexin.life/2017/03/28/title-1/"/>
     <id>http:\\hexin.life/2017/03/28/title-1/</id>
     <published>2017-03-28T15:15:03.000Z</published>
-    <updated>2017-04-09T16:29:01.564Z</updated>
+    <updated>2017-04-09T16:36:50.966Z</updated>
     
-    <content type="html"><![CDATA[<p>   一直想有一个属于自己的博客，前段时间看到HEXO+GitHub傻瓜式搭建，就利用周末花了俩天时间搭建了一个自己的博客。花俩天时间是因为走了太多弯路~搞了太多错误，在这里把流程梳理一下，希望大家不要像我一样走弯路，顺便填入第一篇博客0.0，没有基础的同学也可以利用它搭建自己的博客，我觉得博客不一定要写技术，用来当做自己的私人空间也是很不错的。这里特别感谢<a href="http://chasen-g.cn/" target="_blank" rel="external">Chasen’s </a>，帮我解决了好多问题。 </p>
+    <content type="html"><![CDATA[ <blockquote class="blockquote-center">白日做的梦要靠自己追</blockquote>
+
+
+
+
+<p>   一直想有一个属于自己的博客，前段时间看到HEXO+GitHub傻瓜式搭建，就利用周末花了俩天时间搭建了一个自己的博客。花俩天时间是因为走了太多弯路~搞了太多错误，在这里把流程梳理一下，希望大家不要像我一样走弯路，顺便填入第一篇博客0.0，没有基础的同学也可以利用它搭建自己的博客，我觉得博客不一定要写技术，用来当做自己的私人空间也是很不错的。这里特别感谢<a href="http://chasen-g.cn/" target="_blank" rel="external">Chasen’s </a>，帮我解决了好多问题。 </p>
 <hr>
 <h2 id="关于HEXO"><a href="#关于HEXO" class="headerlink" title="关于HEXO"></a>关于HEXO</h2><hr>
 <blockquote>
@@ -228,7 +290,12 @@
     
     <summary type="html">
     
-      &lt;p&gt;   一直想有一个属于自己的博客，前段时间看到HEXO+GitHub傻瓜式搭建，就利用周末花了俩天时间搭建了一个自己的博客。花俩天时间是因为走了太多弯路~搞了太多错误，在这里把流程梳理一下，希望大家不要像我一样走弯路，顺便填入第一篇博客0.0，没有基础的同学也可以利用它搭建
+       &lt;blockquote class=&quot;blockquote-center&quot;&gt;白日做的梦要靠自己追&lt;/blockquote&gt;
+
+
+
+
+&lt;p&gt;   一直想有一个属于自己的博客，前段时间看到HEXO+GitHub傻瓜式搭建，就利用周末花了俩天时间搭建了一个自己的博客。花俩天时间是因为
     
     </summary>
     
@@ -236,44 +303,6 @@
     
     
       <category term="hexo" scheme="http:%5C%5Chexin.life/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>白日做的梦要靠自己追</title>
-    <link href="http:%5C%5Chexin.life/2000/04/10/title-4/"/>
-    <id>http:\\hexin.life/2000/04/10/title-4/</id>
-    <published>2000-04-10T15:09:45.000Z</published>
-    <updated>2017-04-09T16:34:55.135Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote class="blockquote-center">白日做的梦要靠自己追</blockquote>
-
-
-<blockquote>
-<p>虽然一天都趴在电脑前学习，但是也不知道进步在哪里，上了大学才感觉到什么叫时光如梭~，真的是快，昨天仿佛才刚刚四月，看了一下时间，1/3已经过去了，还在学基础知识，同学在准备简历的时候发现我连个项目都没有…希望自己能赶上秋招（嘁、赶不上也得赶）<br>推荐个电影吧–&gt;<a href="https://movie.douban.com/subject/2133323/" target="_blank" rel="external">白日梦想家</a></p>
-<p>网名就是从这里来的，感觉特别像自己，喜欢胡思乱想，害怕去行动，大神告诉我说：”白日梦想家家的状态是不行的”。0.0但是目前没有找到的方法前行，虽然觉得自己目光短浅，眼高手低。但是现在确实我觉得至少自己在进步的路上，因为我一直觉得斯和自己的才是最好的。</p>
-<p>目标是在招聘前写俩个能拿得出手的项目，还得一个月时间刷一下笔试面试题…加油吧~</p>
-<ul>
-<li>其实只是想凑个博客数量,顺便测测效果,话说博客打开速度变慢了，是我网速不好，还是需要优化0.0~最喜欢的鼬神<br><img src="http://i2.muimg.com/567571/c5ec92ad5d39284f.jpg" alt="鼬神"></li>
-</ul>
-</blockquote>
-<hr>
-<blockquote class="blockquote-center">相信你所相信的，坚持你所坚持的</blockquote>
-
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote class=&quot;blockquote-center&quot;&gt;白日做的梦要靠自己追&lt;/blockquote&gt;
-
-
-&lt;blockquote&gt;
-&lt;p&gt;虽然一天都趴在电脑前学习，但是也不知道进步在哪里，上了大学才感觉到什么叫时光如梭~，真的是快，昨天仿佛才刚刚四月，看了一
-    
-    </summary>
-    
-      <category term="随笔" scheme="http:%5C%5Chexin.life/categories/%E9%9A%8F%E7%AC%94/"/>
-    
     
   </entry>
   
