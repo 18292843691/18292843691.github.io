@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>dayDream&#39;s blog</title>
-  <subtitle>Hello Dream</subtitle>
+  
   <link href="/atom.xml" rel="self"/>
   
   <link href="http:%5C%5Chexin.life/"/>
-  <updated>2017-04-11T13:22:30.340Z</updated>
+  <updated>2017-04-11T13:32:47.665Z</updated>
   <id>http:\\hexin.life/</id>
   
   <author>
@@ -20,15 +20,16 @@
     <link href="http:%5C%5Chexin.life/2017/04/11/title-4/"/>
     <id>http:\\hexin.life/2017/04/11/title-4/</id>
     <published>2017-04-11T12:06:00.000Z</published>
-    <updated>2017-04-11T13:22:30.340Z</updated>
+    <updated>2017-04-11T13:32:47.665Z</updated>
     
     <content type="html"><![CDATA[<p>前几天被朋友吐槽排版太烂了，今天偶然看到这篇文章，然后就转载了过来，由于转载原因可能文章没有原文格式美观，有兴趣请点击链接查看原文。</p>
 <ul>
 <li>原文转载自<a href="http://stormzhang.com/2017/03/16/chinese-copywriting/" target="_blank" rel="external">stormzhang</a></li>
 </ul>
-<p>———-<blockquote class="blockquote-center">相信你所相信的，坚持你所坚持的</blockquote><br>&gt;</p>
+<a id="more"></a>
+<p> <blockquote class="blockquote-center">相信你所相信的，坚持你所坚持的</blockquote><br> ———- &gt;</p>
 <h1 id="每个人都需要的中文排版指南"><a href="#每个人都需要的中文排版指南" class="headerlink" title="每个人都需要的中文排版指南"></a>每个人都需要的中文排版指南</h1><blockquote>
-<p><a id="more"></a>之前有不少人在我公众号留言，说看我的排版很舒服，求指导。</p>
+<p>之前有不少人在我公众号留言，说看我的排版很舒服，求指导。</p>
 <p>我不是一个专业的写字人，我是程序员出身，在写代码的时候有点小洁癖，尽量会把每个细节做到更好，所以我在公众号写作的时候一样会注重每个细节，我认为排版是对写作最基本的要求，所以当我决定要在公众号写作的时候，就非常在意排版，并且一直在改进，</p>
 <p>可惜的是，我看到无数不管是写博客还是写公众号的作者，从不会注意自己的排版，有时候看到一篇好的文章，如果排版很烂，会觉得很可惜。</p>
 <p>公众号「小道消息」的作者 Fenng<br>曾不止一次强调排版的重要性，对此我也非常认同，任何说不拘小节，注重内容就行了的反驳都是借口，我自己在我的小密圈中也一直强调排版的重要性，很多圈友发布的动态无一排版都太烂，为此，我在小密圈中写下了这么一篇排版指南，真心希望所有的写字人都能注意下自己的排版。</p>
@@ -136,9 +137,6 @@
 &lt;ul&gt;
 &lt;li&gt;原文转载自&lt;a href=&quot;http://stormzhang.com/2017/03/16/chinese-copywriting/&quot;&gt;stormzhang&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;———-&lt;blockquote class=&quot;blockquote-center&quot;&gt;相信你所相信的，坚持你所坚持的&lt;/blockquote&gt;&lt;br&gt;&amp;gt;&lt;/p&gt;
-&lt;h1 id=&quot;每个人都需要的中文排版指南&quot;&gt;&lt;a href=&quot;#每个人都需要的中文排版指南&quot; class=&quot;headerlink&quot; title=&quot;每个人都需要的中文排版指南&quot;&gt;&lt;/a&gt;每个人都需要的中文排版指南&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;
     
     </summary>
     
@@ -184,14 +182,13 @@
     <link href="http:%5C%5Chexin.life/2017/03/31/title-2/"/>
     <id>http:\\hexin.life/2017/03/31/title-2/</id>
     <published>2017-03-31T15:09:45.000Z</published>
-    <updated>2017-04-11T13:22:00.698Z</updated>
+    <updated>2017-04-11T13:33:24.214Z</updated>
     
     <content type="html"><![CDATA[<p><blockquote class="blockquote-center">相信你所相信的，坚持你所坚持的</blockquote></p>
 <h1 id="IE8以下图片出现蓝色边框"><a href="#IE8以下图片出现蓝色边框" class="headerlink" title="IE8以下图片出现蓝色边框"></a>IE8以下图片出现蓝色边框</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">img&#123;</div><div class="line">        <span class="attr">border</span>:<span class="number">0</span>;  <span class="comment">/*或者border:none;*/</span></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p>#如何使文本以大写字母开头？</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">text-transform:capitalize;</div></pre></td></tr></table></figure>
+<h1 id="如何使文本以大写字母开头？"><a href="#如何使文本以大写字母开头？" class="headerlink" title="如何使文本以大写字母开头？"></a>如何使文本以大写字母开头？</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">text-transform:capitalize;</div></pre></td></tr></table></figure>
 <h1 id="强制设置为IE模式"><a href="#强制设置为IE模式" class="headerlink" title="强制设置为IE模式"></a>强制设置为IE模式</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge"</span> /&gt;</div><div class="line">    <span class="comment">//我写的页面在IE8之下全部乱掉了，用这个强制用最新版本的IE渲染</span></div></pre></td></tr></table></figure>
-<p>#chrome浏览器点击input框时出现边框<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//虽然我觉得还挺好看的</span></div><div class="line">input&#123;    <span class="attr">outline</span>:none; <span class="comment">//outline:0;    &#125;</span></div></pre></td></tr></table></figure></p>
+<h1 id="chrome浏览器点击input框时出现边框"><a href="#chrome浏览器点击input框时出现边框" class="headerlink" title="chrome浏览器点击input框时出现边框"></a>chrome浏览器点击input框时出现边框</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//虽然我觉得还挺好看的</span></div><div class="line">input&#123;    <span class="attr">outline</span>:none; <span class="comment">//outline:0;    &#125;</span></div></pre></td></tr></table></figure>
 <a id="more"></a>
 <hr>
 <h1 id="IE8及以下不支持Placeholder（基于JQ）"><a href="#IE8及以下不支持Placeholder（基于JQ）" class="headerlink" title="IE8及以下不支持Placeholder（基于JQ）"></a><a href="http://www.cnblogs.com/digdeep/p/4424487.html" target="_blank" rel="external">IE8及以下不支持Placeholder</a>（基于JQ）</h1><pre><code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">&lt;!doctype html&gt;</div><div class="line">    &lt;html&gt;</div><div class="line">    &lt;header&gt;</div><div class="line">    &lt;meta charset="utf-8"&gt;</div><div class="line">    &lt;title&gt;&lt;/title&gt;</div><div class="line">    &lt;style type="text/css"&gt;</div><div class="line">         *&#123;margin:0;padding:0;&#125;</div><div class="line">        form &#123;margin:50px;&#125;</div><div class="line">        input &#123;display:block;margin:0 0 6px 0;&#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">    &lt;/header&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">        &lt;form&gt;</div><div class="line">            用户名：&lt;input name="name" placeholder="请输入用户名"/&gt;</div><div class="line">            密码：&lt;input name="password" placeholder="请输入登陆密码"/&gt;</div><div class="line">        &lt;/form&gt;</div><div class="line">            &lt;script type="text/javascript" src="jquery-1.11.1.min.js"&gt;&lt;/script&gt;</div><div class="line">            &lt;script type="text/javascript"&gt;</div><div class="line">            $(function()&#123;</div><div class="line">                function placeholderSupport() &#123;    // 判断浏览器是否支持 placeholder</div><div class="line">                    return 'placeholder' in document.createElement('input');</div><div class="line">                &#125;</div><div class="line">                </div><div class="line">                if(!placeholderSupport())&#123;</div><div class="line">                    $(document).on('focus', '[placeholder]',function() &#123;</div><div class="line">                        var input = $(this);</div><div class="line">                        if (input.val() == input.attr('placeholder')) &#123;</div><div class="line">                            input.val('');</div><div class="line">                            input.removeClass('placeholder');</div><div class="line">                        &#125;</div><div class="line">                    &#125;);</div><div class="line">                    $(document).on('blur', '[placeholder]',function() &#123;</div><div class="line">                        var input = $(this);</div><div class="line">                        if (input.val() == '' || input.val() == input.attr('placeholder')) &#123;</div><div class="line">                            input.addClass('placeholder');</div><div class="line">                            input.val(input.attr('placeholder'));</div><div class="line">                        &#125;</div><div class="line">                    &#125;);</div><div class="line">                    $('[placeholder]').blur();</div><div class="line">                &#125;;</div><div class="line">            &#125;);</div><div class="line">    &lt;/script&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">    &lt;/html&gt;</div></pre></td></tr></table></figure>
@@ -237,10 +234,9 @@
     
       &lt;p&gt;&lt;blockquote class=&quot;blockquote-center&quot;&gt;相信你所相信的，坚持你所坚持的&lt;/blockquote&gt;&lt;/p&gt;
 &lt;h1 id=&quot;IE8以下图片出现蓝色边框&quot;&gt;&lt;a href=&quot;#IE8以下图片出现蓝色边框&quot; class=&quot;headerlink&quot; title=&quot;IE8以下图片出现蓝色边框&quot;&gt;&lt;/a&gt;IE8以下图片出现蓝色边框&lt;/h1&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;img&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;attr&quot;&gt;border&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;  &lt;span class=&quot;comment&quot;&gt;/*或者border:none;*/&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;#如何使文本以大写字母开头？&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;text-transform:capitalize;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;如何使文本以大写字母开头？&quot;&gt;&lt;a href=&quot;#如何使文本以大写字母开头？&quot; class=&quot;headerlink&quot; title=&quot;如何使文本以大写字母开头？&quot;&gt;&lt;/a&gt;如何使文本以大写字母开头？&lt;/h1&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;text-transform:capitalize;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h1 id=&quot;强制设置为IE模式&quot;&gt;&lt;a href=&quot;#强制设置为IE模式&quot; class=&quot;headerlink&quot; title=&quot;强制设置为IE模式&quot;&gt;&lt;/a&gt;强制设置为IE模式&lt;/h1&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;meta http-equiv=&lt;span class=&quot;string&quot;&gt;&quot;X-UA-Compatible&quot;&lt;/span&gt; content=&lt;span class=&quot;string&quot;&gt;&quot;IE=edge&quot;&lt;/span&gt; /&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//我写的页面在IE8之下全部乱掉了，用这个强制用最新版本的IE渲染&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;#chrome浏览器点击input框时出现边框&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//虽然我觉得还挺好看的&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;input&amp;#123;    &lt;span class=&quot;attr&quot;&gt;outline&lt;/span&gt;:none; &lt;span class=&quot;comment&quot;&gt;//outline:0;    &amp;#125;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h1 id=&quot;chrome浏览器点击input框时出现边框&quot;&gt;&lt;a href=&quot;#chrome浏览器点击input框时出现边框&quot; class=&quot;headerlink&quot; title=&quot;chrome浏览器点击input框时出现边框&quot;&gt;&lt;/a&gt;chrome浏览器点击input框时出现边框&lt;/h1&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//虽然我觉得还挺好看的&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;input&amp;#123;    &lt;span class=&quot;attr&quot;&gt;outline&lt;/span&gt;:none; &lt;span class=&quot;comment&quot;&gt;//outline:0;    &amp;#125;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
