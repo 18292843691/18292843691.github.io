@@ -97,7 +97,7 @@
 <meta property="og:site_name" content="dayDream's blog">
 <meta property="og:description" content="相信你所相信的，坚持你所坚持的  cookies HTTP 是一个无状态协议，所以客户端每次发出请求时，下一次请求无法得知上一次请求所包含的状态数据，如何能把一个用户的状态数据关联起来呢？即大多都是利用 cookie、session 实现。如浏览器自动保存密码，记住登录状态，网页换肤，新手引导等下次不再提醒功能（我就说我以前换网吧玩总得去禁用那些引导）。比如在淘宝的某个页面中，你进行了登陆操作。当">
 <meta property="og:image" content="http://harttle.com/assets/img/blog/cookie.png">
-<meta property="og:updated_time" content="2017-04-15T05:55:11.385Z">
+<meta property="og:updated_time" content="2017-04-15T10:32:08.916Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="cookie和session">
 <meta name="twitter:description" content="相信你所相信的，坚持你所坚持的  cookies HTTP 是一个无状态协议，所以客户端每次发出请求时，下一次请求无法得知上一次请求所包含的状态数据，如何能把一个用户的状态数据关联起来呢？即大多都是利用 cookie、session 实现。如浏览器自动保存密码，记住登录状态，网页换肤，新手引导等下次不再提醒功能（我就说我以前换网吧玩总得去禁用那些引导）。比如在淘宝的某个页面中，你进行了登陆操作。当">
@@ -416,11 +416,12 @@
 <li>存在安全性问题，容易被人拦截。（考虑到安全方面，应使用较安全的session）</li>
 <li>需要指定域，不能够跨域</li>
 <li>cookies 数据太多会影响传输效率，浪费带宽</li>
-<li>有些浏览器禁用 cookies 或者部分手机不支持 cookies<br>广告商可以通过cookies了解到用户经常访问哪些网站，进而提供相应的广告等。<h1 id="session"><a href="#session" class="headerlink" title="session"></a>session</h1><blockquote>
+<li>有些浏览器禁用 cookies 或者部分手机不支持 cookies<br>广告商可以通过cookies了解到用户经常访问哪些网站，进而提供相应的广告等。</li>
+</ul>
+<p>#session</p>
+<blockquote>
 <p>cookies 虽然使用方便,但是 cookies 中所有的数据都可以在客户端被更改，数据很容易被伪造，因此一些重要的数据不能放cookies 中，cookies 数据太多也会影响传输效率，因此产生了 session，session 数据保留在服务器端。(但是当访问增多，会比较占用服务器的性能，考虑到性能方面，减少使用session)</p>
 </blockquote>
-</li>
-</ul>
 <hr>
 <blockquote>
 <p>当你浏览一个网页时，服务端随机产生一个 1024 比特长的字符串，然后存在你 cookie 中的 connect.sid字段中。当你下次访问时，cookie 会带有这个字符串，然后浏览器就知道你是上次访问过的某某某，然后从服务器的存储中对比取出上次记录在你身上的数据。由于字符串是随机产生的，而且位数足够多，所以也不担心有人能够伪造。</p>
@@ -430,8 +431,8 @@
 <li>session 的运作通过一个 session_id 来进行。session_id 通常是存放在客户端的 cookie  中，用户提交页面时，会将这一  SessionID 提交到服务器端，来存取 Session 数据。此时用户禁用cookies，session也会失效。</li>
 <li>但是session并不是完全依赖cookie，服务器可以通过URL重写的方式来传递session_id.</li>
 </ul>
-<hr>
-<h1 id="整理自："><a href="#整理自：" class="headerlink" title="整理自："></a>整理自：</h1><blockquote>
+<p>———- &gt; 整理自：</p>
+<blockquote>
 <ul>
 <li><a href="https://github.com/alsotang/node-lessons/tree/master/lesson16" target="_blank" rel="external">cookies 和 session</a></li>
 <li><a href="http://www.cnblogs.com/shiyangxt/articles/1305506.html" target="_blank" rel="external">cookies 和 session 的详解</a></li>
@@ -495,6 +496,10 @@
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/15/title-6/" rel="next" title="HTML 5 Web 存储及WEB应用缓存">
+                <i class="fa fa-chevron-left"></i> HTML 5 Web 存储及WEB应用缓存
+              </a>
             
           </div>
 
@@ -578,7 +583,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -600,7 +605,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -671,7 +676,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#cookies"><span class="nav-number">1.</span> <span class="nav-text">cookies</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#cookies参数"><span class="nav-number">1.1.</span> <span class="nav-text">cookies参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cookies的缺点"><span class="nav-number">1.2.</span> <span class="nav-text">cookies的缺点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#session"><span class="nav-number">2.</span> <span class="nav-text">session</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#整理自："><span class="nav-number">3.</span> <span class="nav-text">整理自：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#cookies"><span class="nav-number">1.</span> <span class="nav-text">cookies</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#cookies参数"><span class="nav-number">1.1.</span> <span class="nav-text">cookies参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cookies的缺点"><span class="nav-number">1.2.</span> <span class="nav-text">cookies的缺点</span></a></li></ol></li></ol></div>
             
 
           </div>

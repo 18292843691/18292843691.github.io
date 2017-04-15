@@ -89,16 +89,16 @@
 
 
 
-<meta name="description" content=".aboutme {         width: 450px;         height: 250px;         background: url(yy.jpg) no-repeat -5px -120px;         margin: 130px auto;         border: 4px solid rgba(245, 2">
+<meta name="description" content="--- title: &quot;console.log(aboutme)&quot; comments: false ---                        .aboutme {         width: 450px;         height: 250px;         background: url(yy.jpg) no-repeat -5px -120px;         mar">
 <meta property="og:type" content="website">
-<meta property="og:title" content="console.log(aboutme)">
+<meta property="og:title" content="dayDream's blog">
 <meta property="og:url" content="http:\\hexin.life/about/index.html">
 <meta property="og:site_name" content="dayDream's blog">
-<meta property="og:description" content=".aboutme {         width: 450px;         height: 250px;         background: url(yy.jpg) no-repeat -5px -120px;         margin: 130px auto;         border: 4px solid rgba(245, 2">
-<meta property="og:updated_time" content="2017-04-09T13:06:41.635Z">
+<meta property="og:description" content="--- title: &quot;console.log(aboutme)&quot; comments: false ---                        .aboutme {         width: 450px;         height: 250px;         background: url(yy.jpg) no-repeat -5px -120px;         mar">
+<meta property="og:updated_time" content="2017-04-15T12:47:28.784Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="console.log(aboutme)">
-<meta name="twitter:description" content=".aboutme {         width: 450px;         height: 250px;         background: url(yy.jpg) no-repeat -5px -120px;         margin: 130px auto;         border: 4px solid rgba(245, 2">
+<meta name="twitter:title" content="dayDream's blog">
+<meta name="twitter:description" content="--- title: &quot;console.log(aboutme)&quot; comments: false ---                        .aboutme {         width: 450px;         height: 250px;         background: url(yy.jpg) no-repeat -5px -120px;         mar">
 
 
 
@@ -135,7 +135,7 @@
   
 
   
-    console.log(aboutme) | dayDream's blog
+     | dayDream's blog
   
 </title>
 </head>
@@ -282,7 +282,7 @@
   <div id="posts" class="posts-expand">
   <header class="post-header">
 
-	<h2 class="post-title" itemprop="name headline">console.log(aboutme)</h2>
+	<h2 class="post-title" itemprop="name headline"></h2>
 
 
 
@@ -290,7 +290,7 @@
 
     
     
-      
+       --- title: "console.log(aboutme)" comments: false ---
 <!DOCTYPE html>
 <html lang="en">
 
@@ -303,7 +303,7 @@
         height: 250px;
         background: url(yy.jpg) no-repeat -5px -120px;
         margin: 130px auto;
-        border: 4px solid rgba(245, 245, 245,.8);
+        border: 4px solid rgba(245, 245, 245, .8);
         box-shadow: 0 1px 5px rgba(0, 0, 0, .1), 0 1px 10px rgba(0, 0, 0, .4) inset;
         position: relative;
         cursor: pointer;
@@ -325,8 +325,7 @@
         box-shadow: 0 0 20px rgba(0, 0, 0, .4);
         border-radius: 30px;
     }
-    
-   /* .aboutme p {
+    /* .aboutme p {
         text-align: center;
         color: red;
         font-size: 28px;
@@ -341,58 +340,64 @@
         <!-- <p>console.log(aboutme);</p> -->
     </div>
     <script type="text/javascript">
-    // function Aboutme(name, age, sex) {
-    //     this.name = name;
-    //     this.age = age;
-    //     this.sex = sex;
-    // }
-
-    // Aboutme.prototype.name = function() {
-    //     console.log("Hello,i'm " + this.name);
-    // }
-
-    // function Resume(name, age, sex, skills, project) {
-    //     Aboutme.call(this, name, age, sex);
-    //     this.skills = skills;
-    //     this.project = project;
-    // }
-
-    // Resume.prototype = Object.create(Aboutme.prototype);
-    // Resume.prototype.constructor = Resume;
-
-    // var hexin = new Resume("hexin", "22");
-    var hexin = {
-        Name: "贺鑫",
-        Age: "22",
-        Sex: "♂",
-        Current: "student 2014-2018",
-        DesiredJob: "Front-end engineer",
-        Hobby: "coding,Basketball,古风音乐,E-Sports",
-        Skills: {
-            HTML: "expression",
-            CSS: "expression",
-            JavaScript: "familliar",
-        },
-        // tel:"18292843691",
-        email: "hexin_9508@163.com",
-        More: "waiting..."
+    function Aboutme(name, age, sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
     }
 
+    Aboutme.prototype.name = function() {
+        console.log("Hello,i'm " + this.name);
+    }
+
+    function Resume(name, age, sex, email) {
+        Aboutme.call(this, name, age, sex);
+        this.email = email;
+        
+        
+    }
+
+    Resume.prototype = Object.create(Aboutme.prototype);
+    Resume.prototype.constructor = Resume;
+	
+	var email = "mailTo:"+"hexin_9508@163.com";
+
+	var skills = {
+		HTML: "expression",
+	    CSS: "expression",
+		JavaScript: "familliar"
+	}
+
+	var projects = {
+		blog:"http://hexin.life",
+		More:"watting"
+	}
+
+
+
+    var hexin = new Resume("hexin","22","♂",email);
+    
+    hexin.current = "student 2014-2018";
+    hexin.DesiredJob = "Front-end engineer";
+    hexin.Hobby = "coding,Basketball,古风音乐,E-Sports";
+    hexin.tel = "182****3691";    //hexin.tel = "18292843691";
+    hexin.skills = skills;
+    hexin.project = projects;
+
+    
     for (var i in hexin) {
         if (hexin.hasOwnProperty(i)) {
 
             if ((typeof hexin[i]) == "object") {
                 console.log(i + ":");
                 for (var j in hexin[i]) {
-                    console.log("    "+j + ":", hexin[i][j]);
+                    console.log("    " + j + ":", hexin[i][j]);
                 }
             } else {
                 console.log(i + ":", hexin[i]);
             }
         }
     }
-
-    
     </script>
 </body>
 
@@ -407,6 +412,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
 
         </div>
         
@@ -442,7 +453,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -464,7 +475,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

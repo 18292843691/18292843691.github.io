@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http:%5C%5Chexin.life/"/>
-  <updated>2017-04-15T05:55:11.385Z</updated>
+  <updated>2017-04-15T13:31:52.581Z</updated>
   <id>http:\\hexin.life/</id>
   
   <author>
@@ -16,11 +16,120 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>JS函数闭包</title>
+    <link href="http:%5C%5Chexin.life/2017/04/15/title-7/"/>
+    <id>http:\\hexin.life/2017/04/15/title-7/</id>
+    <published>2017-04-15T13:03:54.000Z</published>
+    <updated>2017-04-15T13:31:52.581Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote class="blockquote-center">相信你所相信的，坚持你所坚持的</blockquote>
+
+
+
+<p>#JS循环闭包：</p>
+<h2 id="应用一"><a href="#应用一" class="headerlink" title="应用一"></a>应用一</h2><h3 id="html-结构"><a href="#html-结构" class="headerlink" title="html 结构"></a>html 结构</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &lt;p&gt;test0&lt;/p&gt;</div><div class="line">&lt;p&gt;test1&lt;/p&gt;</div><div class="line">&lt;p&gt;test2&lt;/p&gt;</div><div class="line">&lt;p&gt;test3&lt;/p&gt;</div><div class="line">&lt;p&gt;test4&lt;/p&gt;</div></pre></td></tr></table></figure>
+<h3 id="抛出问题"><a href="#抛出问题" class="headerlink" title="抛出问题"></a>抛出问题</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 抛出问题:</span></div><div class="line">                此题的目的是想每次点击对应目标时弹出对应的数字下标 0~4,但实际是无论点击哪个目标都会弹出数字5</div><div class="line">      &lt;!--more--&gt;         问题所在:</div><div class="line">                arr 中的每一项的 onclick 均为一个函数实例(Function 对象),这个函数实例也产生了一个闭包域,</div><div class="line">                这个闭包域引用了外部闭包域的变量,其 function scope 的 closure 对象有个名为 i 的引用,</div><div class="line">                外部闭包域的私有变量内容发生变化,内部闭包域得到的值自然会发生改变</div><div class="line">            */</div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">myClosure</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> arr = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>);</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">                arr[i].onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                    alert(i);     <span class="comment">//无论点击哪一个均会弹出5</span></div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+<h3 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">解决方法一：</div><div class="line">        增加若干个对应的闭包域空间(	这里采用的是匿名函数),专门用来存储原先需要引用的内容(下标),不过只限于基本类型(基本类型值传递,对象类型引用传递) </div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">myClosure</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> arr = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>);</div><div class="line"></div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">                (<span class="function"><span class="keyword">function</span> (<span class="params">j</span>) </span>&#123;  </div><div class="line">                arr[i].onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                    alert(j);     </div><div class="line">                    &#125;</div><div class="line">                &#125;)(i);</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*思路：将下标作为对象属性(name:"i",value:i的值)添加到每个数组项(p对象)中*/</span></div><div class="line">此时当前 p 对象的 i 属性并不是对循环体的 i 变量的引用,而是一个独立 p 对象的属性,属性值在声明的时候就确定了(基本类型的值都是存在栈中的,当有一个基本类型变量声明其等于另一个基本变量时,此时并不是两个基本类型变量都指向一个值,而是各自有各自的值,但值是相等的)</div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">myClosure</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> arr = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>);</div><div class="line"></div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">                arr[i].i = i;</div><div class="line">                arr[i].onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                    alert(<span class="keyword">this</span>.i);     </div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+<h3 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*解决思路:</span></div><div class="line">与解决办法一有点相似但却有点不太相似.</div><div class="line">相似点:同样是增加若干个对应的闭包域空间用来存储下标</div><div class="line">不同点:解决办法一是在新增的匿名闭包空间内完成事件的绑定,而此例是将事件绑定在新增的匿名函数返回的函数上。</div><div class="line">此时绑定的函数中的 function scope 中的 closure 对象的 引用 arg 是指向将其返回的匿名函数的私有变量 arg*/</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">myClosure</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> arr = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>);</div><div class="line">            </div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;								</div><div class="line">                arr[i].onclick = (<span class="function"><span class="keyword">function</span> (<span class="params">j</span>) </span>&#123;</div><div class="line">                    </div><div class="line">                    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">                        alert(j);     </div><div class="line">                    &#125;</div><div class="line">                &#125;)(i);</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+<h3 id="方法四"><a href="#方法四" class="headerlink" title="方法四"></a>方法四</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">  <span class="comment">//思路同方法一：</span></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">myClosure</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> arr = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>);</div><div class="line">    </div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">            (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">                    <span class="keyword">var</span> tmp = i;</div><div class="line">                    arr[i].onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;						</div><div class="line">                    alert(tmp);    </div><div class="line">                &#125;</div><div class="line">            &#125;)();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="方法五："><a href="#方法五：" class="headerlink" title="方法五："></a>方法五：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//方法五：es6新语法，let为一个块级作用域</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">myClosure</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> arr = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>);</div><div class="line">        </div><div class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">            arr[i].onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                alert(i);     </div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h1 id="非循环闭包："><a href="#非循环闭包：" class="headerlink" title="非循环闭包："></a>非循环闭包：</h1><h2 id="应用一："><a href="#应用一：" class="headerlink" title="应用一："></a>应用一：</h2><h3 id="html-结构-1"><a href="#html-结构-1" class="headerlink" title="html 结构"></a>html 结构</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;p id="help"&gt;Helpful notes will appear here&lt;/p&gt;</div><div class="line">    &lt;p&gt;E-mail:</div><div class="line">        &lt;input type="text" id="email" name="email"&gt;</div><div class="line">    &lt;/p&gt;</div><div class="line">    &lt;p&gt;Name:</div><div class="line">        &lt;input type="text" id="name" name="name"&gt;</div><div class="line">    &lt;/p&gt;</div><div class="line">    &lt;p&gt;Age:</div><div class="line">        &lt;input type="text" id="age" name="age"&gt;</div><div class="line">    &lt;/p&gt;</div></pre></td></tr></table></figure>
+<h3 id="闭包解决-input-框聚焦动态提示"><a href="#闭包解决-input-框聚焦动态提示" class="headerlink" title="闭包解决 input 框聚焦动态提示"></a>闭包解决 input 框聚焦动态提示</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">showHelp</span>(<span class="params">help</span>) </span>&#123;</div><div class="line">            <span class="built_in">document</span>.getElementById(<span class="string">'help'</span>).innerHTML = help;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">makeHelpCallback</span>(<span class="params">help</span>) </span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;     <span class="comment">//形成闭包</span></div><div class="line">                showHelp(help);</div><div class="line">            &#125;;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">setupHelp</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> helpText = [&#123;</div><div class="line">                <span class="string">'id'</span>: <span class="string">'email'</span>,</div><div class="line">                <span class="string">'help'</span>: <span class="string">'Your e-mail address'</span></div><div class="line">            &#125;, &#123;</div><div class="line">                <span class="string">'id'</span>: <span class="string">'name'</span>,</div><div class="line">                <span class="string">'help'</span>: <span class="string">'Your full name'</span></div><div class="line">            &#125;, &#123;</div><div class="line">                <span class="string">'id'</span>: <span class="string">'age'</span>,</div><div class="line">                <span class="string">'help'</span>: <span class="string">'Your age (you must be over 16)'</span></div><div class="line">            &#125;];</div><div class="line"></div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; helpText.length; i++) &#123;</div><div class="line">                <span class="keyword">var</span> item = helpText[i];</div><div class="line">                <span class="built_in">document</span>.getElementById(item.id).onfocus = makeHelpCallback(item.help);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        setupHelp();</div></pre></td></tr></table></figure>
+<h2 id="应用二"><a href="#应用二" class="headerlink" title="应用二"></a>应用二</h2><h3 id="html-结构-2"><a href="#html-结构-2" class="headerlink" title="html 结构"></a>html 结构</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Some paragraph text<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>some heading 1 text<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>some heading 2 text<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">id</span>=<span class="string">"size-12"</span>&gt;</span>12<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">id</span>=<span class="string">"size-14"</span>&gt;</span>14<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">id</span>=<span class="string">"size-16"</span>&gt;</span>16<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="css"><a href="#css" class="headerlink" title="css"></a>css</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">  <span class="selector-tag">body</span> &#123;</div><div class="line">  <span class="attribute">font-family</span>: Helvetica, Arial, sans-serif;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">12px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">h1</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">1.5em</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">h2</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">1.2em</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">     function makeSizer(size) &#123;</div><div class="line">  return function() &#123;</div><div class="line">    document.body.style.fontSize = size + &apos;px&apos;;</div><div class="line">  &#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var size12 = makeSizer(12);</div><div class="line">var size14 = makeSizer(14);</div><div class="line">var size16 = makeSizer(16);</div><div class="line"></div><div class="line">document.getElementById(&apos;size-12&apos;).onclick = size12;</div><div class="line">document.getElementById(&apos;size-14&apos;).onclick = size14;</div><div class="line">document.getElementById(&apos;size-16&apos;).onclick = size16;</div></pre></td></tr></table></figure>
+<p>From:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/cn/docs/Web/JavaScript/Closures" target="_blank" rel="external">闭包-MDN</a> </li>
+<li><a href="https://segmentfault.com/a/1190000003818163" target="_blank" rel="external">9种办法解决JS循环闭包面试经典题之for循环</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote class=&quot;blockquote-center&quot;&gt;相信你所相信的，坚持你所坚持的&lt;/blockquote&gt;
+
+
+
+&lt;p&gt;#JS循环闭包：&lt;/p&gt;
+&lt;h2 id=&quot;应用一&quot;&gt;&lt;a href=&quot;#应用一&quot; class=&quot;headerlink&quot; title=&quot;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>HTML 5 Web 存储及WEB应用缓存</title>
+    <link href="http:%5C%5Chexin.life/2017/04/15/title-6/"/>
+    <id>http:\\hexin.life/2017/04/15/title-6/</id>
+    <published>2017-04-15T12:51:20.000Z</published>
+    <updated>2017-04-15T13:31:47.863Z</updated>
+    
+    <content type="html"><![CDATA[<p><blockquote class="blockquote-center">相信你所相信的，坚持你所坚持的</blockquote></p>
+<h1 id="俩种在客户端储存数据的方法"><a href="#俩种在客户端储存数据的方法" class="headerlink" title="俩种在客户端储存数据的方法"></a>俩种在客户端储存数据的方法</h1><ul>
+<li>localStorage - 没有时间限制的数据存储</li>
+<li>sessionStorage - 针对 session 的数据存储</li>
+</ul>
+<p>之前这些都是由cookie完成的，但是cookie不适合大量数据的存储，因为他们由每个服务器的请求来传递，使得cookie速度慢而且效率不高。</p>
+<p>在HTML5中，数据不是由每个服务器请求来传递的，而是只有在请求时使用数据，使得在不影响网站性能的情况下存储大量数据。对于不同的网站，sh数据存储于不同的区域，而且一个网站只能访问其自身的数据。HTML5 通过JavaScript来存储和访问数据。 <a id="more"></a>  </p>
+<p>#localStorage 方法</p>
+<ul>
+<li>例子对用户访问页面的次数进行计数：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line"><span class="keyword">if</span> (localStorage.pagecount)</div><div class="line">  &#123;</div><div class="line">  localStorage.pagecount=<span class="built_in">Number</span>(localStorage.pagecount) +<span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line"><span class="keyword">else</span></div><div class="line">  &#123;</div><div class="line">  localStorage.pagecount=<span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line"><span class="built_in">document</span>.write(<span class="string">"Visits "</span>+ localStorage.pagecount + <span class="string">" time(s)."</span>);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<h1 id="sessionStorage-方法"><a href="#sessionStorage-方法" class="headerlink" title="sessionStorage 方法"></a>sessionStorage 方法</h1><blockquote>
+<p>sessionStorage 方法针对一个 session 进行数据存储。当用户关闭浏览器窗口后，数据会被删除。</p>
+</blockquote>
+<ul>
+<li>对用户在当前 session 中访问页面的次数进行计数<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line"><span class="keyword">if</span> (sessionStorage.pagecount)</div><div class="line">  &#123;</div><div class="line">  sessionStorage.pagecount=<span class="built_in">Number</span>(sessionStorage.pagecount) +<span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line"><span class="keyword">else</span></div><div class="line">  &#123;</div><div class="line">  sessionStorage.pagecount=<span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line"><span class="built_in">document</span>.write(<span class="string">"Visits "</span>+sessionStorage.pagecount+<span class="string">" time(s) this session."</span>);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>#HTML 5 应用程序缓存</p>
+<blockquote>
+<p>使用 HTML5，通过创建 cache manifest 文件，可以轻松地创建 web 应用的离线版本。<br>什么是应用程序缓存（Application Cache）？ HTML5 引入了应用程序缓存，这意味着 web<br>应用可进行缓存，并可在没有因特网连接时进行访问。 应用程序缓存为应用带来三个优势： 离线浏览 - 用户可在应用离线时使用它们 速度 -<br>已缓存资源加载得更快 减少服务器负载 - 浏览器将只从服务器下载更新过或更改过的资源。 浏览器支持 所有主流浏览器均支持应用程序缓存，除了Internet Explorer。</p>
+</blockquote>
+<p>如需启用应用程序缓存，请在文档的 <html> 标签中包含 manifest 属性：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE HTML&gt;</div><div class="line">&lt;html manifest="demo.appcache"&gt;</div><div class="line">//something</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></html></p>
+<blockquote>
+<p>每个指定了 manifest 的页面在用户对其访问时都会被缓存。如果未指定 manifest 属性，则页面不会被缓存（除非在 manifest 文件中直接指定了该页面）。<br>manifest 文件的建议的文件扩展名是：”.appcache”。<br>请注意，manifest 文件需要配置正确的 MIME-type，即 “text/cache-manifest”。必须在 web 服务器上进行配置。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>Manifest 文件<br>manifest 文件是简单的文本文件，它告知浏览器被缓存的内容（以及不缓存的内容）。<br>manifest 文件可分为三个部分：<br>CACHE MANIFEST - 在此标题下列出的文件将在首次下载后进行缓存</p>
+</blockquote>
+<pre><code>NETWORK:
+login.asp
+</code></pre><p>NETWORK - 在此标题下列出的文件需要与服务器的连接，且不会被缓存<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">NETWORK:       # NETWORK 小节规定文件 "login.asp" 永远不会被缓存，且离线时是不可用的：</div><div class="line">login.asp  </div><div class="line">/*------------------------------*/</div><div class="line">NETWORK:</div><div class="line">*                        #可以使用星号来指示所有其他资源/文件都需要因特网连接：</div></pre></td></tr></table></figure></p>
+<p>FALLBACK - 在此标题下列出的文件规定当页面无法访问时的回退页面（比如 404 页面）<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">FALLBACK:</div><div class="line">/html5/ /404.html    #第一个 URI 是资源，第二个是替补。</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>From:<br><a href="http://www.w3school.com.cn/html5/html_5_app_cache.asp" target="_blank" rel="external">HTML5 Web应用程序缓存-w3school</a></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;blockquote class=&quot;blockquote-center&quot;&gt;相信你所相信的，坚持你所坚持的&lt;/blockquote&gt;&lt;/p&gt;
+&lt;h1 id=&quot;俩种在客户端储存数据的方法&quot;&gt;&lt;a href=&quot;#俩种在客户端储存数据的方法&quot; class=&quot;headerlink&quot; title=&quot;俩种在客户端储存数据的方法&quot;&gt;&lt;/a&gt;俩种在客户端储存数据的方法&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;localStorage - 没有时间限制的数据存储&lt;/li&gt;
+&lt;li&gt;sessionStorage - 针对 session 的数据存储&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;之前这些都是由cookie完成的，但是cookie不适合大量数据的存储，因为他们由每个服务器的请求来传递，使得cookie速度慢而且效率不高。&lt;/p&gt;
+&lt;p&gt;在HTML5中，数据不是由每个服务器请求来传递的，而是只有在请求时使用数据，使得在不影响网站性能的情况下存储大量数据。对于不同的网站，sh数据存储于不同的区域，而且一个网站只能访问其自身的数据。HTML5 通过JavaScript来存储和访问数据。
+    
+    </summary>
+    
+    
+      <category term="[object Object]" scheme="http:%5C%5Chexin.life/tags/object-Object/"/>
+    
+  </entry>
+  
+  <entry>
     <title>cookie和session</title>
     <link href="http:%5C%5Chexin.life/2017/04/15/title-5/"/>
     <id>http:\\hexin.life/2017/04/15/title-5/</id>
     <published>2017-04-15T05:53:19.000Z</published>
-    <updated>2017-04-15T05:55:11.385Z</updated>
+    <updated>2017-04-15T10:32:08.916Z</updated>
     
     <content type="html"><![CDATA[<blockquote class="blockquote-center">相信你所相信的，坚持你所坚持的</blockquote>
 
@@ -43,11 +152,12 @@
 <li>存在安全性问题，容易被人拦截。（考虑到安全方面，应使用较安全的session）</li>
 <li>需要指定域，不能够跨域</li>
 <li>cookies 数据太多会影响传输效率，浪费带宽</li>
-<li>有些浏览器禁用 cookies 或者部分手机不支持 cookies<br>广告商可以通过cookies了解到用户经常访问哪些网站，进而提供相应的广告等。<h1 id="session"><a href="#session" class="headerlink" title="session"></a>session</h1><blockquote>
+<li>有些浏览器禁用 cookies 或者部分手机不支持 cookies<br>广告商可以通过cookies了解到用户经常访问哪些网站，进而提供相应的广告等。</li>
+</ul>
+<p>#session</p>
+<blockquote>
 <p>cookies 虽然使用方便,但是 cookies 中所有的数据都可以在客户端被更改，数据很容易被伪造，因此一些重要的数据不能放cookies 中，cookies 数据太多也会影响传输效率，因此产生了 session，session 数据保留在服务器端。(但是当访问增多，会比较占用服务器的性能，考虑到性能方面，减少使用session)</p>
 </blockquote>
-</li>
-</ul>
 <hr>
 <blockquote>
 <p>当你浏览一个网页时，服务端随机产生一个 1024 比特长的字符串，然后存在你 cookie 中的 connect.sid字段中。当你下次访问时，cookie 会带有这个字符串，然后浏览器就知道你是上次访问过的某某某，然后从服务器的存储中对比取出上次记录在你身上的数据。由于字符串是随机产生的，而且位数足够多，所以也不担心有人能够伪造。</p>
@@ -57,8 +167,8 @@
 <li>session 的运作通过一个 session_id 来进行。session_id 通常是存放在客户端的 cookie  中，用户提交页面时，会将这一  SessionID 提交到服务器端，来存取 Session 数据。此时用户禁用cookies，session也会失效。</li>
 <li>但是session并不是完全依赖cookie，服务器可以通过URL重写的方式来传递session_id.</li>
 </ul>
-<hr>
-<h1 id="整理自："><a href="#整理自：" class="headerlink" title="整理自："></a>整理自：</h1><blockquote>
+<p>———- &gt; 整理自：</p>
+<blockquote>
 <ul>
 <li><a href="https://github.com/alsotang/node-lessons/tree/master/lesson16" target="_blank" rel="external">cookies 和 session</a></li>
 <li><a href="http://www.cnblogs.com/shiyangxt/articles/1305506.html" target="_blank" rel="external">cookies 和 session 的详解</a></li>
@@ -224,7 +334,7 @@
     <link href="http:%5C%5Chexin.life/2017/04/09/title-3/"/>
     <id>http:\\hexin.life/2017/04/09/title-3/</id>
     <published>2017-04-09T15:09:45.000Z</published>
-    <updated>2017-04-15T05:35:18.044Z</updated>
+    <updated>2017-04-15T13:15:20.135Z</updated>
     
     <content type="html"><![CDATA[<blockquote class="blockquote-center">相信你所相信的，坚持你所坚持的</blockquote>
 
