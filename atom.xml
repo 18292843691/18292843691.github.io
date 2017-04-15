@@ -64,56 +64,69 @@
     <link href="http:%5C%5Chexin.life/2017/04/15/title-6/"/>
     <id>http:\\hexin.life/2017/04/15/title-6/</id>
     <published>2017-04-15T12:51:20.000Z</published>
-    <updated>2017-04-15T14:16:14.396Z</updated>
+    <updated>2017-04-15T14:48:07.495Z</updated>
     
-    <content type="html"><![CDATA[<p><blockquote class="blockquote-center">相信你所相信的，坚持你所坚持的</blockquote></p>
-<h1 id="俩种在客户端储存数据的方法"><a href="#俩种在客户端储存数据的方法" class="headerlink" title="俩种在客户端储存数据的方法"></a>俩种在客户端储存数据的方法</h1><ul>
+    <content type="html"><![CDATA[<h1 id="俩种在客户端储存数据的方法"><a href="#俩种在客户端储存数据的方法" class="headerlink" title="俩种在客户端储存数据的方法"></a>俩种在客户端储存数据的方法</h1><ul>
 <li>localStorage - 没有时间限制的数据存储</li>
 <li>sessionStorage - 针对 session 的数据存储</li>
 </ul>
 <p>之前这些都是由cookie完成的，但是cookie不适合大量数据的存储，因为他们由每个服务器的请求来传递，使得cookie速度慢而且效率不高。</p>
-<p>在HTML5中，数据不是由每个服务器请求来传递的，而是只有在请求时使用数据，使得在不影响网站性能的情况下存储大量数据。对于不同的网站，sh数据存储于不同的区域，而且一个网站只能访问其自身的数据。HTML5 通过JavaScript来存储和访问数据。 <a id="more"></a>  </p>
-<h1 id="localStorage-方法"><a href="#localStorage-方法" class="headerlink" title="localStorage 方法"></a>localStorage 方法</h1><ul>
+<p>在HTML5中，数据不是由每个服务器请求来传递的，而是只有在请求时使用数据，使得在不影响网站性能的情况下存储大量数据。对于不同的网站，sh数据存储于不同的区域，而且一个网站只能访问其自身的数据。HTML5 通过JavaScript来存储和访问数据。</p>
+<p>#localStorage 方法</p>
+<ul>
 <li>例子对用户访问页面的次数进行计数：</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line"><span class="keyword">if</span> (localStorage.pagecount)</div><div class="line">  &#123;</div><div class="line">  localStorage.pagecount=<span class="built_in">Number</span>(localStorage.pagecount) +<span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line"><span class="keyword">else</span></div><div class="line">  &#123;</div><div class="line">  localStorage.pagecount=<span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line"><span class="built_in">document</span>.write(<span class="string">"Visits "</span>+ localStorage.pagecount + <span class="string">" time(s)."</span>);</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line"><span class="keyword">if</span> (localStorage.pagecount)</div><div class="line">  &#123;</div><div class="line">  localStorage.pagecount=<span class="built_in">Number</span>(localStorage.pagecount) +<span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line"><span class="keyword">else</span></div><div class="line">  &#123;</div><div class="line">  localStorage.pagecount=<span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line"><span class="built_in">document</span>.write(<span class="string">"Visits "</span>+ localStorage.pagecount + <span class="string">" time(s)."</span>);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
 <h1 id="sessionStorage-方法"><a href="#sessionStorage-方法" class="headerlink" title="sessionStorage 方法"></a>sessionStorage 方法</h1><blockquote>
 <p>sessionStorage 方法针对一个 session 进行数据存储。当用户关闭浏览器窗口后，数据会被删除。</p>
 </blockquote>
 <ul>
-<li>对用户在当前 session 中访问页面的次数进行计数<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line"><span class="keyword">if</span> (sessionStorage.pagecount)</div><div class="line">  &#123;</div><div class="line">  sessionStorage.pagecount=<span class="built_in">Number</span>(sessionStorage.pagecount) +<span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line"><span class="keyword">else</span></div><div class="line">  &#123;</div><div class="line">  sessionStorage.pagecount=<span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line"><span class="built_in">document</span>.write(<span class="string">"Visits "</span>+sessionStorage.pagecount+<span class="string">" time(s) this session."</span>);</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<li>对用户在当前 session 中访问页面的次数进行计数<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line"><span class="keyword">if</span> (sessionStorage.pagecount)</div><div class="line">  &#123;</div><div class="line">  sessionStorage.pagecount=<span class="built_in">Number</span>(sessionStorage.pagecount) +<span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line"><span class="keyword">else</span></div><div class="line">  &#123;</div><div class="line">  sessionStorage.pagecount=<span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line"><span class="built_in">document</span>.write(<span class="string">"Visits "</span>+sessionStorage.pagecount+<span class="string">" time(s) this session."</span>);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h1 id="HTML-5-应用程序缓存"><a href="#HTML-5-应用程序缓存" class="headerlink" title="HTML 5 应用程序缓存"></a>HTML 5 应用程序缓存</h1><blockquote>
-<p>使用 HTML5，通过创建 cache manifest 文件，可以轻松地创建 web 应用的离线版本。<br>什么是应用程序缓存（Application Cache）？ HTML5 引入了应用程序缓存，这意味着 web<br>应用可进行缓存，并可在没有因特网连接时进行访问。 应用程序缓存为应用带来三个优势： 离线浏览 - 用户可在应用离线时使用它们 速度 -<br>已缓存资源加载得更快 减少服务器负载 - 浏览器将只从服务器下载更新过或更改过的资源。 浏览器支持 所有主流浏览器均支持应用程序缓存，除了Internet Explorer。</p>
+<p>#HTML 5 应用程序缓存</p>
+<blockquote>
+<p>使用 HTML5，通过创建 cache manifest 文件，可以轻松地创建 web 应用的离线版本。</p>
+<p>什么是应用程序缓存（Application Cache）？ HTML5 引入了应用程序缓存，这意味着 web 应用可进行缓存，并可在没有因特网连接时进行访问。<br>应用程序缓存为应用带来三个优势： </p>
+<ul>
+<li>离线浏览：用户可在应用离线时使用它们 </li>
+<li>速度：已缓存资源加载得更快 </li>
+<li>减少服务器负载：浏览器将只从服务器下载更新过或更改过的资源。 </li>
+</ul>
 </blockquote>
-<p>如需启用应用程序缓存，请在文档的 <html> 标签中包含 manifest 属性：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE HTML&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">manifest</span>=<span class="string">"demo.appcache"</span>&gt;</span></div><div class="line">//something</div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></html></p>
+<p>浏览器支持 所有主流浏览器均支持应用程序缓存，除了Internet Explorer。</p>
+<p><strong>如需启用应用程序缓存，请在文档的 <html> 标签中包含 manifest 属性：</html></strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE HTML&gt;</div><div class="line">&lt;html manifest="demo.appcache"&gt;</div><div class="line">//something</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
 <blockquote>
 <p>每个指定了 manifest 的页面在用户对其访问时都会被缓存。如果未指定 manifest 属性，则页面不会被缓存（除非在 manifest 文件中直接指定了该页面）。<br>manifest 文件的建议的文件扩展名是：”.appcache”。<br>请注意，manifest 文件需要配置正确的 MIME-type，即 “text/cache-manifest”。必须在 web 服务器上进行配置。</p>
 </blockquote>
 <hr>
 <blockquote>
-<p>Manifest 文件<br>manifest 文件是简单的文本文件，它告知浏览器被缓存的内容（以及不缓存的内容）。<br>manifest 文件可分为三个部分：<br>CACHE MANIFEST - 在此标题下列出的文件将在首次下载后进行缓存</p>
+<p><strong>Manifest 文件</strong><br>manifest 文件是简单的文本文件，它告知浏览器被缓存的内容（以及不缓存的内容）。<br>manifest 文件可分为三个部分：</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">NETWORK:</div><div class="line">    login.asp</div><div class="line"></div><div class="line"></div><div class="line"> ``` </div><div class="line"></div><div class="line">&gt; NETWORK - 在此标题下列出的文件需要与服务器的连接，且不会被缓存</div><div class="line"></div><div class="line">```javascript</div><div class="line"></div><div class="line">NETWORK:       # NETWORK 小节规定文件 &quot;login.asp&quot; 永远不会被缓存，且离线时是不可用的：</div><div class="line">login.asp  </div><div class="line">/*------------------------------*/</div><div class="line">NETWORK:</div><div class="line">*                        #可以使用星号来指示所有其他资源/文件都需要因特网连接</div></pre></td></tr></table></figure>
+<hr>
 <blockquote>
-<p>FALLBACK - 在此标题下列出的文件规定当页面无法访问时的回退页面（比如 404 页面）<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">FALLBACK:</div><div class="line">/html5/ /404.html    #第一个 URI 是资源，第二个是替补。</div></pre></td></tr></table></figure></p>
-<p>From:</p>
-<ul>
-<li><a href="http://www.w3school.com.cn/html5/html_5_app_cache.asp" target="_blank" rel="external">HTML5 Web应用程序缓存-w3school</a></li>
-</ul>
+<ol>
+<li><strong>CACHE MANIFEST - 在此标题下列出的文件将在首次下载后进行缓存</strong></li>
+</ol>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">NETWORK:</div><div class="line">login.asp</div></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>2.NETWORK ：在此标题下列出的文件需要与服务器的连接，且不会被缓存</strong></p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">NETWORK:       # NETWORK 小节规定文件 "login.asp" 永远不会被缓存，且离线时是不可用的：</div><div class="line">login.asp  </div><div class="line">/*------------------------------*/</div><div class="line">NETWORK:</div><div class="line">*                        #可以使用星号来指示所有其他资源/文件都需要因特网连接：</div></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>3. FALLBACK：在此标题下列出的文件规定当页面无法访问时的回退页面（比如 404 页面）</strong></p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">FALLBACK:</div><div class="line">/html5/ /404.html    #第一个 URI 是资源，第二个是替补。</div></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="http://www.w3school.com.cn/html5/html_5_app_cache.asp" target="_blank" rel="external">HTML5 Web应用程序缓存-w3school</a></p>
 </blockquote>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;blockquote class=&quot;blockquote-center&quot;&gt;相信你所相信的，坚持你所坚持的&lt;/blockquote&gt;&lt;/p&gt;
-&lt;h1 id=&quot;俩种在客户端储存数据的方法&quot;&gt;&lt;a href=&quot;#俩种在客户端储存数据的方法&quot; class=&quot;headerlink&quot; title=&quot;俩种在客户端储存数据的方法&quot;&gt;&lt;/a&gt;俩种在客户端储存数据的方法&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;localStorage - 没有时间限制的数据存储&lt;/li&gt;
-&lt;li&gt;sessionStorage - 针对 session 的数据存储&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;之前这些都是由cookie完成的，但是cookie不适合大量数据的存储，因为他们由每个服务器的请求来传递，使得cookie速度慢而且效率不高。&lt;/p&gt;
-&lt;p&gt;在HTML5中，数据不是由每个服务器请求来传递的，而是只有在请求时使用数据，使得在不影响网站性能的情况下存储大量数据。对于不同的网站，sh数据存储于不同的区域，而且一个网站只能访问其自身的数据。HTML5 通过JavaScript来存储和访问数据。
+      &lt;h1 id=&quot;俩种在客户端储存数据的方法&quot;&gt;&lt;a href=&quot;#俩种在客户端储存数据的方法&quot; class=&quot;headerlink&quot; title=&quot;俩种在客户端储存数据的方法&quot;&gt;&lt;/a&gt;俩种在客户端储存数据的方法&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;localStorage - 没有时间限
     
     </summary>
     
