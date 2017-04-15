@@ -89,16 +89,16 @@
 
 
 
-<meta name="description" content="--- title: &quot;console.log(aboutme)&quot; comments: false ---                        .aboutme {         width: 450px;         height: 250px;         background: url(yy.jpg) no-repeat -5px -120px;         mar">
+<meta name="description" content="---title: &quot;console.log(aboutme)&quot; comments: false---                         .aboutme {         width: 450px;         height: 250px;         background: url(yy.jpg) no-repeat -5px -120px;         marg">
 <meta property="og:type" content="website">
 <meta property="og:title" content="dayDream's blog">
 <meta property="og:url" content="http:\\hexin.life/about/index.html">
 <meta property="og:site_name" content="dayDream's blog">
-<meta property="og:description" content="--- title: &quot;console.log(aboutme)&quot; comments: false ---                        .aboutme {         width: 450px;         height: 250px;         background: url(yy.jpg) no-repeat -5px -120px;         mar">
-<meta property="og:updated_time" content="2017-04-15T12:47:28.784Z">
+<meta property="og:description" content="---title: &quot;console.log(aboutme)&quot; comments: false---                         .aboutme {         width: 450px;         height: 250px;         background: url(yy.jpg) no-repeat -5px -120px;         marg">
+<meta property="og:updated_time" content="2017-04-15T14:02:04.459Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="dayDream's blog">
-<meta name="twitter:description" content="--- title: &quot;console.log(aboutme)&quot; comments: false ---                        .aboutme {         width: 450px;         height: 250px;         background: url(yy.jpg) no-repeat -5px -120px;         mar">
+<meta name="twitter:description" content="---title: &quot;console.log(aboutme)&quot; comments: false---                         .aboutme {         width: 450px;         height: 250px;         background: url(yy.jpg) no-repeat -5px -120px;         marg">
 
 
 
@@ -290,7 +290,8 @@
 
     
     
-       --- title: "console.log(aboutme)" comments: false ---
+       ---title: "console.log(aboutme)" comments: false---
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -325,19 +326,13 @@
         box-shadow: 0 0 20px rgba(0, 0, 0, .4);
         border-radius: 30px;
     }
-    /* .aboutme p {
-        text-align: center;
-        color: red;
-        font-size: 28px;
-        bottom: 20px;
-        text-shadow: 3px 3px 5px rgba(0, 0, 0, .6);
-    }*/
+    
     </style>
 </head>
 
 <body>
     <div class="aboutme">
-        <!-- <p>console.log(aboutme);</p> -->
+       
     </div>
     <script type="text/javascript">
     function Aboutme(name, age, sex) {
@@ -353,8 +348,7 @@
     function Resume(name, age, sex, email) {
         Aboutme.call(this, name, age, sex);
         this.email = email;
-        
-        
+               
     }
 
     Resume.prototype = Object.create(Aboutme.prototype);

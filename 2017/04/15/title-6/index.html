@@ -96,7 +96,7 @@
 <meta property="og:url" content="http:\\hexin.life/2017/04/15/title-6/index.html">
 <meta property="og:site_name" content="dayDream's blog">
 <meta property="og:description" content="相信你所相信的，坚持你所坚持的 俩种在客户端储存数据的方法 localStorage - 没有时间限制的数据存储 sessionStorage - 针对 session 的数据存储  之前这些都是由cookie完成的，但是cookie不适合大量数据的存储，因为他们由每个服务器的请求来传递，使得cookie速度慢而且效率不高。 在HTML5中，数据不是由每个服务器请求来传递的，而是只有在请求时使用数">
-<meta property="og:updated_time" content="2017-04-15T13:52:20.811Z">
+<meta property="og:updated_time" content="2017-04-15T14:05:59.113Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML 5 Web 存储及WEB应用缓存">
 <meta name="twitter:description" content="相信你所相信的，坚持你所坚持的 俩种在客户端储存数据的方法 localStorage - 没有时间限制的数据存储 sessionStorage - 针对 session 的数据存储  之前这些都是由cookie完成的，但是cookie不适合大量数据的存储，因为他们由每个服务器的请求来传递，使得cookie速度慢而且效率不高。 在HTML5中，数据不是由每个服务器请求来传递的，而是只有在请求时使用数">
@@ -400,10 +400,13 @@
 <blockquote>
 <p>Manifest 文件<br>manifest 文件是简单的文本文件，它告知浏览器被缓存的内容（以及不缓存的内容）。<br>manifest 文件可分为三个部分：<br>CACHE MANIFEST - 在此标题下列出的文件将在首次下载后进行缓存</p>
 </blockquote>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">NETWORK:</div><div class="line">    login.asp</div><div class="line"></div><div class="line"></div><div class="line"> ``` NETWORK - 在此标题下列出的文件需要与服务器的连接，且不会被缓存</div><div class="line"></div><div class="line">```javascript</div><div class="line"></div><div class="line">NETWORK:       # NETWORK 小节规定文件 &quot;login.asp&quot; 永远不会被缓存，且离线时是不可用的：</div><div class="line">login.asp  </div><div class="line">/*------------------------------*/</div><div class="line">NETWORK:</div><div class="line">*                        #可以使用星号来指示所有其他资源/文件都需要因特网连接</div></pre></td></tr></table></figure>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line">NETWORK:</div><div class="line">    login.asp</div><div class="line"></div><div class="line"></div><div class="line"> ``` </div><div class="line">NETWORK - 在此标题下列出的文件需要与服务器的连接，且不会被缓存</div><div class="line"></div><div class="line">```javascript</div><div class="line"></div><div class="line">NETWORK:       # NETWORK 小节规定文件 &quot;login.asp&quot; 永远不会被缓存，且离线时是不可用的：</div><div class="line">login.asp  </div><div class="line">/*------------------------------*/</div><div class="line">NETWORK:</div><div class="line">*                        #可以使用星号来指示所有其他资源/文件都需要因特网连接</div></pre></td></tr></table></figure>
 </code></pre><p>FALLBACK - 在此标题下列出的文件规定当页面无法访问时的回退页面（比如 404 页面）<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">FALLBACK:</div><div class="line">/html5/ /404.html    #第一个 URI 是资源，第二个是替补。</div></pre></td></tr></table></figure></p>
 <blockquote>
-<p>From:<br><a href="http://www.w3school.com.cn/html5/html_5_app_cache.asp" target="_blank" rel="external">HTML5 Web应用程序缓存-w3school</a></p>
+<p>From:</p>
+<ul>
+<li><a href="http://www.w3school.com.cn/html5/html_5_app_cache.asp" target="_blank" rel="external">HTML5 Web应用程序缓存-w3school</a></li>
+</ul>
 </blockquote>
 
       
