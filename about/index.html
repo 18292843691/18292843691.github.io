@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="dayDream's blog">
 <meta property="og:description" content="#content-1{     	width: 100%;     	height: 100%;     	padding: 0;     	margin: 0;     	position: relative;     }     #aboutme {         width: 450px;         height: 250p">
 <meta property="og:image" content="http://hexin.life/about/yy.jpg">
-<meta property="og:updated_time" content="2017-04-18T13:28:13.774Z">
+<meta property="og:updated_time" content="2017-04-18T14:17:02.101Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="console.log(aboutme)">
 <meta name="twitter:description" content="#content-1{     	width: 100%;     	height: 100%;     	padding: 0;     	margin: 0;     	position: relative;     }     #aboutme {         width: 450px;         height: 250p">
@@ -312,7 +312,7 @@
     #aboutme {
         width: 450px;
         height: 250px;
-        background: url(yy.jpg) no-repeat -5px -120px;
+        /*background: url(yy.jpg) no-repeat -5px -120px;*/
         margin: 130px auto;
         border: 4px solid rgba(245, 245, 245, .8);
         box-shadow: 0 1px 5px rgba(0, 0, 0, .1), 0 1px 10px rgba(0, 0, 0, .4) inset;
@@ -322,7 +322,15 @@
         padding: 15px;
         border-radius: 5px;
         
+        
     }
+    #aboutme img{
+    	width: 100%;
+    	height: 100%;
+    	/*border: 4px solid rgba(245, 245, 245, .8);*/
+        box-shadow:  0 1px 10px rgba(0, 0, 0, .4) inset;
+    }
+
 
     @media screen and(max-width:775px){
     	.aboutme{
@@ -332,20 +340,34 @@
     	
     }
     
-    #aboutme:after,
+    
     #aboutme:before {
         content: "";
         position: absolute;
         background: transparent;
         z-index: -10;
-        top: 50%;
-        bottom: -1px;
-        right: 15px;
-        left: 20px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, .4);
-        border-radius: 30px;
+        top: 15px;
+        bottom: 10px;
+        right: 21px;
+        left: 19px;
+        transform: skewX(10deg);
+        box-shadow: 0 0 25px rgba(0, 0, 0, .5);
+        border-radius: 15px;
     }
-    #bigger-img{
+    #aboutme:after{
+    	content: "";
+        position: absolute;
+        background: transparent;
+        z-index: -10;
+        top: 50%	;
+        bottom: 70px;
+        right: -10px;
+        left: 20px;
+        transform: rotateZ(20deg);
+        box-shadow: 0 0 31px rgba(0, 0, 0, .4);
+        border-radius: 40px;
+    }
+    /*#bigger-img{
     	background-color: rgba(220,220,220,0.1);
     	display: none;
     	width: 100%;
@@ -364,11 +386,12 @@
     	position: absolute;
     	top: 0;
     	left: 50%;
+    	margin-top:-100px;
     	margin-left: -360px;
     	transition: all 1s;
     	border: 4px solid rgba(245, 245, 245, .8);
         box-shadow: 0 1px 15px rgba(0, 0, 0, .2), 0 1px 20px rgba(0, 0, 0, .4) inset;
-    }
+    }*/
    
     </style>
 </head>
@@ -376,24 +399,24 @@
 <body>
     <div id="content-1">
     <div id="aboutme" draggable="true">
-       
+       <img id="cimg" src="yy.jpg">
     </div>
-    <div id="bigger-img"><img id="cimg" src="yy.jpg"><!-- <span>X</span> --></div>
+    <div id="bigger-img"><!-- <span>X</span> --></div>
     </div>
     <script type="text/javascript">
 //------------------------------------------------------------------------------------------------//
-    window.onload = function() {
-    	var about = document.getElementById('aboutme');
-    	var show = document.getElementById('bigger-img');
-    	var closeImg = document.getElementById('cimg');
-    	var index = 0;   	
-    		about.onclick = function(){	    		
-    			show.style.display = "block";		
-	    	}
-	    	closeImg.onclick = function() {
-	    		show.style.display = "none";
-	    	}   	
-    	}
+    // window.onload = function() {
+    // 	var about = document.getElementById('aboutme');
+    // 	var show = document.getElementById('bigger-img');
+    // 	var closeImg = document.getElementById('cimg');
+    // 	var index = 0;   	
+    // 		about.onclick = function(){	    		
+    // 			show.style.display = "block";		
+	   //  	}
+	   //  	closeImg.onclick = function() {
+	   //  		show.style.display = "none";
+	   //  	}   	
+    // 	}
     	
 
 
