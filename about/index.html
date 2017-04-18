@@ -89,16 +89,18 @@
 
 
 
-<meta name="description" content=".aboutme {         width: 450px;         height: 250px;         background: url(yy.jpg) no-repeat -5px -120px;         margin: 130px auto;         border: 4px solid rgba(2">
+<meta name="description" content="#content-1{     	width: 100%;     	height: 100%;     	padding: 0;     	margin: 0;     	position: relative;     }     #aboutme {         width: 450px;         height: 250p">
 <meta property="og:type" content="website">
 <meta property="og:title" content="console.log(aboutme)">
 <meta property="og:url" content="http:\\hexin.life/about/index.html">
 <meta property="og:site_name" content="dayDream's blog">
-<meta property="og:description" content=".aboutme {         width: 450px;         height: 250px;         background: url(yy.jpg) no-repeat -5px -120px;         margin: 130px auto;         border: 4px solid rgba(2">
-<meta property="og:updated_time" content="2017-04-18T12:20:37.201Z">
+<meta property="og:description" content="#content-1{     	width: 100%;     	height: 100%;     	padding: 0;     	margin: 0;     	position: relative;     }     #aboutme {         width: 450px;         height: 250p">
+<meta property="og:image" content="http://hexin.life/about/yy.jpg">
+<meta property="og:updated_time" content="2017-04-18T13:28:13.774Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="console.log(aboutme)">
-<meta name="twitter:description" content=".aboutme {         width: 450px;         height: 250px;         background: url(yy.jpg) no-repeat -5px -120px;         margin: 130px auto;         border: 4px solid rgba(2">
+<meta name="twitter:description" content="#content-1{     	width: 100%;     	height: 100%;     	padding: 0;     	margin: 0;     	position: relative;     }     #aboutme {         width: 450px;         height: 250p">
+<meta name="twitter:image" content="http://hexin.life/about/yy.jpg">
 
 
 
@@ -299,7 +301,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title></title>
     <style type="text/css">
-    .aboutme {
+
+    #content-1{
+    	width: 100%;
+    	height: 100%;
+    	padding: 0;
+    	margin: 0;
+    	position: relative;
+    }
+    #aboutme {
         width: 450px;
         height: 250px;
         background: url(yy.jpg) no-repeat -5px -120px;
@@ -311,18 +321,19 @@
         background-color: #fff;
         padding: 15px;
         border-radius: 5px;
+        
     }
 
-    @media screen {
+    @media screen and(max-width:775px){
     	.aboutme{
-    		width: 450*80%;
-    		height: 250*80%;
+    		width: 288px;
+    		height: 200px;
     	}
     	
     }
     
-    .aboutme:after,
-    .aboutme:before {
+    #aboutme:after,
+    #aboutme:before {
         content: "";
         position: absolute;
         background: transparent;
@@ -334,15 +345,59 @@
         box-shadow: 0 0 20px rgba(0, 0, 0, .4);
         border-radius: 30px;
     }
-    
+    #bigger-img{
+    	background-color: rgba(220,220,220,0.1);
+    	display: none;
+    	width: 100%;
+    	height: 100%;
+    	cursor: pointer;
+    	position: absolute;
+    	z-index: 11;
+    	top: 0;
+    	left: 0;
+    	bottom: 0;
+    	right: 0;
+    }
+    #bigger-img img{
+    	width: 700px;
+    	height: 500px;
+    	position: absolute;
+    	top: 0;
+    	left: 50%;
+    	margin-left: -360px;
+    	transition: all 1s;
+    	border: 4px solid rgba(245, 245, 245, .8);
+        box-shadow: 0 1px 15px rgba(0, 0, 0, .2), 0 1px 20px rgba(0, 0, 0, .4) inset;
+    }
+   
     </style>
 </head>
 
 <body>
-    <div class="aboutme" draggable="true">
+    <div id="content-1">
+    <div id="aboutme" draggable="true">
        
     </div>
+    <div id="bigger-img"><img id="cimg" src="yy.jpg"><!-- <span>X</span> --></div>
+    </div>
     <script type="text/javascript">
+//------------------------------------------------------------------------------------------------//
+    window.onload = function() {
+    	var about = document.getElementById('aboutme');
+    	var show = document.getElementById('bigger-img');
+    	var closeImg = document.getElementById('cimg');
+    	var index = 0;   	
+    		about.onclick = function(){	    		
+    			show.style.display = "block";		
+	    	}
+	    	closeImg.onclick = function() {
+	    		show.style.display = "none";
+	    	}   	
+    	}
+    	
+
+
+//------------------------------------------------------------------------------------------------// 
     function Aboutme(name, age, sex) {
         this.name = name;
         this.age = age;
