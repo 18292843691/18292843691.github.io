@@ -64,7 +64,7 @@
     <link href="http:%5C%5Chexin.life/2017/04/15/title-6/"/>
     <id>http:\\hexin.life/2017/04/15/title-6/</id>
     <published>2017-04-15T12:51:20.000Z</published>
-    <updated>2017-04-15T14:48:07.495Z</updated>
+    <updated>2017-04-18T11:54:03.333Z</updated>
     
     <content type="html"><![CDATA[<h1 id="俩种在客户端储存数据的方法"><a href="#俩种在客户端储存数据的方法" class="headerlink" title="俩种在客户端储存数据的方法"></a>俩种在客户端储存数据的方法</h1><ul>
 <li>localStorage - 没有时间限制的数据存储</li>
@@ -84,8 +84,7 @@
 <li>对用户在当前 session 中访问页面的次数进行计数<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line"><span class="keyword">if</span> (sessionStorage.pagecount)</div><div class="line">  &#123;</div><div class="line">  sessionStorage.pagecount=<span class="built_in">Number</span>(sessionStorage.pagecount) +<span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line"><span class="keyword">else</span></div><div class="line">  &#123;</div><div class="line">  sessionStorage.pagecount=<span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line"><span class="built_in">document</span>.write(<span class="string">"Visits "</span>+sessionStorage.pagecount+<span class="string">" time(s) this session."</span>);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>#HTML 5 应用程序缓存</p>
-<blockquote>
+<h1 id="HTML-5-应用程序缓存"><a href="#HTML-5-应用程序缓存" class="headerlink" title="HTML 5 应用程序缓存"></a>HTML 5 应用程序缓存</h1><blockquote>
 <p>使用 HTML5，通过创建 cache manifest 文件，可以轻松地创建 web 应用的离线版本。</p>
 <p>什么是应用程序缓存（Application Cache）？ HTML5 引入了应用程序缓存，这意味着 web 应用可进行缓存，并可在没有因特网连接时进行访问。<br>应用程序缓存为应用带来三个优势： </p>
 <ul>
@@ -140,7 +139,7 @@
     <link href="http:%5C%5Chexin.life/2017/04/15/title-5/"/>
     <id>http:\\hexin.life/2017/04/15/title-5/</id>
     <published>2017-04-15T05:53:19.000Z</published>
-    <updated>2017-04-15T10:32:08.916Z</updated>
+    <updated>2017-04-18T11:53:51.330Z</updated>
     
     <content type="html"><![CDATA[<blockquote class="blockquote-center">相信你所相信的，坚持你所坚持的</blockquote>
 
@@ -165,8 +164,7 @@
 <li>cookies 数据太多会影响传输效率，浪费带宽</li>
 <li>有些浏览器禁用 cookies 或者部分手机不支持 cookies<br>广告商可以通过cookies了解到用户经常访问哪些网站，进而提供相应的广告等。</li>
 </ul>
-<p>#session</p>
-<blockquote>
+<h1 id="session"><a href="#session" class="headerlink" title="session"></a>session</h1><blockquote>
 <p>cookies 虽然使用方便,但是 cookies 中所有的数据都可以在客户端被更改，数据很容易被伪造，因此一些重要的数据不能放cookies 中，cookies 数据太多也会影响传输效率，因此产生了 session，session 数据保留在服务器端。(但是当访问增多，会比较占用服务器的性能，考虑到性能方面，减少使用session)</p>
 </blockquote>
 <hr>

@@ -89,16 +89,16 @@
 
 
 
-<meta name="description" content=".aboutme {         width: 450px;         height: 250px;         background: url(yy.jpg) no-repeat -5px -120px;         margin: 130px auto;         border: 4px solid rgba(245, 2">
+<meta name="description" content=".aboutme {         width: 450px;         height: 250px;         background: url(yy.jpg) no-repeat -5px -120px;         margin: 130px auto;         border: 4px solid rgba(2">
 <meta property="og:type" content="website">
 <meta property="og:title" content="console.log(aboutme)">
 <meta property="og:url" content="http:\\hexin.life/about/index.html">
 <meta property="og:site_name" content="dayDream's blog">
-<meta property="og:description" content=".aboutme {         width: 450px;         height: 250px;         background: url(yy.jpg) no-repeat -5px -120px;         margin: 130px auto;         border: 4px solid rgba(245, 2">
-<meta property="og:updated_time" content="2017-04-15T14:23:46.635Z">
+<meta property="og:description" content=".aboutme {         width: 450px;         height: 250px;         background: url(yy.jpg) no-repeat -5px -120px;         margin: 130px auto;         border: 4px solid rgba(2">
+<meta property="og:updated_time" content="2017-04-18T12:20:37.201Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="console.log(aboutme)">
-<meta name="twitter:description" content=".aboutme {         width: 450px;         height: 250px;         background: url(yy.jpg) no-repeat -5px -120px;         margin: 130px auto;         border: 4px solid rgba(245, 2">
+<meta name="twitter:description" content=".aboutme {         width: 450px;         height: 250px;         background: url(yy.jpg) no-repeat -5px -120px;         margin: 130px auto;         border: 4px solid rgba(2">
 
 
 
@@ -264,7 +264,7 @@
   
 
   
-  <p>—白日做的梦要靠自己追</p>
+  <p id='dream'>—白日做的梦要靠自己追</p>
 
 </nav>
 
@@ -296,6 +296,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title></title>
     <style type="text/css">
     .aboutme {
@@ -310,6 +311,14 @@
         background-color: #fff;
         padding: 15px;
         border-radius: 5px;
+    }
+
+    @media screen {
+    	.aboutme{
+    		width: 450*80%;
+    		height: 250*80%;
+    	}
+    	
     }
     
     .aboutme:after,
@@ -330,7 +339,7 @@
 </head>
 
 <body>
-    <div class="aboutme">
+    <div class="aboutme" draggable="true">
        
     </div>
     <script type="text/javascript">
@@ -340,9 +349,7 @@
         this.sex = sex;
     }
 
-    Aboutme.prototype.name = function() {
-        console.log("Hello,i'm " + this.name);
-    }
+    
 
     function Resume(name, age, sex, email) {
         Aboutme.call(this, name, age, sex);

@@ -97,7 +97,7 @@
 <meta property="og:site_name" content="dayDream's blog">
 <meta property="og:description" content="相信你所相信的，坚持你所坚持的  cookies HTTP 是一个无状态协议，所以客户端每次发出请求时，下一次请求无法得知上一次请求所包含的状态数据，如何能把一个用户的状态数据关联起来呢？即大多都是利用 cookie、session 实现。如浏览器自动保存密码，记住登录状态，网页换肤，新手引导等下次不再提醒功能（我就说我以前换网吧玩总得去禁用那些引导）。比如在淘宝的某个页面中，你进行了登陆操作。当">
 <meta property="og:image" content="http://harttle.com/assets/img/blog/cookie.png">
-<meta property="og:updated_time" content="2017-04-15T10:32:08.916Z">
+<meta property="og:updated_time" content="2017-04-18T11:53:51.330Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="cookie和session">
 <meta name="twitter:description" content="相信你所相信的，坚持你所坚持的  cookies HTTP 是一个无状态协议，所以客户端每次发出请求时，下一次请求无法得知上一次请求所包含的状态数据，如何能把一个用户的状态数据关联起来呢？即大多都是利用 cookie、session 实现。如浏览器自动保存密码，记住登录状态，网页换肤，新手引导等下次不再提醒功能（我就说我以前换网吧玩总得去禁用那些引导）。比如在淘宝的某个页面中，你进行了登陆操作。当">
@@ -261,7 +261,7 @@
   
 
   
-  <p>—白日做的梦要靠自己追</p>
+  <p id='dream'>—白日做的梦要靠自己追</p>
 
 </nav>
 
@@ -418,8 +418,7 @@
 <li>cookies 数据太多会影响传输效率，浪费带宽</li>
 <li>有些浏览器禁用 cookies 或者部分手机不支持 cookies<br>广告商可以通过cookies了解到用户经常访问哪些网站，进而提供相应的广告等。</li>
 </ul>
-<p>#session</p>
-<blockquote>
+<h1 id="session"><a href="#session" class="headerlink" title="session"></a>session</h1><blockquote>
 <p>cookies 虽然使用方便,但是 cookies 中所有的数据都可以在客户端被更改，数据很容易被伪造，因此一些重要的数据不能放cookies 中，cookies 数据太多也会影响传输效率，因此产生了 session，session 数据保留在服务器端。(但是当访问增多，会比较占用服务器的性能，考虑到性能方面，减少使用session)</p>
 </blockquote>
 <hr>
@@ -667,7 +666,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#cookies"><span class="nav-number">1.</span> <span class="nav-text">cookies</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#cookies参数"><span class="nav-number">1.1.</span> <span class="nav-text">cookies参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cookies的缺点"><span class="nav-number">1.2.</span> <span class="nav-text">cookies的缺点</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#cookies"><span class="nav-number">1.</span> <span class="nav-text">cookies</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#cookies参数"><span class="nav-number">1.1.</span> <span class="nav-text">cookies参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cookies的缺点"><span class="nav-number">1.2.</span> <span class="nav-text">cookies的缺点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#session"><span class="nav-number">2.</span> <span class="nav-text">session</span></a></li></ol></div>
             
 
           </div>
