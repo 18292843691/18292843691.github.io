@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http:%5C%5Chexin.life/"/>
-  <updated>2017-04-15T14:04:52.697Z</updated>
+  <updated>2017-05-06T07:13:51.229Z</updated>
   <id>http:\\hexin.life/</id>
   
   <author>
@@ -16,13 +16,27 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>hello blog</title>
+    <link href="http:%5C%5Chexin.life/2017/05/06/title-8/"/>
+    <id>http:\\hexin.life/2017/05/06/title-8/</id>
+    <published>2017-05-06T07:12:20.000Z</published>
+    <updated>2017-05-06T07:13:51.229Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>JS函数闭包</title>
     <link href="http:%5C%5Chexin.life/2017/04/15/title-7/"/>
     <id>http:\\hexin.life/2017/04/15/title-7/</id>
     <published>2017-04-15T13:03:54.000Z</published>
-    <updated>2017-04-15T14:04:52.697Z</updated>
+    <updated>2017-05-04T15:37:52.486Z</updated>
     
-    <content type="html"><![CDATA[<blockquote class="blockquote-center">相信你所相信的，坚持你所坚持的</blockquote>
+    <content type="html"><![CDATA[<blockquote class="blockquote-center">程序是写给人看的，顺带能在机器上运行</blockquote>
 
 
 
@@ -48,11 +62,11 @@
     
     <summary type="html">
     
-      &lt;blockquote class=&quot;blockquote-center&quot;&gt;相信你所相信的，坚持你所坚持的&lt;/blockquote&gt;
+      &lt;blockquote class=&quot;blockquote-center&quot;&gt;程序是写给人看的，顺带能在机器上运行&lt;/blockquote&gt;
 
 
 
-&lt;h1 id=&quot;JS循环闭包：&quot;&gt;&lt;a href=&quot;#JS循环闭包：&quot; class=&quot;headerlink&quot; title=&quot;JS循环闭包：&quot;
+&lt;h1 id=&quot;JS循环闭包：&quot;&gt;&lt;a href=&quot;#JS循环闭包：&quot; class=&quot;headerlink&quot; title=&quot;JS循环闭
     
     </summary>
     
