@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http:%5C%5Chexin.life/"/>
-  <updated>2017-05-10T18:31:43.453Z</updated>
+  <updated>2017-05-23T14:11:35.563Z</updated>
   <id>http:\\hexin.life/</id>
   
   <author>
@@ -14,6 +14,55 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>px、em和rem</title>
+    <link href="http:%5C%5Chexin.life/2017/05/23/title-9/"/>
+    <id>http:\\hexin.life/2017/05/23/title-9/</id>
+    <published>2017-05-23T14:06:40.000Z</published>
+    <updated>2017-05-23T14:11:35.563Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="px"><a href="#px" class="headerlink" title="px"></a>px</h2><blockquote>
+<p>px : 相对长度单位。像素px是相对于显示器屏幕分辨率而言的。<br> 特点 :</p>
+<ul>
+<li>IE无法调整那些使用px作为单位的字体大小；</li>
+<li>国外的大部分网站能够调整的原因在于其使用了 em 或 rem 作为字体单位；</li>
+<li>Firefox能够调整px和em，rem，但是96%以上的中国网民使用IE浏览器(或内核)。<h2 id="em"><a href="#em" class="headerlink" title="em"></a>em</h2>em是相对长度单位。相对于当前对象内文本的字体尺寸。如当前对行内文本的字体尺寸未被人为设置，则相对于浏览器的默认字体尺寸。</li>
+<li>em的值并不是固定的；</li>
+<li>em会继承父级元素的字体大小。</li>
+</ul>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span> &#123; </div><div class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;   <span class="comment">/* 20px */</span></div><div class="line">&#125; </div><div class="line"><span class="selector-class">.level-1</span>&#123; </div><div class="line">    <span class="attribute">font-size</span>: <span class="number">0.5em</span>;   <span class="comment">/* 10px */</span></div><div class="line">&#125; </div><div class="line"><span class="selector-class">.level-2</span>&#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">2em</span>;     <span class="comment">/* 20px */</span></div><div class="line">&#125;</div><div class="line"><span class="selector-class">.level-3</span> &#123; </div><div class="line">    <span class="attribute">font-size</span>: <span class="number">0.5em</span>;      <span class="comment">/* 10px */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="rem"><a href="#rem" class="headerlink" title="rem"></a>rem</h2><blockquote>
+<p>rem是CSS3新增的一个相对单位（root  em），这个单位引起了广泛关注。这个单位与em有什么区别呢？区别在于使用rem为元素设定字体大小时，仍然是相对大小，但<strong>相对的只是HTML根元素</strong>。这个单位可谓集相对大小和绝对大小的优点于一身，通过它既可以做到只修改根元素就成比例地调整所有字体大小，又可以避免字体大小逐层复合的连锁反应。目前，除了IE8及更早版本外，所有浏览器均已支持rem。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span> &#123; </div><div class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;   <span class="comment">/* 20px */</span></div><div class="line">&#125; </div><div class="line"><span class="selector-class">.level-1</span>&#123; </div><div class="line">    <span class="attribute">font-size</span>: <span class="number">0.5rem</span>;   <span class="comment">/* 10px */</span></div><div class="line">&#125; </div><div class="line"><span class="selector-class">.level-2</span>&#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">2rem</span>;     <span class="comment">/* 40px */</span></div><div class="line">&#125;</div><div class="line"><span class="selector-class">.level-3</span> &#123; </div><div class="line">    <span class="attribute">font-size</span>: <span class="number">0.5rem</span>;      <span class="comment">/* 10px */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<ul>
+<li>对于不支持它的浏览器，应对方法也很简单，就是多写一个绝对单位的声明。这些浏览器会忽略用rem设定的字体大小。<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span> &#123;<span class="attribute">font-size</span>:<span class="number">14px</span>; <span class="attribute">font-size</span>:.<span class="number">875rem</span>;&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>注意： 选择使用什么字体单位主要由你的项目来决定，如果你的用户群都使用最新版的浏览器，那推荐使用rem，如果要考虑兼容性，那就使用px,或者两者同时使用。<br>px 与 rem 的选择？<br>对于只需要适配少部分手机设备，且分辨率对页面影响不大的，使用px即可 。<br>对于需要适配各种移动设备，则使用rem，例如只需要适配iPhone和iPad等分辨率差别比较挺大的设备。</p>
+</blockquote>
+<ul>
+<li><a href="http://www.runoob.com/w3cnote/px-em-rem-different.html" target="_blank" rel="external">px、em、rem的区别及介绍-菜鸟教程</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;px&quot;&gt;&lt;a href=&quot;#px&quot; class=&quot;headerlink&quot; title=&quot;px&quot;&gt;&lt;/a&gt;px&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;px : 相对长度单位。像素px是相对于显示器屏幕分辨率而言的。&lt;br&gt; 特点 :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;IE
+    
+    </summary>
+    
+      <category term="css" scheme="http:%5C%5Chexin.life/categories/css/"/>
+    
+    
+      <category term="css 前端" scheme="http:%5C%5Chexin.life/tags/css-%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>copy小插件</title>
@@ -105,12 +154,12 @@
 <ul>
 <li>例子对用户访问页面的次数进行计数：</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line"><span class="keyword">if</span> (localStorage.pagecount)</div><div class="line">  &#123;</div><div class="line">  localStorage.pagecount=<span class="built_in">Number</span>(localStorage.pagecount) +<span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line"><span class="keyword">else</span></div><div class="line">  &#123;</div><div class="line">  localStorage.pagecount=<span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line"><span class="built_in">document</span>.write(<span class="string">"Visits "</span>+ localStorage.pagecount + <span class="string">" time(s)."</span>);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line"><span class="keyword">if</span> (localStorage.pagecount)</div><div class="line">  &#123;</div><div class="line">  localStorage.pagecount=<span class="built_in">Number</span>(localStorage.pagecount) +<span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line"><span class="keyword">else</span></div><div class="line">  &#123;</div><div class="line">  localStorage.pagecount=<span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line"><span class="built_in">document</span>.write(<span class="string">"Visits "</span>+ localStorage.pagecount + <span class="string">" time(s)."</span>);</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
 <h1 id="sessionStorage-方法"><a href="#sessionStorage-方法" class="headerlink" title="sessionStorage 方法"></a>sessionStorage 方法</h1><blockquote>
 <p>sessionStorage 方法针对一个 session 进行数据存储。当用户关闭浏览器窗口后，数据会被删除。</p>
 </blockquote>
 <ul>
-<li>对用户在当前 session 中访问页面的次数进行计数<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line"><span class="keyword">if</span> (sessionStorage.pagecount)</div><div class="line">  &#123;</div><div class="line">  sessionStorage.pagecount=<span class="built_in">Number</span>(sessionStorage.pagecount) +<span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line"><span class="keyword">else</span></div><div class="line">  &#123;</div><div class="line">  sessionStorage.pagecount=<span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line"><span class="built_in">document</span>.write(<span class="string">"Visits "</span>+sessionStorage.pagecount+<span class="string">" time(s) this session."</span>);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<li>对用户在当前 session 中访问页面的次数进行计数<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line"><span class="keyword">if</span> (sessionStorage.pagecount)</div><div class="line">  &#123;</div><div class="line">  sessionStorage.pagecount=<span class="built_in">Number</span>(sessionStorage.pagecount) +<span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line"><span class="keyword">else</span></div><div class="line">  &#123;</div><div class="line">  sessionStorage.pagecount=<span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line"><span class="built_in">document</span>.write(<span class="string">"Visits "</span>+sessionStorage.pagecount+<span class="string">" time(s) this session."</span>);</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h1 id="HTML-5-应用程序缓存"><a href="#HTML-5-应用程序缓存" class="headerlink" title="HTML 5 应用程序缓存"></a>HTML 5 应用程序缓存</h1><blockquote>
@@ -123,7 +172,7 @@
 </ul>
 </blockquote>
 <p>浏览器支持 所有主流浏览器均支持应用程序缓存，除了Internet Explorer。</p>
-<p><strong>如需启用应用程序缓存，请在文档的 <html> 标签中包含 manifest 属性：</html></strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE HTML&gt;</div><div class="line">&lt;html manifest="demo.appcache"&gt;</div><div class="line">//something</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p><strong>如需启用应用程序缓存，请在文档的 <html> 标签中包含 manifest 属性：</html></strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE HTML&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">html</span> <span class="attr">manifest</span>=<span class="string">"demo.appcache"</span>&gt;</span></span></div><div class="line">//something</div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <blockquote>
 <p>每个指定了 manifest 的页面在用户对其访问时都会被缓存。如果未指定 manifest 属性，则页面不会被缓存（除非在 manifest 文件中直接指定了该页面）。<br>manifest 文件的建议的文件扩展名是：”.appcache”。<br>请注意，manifest 文件需要配置正确的 MIME-type，即 “text/cache-manifest”。必须在 web 服务器上进行配置。</p>
 </blockquote>

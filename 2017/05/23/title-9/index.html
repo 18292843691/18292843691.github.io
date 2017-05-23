@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="HTTP," />
+  <meta name="keywords" content="css 前端," />
 
 
 
@@ -89,19 +89,17 @@
 
 
 
-<meta name="description" content="相信你所相信的，坚持你所坚持的  cookies HTTP 是一个无状态协议，所以客户端每次发出请求时，下一次请求无法得知上一次请求所包含的状态数据，如何能把一个用户的状态数据关联起来呢？即大多都是利用 cookie、session 实现。如浏览器自动保存密码，记住登录状态，网页换肤，新手引导等下次不再提醒功能（我就说我以前换网吧玩总得去禁用那些引导）。比如在淘宝的某个页面中，你进行了登陆操作。当">
-<meta name="keywords" content="HTTP">
+<meta name="description" content="px px : 相对长度单位。像素px是相对于显示器屏幕分辨率而言的。 特点 :  IE无法调整那些使用px作为单位的字体大小； 国外的大部分网站能够调整的原因在于其使用了 em 或 rem 作为字体单位； Firefox能够调整px和em，rem，但是96%以上的中国网民使用IE浏览器(或内核)。emem是相对长度单位。相对于当前对象内文本的字体尺寸。如当前对行内文本的字体尺寸未被人为设置，则相">
+<meta name="keywords" content="css 前端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="cookie和session">
-<meta property="og:url" content="http:\\hexin.life/2017/04/15/title-5/index.html">
+<meta property="og:title" content="px、em和rem">
+<meta property="og:url" content="http:\\hexin.life/2017/05/23/title-9/index.html">
 <meta property="og:site_name" content="dayDream's blog">
-<meta property="og:description" content="相信你所相信的，坚持你所坚持的  cookies HTTP 是一个无状态协议，所以客户端每次发出请求时，下一次请求无法得知上一次请求所包含的状态数据，如何能把一个用户的状态数据关联起来呢？即大多都是利用 cookie、session 实现。如浏览器自动保存密码，记住登录状态，网页换肤，新手引导等下次不再提醒功能（我就说我以前换网吧玩总得去禁用那些引导）。比如在淘宝的某个页面中，你进行了登陆操作。当">
-<meta property="og:image" content="http://harttle.com/assets/img/blog/cookie.png">
-<meta property="og:updated_time" content="2017-04-18T11:53:51.330Z">
+<meta property="og:description" content="px px : 相对长度单位。像素px是相对于显示器屏幕分辨率而言的。 特点 :  IE无法调整那些使用px作为单位的字体大小； 国外的大部分网站能够调整的原因在于其使用了 em 或 rem 作为字体单位； Firefox能够调整px和em，rem，但是96%以上的中国网民使用IE浏览器(或内核)。emem是相对长度单位。相对于当前对象内文本的字体尺寸。如当前对行内文本的字体尺寸未被人为设置，则相">
+<meta property="og:updated_time" content="2017-05-23T14:11:35.563Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="cookie和session">
-<meta name="twitter:description" content="相信你所相信的，坚持你所坚持的  cookies HTTP 是一个无状态协议，所以客户端每次发出请求时，下一次请求无法得知上一次请求所包含的状态数据，如何能把一个用户的状态数据关联起来呢？即大多都是利用 cookie、session 实现。如浏览器自动保存密码，记住登录状态，网页换肤，新手引导等下次不再提醒功能（我就说我以前换网吧玩总得去禁用那些引导）。比如在淘宝的某个页面中，你进行了登陆操作。当">
-<meta name="twitter:image" content="http://harttle.com/assets/img/blog/cookie.png">
+<meta name="twitter:title" content="px、em和rem">
+<meta name="twitter:description" content="px px : 相对长度单位。像素px是相对于显示器屏幕分辨率而言的。 特点 :  IE无法调整那些使用px作为单位的字体大小； 国外的大部分网站能够调整的原因在于其使用了 em 或 rem 作为字体单位； Firefox能够调整px和em，rem，但是96%以上的中国网民使用IE浏览器(或内核)。emem是相对长度单位。相对于当前对象内文本的字体尺寸。如当前对行内文本的字体尺寸未被人为设置，则相">
 
 
 
@@ -129,12 +127,12 @@
 
 
 
-  <link rel="canonical" href="http:\\hexin.life/2017/04/15/title-5/"/>
+  <link rel="canonical" href="http:\\hexin.life/2017/05/23/title-9/"/>
 
 
 
 
-  <title> cookie和session | dayDream's blog </title>
+  <title> px、em和rem | dayDream's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -286,7 +284,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http:\\hexin.life/2017/04/15/title-5/">
+    <link itemprop="mainEntityOfPage" href="http:\\hexin.life/2017/05/23/title-9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="白日梦想家">
@@ -307,7 +305,7 @@
             
             
               
-                cookie和session
+                px、em和rem
               
             
           </h2>
@@ -322,8 +320,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-15T13:53:19+08:00">
-                2017-04-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-23T22:06:40+08:00">
+                2017-05-23
               </time>
             
 
@@ -345,8 +343,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
                   </a>
                 </span>
 
@@ -363,7 +361,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2017/04/15/title-5/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/2017/05/23/title-9/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -395,50 +393,30 @@
       
 
       
-        <blockquote class="blockquote-center">相信你所相信的，坚持你所坚持的</blockquote>
-
-<h1 id="cookies"><a href="#cookies" class="headerlink" title="cookies"></a>cookies</h1><blockquote>
-<p>HTTP 是一个无状态协议，所以客户端每次发出请求时，下一次请求无法得知上一次请求所包含的状态数据，如何能把一个用户的状态数据关联起来呢？即大多都是利用 cookie、session 实现。如浏览器自动保存密码，记住登录状态，网页换肤，新手引导等下次不再提醒功能（我就说我以前换网吧玩总得去禁用那些引导）。<br>比如在淘宝的某个页面中，你进行了登陆操作。当你跳转到商品页时，服务端如何知道你是已经登陆的状态？<br>因此产生了 cookie 来解决这门问题。<a id="more"></a></p>
-</blockquote>
-<p> <img src="http://harttle.com/assets/img/blog/cookie.png" alt="cookie的传输"></p>
+        <h2 id="px"><a href="#px" class="headerlink" title="px"></a>px</h2><blockquote>
+<p>px : 相对长度单位。像素px是相对于显示器屏幕分辨率而言的。<br> 特点 :</p>
 <ul>
-<li>服务器向客户端发送 cookies</li>
-<li>通常使用 HTTP 协议规定的 set-cookie 头操作。</li>
-<li>规范规定 cookies 的格式为vlaue = name 格式，且必须包含这部分</li>
-<li>浏览器将 cookies 保存</li>
-<li><strong>每次浏览器向服务器发送请求都会发送 cookies</strong></li>
+<li>IE无法调整那些使用px作为单位的字体大小；</li>
+<li>国外的大部分网站能够调整的原因在于其使用了 em 或 rem 作为字体单位；</li>
+<li>Firefox能够调整px和em，rem，但是96%以上的中国网民使用IE浏览器(或内核)。<h2 id="em"><a href="#em" class="headerlink" title="em"></a>em</h2>em是相对长度单位。相对于当前对象内文本的字体尺寸。如当前对行内文本的字体尺寸未被人为设置，则相对于浏览器的默认字体尺寸。</li>
+<li>em的值并不是固定的；</li>
+<li>em会继承父级元素的字体大小。</li>
 </ul>
-<h2 id="cookies参数"><a href="#cookies参数" class="headerlink" title="cookies参数"></a>cookies参数</h2><ul>
-<li><strong>httpOnly:浏览器下不允许脚本操作document.cookies去更改 cookies,一般情况下设置为 true，可以避免 xss 攻击拿到 cookies</strong></li>
-<li>path: 表示 cookies 影响到的路径，匹配该路径才会发送 cookies</li>
-<li><strong>expires、maxAge</strong>: 告诉浏览器该 cookies 什么时候过期，采用UTC格式的时间，是 cookies  多久后过期的相对时间。（<strong>删除 cookies，在服务端将 maxAge 设为0，或者在客户端将 expires 设为一个过去的时间</strong>），如果不设置这俩个选项，会产生 session cookies，session cookies 是即时的，当用户关闭浏览器时，会自动清除，一般用来保存 session 的 session_id.<h2 id="cookies的缺点"><a href="#cookies的缺点" class="headerlink" title="cookies的缺点"></a>cookies的缺点</h2></li>
-<li>大小和数目被确定，浏览器对一个域的cookies有上限要求，且<strong>每个 cookies 大小不得超过 4kb</strong>。</li>
-<li>存在安全性问题，容易被人拦截。（考虑到安全方面，应使用较安全的session）</li>
-<li>需要指定域，不能够跨域</li>
-<li>cookies 数据太多会影响传输效率，浪费带宽</li>
-<li>有些浏览器禁用 cookies 或者部分手机不支持 cookies<br>广告商可以通过cookies了解到用户经常访问哪些网站，进而提供相应的广告等。</li>
-</ul>
-<h1 id="session"><a href="#session" class="headerlink" title="session"></a>session</h1><blockquote>
-<p>cookies 虽然使用方便,但是 cookies 中所有的数据都可以在客户端被更改，数据很容易被伪造，因此一些重要的数据不能放cookies 中，cookies 数据太多也会影响传输效率，因此产生了 session，session 数据保留在服务器端。(但是当访问增多，会比较占用服务器的性能，考虑到性能方面，减少使用session)</p>
 </blockquote>
-<hr>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span> &#123; </div><div class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;   <span class="comment">/* 20px */</span></div><div class="line">&#125; </div><div class="line"><span class="selector-class">.level-1</span>&#123; </div><div class="line">    <span class="attribute">font-size</span>: <span class="number">0.5em</span>;   <span class="comment">/* 10px */</span></div><div class="line">&#125; </div><div class="line"><span class="selector-class">.level-2</span>&#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">2em</span>;     <span class="comment">/* 20px */</span></div><div class="line">&#125;</div><div class="line"><span class="selector-class">.level-3</span> &#123; </div><div class="line">    <span class="attribute">font-size</span>: <span class="number">0.5em</span>;      <span class="comment">/* 10px */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="rem"><a href="#rem" class="headerlink" title="rem"></a>rem</h2><blockquote>
+<p>rem是CSS3新增的一个相对单位（root  em），这个单位引起了广泛关注。这个单位与em有什么区别呢？区别在于使用rem为元素设定字体大小时，仍然是相对大小，但<strong>相对的只是HTML根元素</strong>。这个单位可谓集相对大小和绝对大小的优点于一身，通过它既可以做到只修改根元素就成比例地调整所有字体大小，又可以避免字体大小逐层复合的连锁反应。目前，除了IE8及更早版本外，所有浏览器均已支持rem。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span> &#123; </div><div class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;   <span class="comment">/* 20px */</span></div><div class="line">&#125; </div><div class="line"><span class="selector-class">.level-1</span>&#123; </div><div class="line">    <span class="attribute">font-size</span>: <span class="number">0.5rem</span>;   <span class="comment">/* 10px */</span></div><div class="line">&#125; </div><div class="line"><span class="selector-class">.level-2</span>&#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">2rem</span>;     <span class="comment">/* 40px */</span></div><div class="line">&#125;</div><div class="line"><span class="selector-class">.level-3</span> &#123; </div><div class="line">    <span class="attribute">font-size</span>: <span class="number">0.5rem</span>;      <span class="comment">/* 10px */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<ul>
+<li>对于不支持它的浏览器，应对方法也很简单，就是多写一个绝对单位的声明。这些浏览器会忽略用rem设定的字体大小。<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span> &#123;<span class="attribute">font-size</span>:<span class="number">14px</span>; <span class="attribute">font-size</span>:.<span class="number">875rem</span>;&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
 <blockquote>
-<p>当你浏览一个网页时，服务端随机产生一个 1024 比特长的字符串，然后存在你 cookie 中的 connect.sid字段中。当你下次访问时，cookie 会带有这个字符串，然后浏览器就知道你是上次访问过的某某某，然后从服务器的存储中对比取出上次记录在你身上的数据。由于字符串是随机产生的，而且位数足够多，所以也不担心有人能够伪造。</p>
+<p>注意： 选择使用什么字体单位主要由你的项目来决定，如果你的用户群都使用最新版的浏览器，那推荐使用rem，如果要考虑兼容性，那就使用px,或者两者同时使用。<br>px 与 rem 的选择？<br>对于只需要适配少部分手机设备，且分辨率对页面影响不大的，使用px即可 。<br>对于需要适配各种移动设备，则使用rem，例如只需要适配iPhone和iPad等分辨率差别比较挺大的设备。</p>
 </blockquote>
-<hr>
 <ul>
-<li>session 的运作通过一个 session_id 来进行。session_id 通常是存放在客户端的 cookie  中，用户提交页面时，会将这一  SessionID 提交到服务器端，来存取 Session 数据。此时用户禁用cookies，session也会失效。</li>
-<li>但是session并不是完全依赖cookie，服务器可以通过URL重写的方式来传递session_id.</li>
+<li><a href="http://www.runoob.com/w3cnote/px-em-rem-different.html" target="_blank" rel="external">px、em、rem的区别及介绍-菜鸟教程</a></li>
 </ul>
-<p>———- &gt; 整理自：</p>
-<blockquote>
-<ul>
-<li><a href="https://github.com/alsotang/node-lessons/tree/master/lesson16" target="_blank" rel="external">cookies 和 session</a></li>
-<li><a href="http://www.cnblogs.com/shiyangxt/articles/1305506.html" target="_blank" rel="external">cookies 和 session 的详解</a></li>
-<li><a href="http://harttle.com/2015/08/10/cookie-session.html" target="_blank" rel="external">cookie 和 session 的机制与安全</a></li>
-<li><a href="http://caibaojian.com/477.html" target="_blank" rel="external">认识cookie与session的区别与应用</a></li>
-</ul>
-</blockquote>
 
       
     </div>
@@ -467,7 +445,7 @@
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http:\\hexin.life/2017/04/15/title-5/" title="cookie和session">http:\\hexin.life/2017/04/15/title-5/</a>
+      <a href="http:\\hexin.life/2017/05/23/title-9/" title="px、em和rem">http:\\hexin.life/2017/05/23/title-9/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -483,7 +461,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/HTTP/" rel="tag"># HTTP</a>
+            <a href="/tags/css-前端/" rel="tag"># css 前端</a>
           
         </div>
       
@@ -496,18 +474,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/15/title-6/" rel="next" title="HTML 5 Web 存储及WEB应用缓存">
-                <i class="fa fa-chevron-left"></i> HTML 5 Web 存储及WEB应用缓存
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/11/title-4/" rel="prev" title="每个人都需要的中文排版指南（转）">
-                每个人都需要的中文排版指南（转） <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/06/title-8/" rel="prev" title="copy小插件">
+                copy小插件 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -671,7 +645,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#cookies"><span class="nav-number">1.</span> <span class="nav-text">cookies</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#cookies参数"><span class="nav-number">1.1.</span> <span class="nav-text">cookies参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cookies的缺点"><span class="nav-number">1.2.</span> <span class="nav-text">cookies的缺点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#session"><span class="nav-number">2.</span> <span class="nav-text">session</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#px"><span class="nav-number">1.</span> <span class="nav-text">px</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#em"><span class="nav-number">2.</span> <span class="nav-text">em</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rem"><span class="nav-number">3.</span> <span class="nav-text">rem</span></a></li></ol></div>
             
 
           </div>
