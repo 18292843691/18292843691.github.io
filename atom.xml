@@ -1,0 +1,867 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>dayDream&#39;s blog</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http:%5C%5Chexin.life/"/>
+  <updated>2017-06-06T10:44:18.364Z</updated>
+  <id>http:\\hexin.life/</id>
+  
+  <author>
+    <name>白日梦想家</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>定制 hexo</title>
+    <link href="http:%5C%5Chexin.life/2017/06/06/title-11/"/>
+    <id>http:\\hexin.life/2017/06/06/title-11/</id>
+    <published>2017-06-06T03:48:42.000Z</published>
+    <updated>2017-06-06T10:44:18.364Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><p>时隔好久，这里对hexo的博客进行一些功能上的拓展</p>
+<h2 id="1-七牛云定制空间及绑定到极简图床"><a href="#1-七牛云定制空间及绑定到极简图床" class="headerlink" title="1.七牛云定制空间及绑定到极简图床"></a>1.七牛云定制空间及绑定到极简图床</h2><blockquote>
+<p>对于上传图片个人喜欢<a href="http://jiantuku.com/#/" target="_blank" rel="external">极简图床</a>，支持复制粘贴上传，截图然后粘贴用起来贼爽。</p>
+</blockquote>
+<p><img src="http://or3233yyd.bkt.clouddn.com//17-6-6/26112457.jpg" alt="图片标题"><br>极简图窗对于游客每日只有10张图片的上限，开始觉得够用了，但是玩着玩着就没了。不过，他本身提供了七牛云的空间储存。</p>
+<p><img src="http://or3233yyd.bkt.clouddn.com//17-6-6/24671886.jpg" alt="图片标题"></p>
+<ol>
+<li>注册和邮箱验证这里就不赘述了，自行解决吧。</li>
+<li><p>完成之后选择新建仓库<em>名字建议写成小写，他好像是默认小写的。</em></p>
+<p><img src="http://or3233yyd.bkt.clouddn.com//17-6-6/76001751.jpg" alt="图片标题"></p>
+</li>
+<li><p>然后到个人中心找到密钥分别填入<br><img src="http://or3233yyd.bkt.clouddn.com//17-6-6/21360219.jpg" alt="图片标题"></p>
+</li>
+<li><p>找到仓库下的图片处理位置，绑定的域名使用七牛提供的域名即可<br><img src="http://or3233yyd.bkt.clouddn.com//17-6-6/60926365.jpg" alt="图片标题"></p>
+</li>
+</ol>
+<blockquote>
+<p>此时就拥有了10G的七牛免费储存空间，极简图床也不限制次数了。慢慢享用吧骚年。</p>
+</blockquote>
+<h2 id="2-HEXO-内容压缩"><a href="#2-HEXO-内容压缩" class="headerlink" title="2.HEXO 内容压缩"></a>2.HEXO 内容压缩</h2><blockquote>
+<p>我这里使用的 NEXT 主题，它在生成 HTML 时由于主题的简洁，形成了大量留白，反而增大了文件大小，使得本来服务器就在国外的网站加载更慢。</p>
+</blockquote>
+<p><img src="http://or3233yyd.bkt.clouddn.com//17-6-6/96439256.jpg" alt="图片标题"></p>
+<h3 id="1-这里使用当红小生-gulp-进行文件的处理。"><a href="#1-这里使用当红小生-gulp-进行文件的处理。" class="headerlink" title="1.这里使用当红小生 gulp 进行文件的处理。"></a>1.这里使用当红小生 gulp 进行文件的处理。</h3><ol>
+<li>HEXO 在根目录下新建 gulpfile.js 文件</li>
+<li>我们对文件处理需要用到 gulp 的一些插件<br><img src="http://or3233yyd.bkt.clouddn.com//17-6-6/80906841.jpg" alt="图片标题"></li>
+<li>使用 npm install <strong> </strong> ** –save-dev 来下载这些插件并保存，添加到 package.json 配置项中。</li>
+</ol>
+<blockquote>
+<p>由于 npm 服务器在国外下载较慢，安装淘宝镜像 cnpm<br> npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a></p>
+</blockquote>
+<p><img src="http://or3233yyd.bkt.clouddn.com//17-6-6/62994802.jpg" alt=""> </p>
+<ol>
+<li>然后配置 gulpfile.js ,我们知道我们提交博客时，是将静态文件生成到 public 下，然后提交到 github 的。所以我们对文件处理时，就处理这里的静态文件即可。静态文件树形图如下（太长我删减了一部分）：<pre>
+D:. public/                         
+├─2017                        
+│  ├─03                       
+│     ├─28                    
+│     └─title-1                     
+│         
+├─about                       
+├─archives                    
+│  ├─2017                     
+│  │  ├─03                    
+│  │  ├                   
+│  │  └─pages                 
+│  │      ├─2                 
+│  │      └─3                 
+│  └─pages                    
+│      ├─2                    
+│      └─3                    
+├─assets                      
+│  └─js                       
+├─categories                  
+│  ├─css                      
+│  ├─hexo                     
+│  ├─JavaScript               
+│  ├─window                   
+│  ├─其他                       
+│  └─前端                       
+├─css                         
+├─images                      
+├─js                          
+│  └─src                      
+│      └─schemes              
+├─lib                         
+│  ├─algolia-instant-search   
+│  ├─canvas-nest              
+│  ├─fancybox                 
+│  │  └─source                
+│  │      └─helpers           
+│  ├─fastclick                
+│  │  └─lib                   
+│  ├─font-awesome             
+│  │  ├─css                   
+│  │  └─fonts                 
+│  ├─jquery                   
+│  ├─jquery_lazyload          
+│  ├─three                    
+│  ├─ua-parser-js             
+│  │  └─dist                  
+│  └─velocity                 
+├─pages                       
+│  ├─2                        
+│  └─3                        
+└─tags                        
+├─css-前端                  
+├─CSS学习笔记                 
+├                     
+└─转载                      
+</pre>
+
+</li>
+</ol>
+<h4 id="1-因此对文件处理的代码如下："><a href="#1-因此对文件处理的代码如下：" class="headerlink" title="1.因此对文件处理的代码如下："></a>1.因此对文件处理的代码如下：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 引入插件 </span></div><div class="line"><span class="keyword">const</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>),</div><div class="line">    Hexo = <span class="built_in">require</span>(<span class="string">'hexo'</span>),</div><div class="line">    pump = <span class="built_in">require</span>(<span class="string">'pump'</span>), </div><div class="line">    clean = <span class="built_in">require</span>(<span class="string">'gulp-clean'</span>),</div><div class="line">    jsmin = <span class="built_in">require</span>(<span class="string">'gulp-jsmin'</span>),</div><div class="line"> <span class="comment">// rename = require('gulp-rename'),</span></div><div class="line">    htmlmin = <span class="built_in">require</span>(<span class="string">'gulp-htmlmin'</span>),</div><div class="line">    imagemin = <span class="built_in">require</span>(<span class="string">'gulp-imagemin'</span>),</div><div class="line">    cleanCSS = <span class="built_in">require</span>(<span class="string">'gulp-clean-css'</span>),</div><div class="line">    imageminSvgo = <span class="built_in">require</span>(<span class="string">'imagemin-svgo'</span>),</div><div class="line">    imageminJpegtran = <span class="built_in">require</span>(<span class="string">'imagemin-jpegtran'</span>),</div><div class="line">    imageminPngquant = <span class="built_in">require</span>(<span class="string">'imagemin-pngquant'</span>);</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// 利用Hexo API 来生成博客内容，效果同在命令行运行：hexo g </span></div><div class="line"><span class="comment">// generate html with 'hexo generate'</span></div><div class="line"><span class="keyword">var</span> hexo = <span class="keyword">new</span> Hexo(process.cwd(), &#123;&#125;);</div><div class="line">gulp.task(<span class="string">'generate'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">cb</span>) </span>&#123;</div><div class="line">    hexo.init().then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> hexo.call(<span class="string">'generate'</span>, &#123;</div><div class="line">            <span class="attr">watch</span>: <span class="literal">false</span></div><div class="line">        &#125;);</div><div class="line">    &#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> hexo.exit();</div><div class="line">    &#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> cb()</div><div class="line">    &#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(err);</div><div class="line">        hexo.exit(err);</div><div class="line">        <span class="keyword">return</span> cb(err);</div><div class="line">    &#125;)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">//压缩 js 文件</span></div><div class="line">gulp.task(<span class="string">'jsmin'</span>,  () =&gt;</div><div class="line">    gulp.src(<span class="string">'./public/js/src/**/*.js'</span>)</div><div class="line">        .pipe(jsmin())</div><div class="line">        <span class="comment">//.pipe(rename(&#123;suffix: '.min'&#125;))</span></div><div class="line">        .pipe(gulp.dest(<span class="string">'./public/js'</span>));</div><div class="line">);</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//压缩 html 文件</span></div><div class="line">gulp.task(<span class="string">'htmlmin'</span>, () =&gt;</div><div class="line">    gulp.src(<span class="string">'./public/**/**/**/*.html'</span>)</div><div class="line">        .pipe(htmlmin(&#123;<span class="attr">collapseWhitespace</span>: <span class="literal">true</span>&#125;))</div><div class="line">        .pipe(gulp.dest(<span class="string">'./public'</span>));</div><div class="line">);</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// 压缩图片</span></div><div class="line">gulp.task(<span class="string">'imagemin'</span>, () =&gt;</div><div class="line">    gulp.src(<span class="string">'./public/images/*'</span>)</div><div class="line">        .pipe(imagemin())</div><div class="line">        .pipe(gulp.dest(<span class="string">'./public/images'</span>))</div><div class="line">);</div><div class="line"></div><div class="line">imagemin([<span class="string">'./public/images/*.&#123;jpg,png&#125;'</span>], <span class="string">'./public/imagess'</span>, &#123;</div><div class="line">    <span class="attr">plugins</span>: [</div><div class="line">        imageminJpegtran(),</div><div class="line">        imageminPngquant(&#123;<span class="attr">quality</span>: <span class="string">'65-80'</span>&#125;)</div><div class="line">    ]</div><div class="line">&#125;);</div><div class="line">   </div><div class="line">imagemin([<span class="string">'./public/images/*.svg'</span>], <span class="string">'./public/images'</span>, &#123;</div><div class="line">    <span class="attr">use</span>: [</div><div class="line">        imageminSvgo(&#123;</div><div class="line">            <span class="attr">plugins</span>: [</div><div class="line">                &#123;<span class="attr">removeViewBox</span>: <span class="literal">false</span>&#125;</div><div class="line">            ]</div><div class="line">        &#125;)</div><div class="line">    ]</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">//压缩 css</span></div><div class="line">gulp.task(<span class="string">'minify-css'</span>,() =&gt;</div><div class="line">     gulp.src(<span class="string">'./public/css/*.css'</span>)</div><div class="line">        .pipe(cleanCSS(&#123;<span class="attr">compatibility</span>: <span class="string">'ie8'</span>&#125;))</div><div class="line">        .pipe(gulp.dest(<span class="string">'./public/css'</span>))</div><div class="line">);</div><div class="line"></div><div class="line"><span class="comment">//默认任务</span></div><div class="line">gulp.task(<span class="string">'default'</span>,[<span class="string">"generate"</span>,<span class="string">"minify-css"</span>,<span class="string">"jsmin"</span>,<span class="string">"htmlmin"</span>,<span class="string">"imagemin"</span>], <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'gulp is finished!'</span>);</div><div class="line">&#125;)</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// gulp.task("watch",function() &#123;</span></div><div class="line"><span class="comment">//     gulp.watch("public/*",["default"]);</span></div><div class="line"><span class="comment">// &#125;);</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>之后命令行运行 gulp 即可压缩.因为将生成静态文件的步骤hexo generate 集成到了 gulp 中，所以我们以后可以先 gulp 然后 hexo deploy 提交。</p>
+</blockquote>
+<p>输出如下：</p>
+<p><img src="http://or3233yyd.bkt.clouddn.com//17-6-6/29994306.jpg" alt=""></p>
+<p>效果如图：</p>
+<p><img src="http://or3233yyd.bkt.clouddn.com//17-6-6/21765926.jpg" alt=""></p>
+<blockquote>
+<p>参考：</p>
+<ul>
+<li><a href="https://www.karlzhou.com/articles/compress-minify-hexo/" target="_blank" rel="external">优化Hexo博客 - 压缩 HTML、CSS、JS、IMG等</a></li>
+</ul>
+</blockquote>
+<h2 id="3-添加音乐外链"><a href="#3-添加音乐外链" class="headerlink" title="3. 添加音乐外链"></a>3. 添加音乐外链</h2><blockquote>
+<p>如果想在看博客的时候听一些喜欢的音乐怎么办呢？</p>
+</blockquote>
+<ol>
+<li>可以直接在 markdown 中写入 HTML 代码（网易云，虾米均支持外链）</li>
+</ol>
+<h3 id="1-embed"><a href="#1-embed" class="headerlink" title="1. embed"></a>1. embed</h3> <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">embed</span> <span class="attr">src</span>=<span class="string">"//music.163.com/style/swf/widget.swf?sid=452986458&amp;type=2&amp;auto=1&amp;width=320&amp;height=66"</span> <span class="attr">width</span>=<span class="string">"340"</span> <span class="attr">height</span>=<span class="string">"86"</span>  <span class="attr">allowNetworking</span>=<span class="string">"all"</span>&gt;</span><span class="tag">&lt;/<span class="name">embed</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id=""><a href="#" class="headerlink" title=""></a><embed src="//music.163.com/style/swf/widget.swf?sid=452986458&type=2&auto=1&width=320&height=66" width="340" height="86" allownetworking="all"></h2><h3 id="2-javascript"><a href="#2-javascript" class="headerlink" title="2. javascript"></a>2. javascript</h3><pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;http://www.xiami.com/widget/player-single?uid=93773004&amp;sid=1769292418&amp;mode=js&quot;&gt;&lt;/script&gt;
+</code></pre><script type="text/javascript" src="http://www.xiami.com/widget/player-single?uid=93773004&sid=1769292418&mode=js"></script>
+
+<hr>
+<h3 id="3-iframe"><a href="#3-iframe" class="headerlink" title="3. iframe"></a>3. iframe</h3>  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=452986458&auto=1&height=66"></iframe>    
+
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=452986458&auto=1&height=66"></iframe>
+
+
+<hr>
+<h3 id="5-HEXO-的插件-aplayer-dplayer-没有用过就不多说了"><a href="#5-HEXO-的插件-aplayer-dplayer-没有用过就不多说了" class="headerlink" title="5. HEXO 的插件 aplayer / dplayer (没有用过就不多说了)"></a>5. HEXO 的插件 aplayer / dplayer (没有用过就不多说了)</h3><blockquote>
+<p>hexo-tag-aplayer:<a href="https://github.com/grzhan/hexo-tag-aplayer#upstream-issue" target="_blank" rel="external">https://github.com/grzhan/hexo-tag-aplayer#upstream-issue</a><br>hexo-tag-dplayer:<a href="https://github.com/NextMoe/hexo-tag-dplayer" target="_blank" rel="external">https://github.com/NextMoe/hexo-tag-dplayer</a></p>
+</blockquote>
+<h2 id="4-将音乐框添加到-slideBar"><a href="#4-将音乐框添加到-slideBar" class="headerlink" title="4. 将音乐框添加到 slideBar"></a>4. 将音乐框添加到 slideBar</h2><p><img src="http://or3233yyd.bkt.clouddn.com//17-6-6/75207769.jpg" alt="slideBar"></p>
+<blockquote>
+<p>其实方式是一样的，将外链的代码 粘贴到你要显示的地方即可,如图：</p>
+</blockquote>
+<p><img src="http://or3233yyd.bkt.clouddn.com//17-6-6/75559141.jpg" alt="图片标题"></p>
+<h2 id="5-点击出现心型特效，及背景线条"><a href="#5-点击出现心型特效，及背景线条" class="headerlink" title="5. 点击出现心型特效，及背景线条"></a>5. 点击出现心型特效，及背景线条</h2><p><img src="http://or3233yyd.bkt.clouddn.com//17-6-6/21220659.jpg" alt="图片标题"></p>
+<h3 id="1-心型特效代码-love-js"><a href="#1-心型特效代码-love-js" class="headerlink" title="1. 心型特效代码 love.js"></a>1. 心型特效代码 love.js</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">!<span class="function"><span class="keyword">function</span>(<span class="params">e,t,a</span>)</span>&#123;<span class="function"><span class="keyword">function</span> <span class="title">n</span>(<span class="params"></span>)</span>&#123;c(<span class="string">".heart&#123;width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);&#125;.heart:after,.heart:before&#123;content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;&#125;.heart:after&#123;top: -5px;&#125;.heart:before&#123;left: -5px;&#125;"</span>),o(),r()&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">r</span>(<span class="params"></span>)</span>&#123;<span class="keyword">for</span>(<span class="keyword">var</span> e=<span class="number">0</span>;e&lt;d.length;e++)d[e].alpha&lt;=<span class="number">0</span>?(t.body.removeChild(d[e].el),d.splice(e,<span class="number">1</span>)):(d[e].y--,d[e].scale+=<span class="number">.004</span>,d[e].alpha-=<span class="number">.013</span>,d[e].el.style.cssText=<span class="string">"left:"</span>+d[e].x+<span class="string">"px;top:"</span>+d[e].y+<span class="string">"px;opacity:"</span>+d[e].alpha+<span class="string">";transform:scale("</span>+d[e].scale+<span class="string">","</span>+d[e].scale+<span class="string">") rotate(45deg);background:"</span>+d[e].color+<span class="string">";z-index:99999"</span>);requestAnimationFrame(r)&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">o</span>(<span class="params"></span>)</span>&#123;<span class="keyword">var</span> t=<span class="string">"function"</span>==<span class="keyword">typeof</span> e.onclick&amp;&amp;e.onclick;e.onclick=<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;t&amp;&amp;t(),i(e)&#125;&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">i</span>(<span class="params">e</span>)</span>&#123;<span class="keyword">var</span> a=t.createElement(<span class="string">"div"</span>);a.className=<span class="string">"heart"</span>,d.push(&#123;<span class="attr">el</span>:a,<span class="attr">x</span>:e.clientX<span class="number">-5</span>,<span class="attr">y</span>:e.clientY<span class="number">-5</span>,<span class="attr">scale</span>:<span class="number">1</span>,<span class="attr">alpha</span>:<span class="number">.8</span>,<span class="attr">color</span>:s()&#125;),t.body.appendChild(a)&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params">e</span>)</span>&#123;<span class="keyword">var</span> a=t.createElement(<span class="string">"style"</span>);a.type=<span class="string">"text/css"</span>;<span class="keyword">try</span>&#123;a.appendChild(t.createTextNode(e))&#125;<span class="keyword">catch</span>(t)&#123;a.styleSheet.cssText=e&#125;</div><div class="line">t.getElementsByTagName(<span class="string">"head"</span>)[<span class="number">0</span>].appendChild(a)&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">s</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span><span class="string">"rgb("</span>+~~(<span class="number">255</span>*<span class="built_in">Math</span>.random())+<span class="string">","</span>+~~(<span class="number">255</span>*<span class="built_in">Math</span>.random())+<span class="string">","</span>+~~(<span class="number">255</span>*<span class="built_in">Math</span>.random())+<span class="string">")"</span>&#125;</div><div class="line"><span class="keyword">var</span> d=[];e.requestAnimationFrame=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span> e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;setTimeout(e,<span class="number">1e3</span>/<span class="number">60</span>)&#125;&#125;(),n()&#125;(<span class="built_in">window</span>,<span class="built_in">document</span>);</div></pre></td></tr></table></figure>
+<h3 id="2-背景特效代码-par-js"><a href="#2-背景特效代码-par-js" class="headerlink" title="2.背景特效代码 par.js"></a>2.背景特效代码 par.js</h3> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"> </div><div class="line">!<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="function"><span class="keyword">function</span> <span class="title">n</span>(<span class="params">n,e,t</span>)</span>&#123;<span class="keyword">return</span> n.getAttribute(e)||t&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">e</span>(<span class="params">n</span>)</span>&#123;<span class="keyword">return</span> <span class="built_in">document</span>.getElementsByTagName(n)&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">t</span>(<span class="params"></span>)</span>&#123;<span class="keyword">var</span> t=e(<span class="string">"script"</span>),o=t.length,i=t[o<span class="number">-1</span>];<span class="keyword">return</span>&#123;<span class="attr">l</span>:o,<span class="attr">z</span>:n(i,<span class="string">"zIndex"</span>,<span class="number">-1</span>),<span class="attr">o</span>:n(i,<span class="string">"opacity"</span>,<span class="number">.5</span>),<span class="attr">c</span>:n(i,<span class="string">"color"</span>,<span class="string">"0,0,0"</span>),<span class="attr">n</span>:n(i,<span class="string">"count"</span>,<span class="number">99</span>)&#125;&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">o</span>(<span class="params"></span>)</span>&#123;c=u.width=<span class="built_in">window</span>.innerWidth||<span class="built_in">document</span>.documentElement.clientWidth||<span class="built_in">document</span>.body.clientWidth,a=u.height=<span class="built_in">window</span>.innerHeight||<span class="built_in">document</span>.documentElement.clientHeight||<span class="built_in">document</span>.body.clientHeight&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">i</span>(<span class="params"></span>)</span>&#123;l.clearRect(<span class="number">0</span>,<span class="number">0</span>,c,a);<span class="keyword">var</span> n,e,t,o,u,d,x=[w].concat(y);y.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>&#123;<span class="keyword">for</span>(i.x+=i.xa,i.y+=i.ya,i.xa*=i.x&gt;c||i.x&lt;<span class="number">0</span>?<span class="number">-1</span>:<span class="number">1</span>,i.ya*=i.y&gt;a||i.y&lt;<span class="number">0</span>?<span class="number">-1</span>:<span class="number">1</span>,l.fillRect(i.x<span class="number">-.5</span>,i.y<span class="number">-.5</span>,<span class="number">1</span>,<span class="number">1</span>),e=<span class="number">0</span>;e&lt;x.length;e++)n=x[e],i!==n&amp;&amp;<span class="literal">null</span>!==n.x&amp;&amp;<span class="literal">null</span>!==n.y&amp;&amp;(o=i.x-n.x,u=i.y-n.y,d=o*o+u*u,d&lt;n.max&amp;&amp;(n===w&amp;&amp;d&gt;=n.max/<span class="number">2</span>&amp;&amp;(i.x-=<span class="number">.03</span>*o,i.y-=<span class="number">.03</span>*u),t=(n.max-d)/n.max,l.beginPath(),l.lineWidth=t/<span class="number">2</span>,l.strokeStyle=<span class="string">"rgba("</span>+m.c+<span class="string">","</span>+(t+<span class="number">.2</span>)+<span class="string">")"</span>,l.moveTo(i.x,i.y),l.lineTo(n.x,n.y),l.stroke()));x.splice(x.indexOf(i),<span class="number">1</span>)&#125;),r(i)&#125;</div><div class="line"><span class="keyword">var</span> c,a,u=<span class="built_in">document</span>.createElement(<span class="string">"canvas"</span>),m=t(),d=<span class="string">"c_n"</span>+m.l,l=u.getContext(<span class="string">"2d"</span>),r=<span class="built_in">window</span>.requestAnimationFrame||<span class="built_in">window</span>.webkitRequestAnimationFrame||<span class="built_in">window</span>.mozRequestAnimationFrame||<span class="built_in">window</span>.oRequestAnimationFrame||<span class="built_in">window</span>.msRequestAnimationFrame||<span class="function"><span class="keyword">function</span>(<span class="params">n</span>)</span>&#123;<span class="built_in">window</span>.setTimeout(n,<span class="number">1e3</span>/<span class="number">45</span>)&#125;,x=<span class="built_in">Math</span>.random,w=&#123;<span class="attr">x</span>:<span class="literal">null</span>,<span class="attr">y</span>:<span class="literal">null</span>,<span class="attr">max</span>:<span class="number">2e4</span>&#125;;u.id=d,u.style.cssText=<span class="string">"position:fixed;top:0;left:0;z-index:"</span>+m.z+<span class="string">";opacity:"</span>+m.o,e(<span class="string">"body"</span>)[<span class="number">0</span>].appendChild(u),o(),<span class="built_in">window</span>.onresize=o,<span class="built_in">window</span>.onmousemove=<span class="function"><span class="keyword">function</span>(<span class="params">n</span>)</span>&#123;n=n||<span class="built_in">window</span>.event,w.x=n.clientX,w.y=n.clientY&#125;,<span class="built_in">window</span>.onmouseout=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;w.x=<span class="literal">null</span>,w.y=<span class="literal">null</span>&#125;;<span class="keyword">for</span>(<span class="keyword">var</span> y=[],s=<span class="number">0</span>;m.n&gt;s;s++)&#123;<span class="keyword">var</span> f=x()*c,h=x()*a,g=<span class="number">2</span>*x()<span class="number">-1</span>,p=<span class="number">2</span>*x()<span class="number">-1</span>;y.push(&#123;<span class="attr">x</span>:f,<span class="attr">y</span>:h,<span class="attr">xa</span>:g,<span class="attr">ya</span>:p,<span class="attr">max</span>:<span class="number">6e3</span>&#125;)&#125;</div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;i()&#125;,<span class="number">100</span>)&#125;();</div></pre></td></tr></table></figure>
+<h3 id="3-其他特效如头像旋转等"><a href="#3-其他特效如头像旋转等" class="headerlink" title="3.其他特效如头像旋转等"></a>3.其他特效如头像旋转等</h3><blockquote>
+<p>直接如图：</p>
+</blockquote>
+<p><img src="http://or3233yyd.bkt.clouddn.com//17-6-6/42990326.jpg" alt="图片标题"><br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.site-author-image</span> &#123;</div><div class="line">  <span class="attribute">display</span>: block;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</div><div class="line">  <span class="attribute">padding</span>: $site-author-image-padding;</div><div class="line">  <span class="attribute">max-width</span>: $site-author-image-width;</div><div class="line">  <span class="attribute">height</span>: $site-author-image-height;</div><div class="line">  <span class="attribute">border</span>: $site-author-image-border-width solid $site-author-image-border-color;</div><div class="line"> </div><div class="line">  <span class="comment">/* 头像圆形 */</span></div><div class="line">  <span class="attribute">border-radius</span>: <span class="number">50%</span>;</div><div class="line">  <span class="attribute">box-shadow</span>: inset <span class="number">0</span> -<span class="number">1px</span> <span class="number">0</span> <span class="number">#333</span>sf;</div><div class="line">  <span class="attribute">-webkit-border-radius</span>: <span class="number">50%</span>;</div><div class="line">  <span class="attribute">-moz-border-radius</span>: <span class="number">50%</span>;</div><div class="line"></div><div class="line">   <span class="comment">/* 鼠标经过头像旋转360度 */</span></div><div class="line">  <span class="attribute">-webkit-transition</span>: -webkit-transform <span class="number">1s</span> ease-out;</div><div class="line">  <span class="attribute">-moz-transition</span>: -moz-transform <span class="number">1s</span> ease-out;</div><div class="line">  <span class="attribute">transition</span>: transform <span class="number">1s</span> ease-out;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">img</span><span class="selector-pseudo">:hover</span>&#123;</div><div class="line">  <span class="comment">/* 鼠标经过头像旋转360度 */</span></div><div class="line">  <span class="attribute">-webkit-transform</span>: <span class="built_in">rotateZ</span>(360deg);</div><div class="line">  <span class="attribute">-moz-transform</span>: <span class="built_in">rotateZ</span>(360deg);</div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">rotateZ</span>(360deg);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<blockquote class="blockquote-center"> 做自己喜欢的事情才会有动力 </blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;p&gt;时隔好久，这里对hexo的博客进行一些功能上的拓展&lt;/p&gt;
+&lt;h2 id=
+    
+    </summary>
+    
+      <category term="hexo" scheme="http:%5C%5Chexin.life/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="http:%5C%5Chexin.life/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>欢迎来到 cmder</title>
+    <link href="http:%5C%5Chexin.life/2017/06/06/title-10/"/>
+    <id>http:\\hexin.life/2017/06/06/title-10/</id>
+    <published>2017-06-05T17:01:56.000Z</published>
+    <updated>2017-06-05T17:07:11.008Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><h2 id="人没有梦想，那和咸鱼有什么区别"><a href="#人没有梦想，那和咸鱼有什么区别" class="headerlink" title=" 人没有梦想，那和咸鱼有什么区别 "></a><blockquote class="blockquote-center"> 人没有梦想，那和咸鱼有什么区别 </blockquote></h2><p>$ 最近电脑受不了了，折腾比较多,对于好多东西装了N次，在这里简单记录一下。$</p>
+<h2 id="win-下命令行神器-cmder"><a href="#win-下命令行神器-cmder" class="headerlink" title="win 下命令行神器 cmder"></a><a href="http://cmder.net/" target="_blank" rel="external">win 下命令行神器 cmder</a></h2><p>在 win 下 的命令行神器 cmder，原始 cmd 难看不说，功能也少，这里推荐一下 cmder。可以直接下载 mini 版本，只有 6 mb 大小，完整版本包含了 git 等一堆功能，git 已经安装过了， 这里我就选择了 Mini 版。</p>
+<blockquote>
+<p>安装很简单，直接下载解压即可使用</p>
+</blockquote>
+<ul>
+<li>不过为了方便，我们添加一下环境变量。 即可 Win + R 输入 cmder 唤出。<br><img src="http://or3233yyd.bkt.clouddn.com/17-6-6/11973826.jpg" alt=" Win + R 输入 cmder "></li>
+<li><p>但是呢，好像还是不够方便，此时我们可以将它添加到我们的鼠标右键，像 git 巴蜀 here 那样。打开 cmder 终端输入下面命令</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Cmder.exe /REGISTER ALL    <span class="comment">//如果没有权限 则输入 Cmder.exe /REGISTER USER</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>然后是去除文字重叠， win + alt + p 或者点右下角图标选择设置 setting .</p>
+</li>
+<li>然后将 monospace 前面的对勾去掉即可。<br><img src="http://or3233yyd.bkt.clouddn.com/17-6-6/27521085.jpg" alt="将 monospace 前面的对勾去掉"></li>
+<li>如果习惯 git 里面的 \$ 符号的话。可以打开 D:\cmder_mini\vendor\clink.lua 找到44行左右，将 符号改为 \$</li>
+</ul>
+<p><img src="http://or3233yyd.bkt.clouddn.com//17-6-6/10257983.jpg" alt="enter image description here"></p>
+<p>效果如图：<br><img src="http://or3233yyd.bkt.clouddn.com//17-6-6/75785359.jpg" alt="enter image description here"></p>
+<blockquote>
+<p> 基本目前所需要的功能差不多就这样。</p>
+</blockquote>
+<ul>
+<li><a href="http://jeffjade.com/2016/01/13/2016-01-13-windows-software-cmder/" target="_blank" rel="external">晚晴幽草轩轩主</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;h2 id=&quot;人没有梦想，那和咸鱼有什么区别&quot;&gt;&lt;a href=&quot;#人没有梦想
+    
+    </summary>
+    
+      <category term="window" scheme="http:%5C%5Chexin.life/categories/window/"/>
+    
+    
+      <category term="其他" scheme="http:%5C%5Chexin.life/tags/%E5%85%B6%E4%BB%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>px、em和rem</title>
+    <link href="http:%5C%5Chexin.life/2017/05/23/title-9/"/>
+    <id>http:\\hexin.life/2017/05/23/title-9/</id>
+    <published>2017-05-23T14:06:40.000Z</published>
+    <updated>2017-06-06T09:58:06.395Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><h2 id="偶然遇到一个原生JS去除-className-的技巧-Element-className-replace-‘testClassName’-‘realClassName’"><a href="#偶然遇到一个原生JS去除-className-的技巧-Element-className-replace-‘testClassName’-‘realClassName’" class="headerlink" title=" 偶然遇到一个原生JS去除 className 的技巧 Element.className.replace(‘testClassName’, ‘realClassName’); "></a><blockquote class="blockquote-center"> 偶然遇到一个原生JS去除 className 的技巧 Element.className.replace(‘testClassName’, ‘realClassName’); </blockquote></h2><h2 id="px"><a href="#px" class="headerlink" title="px"></a>px</h2><blockquote>
+<p>px : 相对长度单位。像素px是相对于显示器屏幕分辨率而言的。<br> 特点 :</p>
+<ul>
+<li>IE无法调整那些使用px作为单位的字体大小；</li>
+<li>国外的大部分网站能够调整的原因在于其使用了 em 或 rem 作为字体单位；</li>
+<li>Firefox能够调整px和em，rem，但是96%以上的中国网民使用IE浏览器(或内核)。<h2 id="em"><a href="#em" class="headerlink" title="em"></a>em</h2>em是相对长度单位。相对于当前对象内文本的字体尺寸。如当前对行内文本的字体尺寸未被人为设置，则相对于浏览器的默认字体尺寸。</li>
+<li>em的值并不是固定的；</li>
+<li>em会继承父级元素的字体大小。</li>
+</ul>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span> &#123; </div><div class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;   <span class="comment">/* 20px */</span></div><div class="line">&#125; </div><div class="line"><span class="selector-class">.level-1</span>&#123; </div><div class="line">    <span class="attribute">font-size</span>: <span class="number">0.5em</span>;   <span class="comment">/* 10px */</span></div><div class="line">&#125; </div><div class="line"><span class="selector-class">.level-2</span>&#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">2em</span>;     <span class="comment">/* 20px */</span></div><div class="line">&#125;</div><div class="line"><span class="selector-class">.level-3</span> &#123; </div><div class="line">    <span class="attribute">font-size</span>: <span class="number">0.5em</span>;      <span class="comment">/* 10px */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="rem"><a href="#rem" class="headerlink" title="rem"></a>rem</h2><blockquote>
+<p>rem是CSS3新增的一个相对单位（root  em），这个单位引起了广泛关注。这个单位与em有什么区别呢？区别在于使用rem为元素设定字体大小时，仍然是相对大小，但<strong>相对的只是HTML根元素</strong>。这个单位可谓集相对大小和绝对大小的优点于一身，通过它既可以做到只修改根元素就成比例地调整所有字体大小，又可以避免字体大小逐层复合的连锁反应。目前，除了IE8及更早版本外，所有浏览器均已支持rem。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span> &#123; </div><div class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;   <span class="comment">/* 20px */</span></div><div class="line">&#125; </div><div class="line"><span class="selector-class">.level-1</span>&#123; </div><div class="line">    <span class="attribute">font-size</span>: <span class="number">0.5rem</span>;   <span class="comment">/* 10px */</span></div><div class="line">&#125; </div><div class="line"><span class="selector-class">.level-2</span>&#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">2rem</span>;     <span class="comment">/* 40px */</span></div><div class="line">&#125;</div><div class="line"><span class="selector-class">.level-3</span> &#123; </div><div class="line">    <span class="attribute">font-size</span>: <span class="number">0.5rem</span>;      <span class="comment">/* 10px */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<ul>
+<li>对于不支持它的浏览器，应对方法也很简单，就是多写一个绝对单位的声明。这些浏览器会忽略用rem设定的字体大小。<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span> &#123;<span class="attribute">font-size</span>:<span class="number">14px</span>; <span class="attribute">font-size</span>:.<span class="number">875rem</span>;&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>注意： 选择使用什么字体单位主要由你的项目来决定，如果你的用户群都使用最新版的浏览器，那推荐使用rem，如果要考虑兼容性，那就使用px,或者两者同时使用。<br>px 与 rem 的选择？<br>对于只需要适配少部分手机设备，且分辨率对页面影响不大的，使用px即可 。<br>对于需要适配各种移动设备，则使用rem，例如只需要适配iPhone和iPad等分辨率差别比较挺大的设备。</p>
+</blockquote>
+<ul>
+<li><a href="http://www.runoob.com/w3cnote/px-em-rem-different.html" target="_blank" rel="external">px、em、rem的区别及介绍-菜鸟教程</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;h2 id=&quot;偶然遇到一个原生JS去除-className-的技巧-Eleme
+    
+    </summary>
+    
+      <category term="css" scheme="http:%5C%5Chexin.life/categories/css/"/>
+    
+    
+      <category term="css 前端" scheme="http:%5C%5Chexin.life/tags/css-%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>copy小插件</title>
+    <link href="http:%5C%5Chexin.life/2017/05/06/title-8/"/>
+    <id>http:\\hexin.life/2017/05/06/title-8/</id>
+    <published>2017-05-06T07:12:20.000Z</published>
+    <updated>2017-06-06T09:54:05.111Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><p><blockquote class="blockquote-center"> hacker 是擅于解决问题的人 </blockquote></p>
+<h1 id="copy小插件"><a href="#copy小插件" class="headerlink" title="copy小插件"></a>copy小插件</h1><p>昨天舍友在写一个报告的时候，准确的来说是从网上搜罗~然而在 360doc 看到了一个满意的，无奈下载不了，也没法复制粘贴，我心想他应该是用 javascript 来禁止复制的，然后默默地给舍友装了一下子~大神勿喷，舍友计算机盲（我不会告诉你他在大学学会的 ctrl+c/v ）。</p>
+<blockquote>
+<p>其实我直接将 chrome 的 javascript 给禁用了，可能我没清理缓存，他还是不能复制，让我很尴尬~ 百度搜到的方法一般都是这个<br>然后我打开开发者工具(F12)<br>这里我们不看源码，一行代码搞定<br><img src="http://i1.piimg.com/588926/c47501ec4bf4e55a.png" alt=""><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//document.getElementsByTagName('body')[0].oncopy = null;</span></div><div class="line"><span class="built_in">document</span>.getElementsByTagName(<span class="string">'body'</span>)[<span class="number">0</span>].oncopy = <span class="string">''</span>;    <span class="comment">//获取body元素的oncpoy事件，直接置空~</span></div></pre></td></tr></table></figure></p>
+<p>虽然很简单，但是还了一个页面它就失效了，可以再次打开开发者工具，再次置空就行了<br>有更好的办法或者一劳永逸的办法~希望大神指教一下，本来是准备写个chrome插件的，但是试了好多方法都没用~改天好好看看文档</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;p&gt;&lt;blockquote class=&quot;blockquote-center&quot;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http:%5C%5Chexin.life/categories/JavaScript/"/>
+    
+    
+      <category term="插件" scheme="http:%5C%5Chexin.life/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS函数闭包</title>
+    <link href="http:%5C%5Chexin.life/2017/04/15/title-7/"/>
+    <id>http:\\hexin.life/2017/04/15/title-7/</id>
+    <published>2017-04-15T13:03:54.000Z</published>
+    <updated>2017-05-04T15:37:52.487Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><blockquote class="blockquote-center">程序是写给人看的，顺带能在机器上运行</blockquote>
+
+
+
+<h1 id="JS循环闭包："><a href="#JS循环闭包：" class="headerlink" title="JS循环闭包："></a>JS循环闭包：</h1><h2 id="应用一"><a href="#应用一" class="headerlink" title="应用一"></a>应用一</h2><h3 id="html-结构"><a href="#html-结构" class="headerlink" title="html 结构"></a>html 结构</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   <span class="tag">&lt;<span class="name">p</span>&gt;</span>test0<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>test1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>test2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>test3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>test4<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="抛出问题"><a href="#抛出问题" class="headerlink" title="抛出问题"></a>抛出问题</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 抛出问题:</span></div><div class="line">                此题的目的是想每次点击对应目标时弹出对应的数字下标 0~4,但实际是无论点击哪个目标都会弹出数字5</div><div class="line">            问题所在:</div><div class="line">                arr 中的每一项的 onclick 均为一个函数实例(Function 对象),这个函数实例也产生了一个闭包域,</div><div class="line">                这个闭包域引用了外部闭包域的变量,其 function scope 的 closure 对象有个名为 i 的引用,</div><div class="line">                外部闭包域的私有变量内容发生变化,内部闭包域得到的值自然会发生改变</div><div class="line">            */</div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">myClosure</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> arr = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>);</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">                arr[i].onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                    alert(i);     <span class="comment">//无论点击哪一个均会弹出5</span></div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+<h3 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">解决方法一：</div><div class="line">        增加若干个对应的闭包域空间(	这里采用的是匿名函数),专门用来存储原先需要引用的内容(下标),不过只限于基本类型(基本类型值传递,对象类型引用传递) </div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">myClosure</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> arr = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>);</div><div class="line"></div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">                (<span class="function"><span class="keyword">function</span> (<span class="params">j</span>) </span>&#123;  </div><div class="line">                arr[i].onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                    alert(j);     </div><div class="line">                    &#125;</div><div class="line">                &#125;)(i);</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*思路：将下标作为对象属性(name:"i",value:i的值)添加到每个数组项(p对象)中*/</span></div><div class="line">此时当前 p 对象的 i 属性并不是对循环体的 i 变量的引用,而是一个独立 p 对象的属性,属性值在声明的时候就确定了(基本类型的值都是存在栈中的,当有一个基本类型变量声明其等于另一个基本变量时,此时并不是两个基本类型变量都指向一个值,而是各自有各自的值,但值是相等的)</div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">myClosure</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> arr = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>);</div><div class="line"></div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">                arr[i].i = i;</div><div class="line">                arr[i].onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                    alert(<span class="keyword">this</span>.i);     </div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+<h3 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*解决思路:</span></div><div class="line">与解决办法一有点相似但却有点不太相似.</div><div class="line">相似点:同样是增加若干个对应的闭包域空间用来存储下标</div><div class="line">不同点:解决办法一是在新增的匿名闭包空间内完成事件的绑定,而此例是将事件绑定在新增的匿名函数返回的函数上。</div><div class="line">此时绑定的函数中的 function scope 中的 closure 对象的 引用 arg 是指向将其返回的匿名函数的私有变量 arg*/</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">myClosure</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> arr = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>);</div><div class="line">            </div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;								</div><div class="line">                arr[i].onclick = (<span class="function"><span class="keyword">function</span> (<span class="params">j</span>) </span>&#123;</div><div class="line">                    </div><div class="line">                    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">                        alert(j);     </div><div class="line">                    &#125;</div><div class="line">                &#125;)(i);</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+<h3 id="方法四"><a href="#方法四" class="headerlink" title="方法四"></a>方法四</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">  <span class="comment">//思路同方法一：</span></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">myClosure</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> arr = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>);</div><div class="line">    </div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">            (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">                    <span class="keyword">var</span> tmp = i;</div><div class="line">                    arr[i].onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;						</div><div class="line">                    alert(tmp);    </div><div class="line">                &#125;</div><div class="line">            &#125;)();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="方法五："><a href="#方法五：" class="headerlink" title="方法五："></a>方法五：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//方法五：es6新语法，let为一个块级作用域</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">myClosure</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> arr = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>);</div><div class="line">        </div><div class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">            arr[i].onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                alert(i);     </div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h1 id="非循环闭包："><a href="#非循环闭包：" class="headerlink" title="非循环闭包："></a>非循环闭包：</h1><h2 id="应用一："><a href="#应用一：" class="headerlink" title="应用一："></a>应用一：</h2><h3 id="html-结构-1"><a href="#html-结构-1" class="headerlink" title="html 结构"></a>html 结构</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;p id="help"&gt;Helpful notes will appear here&lt;/p&gt;</div><div class="line">    &lt;p&gt;E-mail:</div><div class="line">        &lt;input type="text" id="email" name="email"&gt;</div><div class="line">    &lt;/p&gt;</div><div class="line">    &lt;p&gt;Name:</div><div class="line">        &lt;input type="text" id="name" name="name"&gt;</div><div class="line">    &lt;/p&gt;</div><div class="line">    &lt;p&gt;Age:</div><div class="line">        &lt;input type="text" id="age" name="age"&gt;</div><div class="line">    &lt;/p&gt;</div></pre></td></tr></table></figure>
+<h3 id="闭包解决-input-框聚焦动态提示"><a href="#闭包解决-input-框聚焦动态提示" class="headerlink" title="闭包解决 input 框聚焦动态提示"></a>闭包解决 input 框聚焦动态提示</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">showHelp</span>(<span class="params">help</span>) </span>&#123;</div><div class="line">            <span class="built_in">document</span>.getElementById(<span class="string">'help'</span>).innerHTML = help;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">makeHelpCallback</span>(<span class="params">help</span>) </span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;     <span class="comment">//形成闭包</span></div><div class="line">                showHelp(help);</div><div class="line">            &#125;;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">setupHelp</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> helpText = [&#123;</div><div class="line">                <span class="string">'id'</span>: <span class="string">'email'</span>,</div><div class="line">                <span class="string">'help'</span>: <span class="string">'Your e-mail address'</span></div><div class="line">            &#125;, &#123;</div><div class="line">                <span class="string">'id'</span>: <span class="string">'name'</span>,</div><div class="line">                <span class="string">'help'</span>: <span class="string">'Your full name'</span></div><div class="line">            &#125;, &#123;</div><div class="line">                <span class="string">'id'</span>: <span class="string">'age'</span>,</div><div class="line">                <span class="string">'help'</span>: <span class="string">'Your age (you must be over 16)'</span></div><div class="line">            &#125;];</div><div class="line"></div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; helpText.length; i++) &#123;</div><div class="line">                <span class="keyword">var</span> item = helpText[i];</div><div class="line">                <span class="built_in">document</span>.getElementById(item.id).onfocus = makeHelpCallback(item.help);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        setupHelp();</div></pre></td></tr></table></figure>
+<h2 id="应用二"><a href="#应用二" class="headerlink" title="应用二"></a>应用二</h2><h3 id="html-结构-2"><a href="#html-结构-2" class="headerlink" title="html 结构"></a>html 结构</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Some paragraph text<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>some heading 1 text<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>some heading 2 text<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">id</span>=<span class="string">"size-12"</span>&gt;</span>12<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">id</span>=<span class="string">"size-14"</span>&gt;</span>14<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">id</span>=<span class="string">"size-16"</span>&gt;</span>16<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="css"><a href="#css" class="headerlink" title="css"></a>css</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">  body &#123;</div><div class="line">  font-family: Helvetica, Arial, sans-serif;</div><div class="line">  font-size: 12px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">h1 &#123;</div><div class="line">  font-size: 1.5em;</div><div class="line">&#125;</div><div class="line">h2 &#123;</div><div class="line">  font-size: 1.2em;</div><div class="line">&#125;```javascript</div><div class="line">      function makeSizer(size) &#123;</div><div class="line">      return function() &#123;</div><div class="line">        document.body.style.fontSize = size + 'px';</div><div class="line">      &#125;;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    var size12 = makeSizer(12);</div><div class="line">    var size14 = makeSizer(14);</div><div class="line">    var size16 = makeSizer(16);</div><div class="line"></div><div class="line">    document.getElementById('size-12').onclick = size12;</div><div class="line">    document.getElementById('size-14').onclick = size14;</div><div class="line">    document.getElementById('size-16').onclick = size16;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>From:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/cn/docs/Web/JavaScript/Closures" target="_blank" rel="external">闭包-MDN</a> </li>
+<li><a href="https://segmentfault.com/a/1190000003818163" target="_blank" rel="external">9种办法解决JS循环闭包面试经典题之for循环</a></li>
+</ul>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;blockquote class=&quot;blockquote-center&quot;&gt;程序
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>HTML 5 Web 存储及WEB应用缓存</title>
+    <link href="http:%5C%5Chexin.life/2017/04/15/title-6/"/>
+    <id>http:\\hexin.life/2017/04/15/title-6/</id>
+    <published>2017-04-15T12:51:20.000Z</published>
+    <updated>2017-04-18T11:54:03.333Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><h1 id="俩种在客户端储存数据的方法"><a href="#俩种在客户端储存数据的方法" class="headerlink" title="俩种在客户端储存数据的方法"></a>俩种在客户端储存数据的方法</h1><ul>
+<li>localStorage - 没有时间限制的数据存储</li>
+<li>sessionStorage - 针对 session 的数据存储</li>
+</ul>
+<p>之前这些都是由cookie完成的，但是cookie不适合大量数据的存储，因为他们由每个服务器的请求来传递，使得cookie速度慢而且效率不高。</p>
+<p>在HTML5中，数据不是由每个服务器请求来传递的，而是只有在请求时使用数据，使得在不影响网站性能的情况下存储大量数据。对于不同的网站，sh数据存储于不同的区域，而且一个网站只能访问其自身的数据。HTML5 通过JavaScript来存储和访问数据。</p>
+<p>#localStorage 方法</p>
+<ul>
+<li>例子对用户访问页面的次数进行计数：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line"><span class="keyword">if</span> (localStorage.pagecount)</div><div class="line">  &#123;</div><div class="line">  localStorage.pagecount=<span class="built_in">Number</span>(localStorage.pagecount) +<span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line"><span class="keyword">else</span></div><div class="line">  &#123;</div><div class="line">  localStorage.pagecount=<span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line"><span class="built_in">document</span>.write(<span class="string">"Visits "</span>+ localStorage.pagecount + <span class="string">" time(s)."</span>);</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<h1 id="sessionStorage-方法"><a href="#sessionStorage-方法" class="headerlink" title="sessionStorage 方法"></a>sessionStorage 方法</h1><blockquote>
+<p>sessionStorage 方法针对一个 session 进行数据存储。当用户关闭浏览器窗口后，数据会被删除。</p>
+</blockquote>
+<ul>
+<li>对用户在当前 session 中访问页面的次数进行计数<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line"><span class="keyword">if</span> (sessionStorage.pagecount)</div><div class="line">  &#123;</div><div class="line">  sessionStorage.pagecount=<span class="built_in">Number</span>(sessionStorage.pagecount) +<span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line"><span class="keyword">else</span></div><div class="line">  &#123;</div><div class="line">  sessionStorage.pagecount=<span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line"><span class="built_in">document</span>.write(<span class="string">"Visits "</span>+sessionStorage.pagecount+<span class="string">" time(s) this session."</span>);</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="HTML-5-应用程序缓存"><a href="#HTML-5-应用程序缓存" class="headerlink" title="HTML 5 应用程序缓存"></a>HTML 5 应用程序缓存</h1><blockquote>
+<p>使用 HTML5，通过创建 cache manifest 文件，可以轻松地创建 web 应用的离线版本。</p>
+<p>什么是应用程序缓存（Application Cache）？ HTML5 引入了应用程序缓存，这意味着 web 应用可进行缓存，并可在没有因特网连接时进行访问。<br>应用程序缓存为应用带来三个优势： </p>
+<ul>
+<li>离线浏览：用户可在应用离线时使用它们 </li>
+<li>速度：已缓存资源加载得更快 </li>
+<li>减少服务器负载：浏览器将只从服务器下载更新过或更改过的资源。 </li>
+</ul>
+</blockquote>
+<p>浏览器支持 所有主流浏览器均支持应用程序缓存，除了Internet Explorer。</p>
+<p><strong>如需启用应用程序缓存，请在文档的 <html> 标签中包含 manifest 属性：</html></strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE HTML&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">html</span> <span class="attr">manifest</span>=<span class="string">"demo.appcache"</span>&gt;</span></span></div><div class="line">//something</div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>每个指定了 manifest 的页面在用户对其访问时都会被缓存。如果未指定 manifest 属性，则页面不会被缓存（除非在 manifest 文件中直接指定了该页面）。<br>manifest 文件的建议的文件扩展名是：”.appcache”。<br>请注意，manifest 文件需要配置正确的 MIME-type，即 “text/cache-manifest”。必须在 web 服务器上进行配置。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p><strong>Manifest 文件</strong><br>manifest 文件是简单的文本文件，它告知浏览器被缓存的内容（以及不缓存的内容）。<br>manifest 文件可分为三个部分：</p>
+</blockquote>
+<hr>
+<blockquote>
+<ol>
+<li><strong>CACHE MANIFEST - 在此标题下列出的文件将在首次下载后进行缓存</strong></li>
+</ol>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">NETWORK:</div><div class="line">login.asp</div></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>2.NETWORK ：在此标题下列出的文件需要与服务器的连接，且不会被缓存</strong></p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">NETWORK:       # NETWORK 小节规定文件 "login.asp" 永远不会被缓存，且离线时是不可用的：</div><div class="line">login.asp  </div><div class="line">/*------------------------------*/</div><div class="line">NETWORK:</div><div class="line">*                        #可以使用星号来指示所有其他资源/文件都需要因特网连接：</div></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>3. FALLBACK：在此标题下列出的文件规定当页面无法访问时的回退页面（比如 404 页面）</strong></p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">FALLBACK:</div><div class="line">/html5/ /404.html    #第一个 URI 是资源，第二个是替补。</div></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="http://www.w3school.com.cn/html5/html_5_app_cache.asp" target="_blank" rel="external">HTML5 Web应用程序缓存-w3school</a></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;h1 id=&quot;俩种在客户端储存数据的方法&quot;&gt;&lt;a href=&quot;#俩种在客户端储
+    
+    </summary>
+    
+    
+      <category term="[object Object]" scheme="http:%5C%5Chexin.life/tags/object-Object/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>cookie和session</title>
+    <link href="http:%5C%5Chexin.life/2017/04/15/title-5/"/>
+    <id>http:\\hexin.life/2017/04/15/title-5/</id>
+    <published>2017-04-15T05:53:19.000Z</published>
+    <updated>2017-04-18T11:53:51.330Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><blockquote class="blockquote-center">相信你所相信的，坚持你所坚持的</blockquote>
+
+<h1 id="cookies"><a href="#cookies" class="headerlink" title="cookies"></a>cookies</h1><blockquote>
+<p>HTTP 是一个无状态协议，所以客户端每次发出请求时，下一次请求无法得知上一次请求所包含的状态数据，如何能把一个用户的状态数据关联起来呢？即大多都是利用 cookie、session 实现。如浏览器自动保存密码，记住登录状态，网页换肤，新手引导等下次不再提醒功能（我就说我以前换网吧玩总得去禁用那些引导）。<br>比如在淘宝的某个页面中，你进行了登陆操作。当你跳转到商品页时，服务端如何知道你是已经登陆的状态？<br>因此产生了 cookie 来解决这门问题。<a id="more"></a></p>
+</blockquote>
+<p> <img src="http://harttle.com/assets/img/blog/cookie.png" alt="cookie的传输"></p>
+<ul>
+<li>服务器向客户端发送 cookies</li>
+<li>通常使用 HTTP 协议规定的 set-cookie 头操作。</li>
+<li>规范规定 cookies 的格式为vlaue = name 格式，且必须包含这部分</li>
+<li>浏览器将 cookies 保存</li>
+<li><strong>每次浏览器向服务器发送请求都会发送 cookies</strong></li>
+</ul>
+<h2 id="cookies参数"><a href="#cookies参数" class="headerlink" title="cookies参数"></a>cookies参数</h2><ul>
+<li><strong>httpOnly:浏览器下不允许脚本操作document.cookies去更改 cookies,一般情况下设置为 true，可以避免 xss 攻击拿到 cookies</strong></li>
+<li>path: 表示 cookies 影响到的路径，匹配该路径才会发送 cookies</li>
+<li><strong>expires、maxAge</strong>: 告诉浏览器该 cookies 什么时候过期，采用UTC格式的时间，是 cookies  多久后过期的相对时间。（<strong>删除 cookies，在服务端将 maxAge 设为0，或者在客户端将 expires 设为一个过去的时间</strong>），如果不设置这俩个选项，会产生 session cookies，session cookies 是即时的，当用户关闭浏览器时，会自动清除，一般用来保存 session 的 session_id.<h2 id="cookies的缺点"><a href="#cookies的缺点" class="headerlink" title="cookies的缺点"></a>cookies的缺点</h2></li>
+<li>大小和数目被确定，浏览器对一个域的cookies有上限要求，且<strong>每个 cookies 大小不得超过 4kb</strong>。</li>
+<li>存在安全性问题，容易被人拦截。（考虑到安全方面，应使用较安全的session）</li>
+<li>需要指定域，不能够跨域</li>
+<li>cookies 数据太多会影响传输效率，浪费带宽</li>
+<li>有些浏览器禁用 cookies 或者部分手机不支持 cookies<br>广告商可以通过cookies了解到用户经常访问哪些网站，进而提供相应的广告等。</li>
+</ul>
+<h1 id="session"><a href="#session" class="headerlink" title="session"></a>session</h1><blockquote>
+<p>cookies 虽然使用方便,但是 cookies 中所有的数据都可以在客户端被更改，数据很容易被伪造，因此一些重要的数据不能放cookies 中，cookies 数据太多也会影响传输效率，因此产生了 session，session 数据保留在服务器端。(但是当访问增多，会比较占用服务器的性能，考虑到性能方面，减少使用session)</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>当你浏览一个网页时，服务端随机产生一个 1024 比特长的字符串，然后存在你 cookie 中的 connect.sid字段中。当你下次访问时，cookie 会带有这个字符串，然后浏览器就知道你是上次访问过的某某某，然后从服务器的存储中对比取出上次记录在你身上的数据。由于字符串是随机产生的，而且位数足够多，所以也不担心有人能够伪造。</p>
+</blockquote>
+<hr>
+<ul>
+<li>session 的运作通过一个 session_id 来进行。session_id 通常是存放在客户端的 cookie  中，用户提交页面时，会将这一  SessionID 提交到服务器端，来存取 Session 数据。此时用户禁用cookies，session也会失效。</li>
+<li>但是session并不是完全依赖cookie，服务器可以通过URL重写的方式来传递session_id.</li>
+</ul>
+<p>———- &gt; 整理自：</p>
+<blockquote>
+<ul>
+<li><a href="https://github.com/alsotang/node-lessons/tree/master/lesson16" target="_blank" rel="external">cookies 和 session</a></li>
+<li><a href="http://www.cnblogs.com/shiyangxt/articles/1305506.html" target="_blank" rel="external">cookies 和 session 的详解</a></li>
+<li><a href="http://harttle.com/2015/08/10/cookie-session.html" target="_blank" rel="external">cookie 和 session 的机制与安全</a></li>
+<li><a href="http://caibaojian.com/477.html" target="_blank" rel="external">认识cookie与session的区别与应用</a></li>
+</ul>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote class=&quot;blockquote-center&quot;&gt;相信你所相信的，坚持你所坚持的&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;cookies&quot;&gt;&lt;a href=&quot;#cookies&quot; class=&quot;headerlink&quot; title=&quot;cookies&quot;&gt;&lt;/a&gt;cookies&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;HTTP 是一个无状态协议，所以客户端每次发出请求时，下一次请求无法得知上一次请求所包含的状态数据，如何能把一个用户的状态数据关联起来呢？即大多都是利用 cookie、session 实现。如浏览器自动保存密码，记住登录状态，网页换肤，新手引导等下次不再提醒功能（我就说我以前换网吧玩总得去禁用那些引导）。&lt;br&gt;比如在淘宝的某个页面中，你进行了登陆操作。当你跳转到商品页时，服务端如何知道你是已经登陆的状态？&lt;br&gt;因此产生了 cookie 来解决这门问题。
+    
+    </summary>
+    
+      <category term="前端" scheme="http:%5C%5Chexin.life/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="HTTP" scheme="http:%5C%5Chexin.life/tags/HTTP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>每个人都需要的中文排版指南（转）</title>
+    <link href="http:%5C%5Chexin.life/2017/04/11/title-4/"/>
+    <id>http:\\hexin.life/2017/04/11/title-4/</id>
+    <published>2017-04-11T12:06:00.000Z</published>
+    <updated>2017-05-10T16:26:39.135Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><p>前几天被朋友吐槽排版太烂了，今天偶然看到这篇文章，然后就转载了过来，由于转载原因可能文章没有原文格式美观，有兴趣请点击链接查看原文。</p>
+<ul>
+<li>原文转载自<a href="http://stormzhang.com/2017/03/16/chinese-copywriting/" target="_blank" rel="external">stormzhang</a></li>
+</ul>
+<a id="more"></a>
+ <blockquote class="blockquote-center">相信你所相信的，坚持你所坚持的</blockquote>
+
+
+
+<h1 id="每个人都需要的中文排版指南"><a href="#每个人都需要的中文排版指南" class="headerlink" title="每个人都需要的中文排版指南"></a>每个人都需要的中文排版指南</h1><blockquote>
+<p>之前有不少人在我公众号留言，说看我的排版很舒服，求指导。</p>
+<p>我不是一个专业的写字人，我是程序员出身，在写代码的时候有点小洁癖，尽量会把每个细节做到更好，所以我在公众号写作的时候一样会注重每个细节，我认为排版是对写作最基本的要求，所以当我决定要在公众号写作的时候，就非常在意排版，并且一直在改进，</p>
+<p>可惜的是，我看到无数不管是写博客还是写公众号的作者，从不会注意自己的排版，有时候看到一篇好的文章，如果排版很烂，会觉得很可惜。</p>
+<p>公众号「小道消息」的作者 Fenng<br>曾不止一次强调排版的重要性，对此我也非常认同，任何说不拘小节，注重内容就行了的反驳都是借口，我自己在我的小密圈中也一直强调排版的重要性，很多圈友发布的动态无一排版都太烂，为此，我在小密圈中写下了这么一篇排版指南，真心希望所有的写字人都能注意下自己的排版。</p>
+<p>这篇文章适用于所有编辑、作家、撰稿人、公众号作者、博主等，甚至适合所有人，因为人的一生难免避免不了写作。</p>
+</blockquote>
+<h1 id="1-空格"><a href="#1-空格" class="headerlink" title="1. 空格"></a>1. 空格</h1><blockquote>
+<p>我每次看到网页上的中文字和英文、数字、符号挤在一起，就会坐立不安，忍不住想在他们之间加个空格。</p>
+<p>「有研究显示，打字的时候不喜欢在中文和英文之间加空格的人，感情路都走得很辛苦，有七成的比例会在 34<br>岁的时候跟自己不爱的人结婚，而其余三成的人最后只能把遗产留给自己的猫。毕竟爱情跟书写都需要适时地留白。」</p>
+</blockquote>
+<ul>
+<li>中英文之间需要加空格</li>
+</ul>
+<blockquote>
+<p>eg. 大家可以搜索公众号 AndroidDeveloper 或者 googdev 关注我。</p>
+</blockquote>
+<ul>
+<li>中文与数字之间需要加空格</li>
+</ul>
+<blockquote>
+<p>eg. 不知不觉，我都快 30 岁了。</p>
+</blockquote>
+<ul>
+<li>数字与单位之间需要加空格</li>
+</ul>
+<blockquote>
+<p>eg. 我有一块 20 TB 的硬盘，鬼知道我是怎么用完的。</p>
+</blockquote>
+<ul>
+<li>完整的英文整句时标点与单词之间需要加空格</li>
+</ul>
+<blockquote>
+<p>eg. Stay hungry, stay foolish.</p>
+<p>但是也有一些例外。</p>
+</blockquote>
+<ul>
+<li>度的标志、百分号不加空格</li>
+</ul>
+<blockquote>
+<p>eg. 今天气温有 30° 的高温。 eg. 据统计，关注公众号 AndroidDeveloper 的读者中有 80% 是长得好看的。</p>
+</blockquote>
+<ul>
+<li>全角标点与其他字符之间不加空格</li>
+</ul>
+<blockquote>
+<p>eg. 大家好，我是 stormzhang，请多多关照。</p>
+</blockquote>
+<h1 id="2-标点"><a href="#2-标点" class="headerlink" title="2. 标点"></a>2. 标点</h1><blockquote>
+<p>说到标点，不得不说下全角和半角，很多人可能不了解全角和半角的概念，这里顺便介绍下。</p>
+<p>全角和半角是英文和中文的编码规范不同遗留下的问题，简单来说，全角占两个字节，半角占一个字节，你可以理解成中文汉字是全角，英文字母是半角，不过半角全角主要是针对标点符号来说的，中文标点占两个字节，英文标点占一个字节。体现在排版上的差异就是，全角字符屏幕打印宽度是两个，而半角字符屏幕打印宽度是一个，如中文逗号和英文逗号他们的显示分别是「，」和「,」。</p>
+</blockquote>
+<ul>
+<li>使用全角中文标点，中文排版中所有的标点都应该使用中文全角中文标点</li>
+</ul>
+<blockquote>
+<p>eg. 大家好，我是 stormzhang。</p>
+</blockquote>
+<ul>
+<li>遇到英文整句、特殊名词时使用半角标点。</li>
+</ul>
+<blockquote>
+<p>eg. 乔布斯说过：「Stay hungry, stay foolish.」 eg. Facebook, Inc.</p>
+</blockquote>
+<ul>
+<li>使用直角引号「我国国家标准要求弯引号，但是个人建议在新媒体排版时使用直角引号」。</li>
+</ul>
+<blockquote>
+<p>eg. 你竟然不知道「帅比张」？</p>
+</blockquote>
+<ul>
+<li>如果引号再使用引号使用直角双引号。</li>
+</ul>
+<blockquote>
+<p>eg. 我质问他，「你难道忘记『帅比张』了么？」</p>
+</blockquote>
+<h1 id="3-其他"><a href="#3-其他" class="headerlink" title="3. 其他"></a>3. 其他</h1><blockquote>
+<p>除以上之外，还有一些其他标准推荐大家使用的。</p>
+</blockquote>
+<ul>
+<li>英文名词首字母尽量大写</li>
+</ul>
+<blockquote>
+<p>eg. Google、Android、Facebook</p>
+</blockquote>
+<ul>
+<li>专有名词使用正确的大小写</li>
+</ul>
+<blockquote>
+<p>  eg. GitHub、iOS、iPhone 6s、MacBook Pro</p>
+</blockquote>
+<ul>
+<li>首行不要缩进</li>
+</ul>
+<blockquote>
+<p>这点可能有人不同意，但是我要在这里解释下，在说明之前我们必须弄明白「首行缩进」的目的是什么。</p>
+<p>「每段之前空两格」是我们从小学写作文就养成的习惯，也是正式文体的格式要求，其目的是为了区分自然段。</p>
+<p>但是像我们现在接触的阅读，都是没有固定的格式要求的，如微信公众号、电子文档等，所以大家一般都采用「空出一行」进行自然段与自然段之间的区分，这种写作方式非常省事，而且很整齐。</p>
+<p>所以，我认为这种应该是最科学的方式，只要没有明确的格式要求，写作的排版无须首行缩进。</p>
+<p>最后，你可能会问，以上这些原则是业界标准么？我不敢保证，但是你不妨看下 「Apple 中国官网」、「Microsoft<br>中国官网」、公众号「小道消息」、「MacTalk」等的排版，基本都是使用以上排版标准。</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前几天被朋友吐槽排版太烂了，今天偶然看到这篇文章，然后就转载了过来，由于转载原因可能文章没有原文格式美观，有兴趣请点击链接查看原文。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;原文转载自&lt;a href=&quot;http://stormzhang.com/2017/03/16/chinese-copywriting/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;stormzhang&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="其他" scheme="http:%5C%5Chexin.life/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="转载" scheme="http:%5C%5Chexin.life/tags/%E8%BD%AC%E8%BD%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>瀑布流</title>
+    <link href="http:%5C%5Chexin.life/2017/04/09/title-3/"/>
+    <id>http:\\hexin.life/2017/04/09/title-3/</id>
+    <published>2017-04-09T15:09:45.000Z</published>
+    <updated>2017-04-15T13:15:20.135Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><blockquote class="blockquote-center">相信你所相信的，坚持你所坚持的</blockquote>
+
+
+<p> 好久没有写博客了，学习途中经常遇到好多小问题，感觉还是动手太少了，不过感觉好多视频中老师的代码是错误的，也不知道他们是怎么运行成功的，调试+百度了好久才修正过来，不过感觉不错，<em>可能是故意的吧，为了让我们自己动手查询</em>，今天实现了一下瀑布流的布局就发在这里吧，具体的注释我都放在代码里了。</p>
+ <a id="more"></a>   
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">    &lt;html&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">    &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;</div><div class="line">    </div><div class="line">    &lt;title&gt;瀑布流&lt;/title&gt;</div><div class="line">    &lt;style type="text/css"&gt;</div><div class="line">        </div><div class="line">        *&#123;padding: 0;margin:0;&#125;</div><div class="line">        #main&#123;</div><div class="line">            position: relative;</div><div class="line">        &#125;</div><div class="line">        .pin&#123;</div><div class="line">            padding: 15px 0 0 15px;</div><div class="line">            float:left;</div><div class="line">        &#125;</div><div class="line">        .box&#123;</div><div class="line">            padding: 10px;</div><div class="line">            border:1px solid #ccc;</div><div class="line">            box-shadow: 0 0 6px #ccc;</div><div class="line">            border-radius: 5px;</div><div class="line">        &#125;</div><div class="line">        .box img&#123;</div><div class="line">            width:162px;</div><div class="line">            height:auto;</div><div class="line">        &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">    </div><div class="line">    &lt;body&gt;</div><div class="line">    &lt;div id="main"&gt;</div><div class="line">        &lt;div class="pin"&gt;</div><div class="line">            &lt;div class="box"&gt;</div><div class="line">                &lt;img src="./images/1.jpg"/&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">        &lt;!-- ...这里由于结构都一样就直接省去了 --&gt;</div><div class="line">        &lt;div class="pin"&gt;</div><div class="line">            &lt;div class="box"&gt;</div><div class="line">                &lt;img src="./images/1.jpg"/&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;script type="text/javascript"&gt;</div><div class="line">    </div><div class="line">    window.onload = function () &#123;</div><div class="line">        waterFall("main","pin");</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    //模拟从后台传来的json数据</div><div class="line">    var dataInt=&#123;'data':[&#123;'src':'1.jpg'&#125;,&#123;'src':'2.jpg'&#125;,&#123;'src':'3.jpg'&#125;,&#123;'src':'5.jpg'&#125;,&#123;'src':'5.jpg'&#125;,&#123;'src':'4.jpg'&#125;,&#123;'src':'6.jpg'&#125;,&#123;'src':'6.jpg'&#125;,&#123;'src':'16.jpg'&#125;,&#123;'src':'16.jpg'&#125;,&#123;'src':'16.jpg'&#125;,&#123;'src':'6.jpg'&#125;]&#125;;</div><div class="line">    </div><div class="line">    //瀑布流滚动加载</div><div class="line">    window.onscroll = function () &#123;</div><div class="line">        if(checkScroll())&#123;</div><div class="line">            var oParent = document.getElementById("main");</div><div class="line">            //	将后台传来的数据渲染进当前页面尾部</div><div class="line">            for( var i = 0; i &lt; dataInt.data.length; i++)&#123;</div><div class="line">                //创建最外层div</div><div class="line">                var oPin = document.createElement('div');</div><div class="line">                oPin.className = 'pin';</div><div class="line">                oParent.appendChild(oPin);</div><div class="line">                </div><div class="line">                //创建图片的盒子</div><div class="line">                var oBox = document.createElement('div');</div><div class="line">                oBox.className = 'box';</div><div class="line">                oPin.appendChild(oBox);</div><div class="line">                </div><div class="line">                //创建图片</div><div class="line">                var oImg = document.createElement('img');</div><div class="line">                oImg.src = "./images/" + dataInt.data[i].src;//获取传来的json中的图片</div><div class="line">                oBox.appendChild(oImg);</div><div class="line">            &#125;</div><div class="line">            waterFall("main","pin");  //将传入的图片进行瀑布流排序</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    //检测是否具备加载条件--&gt;当最后一个盒子出现在视线中时开始加载</div><div class="line">    function checkScroll () &#123;</div><div class="line">        //获取整个大盒子</div><div class="line">        var oParent = document.getElementById("main");</div><div class="line">        //获取所有图片</div><div class="line">        var oBoxs = getByClass(oParent,"pin");</div><div class="line">        // var oBoxs = oParent.getElementsByClassName("pin");</div><div class="line">        </div><div class="line">        //获取最后一个盒子的高度</div><div class="line">        var lastBoxH = oBoxs[oBoxs.length - 1].offsetTop ;</div><div class="line">        </div><div class="line">        //获取滚动距离</div><div class="line">        var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;</div><div class="line">        </div><div class="line">        //获取浏览器窗口的高度</div><div class="line">        // var clienHeight = document.documentElement.clientHeight;</div><div class="line">        var clientHeight = document.body.clientHeight || document.documentElement.clientHeight </div><div class="line">        console.log(scrollTop);</div><div class="line">        console.log(clientHeight);</div><div class="line">        return (lastBoxH &lt; clientHeight + scrollTop) ? true : false;  //判断滚动的高度加浏览器的高度是否高于最后一个盒子的高度，即盒子是否出现在视线中</div><div class="line">    &#125;</div><div class="line">    </div><div class="line"></div><div class="line">    function waterFall( parent, pin ) &#123;</div><div class="line">        //获取整个大盒子</div><div class="line">        var oParent = document.getElementById(parent);</div><div class="line">        //获取所有图片</div><div class="line">        var oBoxs = getByClass(oParent,"pin");</div><div class="line">        // var oBoxs = oParent.getElementsByClassName("pin");</div><div class="line">        </div><div class="line">        // 获取每个盒子的宽度</div><div class="line">        var oBoxw = oBoxs[0].offsetWidth;</div><div class="line">        </div><div class="line">        //获取每一行一共有几个盒子，用Math.floor()向下取整</div><div class="line">        var cols = Math.floor(document.documentElement.clientWidth / oBoxw);</div><div class="line">        </div><div class="line">        //设置每个图片盒子的宽度都一致并居中显示</div><div class="line">        oParent.style.cssText = "width:" + oBoxw*cols + "px; margin:0 auto;";</div><div class="line">        </div><div class="line">        //存放每一列盒子高度的数组</div><div class="line">        var boxArr = [];</div><div class="line">        for(var i = 0; i &lt; oBoxs.length; i++)&#123;</div><div class="line">            </div><div class="line">            if( i &lt; cols)&#123;//遍历盒子，将盒子的高度放入数组</div><div class="line">                boxArr.push(oBoxs[i].offsetHeight);</div><div class="line">            &#125;else&#123;</div><div class="line"></div><div class="line">                //调整下一列盒子的位置</div><div class="line">                var minH = Math.min.apply(null,boxArr);   //找到数组中的最小值				var minIndex = getMinIndex(boxArr,minH); // 获取高度最低的索引值</div><div class="line">                </div><div class="line">                oBoxs[i].style.position = "absolute";</div><div class="line">                oBoxs[i].style.top = minH + "px";</div><div class="line">                oBoxs[i].style.left = minIndex*oBoxw + "px";    //盒子左边的距离等于最低盒子的索引值*每一个盒子的宽度</div><div class="line">                </div><div class="line">                /* oBoxs[i].style.left = oBoxs[minIndex].offsetWidth + "px"; //--&gt;盒子左边的距离等于最低高度盒子的左边距离 */</div><div class="line"></div><div class="line">                //此时剩余盒子会绝对定位到该位置，因此我们需要去修改数组中最低的高度</div><div class="line">                boxArr[minIndex] += oBoxs[i].offsetHeight;</div><div class="line">            &#125;		</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // 获取索引值,遍历取到和最小值相等的值	function getMinIndex ( boxArr, minH ) &#123;</div><div class="line">        for(var i = 0; i &lt; boxArr.length; i++)&#123;</div><div class="line">            if(boxArr[i] == minH)&#123;</div><div class="line">                return i;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    //获取className</div><div class="line">    function getByClass ( parent, cls ) &#123;</div><div class="line">        var oParent = document.getElementById("main");</div><div class="line">        var	oElements = oParent.getElementsByTagName("*");</div><div class="line">        var boxArr = new Array();</div><div class="line">            </div><div class="line">            for(var i = 0; i &lt; oElements.length; i++) &#123;</div><div class="line">                if(oElements[i].className == cls)&#123;</div><div class="line">                    boxArr.push(oElements[i]);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            return boxArr;</div><div class="line">    &#125;</div><div class="line">    &lt;/script&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">    &lt;/html&gt;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote class=&quot;blockquote-center&quot;&gt;相信你所相信的，坚持你所坚持的&lt;/blockquote&gt;
+
+
+&lt;p&gt; 好久没有写博客了，学习途中经常遇到好多小问题，感觉还是动手太少了，不过感觉好多视频中老师的代码是错误的，也不知道他们是怎么运行成功的，调试+百度了好久才修正过来，不过感觉不错，&lt;em&gt;可能是故意的吧，为了让我们自己动手查询&lt;/em&gt;，今天实现了一下瀑布流的布局就发在这里吧，具体的注释我都放在代码里了。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http:%5C%5Chexin.life/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="瀑布流" scheme="http:%5C%5Chexin.life/tags/%E7%80%91%E5%B8%83%E6%B5%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS学习笔记(Placeholder及CSS_hack)</title>
+    <link href="http:%5C%5Chexin.life/2017/03/31/title-2/"/>
+    <id>http:\\hexin.life/2017/03/31/title-2/</id>
+    <published>2017-03-31T15:09:45.000Z</published>
+    <updated>2017-04-15T05:39:55.256Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><p><blockquote class="blockquote-center">相信你所相信的，坚持你所坚持的</blockquote></p>
+<h1 id="IE8以下图片出现蓝色边框"><a href="#IE8以下图片出现蓝色边框" class="headerlink" title="IE8以下图片出现蓝色边框"></a>IE8以下图片出现蓝色边框</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">img&#123;</div><div class="line">        <span class="attr">border</span>:<span class="number">0</span>;  <span class="comment">/*或者border:none;*/</span></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h1 id="如何使文本以大写字母开头？"><a href="#如何使文本以大写字母开头？" class="headerlink" title="如何使文本以大写字母开头？"></a>如何使文本以大写字母开头？</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">text-transform:capitalize;</div></pre></td></tr></table></figure>
+<h1 id="强制设置以最新版本IE渲染"><a href="#强制设置以最新版本IE渲染" class="headerlink" title="强制设置以最新版本IE渲染"></a>强制设置以最新版本IE渲染</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge"</span> /&gt;</div><div class="line">    <span class="comment">//我写的页面在IE8之下全部乱掉了，用这个强制用最新版本的IE渲染</span></div></pre></td></tr></table></figure>
+<h1 id="chrome浏览器点击input框时出现边框"><a href="#chrome浏览器点击input框时出现边框" class="headerlink" title="chrome浏览器点击input框时出现边框"></a>chrome浏览器点击input框时出现边框</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//虽然我觉得还挺好看的--! </span></div><div class="line">input&#123;    <span class="attr">outline</span>:none; <span class="comment">//outline:0;    &#125;</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
+<hr>
+<h1 id="IE8及以下不支持Placeholder解决方案（基于JQ）"><a href="#IE8及以下不支持Placeholder解决方案（基于JQ）" class="headerlink" title="IE8及以下不支持Placeholder解决方案（基于JQ）"></a><a href="http://www.cnblogs.com/digdeep/p/4424487.html" target="_blank" rel="external">IE8及以下不支持Placeholder解决方案</a>（基于JQ）</h1><pre><code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">&lt;!doctype html&gt;</div><div class="line">    &lt;html&gt;</div><div class="line">    &lt;header&gt;</div><div class="line">    &lt;meta charset="utf-8"&gt;</div><div class="line">    &lt;title&gt;&lt;/title&gt;</div><div class="line">    &lt;style type="text/css"&gt;</div><div class="line">         *&#123;margin:0;padding:0;&#125;</div><div class="line">        form &#123;margin:50px;&#125;</div><div class="line">        input &#123;display:block;margin:0 0 6px 0;&#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">    &lt;/header&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">        &lt;form&gt;</div><div class="line">            用户名：&lt;input name="name" placeholder="请输入用户名"/&gt;</div><div class="line">            密码：&lt;input name="password" placeholder="请输入登陆密码"/&gt;</div><div class="line">        &lt;/form&gt;</div><div class="line">            &lt;script type="text/javascript" src="jquery-1.11.1.min.js"&gt;&lt;/script&gt;</div><div class="line">            &lt;script type="text/javascript"&gt;</div><div class="line">            $(function()&#123;</div><div class="line">                function placeholderSupport() &#123;    // 判断浏览器是否支持 placeholder</div><div class="line">                    return 'placeholder' in document.createElement('input');</div><div class="line">                &#125;</div><div class="line">                </div><div class="line">                if(!placeholderSupport())&#123;</div><div class="line">                    $(document).on('focus', '[placeholder]',function() &#123;</div><div class="line">                        var input = $(this);</div><div class="line">                        if (input.val() == input.attr('placeholder')) &#123;</div><div class="line">                            input.val('');</div><div class="line">                            input.removeClass('placeholder');</div><div class="line">                        &#125;</div><div class="line">                    &#125;);</div><div class="line">                    $(document).on('blur', '[placeholder]',function() &#123;</div><div class="line">                        var input = $(this);</div><div class="line">                        if (input.val() == '' || input.val() == input.attr('placeholder')) &#123;</div><div class="line">                            input.addClass('placeholder');</div><div class="line">                            input.val(input.attr('placeholder'));</div><div class="line">                        &#125;</div><div class="line">                    &#125;);</div><div class="line">                    $('[placeholder]').blur();</div><div class="line">                &#125;;</div><div class="line">            &#125;);</div><div class="line">    &lt;/script&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">    &lt;/html&gt;</div></pre></td></tr></table></figure>
+</code></pre><hr>
+<h1 id="常见CSS-hack"><a href="#常见CSS-hack" class="headerlink" title="常见CSS hack"></a>常见<a href="http://baike.baidu.com/item/css%20hack" target="_blank" rel="external">CSS hack</a></h1><p><em>不管是什么方法，书写的顺序都是Firefox的写在前面，IE7的写在中间，IE6的写在最后</em><br><strong>（1）方式一 条件注释法</strong></p>
+<p> <em>只在IE下生效</em></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[<span class="keyword">if</span> IE]&gt;</div><div class="line">    这段文字只在IE浏览器显示</div><div class="line">    &lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+<p><em>只在IE6下生效</em></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[<span class="keyword">if</span> IE <span class="number">6</span>]&gt;</div><div class="line">    这段文字只在IE6浏览器显示</div><div class="line">    &lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+<p><em>只在IE6以上版本生效</em></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[<span class="keyword">if</span> gte IE <span class="number">6</span>]&gt;</div><div class="line">    这段文字只在IE6以上(包括)版本IE浏览器显示</div><div class="line">    &lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+<p><em>只在IE8上不生效</em></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[<span class="keyword">if</span> ! IE <span class="number">8</span>]&gt;</div><div class="line">    这段文字在非IE8浏览器显示</div><div class="line">    &lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+<p><em>非IE浏览器生效</em></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[<span class="keyword">if</span> !IE]&gt;</div><div class="line">    这段文字只在非IE浏览器显示</div><div class="line">    &lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+<p><strong>（2）方式二 类内属性前缀法</strong></p>
+<p>在标准模式中：</p>
+<ul>
+<li>“-″减号是IE6专有的hack</li>
+<li>“\9″ IE6/IE7/IE8/IE9/IE10都生效</li>
+<li>“\0″ IE8/IE9/IE10都生效，是IE8/9/10的hack</li>
+<li>“\9\0″ 只对IE9/IE10生效，是IE9/10的hack</li>
+</ul>
+<ul>
+<li>IE6能识别 *，但不能识别 !important</li>
+<li>IE7能识别 *，也能识别!important</li>
+<li>FF不能识别 *，但能识别!important,下划线_</li>
+<li>IE6支持下划线</li>
+<li>IE7和firefox均不支持下划线</li>
+</ul>
+<p><strong>（3）CSS hack方式三：选择器前缀法</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">*html     <span class="comment">//*前缀只对IE6生效</span></div><div class="line">    *+html    <span class="comment">//*+前缀只对IE7生效 </span></div><div class="line">    @media screen\<span class="number">9</span>&#123;...&#125;    <span class="comment">//只对IE6/7生效</span></div><div class="line">    @media \<span class="number">0</span>screen &#123;body &#123; <span class="attr">background</span>: red; &#125;&#125;    <span class="comment">//只对IE8有效</span></div><div class="line">    @media \<span class="number">0</span>screen\,screen\<span class="number">9</span>&#123;body &#123; <span class="attr">background</span>: blue; &#125;&#125;    <span class="comment">//只对IE6/7/8有效</span></div><div class="line">    @media screen\<span class="number">0</span> &#123;body &#123; <span class="attr">background</span>: green; &#125;&#125;    <span class="comment">//只对IE8/9/10有效</span></div><div class="line">    @media screen and (min-width:<span class="number">0</span>\<span class="number">0</span>) &#123;body &#123; <span class="attr">background</span>: gray; &#125;&#125;     <span class="comment">//只对IE9/10有效</span></div><div class="line">    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) &#123;body &#123; <span class="attr">background</span>: orange; &#125;&#125;     <span class="comment">//只对IE10有效等等</span></div></pre></td></tr></table></figure>
+<p><strong>以: “ #demo {width:100px;} “为例;</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#demo &#123;width:100px;&#125; /*被FIREFOX,IE6,IE7执行.*/</div><div class="line">    *html #demo &#123;width:120px;&#125; /*会被IE6执行,之前的定义会被后来的覆盖,所以#demo的宽度在IE6就为120px; */</div><div class="line">    *+html #demo &#123;width:130px;&#125; /*会被IE7执行*/</div><div class="line">    所以最后,#demo的宽度在三个浏览器的解释为: FIREFOX:100px; ie6:120px; ie7:130px;</div></pre></td></tr></table></figure>
+<p><strong>IE8 最新css hack：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="string">"\9"</span>　例:<span class="string">"border:1px\9;"</span>    <span class="comment">//这里的"\9"可以区别所有IE和FireFox.（只针对IE9 Hack）</span></div><div class="line">        <span class="string">"\0"</span>　<span class="comment">//IE8识别，--&gt;IE6、IE7不能.</span></div><div class="line">        <span class="string">"*"</span>　<span class="comment">//IE6、IE7可以识别.--&gt;IE8、FireFox不能.</span></div><div class="line">        <span class="string">"_"</span>　<span class="comment">//IE6可以识别"_",--&gt;IE7、IE8、FireFox不能.</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>Placeholder源自网上资料，点击标题即进入原网址，本人新手，没怎么用过hack，从百度百科整理一部分，作为以后查询方便，如果有什么问题，希望大神多多指点。</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;blockquote class=&quot;blockquote-center&quot;&gt;相信你所相信的，坚持你所坚持的&lt;/blockquote&gt;&lt;/p&gt;
+&lt;h1 id=&quot;IE8以下图片出现蓝色边框&quot;&gt;&lt;a href=&quot;#IE8以下图片出现蓝色边框&quot; class=&quot;headerlink&quot; title=&quot;IE8以下图片出现蓝色边框&quot;&gt;&lt;/a&gt;IE8以下图片出现蓝色边框&lt;/h1&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;img&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;attr&quot;&gt;border&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;  &lt;span class=&quot;comment&quot;&gt;/*或者border:none;*/&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;如何使文本以大写字母开头？&quot;&gt;&lt;a href=&quot;#如何使文本以大写字母开头？&quot; class=&quot;headerlink&quot; title=&quot;如何使文本以大写字母开头？&quot;&gt;&lt;/a&gt;如何使文本以大写字母开头？&lt;/h1&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;text-transform:capitalize;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;强制设置以最新版本IE渲染&quot;&gt;&lt;a href=&quot;#强制设置以最新版本IE渲染&quot; class=&quot;headerlink&quot; title=&quot;强制设置以最新版本IE渲染&quot;&gt;&lt;/a&gt;强制设置以最新版本IE渲染&lt;/h1&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;meta http-equiv=&lt;span class=&quot;string&quot;&gt;&quot;X-UA-Compatible&quot;&lt;/span&gt; content=&lt;span class=&quot;string&quot;&gt;&quot;IE=edge&quot;&lt;/span&gt; /&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//我写的页面在IE8之下全部乱掉了，用这个强制用最新版本的IE渲染&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;chrome浏览器点击input框时出现边框&quot;&gt;&lt;a href=&quot;#chrome浏览器点击input框时出现边框&quot; class=&quot;headerlink&quot; title=&quot;chrome浏览器点击input框时出现边框&quot;&gt;&lt;/a&gt;chrome浏览器点击input框时出现边框&lt;/h1&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//虽然我觉得还挺好看的--! &lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;input&amp;#123;    &lt;span class=&quot;attr&quot;&gt;outline&lt;/span&gt;:none; &lt;span class=&quot;comment&quot;&gt;//outline:0;    &amp;#125;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http:%5C%5Chexin.life/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="CSS学习笔记" scheme="http:%5C%5Chexin.life/tags/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HEXO+GitHub搭建个人博客</title>
+    <link href="http:%5C%5Chexin.life/2017/03/28/title-1/"/>
+    <id>http:\\hexin.life/2017/03/28/title-1/</id>
+    <published>2017-03-28T15:15:03.000Z</published>
+    <updated>2017-06-06T09:25:34.820Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script> <blockquote class="blockquote-center">白日做的梦要靠自己追</blockquote>
+
+<blockquote>
+<p>一直想有一个自己的博客，前段时间看到HEXO+GitHub傻瓜式搭建，就利用周末花了俩天时间搭建了一个自己的博客。花俩天时间是因为走了太多弯路~搞了太多错误，在这里把流程梳理一下，希望大家不要像我一样走弯路，顺便填入第一篇博客0.0，没有基础的同学也可以利用它搭建自己的博客，我觉得博客不一定要写技术，用来当做自己的私人空间也是很不错的。这里特别感谢<a href="http://chasen-g.cn/" target="_blank" rel="external">Chasen’s </a>，帮我解决了好多问题。 </p>
+</blockquote>
+<hr>
+<h2 id="关于HEXO"><a href="#关于HEXO" class="headerlink" title="关于HEXO"></a>关于HEXO</h2><blockquote>
+<p>hexo是一款基于<a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a>的静态博客框架，可以生成静态文件并且一键部署到 github pages 上，并且他可以使用 markdown 来编写文章，十分方便。</p>
+</blockquote>
+<h2 id="搭建前环境准备"><a href="#搭建前环境准备" class="headerlink" title="搭建前环境准备"></a>搭建前环境准备</h2><p>安装<a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a><br>进入官网，他会自动提取你的电脑型号，有俩个版本下载，左边的是稳定版，右边的是一直更新的前沿版，我们这里随便选择一个就好了，我个人选择了右边的</p>
+<p><img src="http://i1.piimg.com/567571/f11f62b5f567f034.png" alt="node下载"></p>
+<ol>
+<li>直接下载即可，只有13MB大小，然后一路默认安装就好了</li>
+<li>安装好以后按 win+r 打开运行输入CMD（开始栏输入CMD也一样）</li>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">输入 node -v</div></pre></td></tr></table></figure>
+</li>
+<li><p>输出版本号即安装成功，我这里是v7.6.0版本<br><img src="http://i2.muimg.com/567571/9d667d081fc1c3b3.png" alt="这里写图片描述"></p>
+</li>
+</ol>
+<h2 id="接下来安装git"><a href="#接下来安装git" class="headerlink" title="接下来安装git"></a>接下来安装<a href="https://git-scm.com/downloads" target="_blank" rel="external">git</a></h2><p>同上进入git  然后点击下载然后默认安装即可（30MB左右），安装好以后右键会有</p>
+<blockquote>
+<p>git gui here<br>git bush here</p>
+</blockquote>
+<p><img src="http://i4.buimg.com/567571/241888e67827ea3e.png" alt="这里写图片描述"><br>不懂git命令也没关系，跟着命令走就可以了，但是学习会对开发很有帮助的，推荐几个网址吧：</p>
+<blockquote>
+<ul>
+<li><a href="https://git-scm.com/docs" target="_blank" rel="external">Git-Reference</a>(官网首选,当然是英文的)</li>
+<li><a href="http://www.bootcss.com/p/git-guide/" target="_blank" rel="external">git-简易指南</a>（中文简易指南，基本命令够用了）</li>
+<li><a href="http://opiece.me/2015/04/06/git-basic-commands/" target="_blank" rel="external">git-常用的基础命令</a></li>
+</ul>
+</blockquote>
+<h2 id="然后是编辑器Sublime-Text（多选）"><a href="#然后是编辑器Sublime-Text（多选）" class="headerlink" title="然后是编辑器Sublime Text（多选）"></a>然后是编辑器<a href="http://www.sublimetext.com/" target="_blank" rel="external">Sublime Text</a>（多选）</h2><blockquote>
+<p><a href="http://www.vscode.org/" target="_blank" rel="external">VS Code</a> 微软新发编辑器，虽然是新发，但是功能异常强大<br><a href="https://atom.io/" target="_blank" rel="external">Atom</a> 由GitHub打造的属于“ 21 ” 世纪的代码编辑器<br><a href="https://notepad-plus-plus.org/" target="_blank" rel="external">Notepad++</a> 一款强大的编辑器</p>
+</blockquote>
+<p>我这里用的是<a href="http://www.sublimetext.com/" target="_blank" rel="external">sublime text3</a>，很有程序员风格的编辑器，很多插件与快捷键，特别好用，推荐一下。（中文支持不太好，用习惯就好了）。<br>不用sublime也可以，如果熟悉vim的话可以直接用vim编辑</p>
+<h2 id="注册github"><a href="#注册github" class="headerlink" title="注册github"></a>注册<a href="https://github.com/" target="_blank" rel="external">github</a></h2><p>  对于没有<a href="https://github.com/" target="_blank" rel="external">GitHub</a>的同学，在这里申请一个<a href="https://github.com/" target="_blank" rel="external">GitHub</a>账号吧，这个很简单，直接注册，邮箱验证就好了。<br> 申请好以后新建一个自己的仓库</p>
+<p>  <img src="http://i2.muimg.com/567571/2841bb7050ab8a1a.png" alt="github仓库创建"></p>
+<blockquote>
+<p>这里注意上面俩个箭头，<strong><em> 命名必须要一致，后面的名字要以 github.io 结尾 </em></strong></p>
+</blockquote>
+<p> <img src="http://i2.muimg.com/567571/ff8cffca9cb304a6.png" alt="引用块内容"></p>
+<p> <strong> 我当初就因为这里搞错了，导致一直到下面的步骤得重新来，这里先把hexo与github联系起来再说 </strong></p>
+<p> <img src="http://i4.buimg.com/567571/26dca9ec927dae3e.png" alt="引用块内容"></p>
+<h2 id="把git与你的github联系起来"><a href="#把git与你的github联系起来" class="headerlink" title="把git与你的github联系起来"></a>把git与你的github联系起来</h2><blockquote>
+<p>右键git bush here 输入命令绑定你的邮箱和名字，这里是我的~替换成自己的即可<br><img src="http://i2.muimg.com/567571/42e1a5a0bfa86767.png" alt="这里写图片描述"></p>
+</blockquote>
+<h2 id="接下来生成秘钥"><a href="#接下来生成秘钥" class="headerlink" title="接下来生成秘钥"></a>接下来生成秘钥</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C <span class="string">"XXX@XXX.com"</span></div></pre></td></tr></table></figure>
+<p><strong> 这里C是大写！！！</strong><br><img src="http://ww3.sinaimg.cn/large/0060lm7Tgy1fe2sakgczdj30f103t74e.jpg" alt="这里写图片描述"></p>
+<p>如图然后连续按回车即可<br>然后在#user_id/.ssh目录下会生成两个文件，id_rsa.pub 和 id_rsa. </p>
+<p><img src="http://ww3.sinaimg.cn/large/0060lm7Tgy1fe2rtqy319j30jj05paar.jpg" alt="我这里是默认安装的，直接在C盘用户，管理员，.SSH文件下"></p>
+<p>利用编辑器打开rsa文件，将里面的内容copy，复制在github，在SSH设置页面添加刚才的SSH文件也就是id_rsa.pub的内容即可。</p>
+<p><img src="http://ww2.sinaimg.cn/large/0060lm7Tgy1fe2rtqy15pj30tx0cjjsr.jpg" alt="在github中选择setting--&gt;ssh and GPG 添加SSH"> </p>
+<p>这里会验证一下github的密码</p>
+<p>最后来验证一下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -T git@github.com</div></pre></td></tr></table></figure></p>
+<p>如果成功他让你输入yes然后会返回一个成功的信息<br><img src="http://ww4.sinaimg.cn/large/0060lm7Tgy1fe2sgxkqvvj30fn051mxg.jpg" alt="这里写图片描述"></p>
+<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p><strong> 不要着急，马上就可以看到属于你的博客了~ </strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-cli -g</div></pre></td></tr></table></figure>
+<ol>
+<li>然后可以利用 Git 一路 cd 到 hexo 的安装目录，或者进去目录，右键 git bush here 即可（hexo init 的文件夹必须为空文件夹）</li>
+<li>目录初始化完毕后，在根目录执行下面命令安装提交的命令。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save-dev</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong>然后依次执行</strong></p>
+<blockquote>
+<ol>
+<li>hexo init      # 初始化      </li>
+<li>hexo g         # 完整命令为hexo generate，生成静态文件</li>
+<li>hexo s      #完整命令为hexo server，打开本地服务</li>
+</ol>
+<p><strong>日后方便提交和防止出错</strong></p>
+<ul>
+<li>hexo clean     #清理临时文件</li>
+<li>hexo d -g    #快速生成并提交</li>
+</ul>
+</blockquote>
+<p>打开本地服务，这时候打开浏览器输入</p>
+<blockquote>
+<p><a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a></p>
+</blockquote>
+<p>看看你博客页面吧~官方默认会有一篇 hello world，当然 ，现在还只是本地的。只有你自己能看到</p>
+<h2 id="将静态页面提交到github"><a href="#将静态页面提交到github" class="headerlink" title="将静态页面提交到github"></a>将静态页面提交到github</h2><p> 此时就用到了编辑器，打开_config.yml文件，直接拖入编辑器即可自行修改</p>
+<p> 没有编辑器的同学， 可以cd(进入的意思)到hexo的文件夹下，输入 vim _config.yml<br> 然后直接移动下图的位置，按键盘“ a ”，来插入文本，然后就可以修改了，修改完之后按 ESC ，然后按“ Shif ” 加 “ ：”，输入“ wq ”，意思是保存加退出，如果直接退出就输入“ q ”即可。</p>
+<p> <img src="http://ww3.sinaimg.cn/large/0060lm7Tgy1fe2rpumoeuj30iv0d5tal.jpg" alt="这里写图片描述"><br> <img src="http://ww1.sinaimg.cn/large/0060lm7Tgy1fe2rpulywmj30io09pwfe.jpg" alt="这里写图片描述">  </p>
+<blockquote>
+<p>然后修改如下：<br>将repo后面的内容改成自己的(没有独立新建分支的话branch可以不写)</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">      type: git</div><div class="line">      repo: git@github.com:yourself/yourself.github.io.git</div><div class="line">      branch: master</div></pre></td></tr></table></figure>
+<p>提交到 github<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d -g       #组合命令，命令等同于hexo g  再 hexo d</div></pre></td></tr></table></figure></p>
+<p>这时候 github 已经有了你提交的内容( public 文件夹下的内容 ), 然后输入你开始的 github 仓库名字，例如 <em>*</em>.github.io</p>
+<p>就可以看到你的博客页面了…</p>
+<h2 id="关于主题安装"><a href="#关于主题安装" class="headerlink" title="关于主题安装"></a>关于主题安装</h2><p>主题有好多种，这里我推荐<a href="http://theme-next.iissnan.com/" target="_blank" rel="external">NEXT</a>,简洁，大方，支持多语言，一句代码即可下载NEXT最新版，如果需要其他的可以上官网查找喜欢的，添加方式是一样的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https:<span class="comment">//github.com/iissnan/hexo-theme-next themes/next</span></div></pre></td></tr></table></figure>
+<p> 然后打开 _config.yml文件，如图找到theme修改为next即可</p>
+<p><img src="http://i2.muimg.com/567571/767faa63e5360b89.png" alt="这里写图片描述"> </p>
+<blockquote>
+<p>我这里推荐一下<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">yilia</a>。更多好看主题可以去官网搜寻（也可以自己写哦~）。</p>
+</blockquote>
+<h2 id="关于文章发布"><a href="#关于文章发布" class="headerlink" title="关于文章发布"></a>关于文章发布</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">new</span> <span class="string">"title"</span>    <span class="comment">// hexo new "中文标题"</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>注意这里如果发布文章是中文的话，最好标题中出现中文：hexo new “中文标题” （不然可能会出现文章乱码）<br>自动生成md文件在 source/_post 下，也可以自己创建为 .md ，注意编码格式用 UTF-8 同样是防止乱码。</p>
+</blockquote>
+<p><img src="http://i2.muimg.com/567571/deb80ae44a521f7e.png" alt="这里写图片描述"> </p>
+<blockquote>
+<p>然后打开你的 title-n.md 文件编写文章就可以了，文章需要是 markdown 格式，可以用 markdown 格式的编辑器编写，也可以找在线的 markdown 编辑器，例如 CSDN ，<a href="https://maxiang.io/" target="_blank" rel="external">马克飞象</a>等等…可以离线使用，支持导出为 MD ，HTML 格式，很方便。<br>关于添加图片，我推荐<a href="http://jiantuku.com/" target="_blank" rel="external">极简图床</a>，简单方便。</p>
+</blockquote>
+<p><strong><em> hexo 常用命令( # 后为注释 ) </em></strong></p>
+<blockquote>
+<p>hexo init                    # 初始化<br>hexo clean                # 清理临时文件<br>hexo g                     # 完整命令为 hexo generate ，生成静态文件<br>hexo s                     # 完整命令为 hexo server ，打开本地服务<br>hexo d                     # 完整命令为 hexo deploy ，用于将本地文件发布到 github 上<br>hexo new “postName”        # 新建文章<br>hexo new page “pageName”    # 新建页面<br>hexo help                    # 帮助</p>
+</blockquote>
+<hr>
+<p>有什么建议或者改正，希望大家在下面留言，期望同大家共同交流，进步。</p>
+<p>另外推荐几篇大神的 blog ：</p>
+<ul>
+<li><a href="http://www.zipperary.com/categories/hexo/" target="_blank" rel="external">hexo 系列教程</a> </li>
+<li><a href="https://hexo.io/docs/" target="_blank" rel="external">HEXO 官方文档</a> </li>
+<li><a href="https://zespia.tw/blog/2012/10/11/hexo-debut/" target="_blank" rel="external">Hexo 作者博客</a>  </li>
+<li><a href="http://ibruce.info/2013/11/22/hexo-your-blog/" target="_blank" rel="external">hexo 你的博客|不如</a> </li>
+<li><a href="http://opiece.me/2015/04/09/hexo-guide/" target="_blank" rel="external">使用 hexo 搭建个人博客</a> </li>
+<li><a href="http://wiki.jikexueyuan.com/project/hexo-document/" target="_blank" rel="external">极客学院提供的中文文档</a> </li>
+<li><a href="http://chasen-g.cn/" target="_blank" rel="external">帮了我很大忙的 Chasen’s</a></li>
+<li><a href="http://myzchi.com/2015/05/02/hexo-github%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B%E6%80%BB%E7%BB%93/" target="_blank" rel="external">hexo + github 搭建过程总结</a> </li>
+<li><a href="https://linghucong.js.org/2016/04/15/2016-04-15-hexo-github-pages-blog/" target="_blank" rel="external">手把手教你使用 hexo+github 搭建个人博客</a>  </li>
+<li><a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank" rel="external">搭建一个免费的，无限流量的 blog（阮一峰）</a></li>
+</ul>
+<blockquote class="blockquote-center">相信你所相信的，坚持你所坚持的</blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt; &lt;blockquote class=&quot;blockquote-center&quot;&gt;白
+    
+    </summary>
+    
+      <category term="hexo" scheme="http:%5C%5Chexin.life/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="http:%5C%5Chexin.life/tags/hexo/"/>
+    
+  </entry>
+  
+</feed>
