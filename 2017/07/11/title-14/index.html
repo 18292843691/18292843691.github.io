@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="加载动画," />
+  <meta name="keywords" content="转载," />
 
 
 
@@ -89,17 +89,22 @@
 
 
 
-<meta name="description" content="利用 css3结构1234&amp;lt;div id=&amp;quot;loading&amp;quot;&amp;gt;  &amp;lt;div id=&amp;quot;loading-line&amp;quot;&amp;gt;  &amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt; 定制样式 利用 CSS3 的 animation 实现进度条动画  1234567891011121314151617181920212223242526272829">
-<meta name="keywords" content="加载动画">
+<meta name="description" content="缓动的基础知识自然界中没有东西是从一点呈线性地移动到另一点。现实中，物体在移动时往往会加速或减速。我们的大脑习惯于期待这种运动，因此在做动画时，应利用此规律。自然的运动会让用户对您的应用感觉更舒适，从而产生更好的总体体验。  缓动使您的动画感觉更自然。 为 UI 元素选择缓出动画。 避免缓入或缓入缓出动画，除非可以使其保持简短；这类动画可能让最终用户觉得很迟钝。  在经典动画中，缓慢开始然后加">
+<meta name="keywords" content="转载">
 <meta property="og:type" content="article">
-<meta property="og:title" content="实现顶部进度条">
-<meta property="og:url" content="http:\\hexin.life/2017/07/11/title-12/index.html">
+<meta property="og:title" content="关于CSS 缓动">
+<meta property="og:url" content="http:\\hexin.life/2017/07/11/title-14/index.html">
 <meta property="og:site_name" content="dayDream&#39;s blog">
-<meta property="og:description" content="利用 css3结构1234&amp;lt;div id=&amp;quot;loading&amp;quot;&amp;gt;  &amp;lt;div id=&amp;quot;loading-line&amp;quot;&amp;gt;  &amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt; 定制样式 利用 CSS3 的 animation 实现进度条动画  1234567891011121314151617181920212223242526272829">
-<meta property="og:updated_time" content="2017-07-11T09:53:58.569Z">
+<meta property="og:description" content="缓动的基础知识自然界中没有东西是从一点呈线性地移动到另一点。现实中，物体在移动时往往会加速或减速。我们的大脑习惯于期待这种运动，因此在做动画时，应利用此规律。自然的运动会让用户对您的应用感觉更舒适，从而产生更好的总体体验。  缓动使您的动画感觉更自然。 为 UI 元素选择缓出动画。 避免缓入或缓入缓出动画，除非可以使其保持简短；这类动画可能让最终用户觉得很迟钝。  在经典动画中，缓慢开始然后加">
+<meta property="og:image" content="https://developers.google.com/web/fundamentals/design-and-ui/animations/images/linear.png?hl=zh-cn">
+<meta property="og:image" content="https://developers.google.com/web/fundamentals/design-and-ui/animations/images/ease-out.png?hl=zh-cn">
+<meta property="og:image" content="https://developers.google.com/web/fundamentals/design-and-ui/animations/images/ease-in.png?hl=zh-cn">
+<meta property="og:image" content="https://developers.google.com/web/fundamentals/design-and-ui/animations/images/ease-in-out.png?hl=zh-cn">
+<meta property="og:updated_time" content="2017-07-11T12:38:53.938Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="实现顶部进度条">
-<meta name="twitter:description" content="利用 css3结构1234&amp;lt;div id=&amp;quot;loading&amp;quot;&amp;gt;  &amp;lt;div id=&amp;quot;loading-line&amp;quot;&amp;gt;  &amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt; 定制样式 利用 CSS3 的 animation 实现进度条动画  1234567891011121314151617181920212223242526272829">
+<meta name="twitter:title" content="关于CSS 缓动">
+<meta name="twitter:description" content="缓动的基础知识自然界中没有东西是从一点呈线性地移动到另一点。现实中，物体在移动时往往会加速或减速。我们的大脑习惯于期待这种运动，因此在做动画时，应利用此规律。自然的运动会让用户对您的应用感觉更舒适，从而产生更好的总体体验。  缓动使您的动画感觉更自然。 为 UI 元素选择缓出动画。 避免缓入或缓入缓出动画，除非可以使其保持简短；这类动画可能让最终用户觉得很迟钝。  在经典动画中，缓慢开始然后加">
+<meta name="twitter:image" content="https://developers.google.com/web/fundamentals/design-and-ui/animations/images/linear.png?hl=zh-cn">
 
 
 
@@ -127,12 +132,12 @@
 
 
 
-  <link rel="canonical" href="http:\\hexin.life/2017/07/11/title-12/"/>
+  <link rel="canonical" href="http:\\hexin.life/2017/07/11/title-14/"/>
 
 
 
 
-  <title> 实现顶部进度条 | dayDream's blog </title>
+  <title> 关于CSS 缓动 | dayDream's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -284,7 +289,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http:\\hexin.life/2017/07/11/title-12/">
+    <link itemprop="mainEntityOfPage" href="http:\\hexin.life/2017/07/11/title-14/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="白日梦想家">
@@ -305,7 +310,7 @@
             
             
               
-                实现顶部进度条
+                关于CSS 缓动
               
             
           </h2>
@@ -320,7 +325,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-11T17:51:05+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-11T20:28:04+08:00">
                 2017-07-11
               </time>
             
@@ -343,8 +348,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/categories/转载/" itemprop="url" rel="index">
+                    <span itemprop="name">转载</span>
                   </a>
                 </span>
 
@@ -361,7 +366,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2017/07/11/title-12/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/2017/07/11/title-14/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -393,15 +398,42 @@
       
 
       
-        <script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><h2 id="利用-css3"><a href="#利用-css3" class="headerlink" title="利用 css3"></a>利用 css3</h2><h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;loading&quot;&gt;</div><div class="line">  &lt;div id=&quot;loading-line&quot;&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<h3 id="定制样式"><a href="#定制样式" class="headerlink" title="定制样式"></a>定制样式</h3><blockquote>
-<p>利用 CSS3 的 animation 实现进度条动画</p>
-</blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#loading</span> &#123;</div><div class="line">          <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">          <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">          <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">          <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">          <span class="attribute">position</span>: fixed;</div><div class="line">          <span class="attribute">z-index</span>: <span class="number">99</span>;</div><div class="line">      &#125;</div><div class="line"></div><div class="line">      <span class="selector-id">#loading-line</span> &#123;</div><div class="line">          <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">          <span class="attribute">height</span>: <span class="number">5px</span>;</div><div class="line">          <span class="attribute">position</span>: absolute;</div><div class="line">          <span class="attribute">z-index</span>: <span class="number">100</span>;</div><div class="line">          <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">          <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(204,24,30);</div><div class="line">          <span class="attribute">-webkit-animation</span>: line <span class="number">3s</span>;</div><div class="line">                  <span class="attribute">animation</span>: line <span class="number">3s</span>;</div><div class="line">      &#125;</div><div class="line"></div><div class="line">      @-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> line &#123;</div><div class="line">          0% &#123;</div><div class="line">              <span class="attribute">width</span>: <span class="number">0%</span>;</div><div class="line">          &#125;</div><div class="line">          50% &#123;</div><div class="line">              <span class="attribute">width</span>: <span class="number">50%</span>;</div><div class="line">          &#125;</div><div class="line">          100% &#123;</div><div class="line">              <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">          &#125;</div><div class="line">      &#125;</div><div class="line"></div><div class="line">      @<span class="keyword">keyframes</span> line &#123;</div><div class="line">          0% &#123;</div><div class="line">              <span class="attribute">width</span>: <span class="number">0%</span>;</div><div class="line">          &#125;</div><div class="line">          50% &#123;</div><div class="line">              <span class="attribute">width</span>: <span class="number">50%</span>;</div><div class="line">          &#125;</div><div class="line">          100% &#123;</div><div class="line">              <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">          &#125;</div><div class="line">      &#125;</div></pre></td></tr></table></figure>
-<h2 id="利用-jQuery"><a href="#利用-jQuery" class="headerlink" title="利用 jQuery"></a>利用 jQuery</h2><h3 id="结构-1"><a href="#结构-1" class="headerlink" title="结构"></a>结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;loading&quot;&gt;</div><div class="line">  &lt;div id=&quot;loading-line&quot;&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<h3 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#loading</span> &#123;</div><div class="line">         <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">         <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">         <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">         <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">         <span class="attribute">position</span>: fixed;</div><div class="line">         <span class="attribute">z-index</span>: <span class="number">99</span>;</div><div class="line">     &#125;</div><div class="line"></div><div class="line">     <span class="selector-id">#loading-line</span> &#123;</div><div class="line">         <span class="attribute">width</span>: <span class="number">0%</span>;</div><div class="line">         <span class="attribute">height</span>: <span class="number">5px</span>;</div><div class="line">         <span class="attribute">position</span>: absolute;</div><div class="line">         <span class="attribute">z-index</span>: <span class="number">100</span>;</div><div class="line">         <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">         <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(204,24,30,1);</div><div class="line">     &#125;</div></pre></td></tr></table></figure>
-<h3 id="利用-jQuery-的-animation-实现动画效果"><a href="#利用-jQuery-的-animation-实现动画效果" class="headerlink" title="利用 jQuery 的 animation 实现动画效果"></a>利用 jQuery 的 animation 实现动画效果</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'#loading-line'</span>).animate(&#123; <span class="attr">width</span>: <span class="string">'1%'</span> &#125;, <span class="number">1000</span>)</div><div class="line">      $(<span class="string">'#loading-line'</span>).animate(&#123; <span class="attr">width</span>: <span class="string">'99%'</span> &#125;, <span class="number">1000</span>)</div><div class="line">      $(<span class="string">'#loading-line'</span>).animate(&#123; <span class="attr">width</span>: <span class="string">'100%'</span> &#125;, <span class="number">1000</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">          $(<span class="string">'#loading'</span>).fadeOut();    <span class="comment">//加载至100%时，进度条淡出</span></div><div class="line">      &#125;)</div></pre></td></tr></table></figure>
-<blockquote class="blockquote-center"> 还好我没放弃 </blockquote>
+        <script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><h2 id="缓动的基础知识"><a href="#缓动的基础知识" class="headerlink" title="缓动的基础知识"></a>缓动的基础知识</h2><p>自然界中没有东西是从一点呈线性地移动到另一点。现实中，物体在移动时往往会加速或减速。我们的大脑习惯于期待这种运动，因此在做动画时，应利用此规律。自然的运动会让用户对您的应用感觉更舒适，从而产生更好的总体体验。</p>
+<ul>
+<li>缓动使您的动画感觉更自然。</li>
+<li>为 UI 元素选择缓出动画。</li>
+<li>避免缓入或缓入缓出动画，除非可以使其保持简短；这类动画可能让最终用户觉得很迟钝。</li>
+</ul>
+<p>在经典动画中，缓慢开始然后加速的动画术语是“慢入”，快速开始然后减速的动画被称为“慢出”。网络上对于这些动画最常用的术语分别是“缓入”和“缓出”。有时两种动画相组合，称为“缓入缓出”。缓动实际上是使动画不再那么尖锐或生硬的过程。</p>
+<h2 id="缓动关键字"><a href="#缓动关键字" class="headerlink" title="缓动关键字"></a>缓动关键字</h2><p>CSS 变换和动画都允许您<a href="https://developers.google.com/web/fundamentals/design-and-ui/animations/choosing-the-right-easing?hl=zh-cn" target="_blank" rel="external">选择要为动画使用的缓动类型</a>。您可以使用影响相关动画的缓动（或有时称为 timing）的关键字。还可以[完全自定义您的缓动(<a href="https://developers.google.com/web/fundamentals/design-and-ui/animations/custom-easing?hl=zh-cn)，借此方式更自由地表达应用的个性。" target="_blank" rel="external">https://developers.google.com/web/fundamentals/design-and-ui/animations/custom-easing?hl=zh-cn)，借此方式更自由地表达应用的个性。</a></p>
+<p>以下是可在 CSS 中使用的一些关键字：</p>
+<ul>
+<li>linear</li>
+<li>ease-in</li>
+<li>ease-out</li>
+<li>ease-in-out<br>资料来源：<a href="http://www.w3.org/TR/css3-transitions/#transition-timing-function-property" target="_blank" rel="external">CSS 变换，W3C</a></li>
+</ul>
+<p>还可以使用 steps 关键字，它允许您创建具有离散步骤的变换，但上面列出的关键字对于创建感觉自然的动画最有用，并且这绝对是您要的效果。</p>
+<h2 id="线性动画"><a href="#线性动画" class="headerlink" title="线性动画"></a>线性动画</h2><hr>
+<p>没有任何缓动的动画称为线性动画。线性变换的图形看起来像这样：</p>
+<p>随着时间推移，其值以等量增加。采用线性运动时，动画内容往往显得很僵硬，不自然，让用户觉得不协调。一般来说，应避免线性运动。</p>
+<p>不管通过 CSS 还是 JavaScript 来编写动画代码，您将发现始终有线性运动的选项。<br><img src="https://developers.google.com/web/fundamentals/design-and-ui/animations/images/linear.png?hl=zh-cn" alt="线性动画"></p>
+<p><a href="https://googlesamples.github.io/web-fundamentals/fundamentals/design-and-ui/animations/box-move-linear.html" target="_blank" rel="external">查看线性动画</a></p>
+<p>要通过 CSS 实现上述效果，代码将类似下面这样：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">transition</span>: <span class="selector-tag">transform</span> 500<span class="selector-tag">ms</span> <span class="selector-tag">linear</span>;</div></pre></td></tr></table></figure></p>
+<h2 id="缓出动画"><a href="#缓出动画" class="headerlink" title="缓出动画"></a>缓出动画</h2><hr>
+<p>缓出使动画在开头处比线性动画更快，还会在结尾处减速。</p>
+<p>缓出一般最适合界面，因为开头时快速使动画有反应快的感觉，同时在结尾仍允许有一点自然的减速。<br><img src="https://developers.google.com/web/fundamentals/design-and-ui/animations/images/ease-out.png?hl=zh-cn" alt="缓出动画"><br><a href="https://googlesamples.github.io/web-fundamentals/fundamentals/design-and-ui/animations/box-move-ease-out.html" target="_blank" rel="external">查看缓出动画</a></p>
+<p>有很多方法来实现缓出效果，但最简单的方法是 CSS 中的 ease-out 关键字：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="selector-tag">transition</span>: <span class="selector-tag">transform</span> 500<span class="selector-tag">ms</span> <span class="selector-tag">ease-out</span>;</div></pre></td></tr></table></figure></p>
+<h2 id="缓入动画"><a href="#缓入动画" class="headerlink" title="缓入动画"></a>缓入动画</h2><hr>
+<p>缓入动画开头慢结尾快，与缓出动画正好相反。</p>
+<p>这种动画像沉重的石头掉落一样，开始时很慢，然后快速地重重撞击地面，突然沉寂下来。</p>
+<p>但是，从交互的角度来看，缓入可能让人感觉有点不寻常，因为结尾很突然；在现实中移动的物体往往是减速，而不是突然停止。缓入还有让人感觉行动迟缓的不利效果，这会对网站或应用的响应速度给人的感觉产生负面影响。</p>
+<p><img src="https://developers.google.com/web/fundamentals/design-and-ui/animations/images/ease-in.png?hl=zh-cn" alt=""><br><a href="https://googlesamples.github.io/web-fundamentals/fundamentals/design-and-ui/animations/box-move-ease-in.html" target="_blank" rel="external">查看缓入动画</a></p>
+<p>要使用缓入动画，与缓出和线性动画类似，可以使用其关键字：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="selector-tag">transition</span>: <span class="selector-tag">transform</span> 500<span class="selector-tag">ms</span> <span class="selector-tag">ease-in</span>;</div></pre></td></tr></table></figure></p>
+<h2 id="缓入缓出动画"><a href="#缓入缓出动画" class="headerlink" title="缓入缓出动画"></a>缓入缓出动画</h2><hr>
+<p>缓入并缓出与汽车加速和减速相似，使用得当时，可以实现比单纯缓出更生动的效果。</p>
+<p>由于缓入开头让动画有迟钝感，因此动画持续时间不要过长。300-500 毫秒的时间范围通常比较合适，但实际的数量主要取决于项目的感觉。也就是说，由于开头慢、中间快和结尾慢，动画将有更强的对比，可能让用户感到非常满意。<br><img src="https://developers.google.com/web/fundamentals/design-and-ui/animations/images/ease-in-out.png?hl=zh-cn" alt=""><br><a href="https://googlesamples.github.io/web-fundamentals/fundamentals/design-and-ui/animations/box-move-ease-in-out.html" target="_blank" rel="external">查看缓入缓出动画</a><br>要设置缓入缓出动画，可以使用 ease-in-out CSS 关键字：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="selector-tag">transition</span>: <span class="selector-tag">transform</span> 500<span class="selector-tag">ms</span> <span class="selector-tag">ease-in-out</span>;</div></pre></td></tr></table></figure></p>
+
       
     </div>
 
@@ -429,7 +461,7 @@
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http:\\hexin.life/2017/07/11/title-12/" title="实现顶部进度条">http:\\hexin.life/2017/07/11/title-12/</a>
+      <a href="http:\\hexin.life/2017/07/11/title-14/" title="关于CSS 缓动">http:\\hexin.life/2017/07/11/title-14/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -445,7 +477,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/加载动画/" rel="tag"># 加载动画</a>
+            <a href="/tags/转载/" rel="tag"># 转载</a>
           
         </div>
       
@@ -458,8 +490,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/06/title-11/" rel="next" title="定制 hexo">
-                <i class="fa fa-chevron-left"></i> 定制 hexo
+              <a href="/2017/07/11/title-13/" rel="next" title="CSS3 加载小动画">
+                <i class="fa fa-chevron-left"></i> CSS3 加载小动画
               </a>
             
           </div>
@@ -467,10 +499,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/11/title-13/" rel="prev" title="CSS3 加载小动画">
-                CSS3 加载小动画 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -631,7 +659,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#利用-css3"><span class="nav-number">1.</span> <span class="nav-text">利用 css3</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#结构"><span class="nav-number">1.1.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定制样式"><span class="nav-number">1.2.</span> <span class="nav-text">定制样式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用-jQuery"><span class="nav-number">2.</span> <span class="nav-text">利用 jQuery</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#结构-1"><span class="nav-number">2.1.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样式"><span class="nav-number">2.2.</span> <span class="nav-text">样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#利用-jQuery-的-animation-实现动画效果"><span class="nav-number">2.3.</span> <span class="nav-text">利用 jQuery 的 animation 实现动画效果</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#缓动的基础知识"><span class="nav-number">1.</span> <span class="nav-text">缓动的基础知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缓动关键字"><span class="nav-number">2.</span> <span class="nav-text">缓动关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性动画"><span class="nav-number">3.</span> <span class="nav-text">线性动画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缓出动画"><span class="nav-number">4.</span> <span class="nav-text">缓出动画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缓入动画"><span class="nav-number">5.</span> <span class="nav-text">缓入动画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缓入缓出动画"><span class="nav-number">6.</span> <span class="nav-text">缓入缓出动画</span></a></li></ol></div>
             
 
           </div>
