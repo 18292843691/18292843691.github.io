@@ -1,4 +1,109 @@
-<!doctype html><html class="theme-next mist use-motion" lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"><link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css"><link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css"><link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css"><meta name="keywords" content="Hexo, NexT"><link rel="alternate" href="/atom.xml" title="dayDream's blog" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0"><meta name="description" content="程序是写给人看的，顺带能在机器上运行    JS循环闭包：应用一html 结构12345   &amp;lt;p&amp;gt;test0&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;test1&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;test2&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;test3&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;test4&amp;lt;/p&amp;gt; 抛出问题123456789101112131415/* 抛出"><meta property="og:type" content="article"><meta property="og:title" content="JS函数闭包"><meta property="og:url" content="http:\\hexin.life/2017/04/15/title-7/index.html"><meta property="og:site_name" content="dayDream&#39;s blog"><meta property="og:description" content="程序是写给人看的，顺带能在机器上运行    JS循环闭包：应用一html 结构12345   &amp;lt;p&amp;gt;test0&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;test1&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;test2&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;test3&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;test4&amp;lt;/p&amp;gt; 抛出问题123456789101112131415/* 抛出"><meta property="og:updated_time" content="2017-05-04T15:37:52.487Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="JS函数闭包"><meta name="twitter:description" content="程序是写给人看的，顺带能在机器上运行    JS循环闭包：应用一html 结构12345   &amp;lt;p&amp;gt;test0&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;test1&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;test2&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;test3&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;test4&amp;lt;/p&amp;gt; 抛出问题123456789101112131415/* 抛出"><script type="text/javascript" id="hexo.configurations">var NexT = window.NexT || {};
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="dayDream's blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="程序是写给人看的，顺带能在机器上运行    JS循环闭包：应用一html 结构12345   &amp;lt;p&amp;gt;test0&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;test1&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;test2&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;test3&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;test4&amp;lt;/p&amp;gt; 抛出问题123456789101112131415/* 抛出">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS函数闭包">
+<meta property="og:url" content="http:\\hexin.life/2017/04/15/title-7/index.html">
+<meta property="og:site_name" content="dayDream&#39;s blog">
+<meta property="og:description" content="程序是写给人看的，顺带能在机器上运行    JS循环闭包：应用一html 结构12345   &amp;lt;p&amp;gt;test0&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;test1&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;test2&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;test3&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;test4&amp;lt;/p&amp;gt; 抛出问题123456789101112131415/* 抛出">
+<meta property="og:updated_time" content="2017-05-04T15:37:52.486Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS函数闭包">
+<meta name="twitter:description" content="程序是写给人看的，顺带能在机器上运行    JS循环闭包：应用一html 结构12345   &amp;lt;p&amp;gt;test0&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;test1&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;test2&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;test3&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;test4&amp;lt;/p&amp;gt; 抛出问题123456789101112131415/* 抛出">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
@@ -16,14 +121,694 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
-  };</script><link rel="canonical" href="http:\\hexin.life/2017/04/15/title-7/"><title>JS函数闭包 | dayDream's blog</title></head><body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"><div class="container sidebar-position-left page-post-detail"><div class="headband"></div><header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-brand-wrapper"><div class="site-meta custom-logo"><div class="custom-logo-site-title"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">dayDream's blog</span> <span class="logo-line-after"><i></i></span></a></div><h1 class="site-subtitle" itemprop="description"></h1></div><div class="site-nav-toggle"><button><span class="btn-bar"></span> <span class="btn-bar"></span> <span class="btn-bar"></span></button></div></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i><br>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class="menu-item menu-item-about"><a href="/about" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i><br>标签</a></li></ul><p id="dream">—白日做的梦要靠自己追</p></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><link itemprop="mainEntityOfPage" href="http:\\hexin.life/2017/04/15/title-7/"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="白日梦想家"><meta itemprop="description" content=""><meta itemprop="image" content="/images/右右.jpg"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="dayDream's blog"></span><header class="post-header"><h2 class="post-title" itemprop="name headline">JS函数闭包</h2><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i> </span><span class="post-meta-item-text">发表于</span> <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-15T21:03:54+08:00">2017-04-15 </time></span><span class="post-comments-count"><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-comment-o"></i> </span><a class="cloud-tie-join-count" href="/2017/04/15/title-7/#comments" itemprop="discussionUrl"><span class="post-comments-count join-count" itemprop="commentCount"></span> </a></span><span class="post-meta-divider">|</span> <span class="page-pv"><i class="fa fa-file-o"></i> <span class="busuanzi-value" id="busuanzi_value_page_pv"></span></span></div></header><div class="post-body" itemprop="articleBody"><script src="/assets/js/DPlayer.min.js"></script><script src="/assets/js/APlayer.min.js"></script><blockquote class="blockquote-center">程序是写给人看的，顺带能在机器上运行</blockquote><h1 id="JS循环闭包："><a href="#JS循环闭包：" class="headerlink" title="JS循环闭包："></a>JS循环闭包：</h1><h2 id="应用一"><a href="#应用一" class="headerlink" title="应用一"></a>应用一</h2><h3 id="html-结构"><a href="#html-结构" class="headerlink" title="html 结构"></a>html 结构</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   <span class="tag">&lt;<span class="name">p</span>&gt;</span>test0<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>test1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>test2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>test3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>test4<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure><h3 id="抛出问题"><a href="#抛出问题" class="headerlink" title="抛出问题"></a>抛出问题</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 抛出问题:</span></div><div class="line">                此题的目的是想每次点击对应目标时弹出对应的数字下标 0~4,但实际是无论点击哪个目标都会弹出数字5</div><div class="line">            问题所在:</div><div class="line">                arr 中的每一项的 onclick 均为一个函数实例(Function 对象),这个函数实例也产生了一个闭包域,</div><div class="line">                这个闭包域引用了外部闭包域的变量,其 function scope 的 closure 对象有个名为 i 的引用,</div><div class="line">                外部闭包域的私有变量内容发生变化,内部闭包域得到的值自然会发生改变</div><div class="line">            */</div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">myClosure</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> arr = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>);</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">                arr[i].onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                    alert(i);     <span class="comment">//无论点击哪一个均会弹出5</span></div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure><h3 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">解决方法一：</div><div class="line">        增加若干个对应的闭包域空间(	这里采用的是匿名函数),专门用来存储原先需要引用的内容(下标),不过只限于基本类型(基本类型值传递,对象类型引用传递) </div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">myClosure</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> arr = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>);</div><div class="line"></div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">                (<span class="function"><span class="keyword">function</span> (<span class="params">j</span>) </span>&#123;  </div><div class="line">                arr[i].onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                    alert(j);     </div><div class="line">                    &#125;</div><div class="line">                &#125;)(i);</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure><h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*思路：将下标作为对象属性(name:"i",value:i的值)添加到每个数组项(p对象)中*/</span></div><div class="line">此时当前 p 对象的 i 属性并不是对循环体的 i 变量的引用,而是一个独立 p 对象的属性,属性值在声明的时候就确定了(基本类型的值都是存在栈中的,当有一个基本类型变量声明其等于另一个基本变量时,此时并不是两个基本类型变量都指向一个值,而是各自有各自的值,但值是相等的)</div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">myClosure</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> arr = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>);</div><div class="line"></div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">                arr[i].i = i;</div><div class="line">                arr[i].onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                    alert(<span class="keyword">this</span>.i);     </div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure><h3 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*解决思路:</span></div><div class="line">与解决办法一有点相似但却有点不太相似.</div><div class="line">相似点:同样是增加若干个对应的闭包域空间用来存储下标</div><div class="line">不同点:解决办法一是在新增的匿名闭包空间内完成事件的绑定,而此例是将事件绑定在新增的匿名函数返回的函数上。</div><div class="line">此时绑定的函数中的 function scope 中的 closure 对象的 引用 arg 是指向将其返回的匿名函数的私有变量 arg*/</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">myClosure</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> arr = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>);</div><div class="line">            </div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;								</div><div class="line">                arr[i].onclick = (<span class="function"><span class="keyword">function</span> (<span class="params">j</span>) </span>&#123;</div><div class="line">                    </div><div class="line">                    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">                        alert(j);     </div><div class="line">                    &#125;</div><div class="line">                &#125;)(i);</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure><h3 id="方法四"><a href="#方法四" class="headerlink" title="方法四"></a>方法四</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">  <span class="comment">//思路同方法一：</span></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">myClosure</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> arr = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>);</div><div class="line">    </div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">            (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">                    <span class="keyword">var</span> tmp = i;</div><div class="line">                    arr[i].onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;						</div><div class="line">                    alert(tmp);    </div><div class="line">                &#125;</div><div class="line">            &#125;)();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><h3 id="方法五："><a href="#方法五：" class="headerlink" title="方法五："></a>方法五：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//方法五：es6新语法，let为一个块级作用域</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">myClosure</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> arr = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>);</div><div class="line">        </div><div class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">            arr[i].onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                alert(i);     </div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure><h1 id="非循环闭包："><a href="#非循环闭包：" class="headerlink" title="非循环闭包："></a>非循环闭包：</h1><h2 id="应用一："><a href="#应用一：" class="headerlink" title="应用一："></a>应用一：</h2><h3 id="html-结构-1"><a href="#html-结构-1" class="headerlink" title="html 结构"></a>html 结构</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;p id="help"&gt;Helpful notes will appear here&lt;/p&gt;</div><div class="line">    &lt;p&gt;E-mail:</div><div class="line">        &lt;input type="text" id="email" name="email"&gt;</div><div class="line">    &lt;/p&gt;</div><div class="line">    &lt;p&gt;Name:</div><div class="line">        &lt;input type="text" id="name" name="name"&gt;</div><div class="line">    &lt;/p&gt;</div><div class="line">    &lt;p&gt;Age:</div><div class="line">        &lt;input type="text" id="age" name="age"&gt;</div><div class="line">    &lt;/p&gt;</div></pre></td></tr></table></figure><h3 id="闭包解决-input-框聚焦动态提示"><a href="#闭包解决-input-框聚焦动态提示" class="headerlink" title="闭包解决 input 框聚焦动态提示"></a>闭包解决 input 框聚焦动态提示</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">showHelp</span>(<span class="params">help</span>) </span>&#123;</div><div class="line">            <span class="built_in">document</span>.getElementById(<span class="string">'help'</span>).innerHTML = help;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">makeHelpCallback</span>(<span class="params">help</span>) </span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;     <span class="comment">//形成闭包</span></div><div class="line">                showHelp(help);</div><div class="line">            &#125;;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">setupHelp</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> helpText = [&#123;</div><div class="line">                <span class="string">'id'</span>: <span class="string">'email'</span>,</div><div class="line">                <span class="string">'help'</span>: <span class="string">'Your e-mail address'</span></div><div class="line">            &#125;, &#123;</div><div class="line">                <span class="string">'id'</span>: <span class="string">'name'</span>,</div><div class="line">                <span class="string">'help'</span>: <span class="string">'Your full name'</span></div><div class="line">            &#125;, &#123;</div><div class="line">                <span class="string">'id'</span>: <span class="string">'age'</span>,</div><div class="line">                <span class="string">'help'</span>: <span class="string">'Your age (you must be over 16)'</span></div><div class="line">            &#125;];</div><div class="line"></div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; helpText.length; i++) &#123;</div><div class="line">                <span class="keyword">var</span> item = helpText[i];</div><div class="line">                <span class="built_in">document</span>.getElementById(item.id).onfocus = makeHelpCallback(item.help);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        setupHelp();</div></pre></td></tr></table></figure><h2 id="应用二"><a href="#应用二" class="headerlink" title="应用二"></a>应用二</h2><h3 id="html-结构-2"><a href="#html-结构-2" class="headerlink" title="html 结构"></a>html 结构</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Some paragraph text<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>some heading 1 text<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>some heading 2 text<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">id</span>=<span class="string">"size-12"</span>&gt;</span>12<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">id</span>=<span class="string">"size-14"</span>&gt;</span>14<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">id</span>=<span class="string">"size-16"</span>&gt;</span>16<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure><h3 id="css"><a href="#css" class="headerlink" title="css"></a>css</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">  body &#123;</div><div class="line">  font-family: Helvetica, Arial, sans-serif;</div><div class="line">  font-size: 12px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">h1 &#123;</div><div class="line">  font-size: 1.5em;</div><div class="line">&#125;</div><div class="line">h2 &#123;</div><div class="line">  font-size: 1.2em;</div><div class="line">&#125;```javascript</div><div class="line">      function makeSizer(size) &#123;</div><div class="line">      return function() &#123;</div><div class="line">        document.body.style.fontSize = size + 'px';</div><div class="line">      &#125;;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    var size12 = makeSizer(12);</div><div class="line">    var size14 = makeSizer(14);</div><div class="line">    var size16 = makeSizer(16);</div><div class="line"></div><div class="line">    document.getElementById('size-12').onclick = size12;</div><div class="line">    document.getElementById('size-14').onclick = size14;</div><div class="line">    document.getElementById('size-16').onclick = size16;</div></pre></td></tr></table></figure><blockquote><p>From:</p><ul><li><a href="https://developer.mozilla.org/cn/docs/Web/JavaScript/Closures" target="_blank" rel="external">闭包-MDN</a></li><li><a href="https://segmentfault.com/a/1190000003818163" target="_blank" rel="external">9种办法解决JS循环闭包面试经典题之for循环</a></li></ul></blockquote></div><div></div><div></div><div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong> 白日梦想家</li><li class="post-copyright-link"><strong>本文链接：</strong> <a href="http:\\hexin.life/2017/04/15/title-7/" title="JS函数闭包">http:\\hexin.life/2017/04/15/title-7/</a></li><li class="post-copyright-license"><strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！</li></ul></div><footer class="post-footer"><div class="post-nav"><div class="post-nav-next post-nav-item"><a href="/2017/04/15/title-6/" rel="next" title="HTML 5 Web 存储及WEB应用缓存"><i class="fa fa-chevron-left"></i> HTML 5 Web 存储及WEB应用缓存</a></div><span class="post-nav-divider"></span><div class="post-nav-prev post-nav-item"><a href="/2017/05/06/title-8/" rel="prev" title="copy小插件">copy小插件 <i class="fa fa-chevron-right"></i></a></div></div></footer></article><div class="post-spread"></div></div></div><div class="comments" id="comments"><div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div></div></div><div class="sidebar-toggle"><div class="sidebar-toggle-line-wrap"><span class="sidebar-toggle-line sidebar-toggle-line-first"></span> <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span> <span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id="sidebar" class="sidebar"><div class="sidebar-inner"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">文章目录</li><li class="sidebar-nav-overview" data-target="site-overview">站点概览</li></ul><section class="site-overview sidebar-panel"><div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person"><img class="site-author-image" itemprop="image" src="/images/右右.jpg" alt="白日梦想家"><p class="site-author-name" itemprop="name">白日梦想家</p><p class="site-description motion-element" itemprop="description"></p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href="/archives"><span class="site-state-item-count">11</span> <span class="site-state-item-name">日志</span></a></div><div class="site-state-item site-state-categories"><a href="/categories/index.html"><span class="site-state-item-count">6</span> <span class="site-state-item-name">分类</span></a></div><div class="site-state-item site-state-tags"><a href="/tags/index.html"><span class="site-state-item-count">9</span> <span class="site-state-item-name">标签</span></a></div></nav><div class="feed-link motion-element"><a href="/atom.xml" rel="alternate"><i class="fa fa-rss"></i> RSS</a></div><div class="links-of-author motion-element"><span class="links-of-author-item"><a href="https://github.com/18292843691" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i> GitHub </a></span><span class="links-of-author-item"><a href="mailto:hexin_9508@163.com" target="_blank" title="邮箱"><i class="fa fa-fw fa-envelope"></i> 邮箱</a></span></div><div id="music"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="450" src="//music.163.com/outchain/player?type=0&id=448532075&auto=0&height=430"></iframe></div></section><!--noindex--><section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active"><div class="post-toc"><div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JS循环闭包："><span class="nav-number">1.</span> <span class="nav-text">JS循环闭包：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#应用一"><span class="nav-number">1.1.</span> <span class="nav-text">应用一</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#html-结构"><span class="nav-number">1.1.1.</span> <span class="nav-text">html 结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#抛出问题"><span class="nav-number">1.1.2.</span> <span class="nav-text">抛出问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一："><span class="nav-number">1.1.3.</span> <span class="nav-text">方法一：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二"><span class="nav-number">1.1.4.</span> <span class="nav-text">方法二</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法三"><span class="nav-number">1.1.5.</span> <span class="nav-text">方法三</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法四"><span class="nav-number">1.1.6.</span> <span class="nav-text">方法四</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法五："><span class="nav-number">1.1.7.</span> <span class="nav-text">方法五：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#非循环闭包："><span class="nav-number">2.</span> <span class="nav-text">非循环闭包：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#应用一："><span class="nav-number">2.1.</span> <span class="nav-text">应用一：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#html-结构-1"><span class="nav-number">2.1.1.</span> <span class="nav-text">html 结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包解决-input-框聚焦动态提示"><span class="nav-number">2.1.2.</span> <span class="nav-text">闭包解决 input 框聚焦动态提示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用二"><span class="nav-number">2.2.</span> <span class="nav-text">应用二</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#html-结构-2"><span class="nav-number">2.2.1.</span> <span class="nav-text">html 结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css"><span class="nav-number">2.2.2.</span> <span class="nav-text">css</span></a></li></ol></li></ol></li></ol></div></div></section><!--/noindex--></div></aside></div></main><footer id="footer" class="footer"><div class="footer-inner"><div class="copyright">&copy; <span itemprop="copyrightYear">2017</span> <span class="with-love"><i class="fa fa-heart"></i> </span><span class="author" itemprop="copyrightHolder">白日梦想家</span></div><div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div><div class="theme-info">主题 - <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a></div><div class="busuanzi-count"><script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><span class="site-uv"><i class="fa fa-user"></i> <span class="busuanzi-value" id="busuanzi_value_site_uv"></span> </span><span class="site-pv"><i class="fa fa-eye"></i> <span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span></div></div></footer><div class="back-to-top"><i class="fa fa-arrow-up"></i></div></div><script type="text/javascript">if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http:\\hexin.life/2017/04/15/title-7/"/>
+
+
+
+
+  <title> JS函数闭包 | dayDream's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">dayDream's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+        
+        
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+        
+        
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+        
+        
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+        
+        
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+        
+        
+      
+      
+
+      
+    </ul>
+  
+
+  
+  <p id='dream'>—白日做的梦要靠自己追</p>
+
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http:\\hexin.life/2017/04/15/title-7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="白日梦想家">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/右右.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="dayDream's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                JS函数闭包
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-15T21:03:54+08:00">
+                2017-04-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/2017/04/15/title-7/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><blockquote class="blockquote-center">程序是写给人看的，顺带能在机器上运行</blockquote>
+
+
+
+<h1 id="JS循环闭包："><a href="#JS循环闭包：" class="headerlink" title="JS循环闭包："></a>JS循环闭包：</h1><h2 id="应用一"><a href="#应用一" class="headerlink" title="应用一"></a>应用一</h2><h3 id="html-结构"><a href="#html-结构" class="headerlink" title="html 结构"></a>html 结构</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   <span class="tag">&lt;<span class="name">p</span>&gt;</span>test0<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>test1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>test2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>test3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>test4<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="抛出问题"><a href="#抛出问题" class="headerlink" title="抛出问题"></a>抛出问题</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 抛出问题:</span></div><div class="line">                此题的目的是想每次点击对应目标时弹出对应的数字下标 0~4,但实际是无论点击哪个目标都会弹出数字5</div><div class="line">            问题所在:</div><div class="line">                arr 中的每一项的 onclick 均为一个函数实例(Function 对象),这个函数实例也产生了一个闭包域,</div><div class="line">                这个闭包域引用了外部闭包域的变量,其 function scope 的 closure 对象有个名为 i 的引用,</div><div class="line">                外部闭包域的私有变量内容发生变化,内部闭包域得到的值自然会发生改变</div><div class="line">            */</div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">myClosure</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> arr = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>);</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">                arr[i].onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                    alert(i);     <span class="comment">//无论点击哪一个均会弹出5</span></div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+<h3 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">解决方法一：</div><div class="line">        增加若干个对应的闭包域空间(	这里采用的是匿名函数),专门用来存储原先需要引用的内容(下标),不过只限于基本类型(基本类型值传递,对象类型引用传递) </div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">myClosure</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> arr = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>);</div><div class="line"></div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">                (<span class="function"><span class="keyword">function</span> (<span class="params">j</span>) </span>&#123;  </div><div class="line">                arr[i].onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                    alert(j);     </div><div class="line">                    &#125;</div><div class="line">                &#125;)(i);</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*思路：将下标作为对象属性(name:"i",value:i的值)添加到每个数组项(p对象)中*/</span></div><div class="line">此时当前 p 对象的 i 属性并不是对循环体的 i 变量的引用,而是一个独立 p 对象的属性,属性值在声明的时候就确定了(基本类型的值都是存在栈中的,当有一个基本类型变量声明其等于另一个基本变量时,此时并不是两个基本类型变量都指向一个值,而是各自有各自的值,但值是相等的)</div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">myClosure</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> arr = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>);</div><div class="line"></div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">                arr[i].i = i;</div><div class="line">                arr[i].onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                    alert(<span class="keyword">this</span>.i);     </div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+<h3 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*解决思路:</span></div><div class="line">与解决办法一有点相似但却有点不太相似.</div><div class="line">相似点:同样是增加若干个对应的闭包域空间用来存储下标</div><div class="line">不同点:解决办法一是在新增的匿名闭包空间内完成事件的绑定,而此例是将事件绑定在新增的匿名函数返回的函数上。</div><div class="line">此时绑定的函数中的 function scope 中的 closure 对象的 引用 arg 是指向将其返回的匿名函数的私有变量 arg*/</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">myClosure</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> arr = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>);</div><div class="line">            </div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;								</div><div class="line">                arr[i].onclick = (<span class="function"><span class="keyword">function</span> (<span class="params">j</span>) </span>&#123;</div><div class="line">                    </div><div class="line">                    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">                        alert(j);     </div><div class="line">                    &#125;</div><div class="line">                &#125;)(i);</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+<h3 id="方法四"><a href="#方法四" class="headerlink" title="方法四"></a>方法四</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">  <span class="comment">//思路同方法一：</span></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">myClosure</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> arr = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>);</div><div class="line">    </div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">            (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">                    <span class="keyword">var</span> tmp = i;</div><div class="line">                    arr[i].onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;						</div><div class="line">                    alert(tmp);    </div><div class="line">                &#125;</div><div class="line">            &#125;)();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="方法五："><a href="#方法五：" class="headerlink" title="方法五："></a>方法五：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//方法五：es6新语法，let为一个块级作用域</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">myClosure</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> arr = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>);</div><div class="line">        </div><div class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">            arr[i].onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                alert(i);     </div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h1 id="非循环闭包："><a href="#非循环闭包：" class="headerlink" title="非循环闭包："></a>非循环闭包：</h1><h2 id="应用一："><a href="#应用一：" class="headerlink" title="应用一："></a>应用一：</h2><h3 id="html-结构-1"><a href="#html-结构-1" class="headerlink" title="html 结构"></a>html 结构</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;p id="help"&gt;Helpful notes will appear here&lt;/p&gt;</div><div class="line">    &lt;p&gt;E-mail:</div><div class="line">        &lt;input type="text" id="email" name="email"&gt;</div><div class="line">    &lt;/p&gt;</div><div class="line">    &lt;p&gt;Name:</div><div class="line">        &lt;input type="text" id="name" name="name"&gt;</div><div class="line">    &lt;/p&gt;</div><div class="line">    &lt;p&gt;Age:</div><div class="line">        &lt;input type="text" id="age" name="age"&gt;</div><div class="line">    &lt;/p&gt;</div></pre></td></tr></table></figure>
+<h3 id="闭包解决-input-框聚焦动态提示"><a href="#闭包解决-input-框聚焦动态提示" class="headerlink" title="闭包解决 input 框聚焦动态提示"></a>闭包解决 input 框聚焦动态提示</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">showHelp</span>(<span class="params">help</span>) </span>&#123;</div><div class="line">            <span class="built_in">document</span>.getElementById(<span class="string">'help'</span>).innerHTML = help;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">makeHelpCallback</span>(<span class="params">help</span>) </span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;     <span class="comment">//形成闭包</span></div><div class="line">                showHelp(help);</div><div class="line">            &#125;;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">setupHelp</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> helpText = [&#123;</div><div class="line">                <span class="string">'id'</span>: <span class="string">'email'</span>,</div><div class="line">                <span class="string">'help'</span>: <span class="string">'Your e-mail address'</span></div><div class="line">            &#125;, &#123;</div><div class="line">                <span class="string">'id'</span>: <span class="string">'name'</span>,</div><div class="line">                <span class="string">'help'</span>: <span class="string">'Your full name'</span></div><div class="line">            &#125;, &#123;</div><div class="line">                <span class="string">'id'</span>: <span class="string">'age'</span>,</div><div class="line">                <span class="string">'help'</span>: <span class="string">'Your age (you must be over 16)'</span></div><div class="line">            &#125;];</div><div class="line"></div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; helpText.length; i++) &#123;</div><div class="line">                <span class="keyword">var</span> item = helpText[i];</div><div class="line">                <span class="built_in">document</span>.getElementById(item.id).onfocus = makeHelpCallback(item.help);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        setupHelp();</div></pre></td></tr></table></figure>
+<h2 id="应用二"><a href="#应用二" class="headerlink" title="应用二"></a>应用二</h2><h3 id="html-结构-2"><a href="#html-结构-2" class="headerlink" title="html 结构"></a>html 结构</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Some paragraph text<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>some heading 1 text<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>some heading 2 text<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">id</span>=<span class="string">"size-12"</span>&gt;</span>12<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">id</span>=<span class="string">"size-14"</span>&gt;</span>14<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">id</span>=<span class="string">"size-16"</span>&gt;</span>16<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="css"><a href="#css" class="headerlink" title="css"></a>css</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">  body &#123;</div><div class="line">  font-family: Helvetica, Arial, sans-serif;</div><div class="line">  font-size: 12px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">h1 &#123;</div><div class="line">  font-size: 1.5em;</div><div class="line">&#125;</div><div class="line">h2 &#123;</div><div class="line">  font-size: 1.2em;</div><div class="line">&#125;```javascript</div><div class="line">      function makeSizer(size) &#123;</div><div class="line">      return function() &#123;</div><div class="line">        document.body.style.fontSize = size + 'px';</div><div class="line">      &#125;;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    var size12 = makeSizer(12);</div><div class="line">    var size14 = makeSizer(14);</div><div class="line">    var size16 = makeSizer(16);</div><div class="line"></div><div class="line">    document.getElementById('size-12').onclick = size12;</div><div class="line">    document.getElementById('size-14').onclick = size14;</div><div class="line">    document.getElementById('size-16').onclick = size16;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>From:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/cn/docs/Web/JavaScript/Closures" target="_blank" rel="external">闭包-MDN</a> </li>
+<li><a href="https://segmentfault.com/a/1190000003818163" target="_blank" rel="external">9种办法解决JS循环闭包面试经典题之for循环</a></li>
+</ul>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      白日梦想家
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http:\\hexin.life/2017/04/15/title-7/" title="JS函数闭包">http:\\hexin.life/2017/04/15/title-7/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/15/title-6/" rel="next" title="HTML 5 Web 存储及WEB应用缓存">
+                <i class="fa fa-chevron-left"></i> HTML 5 Web 存储及WEB应用缓存
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/06/title-8/" rel="prev" title="copy小插件">
+                copy小插件 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/右右.jpg"
+               alt="白日梦想家" />
+          <p class="site-author-name" itemprop="name">白日梦想家</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+        
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/18292843691" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:hexin_9508@163.com" target="_blank" title="邮箱">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  邮箱
+                </a>
+              </span>
+            
+          
+          
+        </div>
+
+        
+        
+        
+        
+
+       
+         <div id='music'>
+ 	<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="//music.163.com/outchain/player?type=0&id=448532075&auto=0&height=430"></iframe>
+</div>
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JS循环闭包："><span class="nav-number">1.</span> <span class="nav-text">JS循环闭包：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#应用一"><span class="nav-number">1.1.</span> <span class="nav-text">应用一</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#html-结构"><span class="nav-number">1.1.1.</span> <span class="nav-text">html 结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#抛出问题"><span class="nav-number">1.1.2.</span> <span class="nav-text">抛出问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一："><span class="nav-number">1.1.3.</span> <span class="nav-text">方法一：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二"><span class="nav-number">1.1.4.</span> <span class="nav-text">方法二</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法三"><span class="nav-number">1.1.5.</span> <span class="nav-text">方法三</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法四"><span class="nav-number">1.1.6.</span> <span class="nav-text">方法四</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法五："><span class="nav-number">1.1.7.</span> <span class="nav-text">方法五：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#非循环闭包："><span class="nav-number">2.</span> <span class="nav-text">非循环闭包：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#应用一："><span class="nav-number">2.1.</span> <span class="nav-text">应用一：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#html-结构-1"><span class="nav-number">2.1.1.</span> <span class="nav-text">html 结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包解决-input-框聚焦动态提示"><span class="nav-number">2.1.2.</span> <span class="nav-text">闭包解决 input 框聚焦动态提示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用二"><span class="nav-number">2.2.</span> <span class="nav-text">应用二</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#html-结构-2"><span class="nav-number">2.2.1.</span> <span class="nav-text">html 结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css"><span class="nav-number">2.2.2.</span> <span class="nav-text">css</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">白日梦想家</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
-  }</script><script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script><script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script><script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script><script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script><script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script><script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script><script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script><script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script><script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script><script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script><script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script><script>var cloudTieConfig = {
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
         url: document.location.href, 
         sourceId: "",
         productKey: "25efdd30451e496991e3637d3c3cd1a1",
         target: "cloud-tie-wrapper"
-      };</script><script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script><script>(function(){
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
     var bp = document.createElement('script');
     var curProtocol = window.location.protocol.split(':')[0];
     if (curProtocol === 'https') {
@@ -34,4 +819,15 @@
     }
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(bp, s);
-})();</script><script type="text/javascript" src="/js/src/love.js"></script><script type="text/javascript" src="/js/src/par.js"></script></body></html>
+})();
+</script>
+
+
+  
+
+  
+
+  <script type="text/javascript" src="/js/src/love.js"></script>
+  <script type="text/javascript" src="/js/src/par.js"></script>
+</body>
+</html>
