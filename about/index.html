@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="dayDream&#39;s blog">
 <meta property="og:description" content="#content-1{     	width: 100%;     	height: 100%;     	padding: 0;     	margin: 0;     	position: relative;     }     #aboutme {         width: 450px;         height: 25">
 <meta property="og:image" content="http://hexin.life/about/yy.jpg">
-<meta property="og:updated_time" content="2017-04-18T14:17:02.101Z">
+<meta property="og:updated_time" content="2017-07-13T06:26:13.038Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="console.log(aboutme)">
 <meta name="twitter:description" content="#content-1{     	width: 100%;     	height: 100%;     	padding: 0;     	margin: 0;     	position: relative;     }     #aboutme {         width: 450px;         height: 25">
@@ -367,31 +367,6 @@
         box-shadow: 0 0 31px rgba(0, 0, 0, .4);
         border-radius: 40px;
     }
-    /*#bigger-img{
-    	background-color: rgba(220,220,220,0.1);
-    	display: none;
-    	width: 100%;
-    	height: 100%;
-    	cursor: pointer;
-    	position: absolute;
-    	z-index: 11;
-    	top: 0;
-    	left: 0;
-    	bottom: 0;
-    	right: 0;
-    }
-    #bigger-img img{
-    	width: 700px;
-    	height: 500px;
-    	position: absolute;
-    	top: 0;
-    	left: 50%;
-    	margin-top:-100px;
-    	margin-left: -360px;
-    	transition: all 1s;
-    	border: 4px solid rgba(245, 245, 245, .8);
-        box-shadow: 0 1px 15px rgba(0, 0, 0, .2), 0 1px 20px rgba(0, 0, 0, .4) inset;
-    }*/
    
     </style>
 </head>
@@ -404,30 +379,11 @@
     <div id="bigger-img"><!-- <span>X</span> --></div>
     </div>
     <script type="text/javascript">
-//------------------------------------------------------------------------------------------------//
-    // window.onload = function() {
-    // 	var about = document.getElementById('aboutme');
-    // 	var show = document.getElementById('bigger-img');
-    // 	var closeImg = document.getElementById('cimg');
-    // 	var index = 0;   	
-    // 		about.onclick = function(){	    		
-    // 			show.style.display = "block";		
-	   //  	}
-	   //  	closeImg.onclick = function() {
-	   //  		show.style.display = "none";
-	   //  	}   	
-    // 	}
-    	
-
-
-//------------------------------------------------------------------------------------------------// 
     function Aboutme(name, age, sex) {
         this.name = name;
         this.age = age;
         this.sex = sex;
     }
-
-    
 
     function Resume(name, age, sex, email) {
         Aboutme.call(this, name, age, sex);
@@ -451,8 +407,6 @@
 		More:"watting"
 	}
 
-
-
     var hexin = new Resume("hexin","22","♂",email);
     
     hexin.current = "student 2014-2018";
@@ -462,7 +416,6 @@
     hexin.skills = skills;
     hexin.project = projects;
 
-    
     for (var i in hexin) {
         if (hexin.hasOwnProperty(i)) {
 
@@ -525,7 +478,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
