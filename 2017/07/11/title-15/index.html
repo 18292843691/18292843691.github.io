@@ -1,7 +1,122 @@
-<!DOCTYPE html><html class="theme-next muse use-motion" lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"><link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css"><link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css"><link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css"><meta name="keywords" content="CSS,"><link rel="alternate" href="/rss" title="dayDream's blog" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1"><meta name="description" content="盒模型.png) 在一个文档中，每个元素都被表示为一个矩形的盒子。确定这些盒子的尺寸, 属性 — 像它的颜色，背景，边框方面 — 和位置是渲染引擎的目标。 在CSS中，使用标准盒模型描述这些矩形盒子中的每一个。这个模型描述了元素所占空间的内容。每个盒子有四个边：外边距边, 边框边, 内填充边 与 内容边。  盒模型  内容区域content area 是包含元素真实内容的区域。它通常包含背景、"><meta name="keywords" content="CSS"><meta property="og:type" content="article"><meta property="og:title" content="盒模型 行内元素及块级元素区别"><meta property="og:url" content="http:\\hexin.life/2017/07/11/title-15/index.html"><meta property="og:site_name" content="dayDream&#39;s blog"><meta property="og:description" content="盒模型.png) 在一个文档中，每个元素都被表示为一个矩形的盒子。确定这些盒子的尺寸, 属性 — 像它的颜色，背景，边框方面 — 和位置是渲染引擎的目标。 在CSS中，使用标准盒模型描述这些矩形盒子中的每一个。这个模型描述了元素所占空间的内容。每个盒子有四个边：外边距边, 边框边, 内填充边 与 内容边。  盒模型  内容区域content area 是包含元素真实内容的区域。它通常包含背景、"><meta property="og:image" content="https://developer.mozilla.org/files/72/boxmodel%20(1"><meta property="og:image" content="http://www.runoob.com/images/box-model.gif"><meta property="og:updated_time" content="2017-07-13T07:43:24.216Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="盒模型 行内元素及块级元素区别"><meta name="twitter:description" content="盒模型.png) 在一个文档中，每个元素都被表示为一个矩形的盒子。确定这些盒子的尺寸, 属性 — 像它的颜色，背景，边框方面 — 和位置是渲染引擎的目标。 在CSS中，使用标准盒模型描述这些矩形盒子中的每一个。这个模型描述了元素所占空间的内容。每个盒子有四个边：外边距边, 边框边, 内填充边 与 内容边。  盒模型  内容区域content area 是包含元素真实内容的区域。它通常包含背景、"><meta name="twitter:image" content="https://developer.mozilla.org/files/72/boxmodel%20(1"><script type="text/javascript" id="hexo.configurations">var NexT = window.NexT || {};
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="CSS," />
+
+
+
+
+
+  <link rel="alternate" href="/rss" title="dayDream's blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="盒模型.png) 在一个文档中，每个元素都被表示为一个矩形的盒子。确定这些盒子的尺寸, 属性 — 像它的颜色，背景，边框方面 — 和位置是渲染引擎的目标。 在CSS中，使用标准盒模型描述这些矩形盒子中的每一个。这个模型描述了元素所占空间的内容。每个盒子有四个边：外边距边, 边框边, 内填充边 与 内容边。  盒模型  内容区域content area 是包含元素真实内容的区域。它通常包含背景、">
+<meta name="keywords" content="CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="盒模型 行内元素及块级元素区别">
+<meta property="og:url" content="http:\\hexin.life/2017/07/11/title-15/index.html">
+<meta property="og:site_name" content="dayDream&#39;s blog">
+<meta property="og:description" content="盒模型.png) 在一个文档中，每个元素都被表示为一个矩形的盒子。确定这些盒子的尺寸, 属性 — 像它的颜色，背景，边框方面 — 和位置是渲染引擎的目标。 在CSS中，使用标准盒模型描述这些矩形盒子中的每一个。这个模型描述了元素所占空间的内容。每个盒子有四个边：外边距边, 边框边, 内填充边 与 内容边。  盒模型  内容区域content area 是包含元素真实内容的区域。它通常包含背景、">
+<meta property="og:image" content="https://developer.mozilla.org/files/72/boxmodel%20(1">
+<meta property="og:image" content="http://www.runoob.com/images/box-model.gif">
+<meta property="og:updated_time" content="2017-07-13T07:43:24.216Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="盒模型 行内元素及块级元素区别">
+<meta name="twitter:description" content="盒模型.png) 在一个文档中，每个元素都被表示为一个矩形的盒子。确定这些盒子的尺寸, 属性 — 像它的颜色，背景，边框方面 — 和位置是渲染引擎的目标。 在CSS中，使用标准盒模型描述这些矩形盒子中的每一个。这个模型描述了元素所占空间的内容。每个盒子有四个边：外边距边, 边框边, 内填充边 与 内容边。  盒模型  内容区域content area 是包含元素真实内容的区域。它通常包含背景、">
+<meta name="twitter:image" content="https://developer.mozilla.org/files/72/boxmodel%20(1">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Mist',
     sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     motion: true,
@@ -16,9 +131,803 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
-  };</script><link rel="canonical" href="http:\\hexin.life/2017/07/11/title-15/"><title>盒模型 行内元素及块级元素区别 | dayDream's blog</title></head><body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"><div class="container sidebar-position-right page-post-detail"><div class="headband"></div><header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-brand-wrapper"><div class="site-meta"><div class="custom-logo-site-title"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">dayDream's blog</span> <span class="logo-line-after"><i></i></span></a></div><p class="site-subtitle"></p></div><div class="site-nav-toggle"><button><span class="btn-bar"></span> <span class="btn-bar"></span> <span class="btn-bar"></span></button></div></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-首页"><a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i><br>menu.首页</a></li><li class="menu-item menu-item-分类"><a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i><br>menu.分类</a></li><li class="menu-item menu-item-关于"><a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i><br>menu.关于</a></li><li class="menu-item menu-item-文章"><a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i><br>menu.文章</a></li><li class="menu-item menu-item-标签"><a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i><br>menu.标签</a></li><li class="menu-item menu-item-search"><a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li></ul><div class="site-search"><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class="search-icon"><i class="fa fa-search"></i> </span><span class="popup-btn-close"><i class="fa fa-times-circle"></i></span><div class="local-search-input-wrapper"><input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input"></div></div><div id="local-search-result"></div></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><link itemprop="mainEntityOfPage" href="http:\\hexin.life/2017/07/11/title-15/"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="白日梦想家"><meta itemprop="description" content=""><meta itemprop="image" content="/images/avatar.jpg"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="dayDream's blog"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">盒模型 行内元素及块级元素区别</h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i> </span><span class="post-meta-item-text">发表于</span> <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-11T21:30:56+08:00">2017-07-11 </time></span><span class="post-category"><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-folder-o"></i> </span><span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">前端</span></a></span></span></div></header><div class="post-body" itemprop="articleBody"><script src="/assets/js/DPlayer.min.js"></script><script src="/assets/js/APlayer.min.js"></script><h1 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h1><p><img src="https://developer.mozilla.org/files/72/boxmodel%20(1" alt="">.png)</p><p>在一个文档中，每个元素都被表示为一个矩形的盒子。确定这些盒子的尺寸, 属性 — 像它的颜色，背景，边框方面 — 和位置是渲染引擎的目标。</p><p>在CSS中，使用标准盒模型描述这些矩形盒子中的每一个。这个模型描述了元素所占空间的内容。每个盒子有四个边：外边距边, 边框边, 内填充边 与 内容边。</p><h2 id="盒模型-1"><a href="#盒模型-1" class="headerlink" title="盒模型"></a>盒模型</h2><p><img src="http://www.runoob.com/images/box-model.gif" alt=""></p><ul><li><p>内容区域content area 是包含元素真实内容的区域。它通常包含背景、颜色或者图片等，位于内容边界的内部，它的大小为内容宽度 或 content-box宽及内容高度或content-box高。</p></li><li><p>如果 box-sizing 为默认值， width, min-width, max-width, height, min-height 与 max-height 控制内容大小。</p></li><li><p>内边距区域 padding area 延伸到包围padding的边框。如果内容区域 content area 设置了背景、颜色或者图片，这些样式将会延伸到 padding 上(译者注：而不仅仅是作用于内容区域)。它位于内边距边界内部, 它的大小为 padding-box 宽与 padding-box 高。</p></li></ul><p>内边距与内容边界之间的空间可以由 padding-top, padding-right, padding-bottom, padding-left 和简写属性 padding 控制。</p><ul><li><p>边框区域 border area 是包含边框的区域，扩展了内边距区域。它位于边框边界内部，大小为 border-box 宽和 border-box 高。由 border-width 及简写属性 border控制。</p></li><li><p>外边距区域 margin area 用空白区域扩展边框区域，以分开相邻的元素。它的大小为 margin-box 的高宽。</p></li></ul><p>外边距区域大小由 margin-top, margin-right, margin-bottom, margin-left 及简写属性 margin 控制。</p><h2 id="盒模型宽高计算"><a href="#盒模型宽高计算" class="headerlink" title="盒模型宽高计算"></a>盒模型宽高计算</h2><p>最终元素的总宽度计算公式是这样的：</p><ul><li>总元素的宽度=宽度+左填充+右填充+左边框+右边框+左边距+右边距</li><li>width = margin-left + border-left + padding-left + width + padding-right + border-right + margin-right</li></ul><p>元素的总高度最终计算公式是这样的：</p><ul><li>总元素的高度=高度+顶部填充+底部填充+上边框+下边框+上边距+下边距</li><li>height = margin-top + border-top + padding-top + width + padding-bottom + border-bottom + margin-bottom</li></ul><p>而IE对宽度的诠释不一样。符合 W3C 标准的浏览器认为一个元素的宽度只等于其 content 的宽度，其余都要额外算。如：<br></p><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.example</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">padding</span>: <span class="number">10px</span>;</div><div class="line">    <span class="attribute">border</span>: <span class="number">5px</span> solid <span class="number">#000</span>;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">20px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p><ul><li>则他最终的宽度应为：<br>宽度 = width + padding <em>2 + border</em> 2 + margin * 2 = 270px;</li><li><p>而在 IE（低于IE9） 下，最终宽度为：<br>宽度 = width + margin* 2 = 240px;</p><blockquote><p>W3C 最后为了解决这个问题，在 CSS3 中加了 box-sizing 这个属性。当我们设置 box-sizing: border-box; 时，border 和 padding 就被包含在了宽高之内，和 IE 之前的标准是一样的。</p></blockquote><p>所以，为了避免你同一份 css 在不同浏览器下表现不同，最好加上：</p></li></ul><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">*, *<span class="selector-pseudo">:before</span>, *<span class="selector-pseudo">:after</span> &#123;</div><div class="line">  <span class="attribute">-moz-box-sizing</span>: border-box;</div><div class="line">  <span class="attribute">-webkit-box-sizing</span>: border-box;</div><div class="line">  <span class="attribute">box-sizing</span>: border-box;</div><div class="line">&#125;</div></pre></td></tr></table></figure><h2 id="浏览器的兼容性问题"><a href="#浏览器的兼容性问题" class="headerlink" title="浏览器的兼容性问题"></a>浏览器的兼容性问题</h2><ul><li>一旦为页面设置了恰当的 DTD，大多数浏览器都会按照上面的图示来呈现内容。然而 IE 5 和 6 的呈现却是不正确的。根据 W3C 的规范，元素内容占据的空间是由 width 属性设置的，而内容周围的 padding 和 border 值是另外计算的。不幸的是，IE5.X 和 6 在怪异模式中使用自己的非标准模型。这些浏览器的 width 属性不是内容的宽度，而是内容、内边距和边框的宽度的总和。</li></ul><p>虽然有方法解决这个问题。但是目前最好的解决方案是回避这个问题。也就是，不要给元素添加具有指定宽度的内边距，而是尝试将内边距或外边距添加到元素的父元素和子元素。</p><ul><li>IE8 及更早IE版本不支持 填充的宽度和边框的宽度属性设。<br>解决 IE8 及更早版本不兼容问题可以在HTML页面声明 &lt; !DOCTYPE html &gt; 即可。</li></ul><ul><li>IE6中浮动双边距<br>因为内联元素没有此问题，所以通过设置 display:inline 解决</li></ul><h1 id="行内元素及块级元素"><a href="#行内元素及块级元素" class="headerlink" title="行内元素及块级元素"></a>行内元素及块级元素</h1><p>HTML (超文本标记语言) 元素大多数都是行内元素或块级元素。</p><ul><li>行内元素只占据它对应标签的边框所包含的空间。</li><li>块级元素占据其父元素（容器）的整个空间，因此创建了一个“块”。<h2 id="行内元素"><a href="#行内元素" class="headerlink" title="行内元素"></a>行内元素</h2></li></ul><ol><li>内容<ul><li>一般情况下，行内元素只能包含数据和其他行内元素。</li></ul></li><li>格式<ul><li>行内元素不会以新行开始</li><li>块级元素会新起一行。</li></ul></li></ol><blockquote><ul><li>设置宽度width 无效。</li><li>设置高度height 无效，可以通过 <a href="http://www.zhangxinxu.com/wordpress/2009/11/css%E8%A1%8C%E9%AB%98line-height%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%8F%8A%E5%BA%94%E7%94%A8/" target="_blank" rel="external">line-height</a> 来设置。</li><li>设置 margin 只有左右 margin 有效，上下无效。</li><li>设置 padding 只有左右 padding 有效，上下则无效。<em>注意元素范围是增大了，但是对元素周围的内容是没影响的.</em></li></ul></blockquote><p>如果你要将行内元素变成块级元素，那么就只需要在该标签上加上样式<br></p><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">display</span><span class="selector-pseudo">:block</span>;</div></pre></td></tr></table></figure><p></p><p>块级元素可以用样式控制其高、宽的值。</p><h4 id="若既想让元素在行内显示，又能设置宽高"><a href="#若既想让元素在行内显示，又能设置宽高" class="headerlink" title="若既想让元素在行内显示，又能设置宽高"></a>若既想让元素在行内显示，又能设置宽高</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">display</span>: <span class="selector-tag">inline-block</span></div></pre></td></tr></table></figure><p>行内元素不可以控制宽和高，除非你想将它转变成为块级元素。它的宽和高，是随标签里的内容而变化。</p><h3 id="行内元素列表"><a href="#行内元素列表" class="headerlink" title="行内元素列表"></a>行内元素列表</h3><ul><li>b, big, i, small, tt</li><li>abbr, acronym, cite, code, dfn, em, kbd, strong, samp, var</li><li>a, bdo, br, img, map, object, q, script, span, sub, sup</li><li>button, input, label, select, textarea</li></ul><h2 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h2><h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><p><em>块级元素只能出现在<body>元素内</body></em></p><ol><li>内容<ul><li>块级元素可以包含行内元素和其他块级元素。这种结构上的包含继承区别可以使块级元素创建比行内元素更”大型“的结构。</li></ul></li><li>格式<ul><li>默认情况下，块级元素会新起一行。</li></ul></li><li>内容模型<ul><li>一般块级元素可以包含行内元素和其他块级元素。这种结构上的包含继承区别可以使块级元素创建比行内元素更”大型“的结构。<h3 id="块级元素列表"><a href="#块级元素列表" class="headerlink" title="块级元素列表"></a>块级元素列表</h3></li></ul></li></ol><ul><li>article [HTML5] 文章内容。</li><li>aside [HTML5] 伴随内容。</li><li>audio [HTML5] 音频播放。</li><li>blockquote 块引用。</li><li>canvas [HTML5] 绘制图形。</li><li>dd 定义列表中定义条目描述。</li><li>div 文档分区。</li><li>dl 定义列表。</li><li>fieldset 表单元素分组。</li><li>figcaption [HTML5] 图文信息组标题</li><li>figure [HTML5] 图文信息组 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/figcaption" target="_blank" rel="external">(参照 figcaption)</a>。</li><li>footer [HTML5] 区段尾或页尾。</li><li>form 表单。</li><li>h1, h2, h3, h4, h5, h6 标题级别 1-6.</li><li>header [HTML5] 区段头或页头。</li><li>hgroup [HTML5] 标题组。</li><li>hr 水平分割线。</li><li>noscript 不支持脚本或禁用脚本时显示的内容。</li><li>ol 有序列表。</li><li>output [HTML5] 表单输出。</li><li>p 行。 pre 预格式化文本。</li><li>section [HTML5] 一个页面区段。</li><li>table 表格。</li><li>tfoot 表脚注。</li><li>ul 无序列表。</li><li><p>video [HTML5] 视频。</p><h2 id="可变元素"><a href="#可变元素" class="headerlink" title="可变元素"></a>可变元素</h2><blockquote><p>可变元素为根据上下文语境决定该元素为块元素或者内联元素。</p></blockquote></li><li><p>applet - java applet</p></li><li>button - 按钮</li><li>del - 删除文本</li><li>iframe - inline frame</li><li>ins - 插入的文本</li><li>map - 图片区块(map)</li><li>object - object 对象</li><li>script - 客户端脚本</li></ul><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul><li><a href="http://jeffjade.com/2015/06/24/2015-06-24-css-block-inline/" target="_blank" rel="external">CSS块级元素和行内元素-晚晴幽草轩</a></li><li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Inline_elemente" target="_blank" rel="external">MDN -行内元素</a></li><li><a href="http://geekplux.com/2014/04/25/several_core_concepts_of_css.html" target="_blank" rel="external">CSS 最核心的几个概念</a></li></ul></div><div></div><div></div><div></div><footer class="post-footer"><div class="post-tags"><a href="/tags/CSS/" rel="tag"># CSS</a></div><div class="post-nav"><div class="post-nav-next post-nav-item"><a href="/2017/07/11/title-14/" rel="next" title="关于CSS 缓动(转)"><i class="fa fa-chevron-left"></i> 关于CSS 缓动(转)</a></div><span class="post-nav-divider"></span><div class="post-nav-prev post-nav-item"><a href="/2017/07/11/title-16/" rel="prev" title="前端性能优化">前端性能优化 <i class="fa fa-chevron-right"></i></a></div></div></footer></article><div class="post-spread"></div></div></div><div class="comments" id="comments"></div></div><div class="sidebar-toggle"><div class="sidebar-toggle-line-wrap"><span class="sidebar-toggle-line sidebar-toggle-line-first"></span> <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span> <span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id="sidebar" class="sidebar"><div class="sidebar-inner"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">文章目录</li><li class="sidebar-nav-overview" data-target="site-overview">站点概览</li></ul><section class="site-overview sidebar-panel"><div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person"><img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="白日梦想家"><p class="site-author-name" itemprop="name">白日梦想家</p><p class="site-description motion-element" itemprop="description">白日梦想家那些一起做的白日梦，你还记得么</p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href="/"><span class="site-state-item-count">17</span> <span class="site-state-item-name">日志</span></a></div><div class="site-state-item site-state-categories"><a href="/categories/index.html"><span class="site-state-item-count">7</span> <span class="site-state-item-name">分类</span></a></div><div class="site-state-item site-state-tags"><a href="/tags/index.html"><span class="site-state-item-count">12</span> <span class="site-state-item-name">标签</span></a></div></nav><div class="feed-link motion-element"><a href="/rss" rel="alternate"><i class="fa fa-rss"></i> RSS</a></div><div class="links-of-author motion-element"></div><div><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="110" src="//music.163.com/outchain/player?type=0&id=448532075&auto=0&height=90"></iframe></div></section><!--noindex--><section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active"><div class="post-toc"><div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#盒模型"><span class="nav-number">1.</span> <span class="nav-text">盒模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#盒模型-1"><span class="nav-number">1.1.</span> <span class="nav-text">盒模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#盒模型宽高计算"><span class="nav-number">1.2.</span> <span class="nav-text">盒模型宽高计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器的兼容性问题"><span class="nav-number">1.3.</span> <span class="nav-text">浏览器的兼容性问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#行内元素及块级元素"><span class="nav-number">2.</span> <span class="nav-text">行内元素及块级元素</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#行内元素"><span class="nav-number">2.1.</span> <span class="nav-text">行内元素</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#若既想让元素在行内显示，又能设置宽高"><span class="nav-number">2.1.0.1.</span> <span class="nav-text">若既想让元素在行内显示，又能设置宽高</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#行内元素列表"><span class="nav-number">2.1.1.</span> <span class="nav-text">行内元素列表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#块级元素"><span class="nav-number">2.2.</span> <span class="nav-text">块级元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用法"><span class="nav-number">2.2.1.</span> <span class="nav-text">用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#块级元素列表"><span class="nav-number">2.2.2.</span> <span class="nav-text">块级元素列表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可变元素"><span class="nav-number">2.3.</span> <span class="nav-text">可变元素</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></div></div></section><!--/noindex--></div></aside></div></main><footer id="footer" class="footer"><div class="footer-inner"><div class="copyright">&copy; <span itemprop="copyrightYear">2017</span> <span class="with-love"><i class="fa fa-heart"></i> </span><span class="author" itemprop="copyrightHolder">白日梦想家</span></div><div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div><div class="theme-info">主题 - <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a></div><div class="busuanzi-count"><script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><span class="site-pv"><i class="fa fa-eye"></i> <span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span></div></div></footer><div class="back-to-top"><i class="fa fa-arrow-up"></i></div></div><script type="text/javascript">if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http:\\hexin.life/2017/07/11/title-15/"/>
+
+
+
+
+
+  <title>盒模型 行内元素及块级元素区别 | dayDream's blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">dayDream's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http:\\hexin.life/2017/07/11/title-15/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="白日梦想家">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="dayDream's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">盒模型 行内元素及块级元素区别</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-11T21:30:56+08:00">
+                2017-07-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><h1 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h1><p><img src="https://developer.mozilla.org/files/72/boxmodel%20(1" alt="">.png)</p>
+<p>在一个文档中，每个元素都被表示为一个矩形的盒子。确定这些盒子的尺寸, 属性 — 像它的颜色，背景，边框方面 — 和位置是渲染引擎的目标。</p>
+<p>在CSS中，使用标准盒模型描述这些矩形盒子中的每一个。这个模型描述了元素所占空间的内容。每个盒子有四个边：外边距边, 边框边, 内填充边 与 内容边。 </p>
+<h2 id="盒模型-1"><a href="#盒模型-1" class="headerlink" title="盒模型"></a>盒模型</h2><p><img src="http://www.runoob.com/images/box-model.gif" alt=""></p>
+<ul>
+<li><p>内容区域content area 是包含元素真实内容的区域。它通常包含背景、颜色或者图片等，位于内容边界的内部，它的大小为内容宽度 或 content-box宽及内容高度或content-box高。</p>
+</li>
+<li><p>如果 box-sizing 为默认值， width, min-width, max-width, height, min-height 与 max-height 控制内容大小。</p>
+</li>
+<li><p>内边距区域 padding area 延伸到包围padding的边框。如果内容区域 content area 设置了背景、颜色或者图片，这些样式将会延伸到 padding 上(译者注：而不仅仅是作用于内容区域)。它位于内边距边界内部, 它的大小为 padding-box  宽与 padding-box 高。</p>
+</li>
+</ul>
+<p>内边距与内容边界之间的空间可以由 padding-top, padding-right, padding-bottom, padding-left 和简写属性 padding 控制。</p>
+<ul>
+<li><p>边框区域 border area 是包含边框的区域，扩展了内边距区域。它位于边框边界内部，大小为 border-box  宽和 border-box 高。由 border-width 及简写属性 border控制。</p>
+</li>
+<li><p>外边距区域 margin area 用空白区域扩展边框区域，以分开相邻的元素。它的大小为  margin-box 的高宽。</p>
+</li>
+</ul>
+<p>外边距区域大小由 margin-top, margin-right, margin-bottom, margin-left 及简写属性 margin 控制。</p>
+<h2 id="盒模型宽高计算"><a href="#盒模型宽高计算" class="headerlink" title="盒模型宽高计算"></a>盒模型宽高计算</h2><p>最终元素的总宽度计算公式是这样的：</p>
+<ul>
+<li>总元素的宽度=宽度+左填充+右填充+左边框+右边框+左边距+右边距</li>
+<li>width = margin-left + border-left + padding-left + width + padding-right + border-right + margin-right</li>
+</ul>
+<p>元素的总高度最终计算公式是这样的：</p>
+<ul>
+<li>总元素的高度=高度+顶部填充+底部填充+上边框+下边框+上边距+下边距</li>
+<li>height = margin-top + border-top + padding-top + width + padding-bottom + border-bottom + margin-bottom</li>
+</ul>
+<p>而IE对宽度的诠释不一样。符合 W3C 标准的浏览器认为一个元素的宽度只等于其 content 的宽度，其余都要额外算。如：</p>
+<pre><code class="css">.example {
+    width: 200px;
+    padding: 10px;
+    border: 5px solid #000;
+    margin: 20px;
+}
+</code></pre>
+<ul>
+<li>则他最终的宽度应为：<br>宽度 = width + padding <em> 2 + border</em> 2 + margin * 2  = 270px;</li>
+<li><p>而在 IE（低于IE9） 下，最终宽度为：<br>宽度 = width + margin* 2 = 240px;</p>
+<blockquote>
+<p> W3C 最后为了解决这个问题，在 CSS3 中加了 box-sizing 这个属性。当我们设置 box-sizing: border-box; 时，border 和 padding 就被包含在了宽高之内，和 IE 之前的标准是一样的。</p>
+</blockquote>
+<p>所以，为了避免你同一份 css 在不同浏览器下表现不同，最好加上：</p>
+</li>
+</ul>
+<pre><code class="css">*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+</code></pre>
+<h2 id="浏览器的兼容性问题"><a href="#浏览器的兼容性问题" class="headerlink" title="浏览器的兼容性问题"></a>浏览器的兼容性问题</h2><ul>
+<li>一旦为页面设置了恰当的 DTD，大多数浏览器都会按照上面的图示来呈现内容。然而 IE 5 和 6 的呈现却是不正确的。根据 W3C 的规范，元素内容占据的空间是由 width 属性设置的，而内容周围的 padding 和 border 值是另外计算的。不幸的是，IE5.X 和 6 在怪异模式中使用自己的非标准模型。这些浏览器的 width 属性不是内容的宽度，而是内容、内边距和边框的宽度的总和。</li>
+</ul>
+<p>虽然有方法解决这个问题。但是目前最好的解决方案是回避这个问题。也就是，不要给元素添加具有指定宽度的内边距，而是尝试将内边距或外边距添加到元素的父元素和子元素。</p>
+<ul>
+<li>IE8 及更早IE版本不支持 填充的宽度和边框的宽度属性设。<br>解决 IE8 及更早版本不兼容问题可以在HTML页面声明 &lt; !DOCTYPE html &gt; 即可。</li>
+</ul>
+<ul>
+<li>IE6中浮动双边距<br>因为内联元素没有此问题，所以通过设置 display:inline 解决</li>
+</ul>
+<h1 id="行内元素及块级元素"><a href="#行内元素及块级元素" class="headerlink" title="行内元素及块级元素"></a>行内元素及块级元素</h1><p>HTML (超文本标记语言) 元素大多数都是行内元素或块级元素。</p>
+<ul>
+<li>行内元素只占据它对应标签的边框所包含的空间。</li>
+<li>块级元素占据其父元素（容器）的整个空间，因此创建了一个“块”。<h2 id="行内元素"><a href="#行内元素" class="headerlink" title="行内元素"></a>行内元素</h2></li>
+</ul>
+<ol>
+<li>内容<ul>
+<li>一般情况下，行内元素只能包含数据和其他行内元素。</li>
+</ul>
+</li>
+<li>格式<ul>
+<li>行内元素不会以新行开始</li>
+<li>块级元素会新起一行。</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<ul>
+<li>设置宽度width 无效。</li>
+<li>设置高度height 无效，可以通过 <a href="http://www.zhangxinxu.com/wordpress/2009/11/css%E8%A1%8C%E9%AB%98line-height%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%8F%8A%E5%BA%94%E7%94%A8/" target="_blank" rel="external">line-height</a> 来设置。</li>
+<li>设置 margin 只有左右 margin 有效，上下无效。</li>
+<li>设置 padding 只有左右 padding 有效，上下则无效。<em>注意元素范围是增大了，但是对元素周围的内容是没影响的.</em></li>
+</ul>
+</blockquote>
+<p> 如果你要将行内元素变成块级元素，那么就只需要在该标签上加上样式 </p>
+<pre><code class="css">display:block;
+</code></pre>
+<p>块级元素可以用样式控制其高、宽的值。</p>
+<h4 id="若既想让元素在行内显示，又能设置宽高"><a href="#若既想让元素在行内显示，又能设置宽高" class="headerlink" title="若既想让元素在行内显示，又能设置宽高"></a>若既想让元素在行内显示，又能设置宽高</h4><pre><code class="css"> display: inline-block
+</code></pre>
+<p>行内元素不可以控制宽和高，除非你想将它转变成为块级元素。它的宽和高，是随标签里的内容而变化。</p>
+<h3 id="行内元素列表"><a href="#行内元素列表" class="headerlink" title="行内元素列表"></a>行内元素列表</h3><ul>
+<li>b, big, i, small, tt</li>
+<li>abbr, acronym, cite, code, dfn, em, kbd, strong, samp, var</li>
+<li>a, bdo, br, img, map, object, q, script, span, sub, sup</li>
+<li>button, input, label, select, textarea</li>
+</ul>
+<h2 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h2><h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><p>  <em>块级元素只能出现在 <body> 元素内</body></em></p>
+<ol>
+<li>内容<ul>
+<li>块级元素可以包含行内元素和其他块级元素。这种结构上的包含继承区别可以使块级元素创建比行内元素更”大型“的结构。</li>
+</ul>
+</li>
+<li>格式<ul>
+<li>默认情况下，块级元素会新起一行。</li>
+</ul>
+</li>
+<li>内容模型<ul>
+<li>一般块级元素可以包含行内元素和其他块级元素。这种结构上的包含继承区别可以使块级元素创建比行内元素更”大型“的结构。<h3 id="块级元素列表"><a href="#块级元素列表" class="headerlink" title="块级元素列表"></a>块级元素列表</h3></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>article [HTML5] 文章内容。</li>
+<li>aside [HTML5] 伴随内容。 </li>
+<li>audio [HTML5] 音频播放。 </li>
+<li>blockquote 块引用。</li>
+<li>canvas [HTML5] 绘制图形。 </li>
+<li>dd 定义列表中定义条目描述。 </li>
+<li>div 文档分区。 </li>
+<li>dl 定义列表。 </li>
+<li>fieldset 表单元素分组。 </li>
+<li>figcaption [HTML5] 图文信息组标题 </li>
+<li>figure [HTML5] 图文信息组 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/figcaption" target="_blank" rel="external">(参照 figcaption)</a>。 </li>
+<li>footer [HTML5] 区段尾或页尾。 </li>
+<li>form 表单。 </li>
+<li>h1, h2, h3, h4, h5, h6 标题级别 1-6. </li>
+<li>header [HTML5] 区段头或页头。 </li>
+<li>hgroup [HTML5] 标题组。 </li>
+<li>hr 水平分割线。 </li>
+<li>noscript 不支持脚本或禁用脚本时显示的内容。 </li>
+<li>ol 有序列表。</li>
+<li>output [HTML5] 表单输出。 </li>
+<li>p 行。 pre 预格式化文本。 </li>
+<li>section [HTML5] 一个页面区段。 </li>
+<li>table 表格。 </li>
+<li>tfoot 表脚注。 </li>
+<li>ul 无序列表。 </li>
+<li><p>video [HTML5] 视频。</p>
+<h2 id="可变元素"><a href="#可变元素" class="headerlink" title="可变元素"></a>可变元素</h2><blockquote>
+<p>可变元素为根据上下文语境决定该元素为块元素或者内联元素。</p>
+</blockquote>
+</li>
+<li><p>applet - java applet</p>
+</li>
+<li>button - 按钮</li>
+<li>del - 删除文本</li>
+<li>iframe - inline frame</li>
+<li>ins - 插入的文本</li>
+<li>map - 图片区块(map)</li>
+<li>object - object 对象</li>
+<li>script - 客户端脚本</li>
+</ul>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li><a href="http://jeffjade.com/2015/06/24/2015-06-24-css-block-inline/" target="_blank" rel="external">CSS块级元素和行内元素-晚晴幽草轩</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Inline_elemente" target="_blank" rel="external"> MDN -行内元素</a></li>
+<li><a href="http://geekplux.com/2014/04/25/several_core_concepts_of_css.html" target="_blank" rel="external">CSS 最核心的几个概念</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/11/title-14/" rel="next" title="关于CSS 缓动(转)">
+                <i class="fa fa-chevron-left"></i> 关于CSS 缓动(转)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/11/title-16/" rel="prev" title="前端性能优化">
+                前端性能优化 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="白日梦想家" />
+          <p class="site-author-name" itemprop="name">白日梦想家</p>
+           
+              <p class="site-description motion-element" itemprop="description">白日梦想家那些一起做的白日梦，你还记得么</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/rss" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#盒模型"><span class="nav-number">1.</span> <span class="nav-text">盒模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#盒模型-1"><span class="nav-number">1.1.</span> <span class="nav-text">盒模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#盒模型宽高计算"><span class="nav-number">1.2.</span> <span class="nav-text">盒模型宽高计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器的兼容性问题"><span class="nav-number">1.3.</span> <span class="nav-text">浏览器的兼容性问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#行内元素及块级元素"><span class="nav-number">2.</span> <span class="nav-text">行内元素及块级元素</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#行内元素"><span class="nav-number">2.1.</span> <span class="nav-text">行内元素</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#若既想让元素在行内显示，又能设置宽高"><span class="nav-number">2.1.0.1.</span> <span class="nav-text">若既想让元素在行内显示，又能设置宽高</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#行内元素列表"><span class="nav-number">2.1.1.</span> <span class="nav-text">行内元素列表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#块级元素"><span class="nav-number">2.2.</span> <span class="nav-text">块级元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用法"><span class="nav-number">2.2.1.</span> <span class="nav-text">用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#块级元素列表"><span class="nav-number">2.2.2.</span> <span class="nav-text">块级元素列表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可变元素"><span class="nav-number">2.3.</span> <span class="nav-text">可变元素</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">白日梦想家</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
-  }</script><script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script><script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script><script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script><script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script><script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script><script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script><script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script><script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script><script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script><script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script><script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script><script type="text/javascript">// Popup Window;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
     var isfetched = false;
     var isXml = true;
     // Search DB path;
@@ -331,7 +1240,18 @@
       if (shouldDismissSearchPopup) {
         onPopupClose();
       }
-    });</script><script>(function(){
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
     var bp = document.createElement('script');
     var curProtocol = window.location.protocol.split(':')[0];
     if (curProtocol === 'https') {
@@ -342,4 +1262,17 @@
     }
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(bp, s);
-})();</script></body></html>
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
