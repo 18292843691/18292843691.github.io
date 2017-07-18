@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -83,7 +83,7 @@
 
 
 
-  <link rel="alternate" href="/rss" title="dayDream's blog" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="dayDream's blog" type="application/atom+xml" />
 
 
 
@@ -133,8 +133,8 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
-    sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -184,7 +184,7 @@
     
   
 
-  <div class="container sidebar-position-right page-post-detail ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -223,7 +223,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -233,7 +233,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -243,7 +243,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
@@ -253,7 +253,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
@@ -263,7 +263,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
@@ -271,43 +271,9 @@
       
 
       
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
-      
     </ul>
   
 
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
   
 </nav>
 
@@ -337,7 +303,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="白日梦想家">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -418,7 +384,7 @@
       
 
       
-        <script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><p>总是正则表达式就有点虚，想着遇到了再去查不就行了，然而为了方便查询和学习，这里对正则表达式做一个整理<br>这里推荐一个正则练习的网站 , 将晦涩的正则表达式用图形描述出来</p>
+        <link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><p>总是正则表达式就有点虚，想着遇到了再去查不就行了，然而为了方便查询和学习，这里对正则表达式做一个整理<br>这里推荐一个正则练习的网站 , 将晦涩的正则表达式用图形描述出来</p>
 <blockquote>
 <p> <a href="https://regexper.com/" target="_blank" rel="external">RegExper</a></p>
 </blockquote>
@@ -433,9 +399,7 @@
 <blockquote>
 <p>使用正则表达式 : </p>
 </blockquote>
-<pre><code class="javascript">var reg = /\w+\s/g;  
-var reg = new RegExp(&quot;\\w+\\s&quot;, &quot;g&quot;);
-</code></pre>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> reg = <span class="regexp">/\w+\s/g</span>;  </div><div class="line"><span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"\\w+\\s"</span>, <span class="string">"g"</span>);</div></pre></td></tr></table></figure>
 <h2 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h2><p><img src="http://or3233yyd.bkt.clouddn.com//17-7-16/64808664.jpg" alt=""></p>
 <blockquote>
 <p>. 只能匹配一个字节的字符，不能识别换行符,回车符，行分隔符，段分隔符等<br>换行符,回车符，行分隔符，段分隔符 需要用 s 修饰符来识别， s 修饰符目前处于提案状态</p>
@@ -452,57 +416,9 @@ var reg = new RegExp(&quot;\\w+\\s&quot;, &quot;g&quot;);
 <p><img src="http://or3233yyd.bkt.clouddn.com//17-7-16/79456676.jpg" alt=""></p>
 <h2 id="贪婪-惰性"><a href="#贪婪-惰性" class="headerlink" title="贪婪 / 惰性"></a>贪婪 / 惰性</h2><p><img src="http://or3233yyd.bkt.clouddn.com//17-7-16/87221432.jpg" alt=""></p>
 <h2 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h2><p><img src="http://or3233yyd.bkt.clouddn.com//17-7-16/6803210.jpg" alt=""></p>
-<h3 id="ES6-新增修饰符"><a href="#ES6-新增修饰符" class="headerlink" title="ES6 新增修饰符"></a>ES6 新增修饰符</h3><h4 id="y-修饰符"><a href="#y-修饰符" class="headerlink" title="y 修饰符"></a>y 修饰符</h4><pre><code class="javascript">let str = &#39;bb_b=b+bbb++bb&#39;;
-
-let reg1 = /b+/g;    
-let reg2 = /b+/y;    
-
-let exec1 = reg1.exec(str);
-let exec2 = reg2.exec(str);
-
-console.log(&#39;OneExec:\n&#39; + &#39;exec1: &#39; + exec1 + &#39;\texec1: &#39; + exec2)  //bb   bb
-console.log(&#39;TwoExec:\n&#39; + &#39;exec1: &#39; + reg1.exec(str) + &#39;\texec1: &#39; + reg2.exec(str)) // b  null  //g 第二次自动匹配下一个位置,而 y 不是
-console.log(reg1.sticky, reg2.sticky)    // 检测是否开启了 y
-</code></pre>
-<h4 id="u-修饰符-unicode"><a href="#u-修饰符-unicode" class="headerlink" title="u 修饰符 (unicode)"></a>u 修饰符 (unicode)</h4><pre><code class="javascript">    var str = &#39;\uD83D\uDC2A&#39;;    
-
-    var reg1 = /^\uD83D/;
-    var reg2 = /^\uD83D/u;
-
-    console.log(&#39;u1: &#39; + reg1.test(str))    //true        //当作俩个字节处理
-    console.log(&#39;u2: &#39; + reg2.test(str))    //false        // 当作了一个字节处理
-
-    console.log(/\u{61}/.test(&#39;a&#39;));  // false   这里不识别 \u{61} 中的 {61}-&gt; unicode编码 // a 的 unicode编码是 61
-    console.log(/\u{61}/u.test(&#39;a&#39;));   //true
-
-    console.log(&#39;\u{54564}&#39;);    //񔕤
-    console.log(&#39;\u{2048}&#39;);     //⁈
-
-    let z1 = &#39;񔕤&#39;;
-    let z2 = &#39;⁈&#39;;
-
-    let reg3 = /^.$/;
-    let reg4 = /^.$/u;
-
-    let test3 = reg3.test(z1);
-    let test4 = reg3.test(z2);       //  . 只能匹配一个字节的字符，也不能识别换行符等
-    let test5 = reg4.test(z1);       //大于俩个字节时，使用 u 修饰符
-    console.log(&#39;z1: &#39; + test3 + &#39; z2: &#39; + test4 + &#39; z1(u): &#39; + test5);   // z1: false z2: true z1(u): true
-</code></pre>
-<h2 id="ES6-新增"><a href="#ES6-新增" class="headerlink" title="ES6 新增"></a>ES6 新增</h2><pre><code class="javascript">    let reg1 = new RegExp(&#39;xyz&#39;, &#39;i&#39;);    // round1
-    let reg2 = new RegExp(/xyz/g);        // round2   ES5 只能输入一个参数
-
-    let test1 = reg1.test(&#39;xyz123&#39;); //true
-    let test2 = reg2.test(&#39;xyz123&#39;); //true
-
-
-    //  --&gt;  flag   es6 新添加，用来获取正则的修饰符 
-    console.log(test1, test2, reg1.flags, reg2.flags)
-    let reg3 = new RegExp(/xyz/g, &#39;i&#39;);  // ES6 允许这种情况输入俩个参数
-
-    let flag3 = reg3.flags;   
-    console.log(flag3);    // -&gt; i    这里 i 覆盖了前面的g
-</code></pre>
+<h3 id="ES6-新增修饰符"><a href="#ES6-新增修饰符" class="headerlink" title="ES6 新增修饰符"></a>ES6 新增修饰符</h3><h4 id="y-修饰符"><a href="#y-修饰符" class="headerlink" title="y 修饰符"></a>y 修饰符</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> str = <span class="string">'bb_b=b+bbb++bb'</span>;</div><div class="line"></div><div class="line"><span class="keyword">let</span> reg1 = <span class="regexp">/b+/g</span>;    </div><div class="line"><span class="keyword">let</span> reg2 = <span class="regexp">/b+/y</span>;    </div><div class="line"></div><div class="line"><span class="keyword">let</span> exec1 = reg1.exec(str);</div><div class="line"><span class="keyword">let</span> exec2 = reg2.exec(str);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'OneExec:\n'</span> + <span class="string">'exec1: '</span> + exec1 + <span class="string">'\texec1: '</span> + exec2)  <span class="comment">//bb   bb</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'TwoExec:\n'</span> + <span class="string">'exec1: '</span> + reg1.exec(str) + <span class="string">'\texec1: '</span> + reg2.exec(str)) <span class="comment">// b  null  //g 第二次自动匹配下一个位置,而 y 不是</span></div><div class="line"><span class="built_in">console</span>.log(reg1.sticky, reg2.sticky)    <span class="comment">// 检测是否开启了 y</span></div></pre></td></tr></table></figure>
+<h4 id="u-修饰符-unicode"><a href="#u-修饰符-unicode" class="headerlink" title="u 修饰符 (unicode)"></a>u 修饰符 (unicode)</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">   <span class="keyword">var</span> str = <span class="string">'\uD83D\uDC2A'</span>;	</div><div class="line"></div><div class="line"><span class="keyword">var</span> reg1 = <span class="regexp">/^\uD83D/</span>;</div><div class="line"><span class="keyword">var</span> reg2 = <span class="regexp">/^\uD83D/u</span>;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'u1: '</span> + reg1.test(str))    <span class="comment">//true        //当作俩个字节处理</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'u2: '</span> + reg2.test(str))	<span class="comment">//false		// 当作了一个字节处理</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="regexp">/\u&#123;61&#125;/</span>.test(<span class="string">'a'</span>));  <span class="comment">// false   这里不识别 \u&#123;61&#125; 中的 &#123;61&#125;-&gt; unicode编码 // a 的 unicode编码是 61</span></div><div class="line"><span class="built_in">console</span>.log(<span class="regexp">/\u&#123;61&#125;/u</span>.test(<span class="string">'a'</span>));   <span class="comment">//true</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'\u&#123;54564&#125;'</span>);    <span class="comment">//񔕤</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'\u&#123;2048&#125;'</span>);     <span class="comment">//⁈</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> z1 = <span class="string">'񔕤'</span>;</div><div class="line"><span class="keyword">let</span> z2 = <span class="string">'⁈'</span>;</div><div class="line"></div><div class="line"><span class="keyword">let</span> reg3 = <span class="regexp">/^.$/</span>;</div><div class="line"><span class="keyword">let</span> reg4 = <span class="regexp">/^.$/u</span>;</div><div class="line"></div><div class="line"><span class="keyword">let</span> test3 = reg3.test(z1);</div><div class="line"><span class="keyword">let</span> test4 = reg3.test(z2);       <span class="comment">//  . 只能匹配一个字节的字符，也不能识别换行符等</span></div><div class="line"><span class="keyword">let</span> test5 = reg4.test(z1);       <span class="comment">//大于俩个字节时，使用 u 修饰符</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'z1: '</span> + test3 + <span class="string">' z2: '</span> + test4 + <span class="string">' z1(u): '</span> + test5);   <span class="comment">// z1: false z2: true z1(u): true</span></div></pre></td></tr></table></figure>
+<h2 id="ES6-新增"><a href="#ES6-新增" class="headerlink" title="ES6 新增"></a>ES6 新增</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">   <span class="keyword">let</span> reg1 = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'xyz'</span>, <span class="string">'i'</span>);    <span class="comment">// round1</span></div><div class="line"><span class="keyword">let</span> reg2 = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/xyz/g</span>);        <span class="comment">// round2   ES5 只能输入一个参数</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> test1 = reg1.test(<span class="string">'xyz123'</span>); <span class="comment">//true</span></div><div class="line"><span class="keyword">let</span> test2 = reg2.test(<span class="string">'xyz123'</span>); <span class="comment">//true</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//  --&gt;  flag   es6 新添加，用来获取正则的修饰符 </span></div><div class="line"><span class="built_in">console</span>.log(test1, test2, reg1.flags, reg2.flags)</div><div class="line"><span class="keyword">let</span> reg3 = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/xyz/g</span>, <span class="string">'i'</span>);  <span class="comment">// ES6 允许这种情况输入俩个参数</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> flag3 = reg3.flags;   </div><div class="line"><span class="built_in">console</span>.log(flag3);    <span class="comment">// -&gt; i    这里 i 覆盖了前面的g</span></div></pre></td></tr></table></figure>
 <h2 id="使用正则表达式"><a href="#使用正则表达式" class="headerlink" title="使用正则表达式"></a>使用正则表达式</h2><h3 id="正则表达式属性"><a href="#正则表达式属性" class="headerlink" title="正则表达式属性"></a>正则表达式属性</h3><p><img src="http://or3233yyd.bkt.clouddn.com//17-7-16/42241406.jpg" alt=""></p>
 <blockquote>
 <p>lastindex 只在全局匹配时有效<br>例：<img src="http://or3233yyd.bkt.clouddn.com//17-7-16/39465782.jpg" alt=""></p>
@@ -558,28 +474,39 @@ console.log(reg1.sticky, reg2.sticky)    // 检测是否开启了 y
 </ul>
 <h1 id="常见的正则表达式"><a href="#常见的正则表达式" class="headerlink" title="常见的正则表达式"></a>常见的正则表达式</h1><blockquote>
 <ul>
-<li>邮箱：<pre><code>/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/
-</code></pre></li>
-<li>URL 地址： <pre><code>/^https?:\/\/(([a-zA-Z0-9_-])+(\.)?)*(:\d+)?(\/((\.)?(\?)?=?&amp;?[a-zA-Z0-9_-](\?)?)*)*$/i
-</code></pre></li>
-<li>手机号码：<pre><code>/^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/
-</code></pre></li>
-<li>匹配身份证号：<pre><code>/^(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[Xx])$)$/
-</code></pre></li>
-<li>邮政编码：<pre><code>/^[1-9]\d{5}(?!\d)$/
-</code></pre></li>
-<li>匹配日期(yyyy-mm-dd)： <pre><code>/^[1-2][0-9][0-9][0-9]-[0-1]{0,1}[0-9]-[0-3]{0,1}[0-9]$/
-</code></pre></li>
-<li>匹配 HTML 标签： <pre><code>/&lt;(\S*?) [^&gt;]*&gt;.*?&lt;/\1&gt;|&lt;.*?/&gt;/gm
-</code></pre></li>
-<li>匹配中文字符：<pre><code>/[\u4e00-\u9fa5]/gm
-</code></pre></li>
-<li>只能输入数字： <pre><code>/^\d+$/
-</code></pre></li>
-<li>只能由英文字母/数字/下划线组成： <pre><code>/^\w+$/
-</code></pre></li>
-<li>只能英文和数字组成：<pre><code>/^[a-z0-9]+$/i
-</code></pre></li>
+<li><p>邮箱：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/</div></pre></td></tr></table></figure>
+</li>
+<li><p>URL 地址： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/^https?:\/\/(([a-zA-Z0-9_-])+(\.)?)*(:\d+)?(\/((\.)?(\?)?=?&amp;?[a-zA-Z0-9_-](\?)?)*)*$/i</div></pre></td></tr></table></figure>
+</li>
+<li><p>手机号码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]&#123;8&#125;$/</div></pre></td></tr></table></figure>
+</li>
+<li><p>匹配身份证号：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/^(^[1-9]\d&#123;7&#125;((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d&#123;3&#125;$)|(^[1-9]\d&#123;5&#125;[1-9]\d&#123;3&#125;((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d&#123;4&#125;)|\d&#123;3&#125;[Xx])$)$/</div></pre></td></tr></table></figure>
+</li>
+<li><p>邮政编码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/^[1-9]\d&#123;5&#125;(?!\d)$/</div></pre></td></tr></table></figure>
+</li>
+<li><p>匹配日期(yyyy-mm-dd)： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/^[1-2][0-9][0-9][0-9]-[0-1]&#123;0,1&#125;[0-9]-[0-3]&#123;0,1&#125;[0-9]$/</div></pre></td></tr></table></figure>
+</li>
+<li><p>匹配 HTML 标签： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/&lt;(\S*?) [^&gt;]*&gt;.*?&lt;/\1&gt;|&lt;.*?/&gt;/gm</div></pre></td></tr></table></figure>
+</li>
+<li><p>匹配中文字符：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/[\u4e00-\u9fa5]/gm</div></pre></td></tr></table></figure>
+</li>
+<li><p>只能输入数字： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/^\d+$/</div></pre></td></tr></table></figure>
+</li>
+<li><p>只能由英文字母/数字/下划线组成： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/^\w+$/</div></pre></td></tr></table></figure>
+</li>
+<li><p>只能英文和数字组成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/^[a-z0-9]+$/i</div></pre></td></tr></table></figure>
+</li>
 </ul>
 </blockquote>
 <h1 id="正则表达式学习"><a href="#正则表达式学习" class="headerlink" title="正则表达式学习"></a>正则表达式学习</h1><p><a href="https://msdn.microsoft.com/zh-cn/library/az24scfc%28v=vs.110%29.aspx" target="_blank" rel="external">正则表达式快速参考-MSDN</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions" target="_blank" rel="external">正则表达式-MDN</a><br><a href="https://deerchao.net/tutorials/regex/regex.htm" target="_blank" rel="external">正则表达式30分钟入门教程</a><br><a href="http://www.runoob.com/regexp/regexp-syntax.html" target="_blank" rel="external">菜鸟教程-正则表达式</a></p>
@@ -694,7 +621,7 @@ console.log(reg1.sticky, reg2.sticky)    // 检测是否开启了 y
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.jpg"
+               src="/images/avatar.gif"
                alt="白日梦想家" />
           <p class="site-author-name" itemprop="name">白日梦想家</p>
            
@@ -738,7 +665,7 @@ console.log(reg1.sticky, reg2.sticky)    // 检测是否开启了 y
 
         
           <div class="feed-link motion-element">
-            <a href="/rss" rel="alternate">
+            <a href="/atom.xml" rel="alternate">
               <i class="fa fa-rss"></i>
               RSS
             </a>
@@ -750,6 +677,12 @@ console.log(reg1.sticky, reg2.sticky)    // 检测是否开启了 y
         </div>
 
         
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
         
 
         
@@ -807,26 +740,12 @@ console.log(reg1.sticky, reg2.sticky)    // 检测是否开启了 y
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Muse
   </a>
 </div>
 
 
         
-<div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-
-  
-    <span class="site-pv">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
-    </span>
-  
-</div>
-
 
         
       </div>
@@ -943,323 +862,6 @@ console.log(reg1.sticky, reg2.sticky)    // 检测是否开启了 y
 
   
 
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
 
 
 
@@ -1267,21 +869,6 @@ console.log(reg1.sticky, reg2.sticky)    // 检测是否开启了 y
   
 
   
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-
 
   
 
