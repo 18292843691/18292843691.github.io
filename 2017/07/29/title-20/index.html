@@ -93,15 +93,16 @@
 
 
 
-<meta name="description" content="那些一起做的白日梦，你还记得么">
-<meta property="og:type" content="website">
-<meta property="og:title" content="dayDream&#39;s blog">
-<meta property="og:url" content="http:\\hexin.life/tags/插件/index.html">
+<meta name="description" content="创建一个n+1的空数组，调用join方法。12345String.prototype.times = function(n) &amp;#123;//IE6 530-640 FF3 400~550 IE8 840 ~1110   chrome 600~1000  return (new Array(n+1)).join(this);&amp;#125;;``` 2. 创建一个对象，拥有length属性，然后">
+<meta property="og:type" content="article">
+<meta property="og:title" content="字符串的乘法">
+<meta property="og:url" content="http:\\hexin.life/2017/07/29/title-20/index.html">
 <meta property="og:site_name" content="dayDream&#39;s blog">
-<meta property="og:description" content="那些一起做的白日梦，你还记得么">
+<meta property="og:description" content="创建一个n+1的空数组，调用join方法。12345String.prototype.times = function(n) &amp;#123;//IE6 530-640 FF3 400~550 IE8 840 ~1110   chrome 600~1000  return (new Array(n+1)).join(this);&amp;#125;;``` 2. 创建一个对象，拥有length属性，然后">
+<meta property="og:updated_time" content="2017-07-29T08:12:57.632Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="dayDream&#39;s blog">
-<meta name="twitter:description" content="那些一起做的白日梦，你还记得么">
+<meta name="twitter:title" content="字符串的乘法">
+<meta name="twitter:description" content="创建一个n+1的空数组，调用join方法。12345String.prototype.times = function(n) &amp;#123;//IE6 530-640 FF3 400~550 IE8 840 ~1110   chrome 600~1000  return (new Array(n+1)).join(this);&amp;#125;;``` 2. 创建一个对象，拥有length属性，然后">
 
 
 
@@ -129,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http:\\hexin.life/tags/插件/"/>
+  <link rel="canonical" href="http:\\hexin.life/2017/07/29/title-20/"/>
 
 
 
 
 
-  <title>标签: 插件 | dayDream's blog</title>
+  <title>字符串的乘法 | dayDream's blog</title>
   
 
 
@@ -160,7 +161,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -298,44 +299,167 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h1>插件<small>标签</small>
-      </h1>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http:\\hexin.life/2017/07/29/title-20/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="白日梦想家">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="dayDream's blog">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">字符串的乘法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-29T15:55:33+08:00">
+                2017-07-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><ol>
+<li>创建一个n+1的空数组，调用join方法。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">String.prototype.times = function(n) &#123;//IE6 530-640 FF3 400~550 IE8 840 ~1110   chrome 600~1000</div><div class="line">  return (new Array(n+1)).join(this);</div><div class="line">&#125;;</div><div class="line">``` </div><div class="line">2. 创建一个对象，拥有length属性，然后利用call()方法去调用数组原型的join方法。这样就不用创建数组了。</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>String.prototype.times = function(n) {//IE6 570~600  FF3 320~430  chrome 550~900 IE8 422~490<br>  return Array.prototype.join.call({length:n+1}, this);<br>};<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">3. 它先把Array.prototype.join与对象缓存起来，这样每次就不用从Array的原型查找join方法与创建对象。</div></pre></td></tr></table></figure></p>
+<p>String.prototype.times = (function(){//IE6 500~600  FF3 322~390 chrome 581~900 IE8 430~500<br>  var join = Array.prototype.join,//利用闭包，每次的结果都非常不稳定，让浏览器无法进行优化<br>  obj = { };<br>  return function(n) {<br>    obj.length = n + 1;<br>    return join.call(obj, this);<br>  }<br>})();<br>```</p>
+<p><a href="http://www.cnblogs.com/rubylouvre/archive/2009/11/08/1598383.html" target="_blank" rel="external">字符串的乘法-司徒正美</a></p>
 
-      <h2 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/05/06/title-8/" itemprop="url">
-              
-                <span itemprop="name">copy小插件</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-06T15:12:20+08:00"
-              content="2017-05-06" >
-          05-06
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      白日梦想家
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http:\\hexin.life/2017/07/29/title-20/" title="字符串的乘法">http:\\hexin.life/2017/07/29/title-20/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/29/title-19/" rel="next" title="JS练习之--模拟call_apply">
+                <i class="fa fa-chevron-left"></i> JS练习之--模拟call_apply
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/29/title-21/" rel="prev" title="面试题整理">
+                面试题整理 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -343,6 +467,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
 
         </div>
         
@@ -585,10 +715,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
@@ -614,6 +744,10 @@
   
     
 
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2139345"></script>
+      <!-- UY END -->
     
   
 

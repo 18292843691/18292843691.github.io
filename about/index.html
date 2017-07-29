@@ -100,7 +100,7 @@
 <meta property="og:site_name" content="dayDream&#39;s blog">
 <meta property="og:description" content="#content-1{     	width: 100%;     	height: 100%;     	padding: 0;     	margin: 0;     	position: relative;     }     #aboutme {         width: 450px;         height: 25">
 <meta property="og:image" content="http://hexin.life/about/yy.jpg">
-<meta property="og:updated_time" content="2017-07-13T06:26:13.038Z">
+<meta property="og:updated_time" content="2017-07-29T07:57:30.669Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="console.log(aboutme)">
 <meta name="twitter:description" content="#content-1{     	width: 100%;     	height: 100%;     	padding: 0;     	margin: 0;     	position: relative;     }     #aboutme {         width: 450px;         height: 25">
@@ -356,8 +356,7 @@
     	.aboutme{
     		width: 288px;
     		height: 200px;
-    	}
-    	
+    	}   	
     }
     
     
@@ -398,7 +397,13 @@
     </div>
     <div id="bigger-img"><!-- <span>X</span> --></div>
     </div>
+    <div id="canvas-clock">
+        <canvas id="clock" width="100" height="100">
+            
+        </canvas>
+    </div>
     <script type="text/javascript">
+
     function Aboutme(name, age, sex) {
         this.name = name;
         this.age = age;
@@ -449,6 +454,126 @@
             }
         }
     }
+
+
+    // 时钟
+    var clo = document.getElementById('clock');
+        var ctx = clo.getContext('2d');
+        var width = ctx.canvas.width;        //获取canvas的宽度
+        var height = ctx.canvas.height;      //获取canvas的高度
+        var r = width*0.8/2;                //圆的半径
+        var rem = width*0.8 / 205;         //方便调整时钟大小
+
+        function drawBackground() {
+            //画最外圈的圆
+            ctx.save();   //状态保存
+            ctx.translate(r,r);    //将原点0,0移到r,r
+            ctx.beginPath();
+            ctx.lineWidth = 5 * rem;
+            ctx.arc(0,0,r-3,0,2*Math.PI);
+            ctx.stroke();
+            //ctx.fill();
+            
+            //小时
+            var hourNumber = [3,4,5,6,7,8,9,10,11,12,1,2];             //数组保存小时
+            ctx.font= 20 * rem +"px Arial";
+            ctx.textAlign = 'center';                             //居中显示
+            ctx.textBaseline = 'middle';
+            hourNumber.forEach(function(number,i){                //将12小时显示在正确位置
+                //弧度
+                var rad = 2 * Math.PI / 12 *i;
+                var x = Math.cos(rad) * (r - (25 * rem));
+                var y = Math.sin(rad) * (r - (25 * rem));
+                ctx.fillText(number,x,y);
+            });
+
+            for(var i =0 ; i <= 60 ; i++) {                      //画时间点
+                var rad = 2 * Math.PI / 60 *i;
+                var x = Math.cos(rad) * (r - (15 * rem));
+                var y = Math.sin(rad) * (r - (15 * rem));
+                ctx.beginPath();
+                if(i % 5 === 0)                                  //每个小时针对应的点为黑，其他为灰方便区分
+                {
+                    ctx.fillStyle = 'black';
+                    ctx.arc(x,y,1.5* rem,0,2*Math.PI);
+                }
+                else{
+                    ctx.fillStyle = 'gray';
+                    ctx.arc(x,y,1.5* rem,0,2*Math.PI);
+                }
+                ctx.fill();
+                
+                //ctx.fillText(".",x,y);
+            }
+        }
+
+        function drawHour(hour,minute) {                     //时针
+            ctx.save();
+            ctx.beginPath();
+            ctx.lineWidth = 3* rem;
+            ctx.lineCap = 'round';
+
+            var rad = 2*Math.PI / 12 * hour;
+            var mrad = 2*Math.PI / 12 / 60 * minute;
+            ctx.rotate(rad + mrad);
+            ctx.moveTo (0,10* rem);
+            ctx.lineTo(0,-r / 3);
+            ctx.stroke();
+            ctx.restore();
+        };
+        function drawMinute(minute){                //分针
+            ctx.save();
+            ctx.beginPath();
+            ctx.lineWidth = 2;
+            ctx.lineCap = 'round';
+
+            var rad = 2*Math.PI / 60 * minute;
+            ctx.rotate(rad);
+            ctx.moveTo (0,10* rem);
+            ctx.lineTo(0,-r / 2);
+            ctx.stroke();
+            ctx.restore();
+        }
+        function drawSecond(second){                //秒针
+            ctx.save();
+            ctx.beginPath();
+            ctx.fillStyle = 'black';
+
+
+            var rad = 2*Math.PI / 60 * second;
+            ctx.rotate(rad);
+            ctx.moveTo(-1,20* rem);
+            ctx.lineTo(2,20* rem);
+            ctx.lineTo(1,-r/2 -(20 * rem));
+            //ctx.lineTo(-2,r/2 -20);
+            ctx.fill();
+            
+            ctx.restore();
+        }
+
+        function drawDot() {                  //中心点
+            ctx.beginPath();     
+            ctx.fillStyle = 'blcak';
+            ctx.arc(r,r,4* rem,0,2*Math.PI);
+            ctx.fill();
+
+        }
+            function draw(){                                //利用定时器实现动态时钟
+                ctx.clearRect(0,0,width,height);            //每秒清除刚画的图，进行重新画图
+                var now = new Date();                        //更新时间为当前系统时间
+                var hour = now.getHours();
+                var minute = now.getMinutes();
+                var second = now.getSeconds();
+                drawDot();
+                drawBackground();
+                drawHour(hour,minute);
+                drawMinute(minute);
+                drawSecond(second);
+                ctx.restore();
+
+            }
+            draw();
+            setInterval(draw,1000);
     </script>
 </body>
 
@@ -499,7 +624,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
