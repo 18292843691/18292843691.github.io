@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http:%5C%5Chexin.life/"/>
-  <updated>2017-07-30T11:52:48.427Z</updated>
+  <updated>2017-07-30T15:43:07.499Z</updated>
   <id>http:\\hexin.life/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http:%5C%5Chexin.life/2017/07/29/title-21/"/>
     <id>http:\\hexin.life/2017/07/29/title-21/</id>
     <published>2017-07-29T08:09:22.000Z</published>
-    <updated>2017-07-30T11:52:48.427Z</updated>
+    <updated>2017-07-30T15:43:07.499Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><h4 id="使用-typeof-能得到哪些基础类型"><a href="#使用-typeof-能得到哪些基础类型" class="headerlink" title="使用 typeof 能得到哪些基础类型"></a>使用 typeof 能得到哪些基础类型</h4><ul>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><h4 id="使用-typeof-能得到哪些基础类型"><a href="#使用-typeof-能得到哪些基础类型" class="headerlink" title="使用 typeof 能得到哪些基础类型"></a>使用 typeof 能得到哪些基础类型</h4><ul>
 <li>undefined</li>
 <li>boolean</li>
 <li>Number</li>
@@ -100,7 +100,7 @@
     
     <summary type="html">
     
-      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/as
+      &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/as
     
     </summary>
     
@@ -118,7 +118,7 @@
     <published>2017-07-29T07:55:33.000Z</published>
     <updated>2017-07-29T08:12:57.632Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><ol>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><ol>
 <li>创建一个n+1的空数组，调用join方法。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">String.prototype.times = function(n) &#123;//IE6 530-640 FF3 400~550 IE8 840 ~1110   chrome 600~1000</div><div class="line">  return (new Array(n+1)).join(this);</div><div class="line">&#125;;</div><div class="line">``` </div><div class="line">2. 创建一个对象，拥有length属性，然后利用call()方法去调用数组原型的join方法。这样就不用创建数组了。</div></pre></td></tr></table></figure>
 </li>
 </ol>
@@ -129,7 +129,7 @@
     
     <summary type="html">
     
-      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/as
+      &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/as
     
     </summary>
     
@@ -143,7 +143,7 @@
     <published>2017-07-29T07:35:46.000Z</published>
     <updated>2017-07-29T08:13:37.274Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><h2 id="apply-和-call"><a href="#apply-和-call" class="headerlink" title="apply 和 call"></a>apply 和 call</h2><p>在 JavaScript 中, 函数是对象。JavaScript 函数有它的属性和方法。<br>call() 和 apply() 是预定义的函数方法。 两个方法可用于调用函数，两个方法的第一个参数必须是对象本身。<br>例1；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var jaw = &#123; </div><div class="line">    name: &apos;jaw&apos;, </div><div class="line">    sayHello: function(age) &#123; </div><div class="line">        console.log(&apos;hello i am &apos; + this.name + &quot; i&apos;m &quot; + age + &apos; years old &apos;) </div><div class="line">    &#125; </div><div class="line">&#125;;</div><div class="line"></div><div class="line">var liu = &#123; </div><div class="line">    name: &apos;liu&apos; </div><div class="line">&#125;;</div><div class="line">jaw.sayHello(22); // hello i am jaw i&apos;m 22 years old</div><div class="line">jaw.sayHello.apply(liu, [24]);  //hello i am liu i&apos;m 24 years old </div><div class="line">jaw.sayHello.call(liu, 23);  //hello i am liu i&apos;m 23 years old</div></pre></td></tr></table></figure></p>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><h2 id="apply-和-call"><a href="#apply-和-call" class="headerlink" title="apply 和 call"></a>apply 和 call</h2><p>在 JavaScript 中, 函数是对象。JavaScript 函数有它的属性和方法。<br>call() 和 apply() 是预定义的函数方法。 两个方法可用于调用函数，两个方法的第一个参数必须是对象本身。<br>例1；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var jaw = &#123; </div><div class="line">    name: &apos;jaw&apos;, </div><div class="line">    sayHello: function(age) &#123; </div><div class="line">        console.log(&apos;hello i am &apos; + this.name + &quot; i&apos;m &quot; + age + &apos; years old &apos;) </div><div class="line">    &#125; </div><div class="line">&#125;;</div><div class="line"></div><div class="line">var liu = &#123; </div><div class="line">    name: &apos;liu&apos; </div><div class="line">&#125;;</div><div class="line">jaw.sayHello(22); // hello i am jaw i&apos;m 22 years old</div><div class="line">jaw.sayHello.apply(liu, [24]);  //hello i am liu i&apos;m 24 years old </div><div class="line">jaw.sayHello.call(liu, 23);  //hello i am liu i&apos;m 23 years old</div></pre></td></tr></table></figure></p>
 <p>例2：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function a()&#123;</div><div class="line">    y=function()&#123;</div><div class="line">    x=2;</div><div class="line">&#125;; </div><div class="line">return function()&#123;</div><div class="line">    var x=3;y();console.log(this.x)</div><div class="line">&#125;.apply(this, arguments)&#125; </div><div class="line">a();    //2</div></pre></td></tr></table></figure></p>
 <p>两个方法都使用了对象本身作为第一个参数。 两者的区别在于第二个参数：</p>
 <ul>
@@ -159,7 +159,7 @@
     
     <summary type="html">
     
-      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/as
+      &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/as
     
     </summary>
     
@@ -177,7 +177,7 @@
     <published>2017-07-26T16:12:42.000Z</published>
     <updated>2017-07-29T08:06:08.924Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><p>在web开发中最常见的莫过于GET和POST，其中 GET 一般将参数编码在 url 中（HTTP header）来传递数据； 而POST或PUT数据必须放在消息主体（entity-body）中，这样的数据便是HTTP表单，表单数据的编码方式应在 HTTP 头中进行设置（Content-Type header字段），常见的编码方式有（HTTP采用MIME框架，编码方式可以是任何MIME类型）：</p>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><p>在web开发中最常见的莫过于GET和POST，其中 GET 一般将参数编码在 url 中（HTTP header）来传递数据； 而POST或PUT数据必须放在消息主体（entity-body）中，这样的数据便是HTTP表单，表单数据的编码方式应在 HTTP 头中进行设置（Content-Type header字段），常见的编码方式有（HTTP采用MIME框架，编码方式可以是任何MIME类型）：</p>
 <ol>
 <li>URLencoded: application/x-www-form-urlencoded</li>
 <li>Multipart: multipart/form-data</li>
@@ -218,7 +218,7 @@
     
     <summary type="html">
     
-      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/as
+      &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/as
     
     </summary>
     
@@ -236,7 +236,7 @@
     <published>2017-07-16T16:12:42.000Z</published>
     <updated>2017-07-29T08:03:43.162Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><p>为了方便查询和学习，这里对正则表达式做一个整理<br>这里推荐一个正则练习的网站 , 将晦涩的正则表达式用图形描述出来</p>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><p>为了方便查询和学习，这里对正则表达式做一个整理<br>这里推荐一个正则练习的网站 , 将晦涩的正则表达式用图形描述出来</p>
 <p> <a href="https://regexper.com/" target="_blank" rel="external">RegExper</a></p>
 <p>像这个样子：<img src="http://or3233yyd.bkt.clouddn.com//17-7-16/5643026.jpg" alt=""></p>
 <h1 id="关于正则表达式"><a href="#关于正则表达式" class="headerlink" title="关于正则表达式"></a>关于正则表达式</h1><blockquote>
@@ -362,7 +362,7 @@
     
     <summary type="html">
     
-      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/as
+      &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/as
     
     </summary>
     
@@ -380,11 +380,11 @@
     <published>2017-07-11T13:32:07.000Z</published>
     <updated>2017-07-11T13:32:07.653Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script>]]></content>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script>]]></content>
     
     <summary type="html">
     
-      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/as
+      &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/as
     
     </summary>
     
@@ -398,7 +398,7 @@
     <published>2017-07-11T13:30:56.000Z</published>
     <updated>2017-07-13T07:43:24.216Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><h1 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h1><p><img src="https://developer.mozilla.org/files/72/boxmodel%20(1" alt="">.png)</p>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><h1 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h1><p><img src="https://developer.mozilla.org/files/72/boxmodel%20(1" alt="">.png)</p>
 <p>在一个文档中，每个元素都被表示为一个矩形的盒子。确定这些盒子的尺寸, 属性 — 像它的颜色，背景，边框方面 — 和位置是渲染引擎的目标。</p>
 <p>在CSS中，使用标准盒模型描述这些矩形盒子中的每一个。这个模型描述了元素所占空间的内容。每个盒子有四个边：外边距边, 边框边, 内填充边 与 内容边。 </p>
 <h2 id="盒模型-1"><a href="#盒模型-1" class="headerlink" title="盒模型"></a>盒模型</h2><p><img src="http://www.runoob.com/images/box-model.gif" alt=""></p>
@@ -548,7 +548,7 @@
     
     <summary type="html">
     
-      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/as
+      &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/as
     
     </summary>
     
@@ -566,7 +566,7 @@
     <published>2017-07-11T12:28:04.000Z</published>
     <updated>2017-07-13T06:29:19.777Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><h2 id="缓动的基础知识"><a href="#缓动的基础知识" class="headerlink" title="缓动的基础知识"></a>缓动的基础知识</h2><p>自然界中没有东西是从一点呈线性地移动到另一点。现实中，物体在移动时往往会加速或减速。我们的大脑习惯于期待这种运动，因此在做动画时，应利用此规律。自然的运动会让用户对您的应用感觉更舒适，从而产生更好的总体体验。</p>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><h2 id="缓动的基础知识"><a href="#缓动的基础知识" class="headerlink" title="缓动的基础知识"></a>缓动的基础知识</h2><p>自然界中没有东西是从一点呈线性地移动到另一点。现实中，物体在移动时往往会加速或减速。我们的大脑习惯于期待这种运动，因此在做动画时，应利用此规律。自然的运动会让用户对您的应用感觉更舒适，从而产生更好的总体体验。</p>
 <ul>
 <li>缓动使您的动画感觉更自然。</li>
 <li>为 UI 元素选择缓出动画。</li>
@@ -605,7 +605,7 @@
     
     <summary type="html">
     
-      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/as
+      &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/as
     
     </summary>
     
@@ -623,7 +623,7 @@
     <published>2017-06-06T03:48:42.000Z</published>
     <updated>2017-06-06T16:41:35.944Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><p>时隔好久，这里对hexo的博客进行一些功能上的拓展</p>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><p>时隔好久，这里对hexo的博客进行一些功能上的拓展</p>
 <h2 id="1-七牛云定制空间及绑定到极简图床"><a href="#1-七牛云定制空间及绑定到极简图床" class="headerlink" title="1.七牛云定制空间及绑定到极简图床"></a>1.七牛云定制空间及绑定到极简图床</h2><blockquote>
 <p>对于上传图片个人喜欢<a href="http://jiantuku.com/#/" target="_blank" rel="external">极简图床</a>，支持复制粘贴上传，截图然后粘贴用起来贼爽。</p>
 </blockquote>
@@ -765,7 +765,7 @@ D:. public/
     
     <summary type="html">
     
-      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/as
+      &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/as
     
     </summary>
     
@@ -783,7 +783,7 @@ D:. public/
     <published>2017-06-05T17:01:56.000Z</published>
     <updated>2017-07-11T10:10:20.713Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><h2 id="咸鱼也得做特别咸的那种"><a href="#咸鱼也得做特别咸的那种" class="headerlink" title=" 咸鱼也得做特别咸的那种 "></a><blockquote class="blockquote-center"> 咸鱼也得做特别咸的那种 </blockquote></h2><p>$ 最近电脑受不了了，折腾比较多,对于好多东西装了N次，在这里简单记录一下。$</p>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><h2 id="咸鱼也得做特别咸的那种"><a href="#咸鱼也得做特别咸的那种" class="headerlink" title=" 咸鱼也得做特别咸的那种 "></a><blockquote class="blockquote-center"> 咸鱼也得做特别咸的那种 </blockquote></h2><p>$ 最近电脑受不了了，折腾比较多,对于好多东西装了N次，在这里简单记录一下。$</p>
 <h2 id="win-下命令行神器-cmder"><a href="#win-下命令行神器-cmder" class="headerlink" title="win 下命令行神器 cmder"></a><a href="http://cmder.net/" target="_blank" rel="external">win 下命令行神器 cmder</a></h2><p>在 win 下 的命令行神器 cmder，原始 cmd 难看不说，功能也少，这里推荐一下 cmder。可以直接下载 mini 版本，只有 6 mb 大小，完整版本包含了 git 等一堆功能，git 已经安装过了， 这里我就选择了 Mini 版。</p>
 <blockquote>
 <p>安装很简单，直接下载解压即可使用</p>
@@ -810,7 +810,7 @@ D:. public/
     
     <summary type="html">
     
-      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/as
+      &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/as
     
     </summary>
     
@@ -828,7 +828,7 @@ D:. public/
     <published>2017-05-23T14:06:40.000Z</published>
     <updated>2017-07-29T08:23:53.138Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><p><blockquote class="blockquote-center"> 再牛逼的梦想也挡不住傻逼似的坚持 ~ –菜鸟教程 </blockquote></p>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><p><blockquote class="blockquote-center"> 再牛逼的梦想也挡不住傻逼似的坚持 ~ –菜鸟教程 </blockquote></p>
 <h2 id="gt-偶然遇到一个原生JS去除-className-的技巧-Element-className-replace-‘testClassName’-‘realClassName’"><a href="#gt-偶然遇到一个原生JS去除-className-的技巧-Element-className-replace-‘testClassName’-‘realClassName’" class="headerlink" title="&gt; 偶然遇到一个原生JS去除 className 的技巧 Element.className.replace(‘testClassName’, ‘realClassName’);"></a>&gt; 偶然遇到一个原生JS去除 className 的技巧 Element.className.replace(‘testClassName’, ‘realClassName’);</h2><h2 id="px"><a href="#px" class="headerlink" title="px"></a>px</h2><blockquote>
 <p>px : 相对长度单位。像素px是相对于显示器屏幕分辨率而言的。<br> 特点 :</p>
 <ul>
@@ -857,7 +857,7 @@ D:. public/
     
     <summary type="html">
     
-      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/as
+      &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/as
     
     </summary>
     
@@ -875,7 +875,7 @@ D:. public/
     <published>2017-05-06T07:12:20.000Z</published>
     <updated>2017-07-29T08:22:28.361Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><p><blockquote class="blockquote-center"> hacker 是擅于解决问题的人 </blockquote></p>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><p><blockquote class="blockquote-center"> hacker 是擅于解决问题的人 </blockquote></p>
 <h1 id="copy小插件"><a href="#copy小插件" class="headerlink" title="copy小插件"></a>copy小插件</h1><p>昨天舍友在写一个报告的时候，准确的来说是从网上搜罗~然而在 360doc 看到了一个满意的，无奈下载不了，也没法复制粘贴，于是就试了一下。</p>
 <blockquote>
 <p>然后我打开开发者工具(F12)<br>一行代码搞定<br><img src="http://i1.piimg.com/588926/c47501ec4bf4e55a.png" alt=""><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//document.getElementsByTagName('body')[0].oncopy = null;</span></div><div class="line"><span class="built_in">document</span>.getElementsByTagName(<span class="string">'body'</span>)[<span class="number">0</span>].oncopy = <span class="string">''</span>;    <span class="comment">//获取body元素的oncpoy事件，直接置空~</span></div></pre></td></tr></table></figure></p>
@@ -886,7 +886,7 @@ D:. public/
     
     <summary type="html">
     
-      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/as
+      &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/as
     
     </summary>
     
@@ -904,7 +904,7 @@ D:. public/
     <published>2017-04-15T13:03:54.000Z</published>
     <updated>2017-05-04T15:37:52.486Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><blockquote class="blockquote-center">程序是写给人看的，顺带能在机器上运行</blockquote>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><blockquote class="blockquote-center">程序是写给人看的，顺带能在机器上运行</blockquote>
 
 
 
@@ -930,7 +930,7 @@ D:. public/
     
     <summary type="html">
     
-      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/as
+      &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/as
     
     </summary>
     
@@ -944,7 +944,7 @@ D:. public/
     <published>2017-04-15T12:51:20.000Z</published>
     <updated>2017-04-18T11:54:03.333Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><h1 id="俩种在客户端储存数据的方法"><a href="#俩种在客户端储存数据的方法" class="headerlink" title="俩种在客户端储存数据的方法"></a>俩种在客户端储存数据的方法</h1><ul>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><h1 id="俩种在客户端储存数据的方法"><a href="#俩种在客户端储存数据的方法" class="headerlink" title="俩种在客户端储存数据的方法"></a>俩种在客户端储存数据的方法</h1><ul>
 <li>localStorage - 没有时间限制的数据存储</li>
 <li>sessionStorage - 针对 session 的数据存储</li>
 </ul>
@@ -1002,7 +1002,7 @@ D:. public/
     
     <summary type="html">
     
-      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/as
+      &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/as
     
     </summary>
     
@@ -1018,7 +1018,7 @@ D:. public/
     <published>2017-04-15T05:53:19.000Z</published>
     <updated>2017-04-18T11:53:51.330Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><blockquote class="blockquote-center">相信你所相信的，坚持你所坚持的</blockquote>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><blockquote class="blockquote-center">相信你所相信的，坚持你所坚持的</blockquote>
 
 <h1 id="cookies"><a href="#cookies" class="headerlink" title="cookies"></a>cookies</h1><blockquote>
 <p>HTTP 是一个无状态协议，所以客户端每次发出请求时，下一次请求无法得知上一次请求所包含的状态数据，如何能把一个用户的状态数据关联起来呢？即大多都是利用 cookie、session 实现。如浏览器自动保存密码，记住登录状态，网页换肤，新手引导等下次不再提醒功能（我就说我以前换网吧玩总得去禁用那些引导）。<br>比如在淘宝的某个页面中，你进行了登陆操作。当你跳转到商品页时，服务端如何知道你是已经登陆的状态？<br>因此产生了 cookie 来解决这门问题。<a id="more"></a></p>
@@ -1087,7 +1087,7 @@ D:. public/
     <published>2017-04-11T12:06:00.000Z</published>
     <updated>2017-05-10T16:26:39.134Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><p>前几天被朋友吐槽排版太烂了，今天偶然看到这篇文章，然后就转载了过来，由于转载原因可能文章没有原文格式美观，有兴趣请点击链接查看原文。</p>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><p>前几天被朋友吐槽排版太烂了，今天偶然看到这篇文章，然后就转载了过来，由于转载原因可能文章没有原文格式美观，有兴趣请点击链接查看原文。</p>
 <ul>
 <li>原文转载自<a href="http://stormzhang.com/2017/03/16/chinese-copywriting/" target="_blank" rel="external">stormzhang</a></li>
 </ul>
@@ -1222,7 +1222,7 @@ D:. public/
     <published>2017-03-31T15:09:45.000Z</published>
     <updated>2017-04-15T05:39:55.255Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><p><blockquote class="blockquote-center">相信你所相信的，坚持你所坚持的</blockquote></p>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><p><blockquote class="blockquote-center">相信你所相信的，坚持你所坚持的</blockquote></p>
 <h1 id="IE8以下图片出现蓝色边框"><a href="#IE8以下图片出现蓝色边框" class="headerlink" title="IE8以下图片出现蓝色边框"></a>IE8以下图片出现蓝色边框</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">img&#123;</div><div class="line">        <span class="attr">border</span>:<span class="number">0</span>;  <span class="comment">/*或者border:none;*/</span></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
 <h1 id="如何使文本以大写字母开头？"><a href="#如何使文本以大写字母开头？" class="headerlink" title="如何使文本以大写字母开头？"></a>如何使文本以大写字母开头？</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">text-transform:capitalize;</div></pre></td></tr></table></figure>
 <h1 id="强制设置以最新版本IE渲染"><a href="#强制设置以最新版本IE渲染" class="headerlink" title="强制设置以最新版本IE渲染"></a>强制设置以最新版本IE渲染</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge"</span> /&gt;</div><div class="line">    <span class="comment">//我写的页面在IE8之下全部乱掉了，用这个强制用最新版本的IE渲染</span></div></pre></td></tr></table></figure>
@@ -1292,7 +1292,7 @@ D:. public/
     <published>2017-03-28T15:15:03.000Z</published>
     <updated>2017-06-06T09:25:34.819Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script> <blockquote class="blockquote-center">白日做的梦要靠自己追</blockquote>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script> <blockquote class="blockquote-center">白日做的梦要靠自己追</blockquote>
 
 <blockquote>
 <p>一直想有一个自己的博客，前段时间看到HEXO+GitHub傻瓜式搭建，就利用周末花了俩天时间搭建了一个自己的博客。花俩天时间是因为走了太多弯路~搞了太多错误，在这里把流程梳理一下，希望大家不要像我一样走弯路，顺便填入第一篇博客0.0，没有基础的同学也可以利用它搭建自己的博客，我觉得博客不一定要写技术，用来当做自己的私人空间也是很不错的。这里特别感谢<a href="http://chasen-g.cn/" target="_blank" rel="external">Chasen’s </a>，帮我解决了好多问题。 </p>
@@ -1420,7 +1420,7 @@ D:. public/
     
     <summary type="html">
     
-      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/as
+      &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/as
     
     </summary>
     
