@@ -1,0 +1,59 @@
+<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        (function() {
+            let body = document.body;
+            for (let i = 0; i < 10; i++) {
+                let a = document.createElement('a');
+
+                a.textContent = `${i}`;
+                a.style.cssText = 'margin: 5px;' + 'color: #363636;' + 'font-size: 16px';
+
+                body.appendChild(a);
+            }
+
+            let ac = document.getElementsByTagName('a');
+            //console.log(ac)
+            for (let i = 0; i < 10; i++) {
+
+                ac[i].onclick = function() {
+                        alert(i)
+                    }
+                    // ac[i].addEventListener('click', function() {
+                    //     alert(ac[i].textContent)
+                    // })
+            }
+
+            // 数组随机排序
+            var arr = [11, 22, 33, 44, 55, 66, 77, 88, 99, 100];
+
+            let len = arr.length;
+
+            function RandomArray(arr) {
+                if (arr.length == 1) {
+                    return arr;
+                }
+                for (let i = 0; i < len; i++) {
+                    let random = Math.floor(Math.random() * len);
+                    arr.push(arr[random]);
+                    arr.splice(random, 1);
+                }
+                console.log(arr);
+                return arr;
+            }
+
+            RandomArray(arr);
+        })()
+    </script>
+</body>
+
+</html>

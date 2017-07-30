@@ -93,16 +93,16 @@
 
 
 
-<meta name="description" content="Document                  (function() {             let body = document.body;             for (let i = 0; i &amp;lt; 10; i++) {                 let a = document.createElement(&apos;a&apos;);">
+<meta name="description" content="Document               body,html{     	margin: 0;     	padding: 0;     	width: 100%;     }     .left {     	position: relative;     	width: 200px;     	height: 300px;     	float: left;">
 <meta property="og:type" content="website">
 <meta property="og:title" content="dayDream&#39;s blog">
-<meta property="og:url" content="http:\\hexin.life/js-test-1.html">
+<meta property="og:url" content="http:\\hexin.life/more/双飞翼布局--三列中间自适应.html">
 <meta property="og:site_name" content="dayDream&#39;s blog">
-<meta property="og:description" content="Document                  (function() {             let body = document.body;             for (let i = 0; i &amp;lt; 10; i++) {                 let a = document.createElement(&apos;a&apos;);">
-<meta property="og:updated_time" content="2017-07-25T10:04:56.575Z">
+<meta property="og:description" content="Document               body,html{     	margin: 0;     	padding: 0;     	width: 100%;     }     .left {     	position: relative;     	width: 200px;     	height: 300px;     	float: left;">
+<meta property="og:updated_time" content="2017-07-30T10:12:22.873Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="dayDream&#39;s blog">
-<meta name="twitter:description" content="Document                  (function() {             let body = document.body;             for (let i = 0; i &amp;lt; 10; i++) {                 let a = document.createElement(&apos;a&apos;);">
+<meta name="twitter:description" content="Document               body,html{     	margin: 0;     	padding: 0;     	width: 100%;     }     .left {     	position: relative;     	width: 200px;     	height: 300px;     	float: left;">
 
 
 
@@ -130,7 +130,7 @@
 
 
 
-  <link rel="canonical" href="http:\\hexin.life/js-test-1.html"/>
+  <link rel="canonical" href="http:\\hexin.life/more/双飞翼布局--三列中间自适应.html"/>
 
 
 
@@ -316,55 +316,62 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <style>
+    
+    body,html{
+    	margin: 0;
+    	padding: 0;
+    	width: 100%;
+    }
+    .left {
+    	position: relative;
+    	width: 200px;
+    	height: 300px;
+    	float: left;
+    	margin-right: -200px;
+    	background-color: #ccc;
+    	text-align: center;
+    	line-height: 300px;
+    }
+
+    .right{
+    	position: relative;
+    	width: 200px;
+    	height: 300px;
+    	float: right;
+    	margin-left: -200px;
+    	background: red;
+    	text-align: center;
+    	line-height: 300px;
+    }
+
+    .main{
+    	width: 100%;
+    	float: left;
+    	background-color: blue;
+    	height: 300px;
+    	line-height: 300px;
+    	text-align: center;
+    }
+
+    .center{
+    	margin: 0 200px 0 200px;   	
+    }
+    </style>
 </head>
 
 <body>
-
-    <script>
-        (function() {
-            let body = document.body;
-            for (let i = 0; i < 10; i++) {
-                let a = document.createElement('a');
-
-                a.textContent = `${i}`;
-                a.style.cssText = 'margin: 5px;' + 'color: #363636;' + 'font-size: 16px';
-
-                body.appendChild(a);
-            }
-
-            let ac = document.getElementsByTagName('a');
-            //console.log(ac)
-            for (let i = 0; i < 10; i++) {
-
-                ac[i].onclick = function() {
-                        alert(i)
-                    }
-                    // ac[i].addEventListener('click', function() {
-                    //     alert(ac[i].textContent)
-                    // })
-            }
-
-            // 数组随机排序
-            var arr = [11, 22, 33, 44, 55, 66, 77, 88, 99, 100];
-
-            let len = arr.length;
-
-            function RandomArray(arr) {
-                if (arr.length == 1) {
-                    return arr;
-                }
-                for (let i = 0; i < len; i++) {
-                    let random = Math.floor(Math.random() * len);
-                    arr.push(arr[random]);
-                    arr.splice(random, 1);
-                }
-                console.log(arr);
-                return arr;
-            }
-
-            RandomArray(arr);
-        })()
-    </script>
+    <div class="left">
+        <p>左侧定宽</p>
+    </div>
+    <div class="main">
+        <div class="center">
+            <p>中间自适应</p>
+        </div>
+    </div>
+    <div class="right">
+        <p>右侧定宽</p>
+    </div>
 </body>
 
 </html>

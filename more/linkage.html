@@ -1,0 +1,168 @@
+<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>联动</title>
+    <style>
+    body,
+    html {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        display: flex;
+        width: 600px;
+        height: 200px;
+        border: 1px solid rgba(200, 200, 200, .8);
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        /*flex-flow: column;*/
+        /*padding: 10px;*/
+        flex-direction: column;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .show {
+        display: show;
+    }
+
+    select {
+        width: 120px;
+        height: 25px;
+        overflow: scroll;
+    }
+
+    .category {
+        margin: 20px 20px 20px -40px;
+    }
+
+    .category input {
+        margin-left: 80px;
+    }
+
+    .pretty {
+        float: left;
+        margin-left: -20px;
+    }
+
+    .pretty select {
+        margin-left: 40px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="category">
+            <label for="student">
+                <input type="radio" value="学校" ,="" name="cat" checked="checked" id="student">学校
+            </label>
+            <label for="worker">
+                <input type="radio" ,="" value="工作单位" name="cat" id="worker"> 工作单位
+            </label>
+        </div>
+        <div class="pretty">
+            <select name="city" ,="" id="city" class="city">
+                <option value="0">北</option>
+                <option value="1" ,="" selected>北京</option>
+                <option value="2">西安</option>
+                <option value="3">浙江</option>
+                <option value="4">上海</option>
+            </select>
+            <select name="school" ,="" id="school" class="student">
+                <option value="0">北京大学</option>
+                <option value="1" ,="" selected>清华大学</option>
+            </select>
+            <select name="work" ,="" id="work" class="worker hide">
+                <option value="0">美团</option>
+                <option value="1">饿了么</option>
+            </select>
+        </div>
+    </div>
+    
+    <script>
+    const cities = [];
+
+    const university = [
+        ['beiUFE', 'beiSchool'],
+        ['北京大学', '清华大学'],
+        ['西安大学', '西安西安', '西安阿里'],
+        ['浙江大学', '浙江阿里'],
+        ['上海戏剧学院', '上海美剧']
+    ];
+    const companies = [
+        ['滴滴'],
+        ['美团', '饿了么'],
+        ['阿里'],
+        ['京东'],
+        ['nothing', 'i dont know']
+    ];
+
+    const category = document.querySelectorAll('.category input');
+
+    const student = document.querySelector('.student');
+    const worker = document.querySelector('.worker');
+
+    const school = document.querySelector('#school');
+    const city = document.querySelector('#city');
+    const workk = document.querySelector('#work');
+
+    category.forEach(function(input, index) {
+        //console.log(input)
+        input.addEventListener('click', function() {
+            if (index == 0) {
+                student.classList.remove('hide');
+                worker.classList.add('hide');
+            } else {
+                student.classList.add('hide');
+                worker.classList.remove('hide');
+            }
+        }, false)
+    })
+
+    city.addEventListener('change', function() {
+
+        const index = parseInt(city.value);
+
+        if (student.className === 'student') {
+
+            school.innerHTML = '';
+            var html = '';
+
+            for (let i = 0, len = university[index].length; i < len; i++) {
+                // console.log(`${university[index][i]}`)
+                html += `<option value="${university[index][i]}">${university[index][i]}</option>`;
+            }
+            school.innerHTML = html;
+        }
+
+        if (worker.className === 'worker') {
+
+            workk.innerHTML = '';
+            var html = '';
+
+            for (let i = 0, len = companies[index].length; i < len; i++) {
+                console.log(`${companies[index][i]}`)
+                html += `<option value="${companies[index][i]}">${companies[index][i]}</option>`;
+            }
+            workk.innerHTML = html;
+        }
+
+    }, false)
+
+    </script>
+</body>
+
+</html>

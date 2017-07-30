@@ -1,0 +1,134 @@
+<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+    <style>
+        html,body{
+            padding: 0;
+            margin: 0;
+        }
+        #demo{
+            display: block;
+            width: 400px;
+            height: 255px;;
+            margin: 50px;
+            position: relative;           
+        }
+        #sm-box{
+            position: relative;
+            z-index: 1;
+            width:400px;
+            height: 255px;
+            display: block;
+            border: 1px solid #ccc;
+            overflow: hidden;
+            cursor: move;
+        }
+        #bg-box{
+            display: none;
+            position: absolute;
+            top:0;
+            left: 500px;
+            width: 400px;
+            height: 300px;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            z-index: 1;
+        }
+        #bg-box img{
+            position: absolute;
+            z-index: 5;
+        }
+        #float-box{
+            display: none;
+            width: 150px;
+            height: 150px;
+            background-color: rgba(0,0,0,.3);
+            border: 1px solid #ccc;
+            cursor: move;
+            position: absolute;           
+        }
+        #mark {
+            position: absolute;
+            display: block;
+            width: 400px;
+            height: 255px;
+            background-color: rgba(0,0,0,0);
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+<div id="demo">
+    <div id="sm-box">
+        <div id="float-box"></div>
+        <div id="mark"></div>
+        <img src="macbook-small.jpg" alt="macbook-small">
+        </div>
+    <div id="bg-box">
+        <img src="macbook-big.jpg" alt="macbook-big">
+    </div>
+</div>
+<script>
+    window.onload = function () {
+        var demo = document.getElementById('demo'),
+            smBox = document.getElementById('sm-box'),
+            bgBox = document.getElementById('bg-box'),
+            mark = document.getElementById('mark'),
+            floatBox = document.getElementById('float-box');
+        var bigBoxImage = bgBox.getElementsByTagName('img')[0];
+
+        smBox.onmouseover = function (e) {
+            // if(e.stopPropagation){
+            //     e.stopPropagation();
+            // } else {
+            //     e.cancelBubble();
+            // }
+            floatBox.style.display = 'block';
+            bgBox.style.display = 'block';
+        }
+        smBox.onmouseout = function (e) {
+            // if(e.stopPropagation){
+            //     e.stopPropagation();
+            // } else {
+            //     e.cancelBubble();
+            // }
+            floatBox.style.display = 'none';
+            bgBox.style.display = 'none';
+        }
+
+        smBox.onmousemove =  function (e) {
+            var _event = e || window.event;
+
+            var left = _event.clientX - (demo.offsetLeft + smBox.offsetLeft + (floatBox.offsetWidth) / 2 );
+            var top = _event.clientY - (demo.offsetTop + smBox.offsetTop + (floatBox.offsetHeight) / 2);
+
+            floatBox.style.left = left + 'px';
+            floatBox.style.top = top + 'px';
+
+            if (left < 0) {
+                left = 0;
+            } else if (left > smBox.offsetWidth - floatBox.offsetWidth) {
+                left = smBox.offsetWidth - floatBox.offsetWidth;
+            }
+            
+            if (top < 0) {
+                top = 0;
+            } else if (top > smBox.offsetHeight - floatBox.offsetHeight) {
+                top = smBox.offsetHeight - floatBox.offsetHeight;
+            }
+
+            var preX = left / (smBox.offsetWidth - floatBox.offsetWidth);
+            var preY = top / (smBox.offsetHeight - floatBox.offsetHeight);
+
+            bigBoxImage.style.left = -preX * (bigBoxImage.offsetWidth - bgBox.offsetWidth) + 'px';
+            bigBoxImage.style.top = -preY * (bigBoxImage.offsetHeight - bgBox.offsetHeight) + 'px'; 
+        }
+    }
+</script>
+</body>
+</html> 

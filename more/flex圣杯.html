@@ -1,0 +1,63 @@
+<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+     body,html {
+            padding: 0;
+            margin: 0;
+        }
+        .all{
+            display: flex;
+            flex-direction: column; 
+        }
+
+        header,footer{
+            flex: 1 0 auto;
+            background-color: rgba(0,0,0,.4);
+            height: 100px;
+        }
+
+        .container {
+            display: flex;
+            /* flex: 3;  */         
+            /* 一共分为三份 */
+
+            flex-direction: row;          
+            /* 水平正向排列 */
+        }
+        
+        /* 左右俩份，当屏幕缩小时，不缩小 */
+        .left,.right{
+            flex: 0 0 200px;           /*flex: x => {默认为0,有剩余空间不放大}  1 => {默认为为1，空间不足缩小}  size => {默认 auto ,占据固定空间}*/
+            background-color: blue;
+            height: 200px;
+        }
+
+        .center{
+            flex: 1;
+            height: 200px;
+            background-color: red;
+        }
+
+    </style>
+</head>
+
+<body class="all">
+    <header>
+        header
+    </header>
+    <div class="container">
+        <div class="left">left</div>
+        <div class="center">center</div>
+        <div class="right">right</div>
+    </div>
+    <footer>
+        footer
+    </footer>
+</body>
+
+</html>
