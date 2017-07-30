@@ -93,15 +93,16 @@
 
 
 
-<meta name="description" content="那些一起做的白日梦，你还记得么">
+<meta name="description" content="联动          body,     html {         height: 100%;         width: 100%;         margin: 0;         padding: 0;         display: flex;         justify-content: center;         align-item">
 <meta property="og:type" content="website">
 <meta property="og:title" content="dayDream&#39;s blog">
-<meta property="og:url" content="http:\\hexin.life/archives/page/2/index.html">
+<meta property="og:url" content="http:\\hexin.life/linkage.html">
 <meta property="og:site_name" content="dayDream&#39;s blog">
-<meta property="og:description" content="那些一起做的白日梦，你还记得么">
+<meta property="og:description" content="联动          body,     html {         height: 100%;         width: 100%;         margin: 0;         padding: 0;         display: flex;         justify-content: center;         align-item">
+<meta property="og:updated_time" content="2017-07-30T09:07:58.278Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="dayDream&#39;s blog">
-<meta name="twitter:description" content="那些一起做的白日梦，你还记得么">
+<meta name="twitter:description" content="联动          body,     html {         height: 100%;         width: 100%;         margin: 0;         padding: 0;         display: flex;         justify-content: center;         align-item">
 
 
 
@@ -129,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http:\\hexin.life/archives/page/2/"/>
+  <link rel="canonical" href="http:\\hexin.life/linkage.html"/>
 
 
 
 
 
-  <title>归档 | dayDream's blog</title>
+  <title> | dayDream's blog</title>
   
 
 
@@ -160,7 +161,7 @@
     
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -298,329 +299,186 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+  <header class="post-header">
 
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..不错~! 目前共计 18 篇日志。 哈哈哈哈哈。
-    </span>
+	<h1 class="post-title" itemprop="name headline"></h1>
+
+
+
+</header>
 
     
+    
+      <link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><!DOCTYPE html>
+<html lang="en">
 
-      
-      
-      
+<head>
+    <meta charset="UTF-8">
+    <title>联动</title>
+    <style>
+    body,
+    html {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
+    .container {
+        display: flex;
+        width: 600px;
+        height: 200px;
+        border: 1px solid rgba(200, 200, 200, .8);
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        /*flex-flow: column;*/
+        /*padding: 10px;*/
+        flex-direction: column;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .show {
+        display: show;
+    }
+
+    select {
+        width: 120px;
+        height: 25px;
+        overflow: scroll;
+    }
+
+    .category {
+        margin: 20px 20px 20px -40px;
+    }
+
+    .category input {
+        margin-left: 80px;
+    }
+
+    .pretty {
+        float: left;
+        margin-left: -20px;
+    }
+
+    .pretty select {
+        margin-left: 40px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="category">
+            <label for="student">
+                <input type="radio" value="学校" ,="" name="cat" checked="checked" id="student">学校
+            </label>
+            <label for="worker">
+                <input type="radio" ,="" value="工作单位" name="cat" id="worker"> 工作单位
+            </label>
         </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/23/title-9/" itemprop="url">
-              
-                <span itemprop="name">px、em和rem</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-23T22:06:40+08:00"
-              content="2017-05-23" >
-          05-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+        <div class="pretty">
+            <select name="city" ,="" id="city" class="city">
+                <option value="0">北</option>
+                <option value="1" ,="" selected>北京</option>
+                <option value="2">西安</option>
+                <option value="3">浙江</option>
+                <option value="4">上海</option>
+            </select>
+            <select name="school" ,="" id="school" class="student">
+                <option value="0">北京大学</option>
+                <option value="1" ,="" selected>清华大学</option>
+            </select>
+            <select name="work" ,="" id="work" class="worker hide">
+                <option value="0">美团</option>
+                <option value="1">饿了么</option>
+            </select>
+        </div>
+    </div>
     
+    <script>
+    const cities = [];
 
-      
-      
-      
+    const university = [
+        ['beiUFE', 'beiSchool'],
+        ['北京大学', '清华大学'],
+        ['西安大学', '西安西安', '西安阿里'],
+        ['浙江大学', '浙江阿里'],
+        ['上海戏剧学院', '上海美剧']
+    ];
+    const companies = [
+        ['滴滴'],
+        ['美团', '饿了么'],
+        ['阿里'],
+        ['京东'],
+        ['nothing', 'i dont know']
+    ];
 
-      
-      
+    const category = document.querySelectorAll('.category input');
 
-      
+    const student = document.querySelector('.student');
+    const worker = document.querySelector('.worker');
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    const school = document.querySelector('#school');
+    const city = document.querySelector('#city');
+    const workk = document.querySelector('#work');
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/06/title-8/" itemprop="url">
-              
-                <span itemprop="name">copy小插件</span>
-              
-            </a>
-        
-      </h2>
+    category.forEach(function(input, index) {
+        //console.log(input)
+        input.addEventListener('click', function() {
+            if (index == 0) {
+                student.classList.remove('hide');
+                worker.classList.add('hide');
+            } else {
+                student.classList.add('hide');
+                worker.classList.remove('hide');
+            }
+        }, false)
+    })
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-06T15:12:20+08:00"
-              content="2017-05-06" >
-          05-06
-        </time>
-      </div>
+    city.addEventListener('change', function() {
 
-    </header>
-  </article>
+        const index = parseInt(city.value);
 
+        if (student.className === 'student') {
 
+            school.innerHTML = '';
+            var html = '';
 
+            for (let i = 0, len = university[index].length; i < len; i++) {
+                // console.log(`${university[index][i]}`)
+                html += `<option value="${university[index][i]}">${university[index][i]}</option>`;
+            }
+            school.innerHTML = html;
+        }
+
+        if (worker.className === 'worker') {
+
+            workk.innerHTML = '';
+            var html = '';
+
+            for (let i = 0, len = companies[index].length; i < len; i++) {
+                console.log(`${companies[index][i]}`)
+                html += `<option value="${companies[index][i]}">${companies[index][i]}</option>`;
+            }
+            workk.innerHTML = html;
+        }
+
+    }, false)
+
+    </script>
+</body>
+
+</html>
     
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/15/title-7/" itemprop="url">
-              
-                <span itemprop="name">JS函数闭包</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-15T21:03:54+08:00"
-              content="2017-04-15" >
-          04-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/15/title-6/" itemprop="url">
-              
-                <span itemprop="name">HTML 5 Web 存储及WEB应用缓存</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-15T20:51:20+08:00"
-              content="2017-04-15" >
-          04-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/15/title-5/" itemprop="url">
-              
-                <span itemprop="name">cookie和session</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-15T13:53:19+08:00"
-              content="2017-04-15" >
-          04-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/11/title-4/" itemprop="url">
-              
-                <span itemprop="name">每个人都需要的中文排版指南（转）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-11T20:06:00+08:00"
-              content="2017-04-11" >
-          04-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/03/31/title-2/" itemprop="url">
-              
-                <span itemprop="name">CSS学习笔记(Placeholder及CSS_hack)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-31T23:09:45+08:00"
-              content="2017-03-31" >
-          03-31
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/03/28/title-1/" itemprop="url">
-              
-                <span itemprop="name">HEXO+GitHub搭建个人博客</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-28T23:15:03+08:00"
-              content="2017-03-28" >
-          03-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-  </nav>
-
-
+  </div>
 
 
           </div>
@@ -628,6 +486,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
 
         </div>
         
@@ -870,8 +734,10 @@
   
 
   
-  
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
+  
 
   
 
@@ -897,6 +763,10 @@
   
     
 
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2139345"></script>
+      <!-- UY END -->
     
   
 
