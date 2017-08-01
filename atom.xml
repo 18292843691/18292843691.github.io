@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http:%5C%5Chexin.life/"/>
-  <updated>2017-08-01T08:58:26.160Z</updated>
+  <updated>2017-08-01T15:42:35.344Z</updated>
   <id>http:\\hexin.life/</id>
   
   <author>
@@ -16,11 +16,90 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>2017拼多多前端笔试</title>
+    <link href="http:%5C%5Chexin.life/2017/08/01/title-22/"/>
+    <id>http:\\hexin.life/2017/08/01/title-22/</id>
+    <published>2017-08-01T13:33:52.000Z</published>
+    <updated>2017-08-01T15:42:35.344Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><h1 id="简答题："><a href="#简答题：" class="headerlink" title="简答题："></a>简答题：</h1><h2 id="settimeout-与-setInterval的区别，-及对他们的内存的分析"><a href="#settimeout-与-setInterval的区别，-及对他们的内存的分析" class="headerlink" title="settimeout 与 setInterval的区别， 及对他们的内存的分析"></a>settimeout 与 setInterval的区别， 及对他们的内存的分析</h2><h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><ol>
+<li>setTimeout是在一段时间后调用指定函数（仅一次）</li>
+<li>setInterval是每隔一段时间调用指定函数（N次）<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function run()&#123;</div><div class="line">    // 其他代码</div><div class="line">    setTimeout(function()&#123;</div><div class="line">        run();</div><div class="line">    &#125;, 10000);</div><div class="line">&#125;</div><div class="line">run();</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>以上面的代码来说, 虽然设置的是10s执行一次, 但是实际时间却是需要// 其他代码的执行时间来确定<br>即setTimeout的间隔时间是, // setTimeout 的间隔时间 === 最小时间是(10s+)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">setInterval(function()&#123;</div><div class="line">    run();</div><div class="line">&#125;, 10000);</div></pre></td></tr></table></figure>
+<p>而setInterval, 不会有上面的问题, 但是如果run()的执行时间, 操作大于10s, 那么甚至可能跳过任务;</p>
+<p><a href="http://www.pjhome.net/article/Javascript/822.html" target="_blank" rel="external">setInterval 和 setTimeout 会产生内存溢出</a><br><a href="https://gxnotes.com/article/65338.html" target="_blank" rel="external">JavaScript setInterval()方法是否导致内存泄漏？</a></p>
+<h2 id="关于内存泄漏"><a href="#关于内存泄漏" class="headerlink" title="关于内存泄漏"></a>关于内存泄漏</h2><h3 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h3><p>程序的运行需要内存。只要程序提出要求，操作系统或者运行时（runtime）就必须供给内存。<br>对于持续运行的服务进程（daemon），必须及时释放不再用到的内存。否则，内存占用越来越高，轻则影响系统性能，重则导致进程崩溃。<br>不再用到的内存，没有及时释放，就叫做内存泄漏（memory leak）。<br>（比如 C 语言）必须手动释放内存，程序员负责内存管理。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">char * buffer;</div><div class="line">buffer = (char*) malloc(42);</div><div class="line"></div><div class="line">//...</div><div class="line"></div><div class="line">free(buffer)    //手动释放内存</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>上面是 C 语言代码，malloc方法用来申请内存，使用完毕之后，必须自己用free方法释放内存。<br>这很麻烦，所以大多数语言提供自动内存管理，减轻程序员的负担，这被称为”垃圾回收机制”（garbage collector）。</p>
+</blockquote>
+<h3 id="垃圾回收机制"><a href="#垃圾回收机制" class="headerlink" title="垃圾回收机制"></a>垃圾回收机制</h3><p>怎么知道哪些内存不再需要呢？常用的方法是 ‘引用计数’, 语言的引擎有一张 ‘引用表’, 保存了内存里面所有的资源(通常是各种值)的引用次数，当一个值的引用次数为 0 时，表示这个值用不到了，因此可将其释放。</p>
+<p>但是如果一个值不再用到了，引用次数却不为 0 ，垃圾回收机制却无法释放这块内存，从而导致内存泄漏。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">const arr = [1, 2, 3, 4];</div><div class="line">console.log(arr);</div></pre></td></tr></table></figure></p>
+<p>打印完 arr 之后, arr 便用不到了，引用次数为 1, 但是它还会继续占用内存。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">const arr = [1, 2, 3, 4];</div><div class="line">console.log(arr);</div><div class="line">arr = null;</div></pre></td></tr></table></figure></p>
+<p>arr 重置为 null，就解除了对 [1, 2, 3, 4] 的引用，引用次数变成了 0 ，内存就可以释放了。</p>
+<h3 id="JavaScript-内存管理"><a href="#JavaScript-内存管理" class="headerlink" title="JavaScript 内存管理"></a>JavaScript 内存管理</h3><p>JavaScript 是一种垃圾回收语言。垃圾回收语言通过周期性地检查先前分配的内存是否可达，帮助开发者管理内存。换言之，垃圾回收语言减轻了“内存仍可用”及“内存仍可达”的问题。两者的区别是微妙而重要的：仅有开发者了解哪些内存在将来仍会使用，而不可达内存通过算法确定和标记，适时被操作系统回收。</p>
+<h3 id="JavaScript-内存泄漏"><a href="#JavaScript-内存泄漏" class="headerlink" title="JavaScript 内存泄漏"></a>JavaScript 内存泄漏</h3><p>垃圾回收语言的内存泄漏主因是不需要的引用。理解它之前，还需了解垃圾回收语言如何辨别内存的可达与不可达。</p>
+<p><strong>Mark-and-sweep</strong></p>
+<ol>
+<li>大部分垃圾回收语言用的算法称之为 Mark-and-sweep 。算法由以下几步组成：<br>垃圾回收器创建了一个“roots”列表。Roots 通常是代码中全局变量的引用。JavaScript 中，“window” 对象是一个全局变量，被当作 root 。window 对象总是存在，因此垃圾回收器可以检查它和它的所有子对象是否存在（即不是垃圾）；</li>
+<li>所有的 roots 被检查和标记为激活（即不是垃圾）。所有的子对象也被递归地检查。从 root 开始的所有对象如果是可达的，它就不被当作垃圾。</li>
+<li>所有未被标记的内存会被当做垃圾，收集器现在可以释放内存，归还给操作系统了。</li>
+</ol>
+<p>现代的垃圾回收器改良了算法，但是本质是相同的：可达内存被标记，其余的被当作垃圾回收。</p>
+<p>不需要的引用是指开发者明知内存引用不再需要，却由于某些原因，它仍被留在激活的 root 树中。在 JavaScript 中，不需要的引用是保留在代码中的变量，它不再需要，却指向一块本该被释放的内存。有些人认为这是开发者的错误。</p>
+<p>为了理解 JavaScript 中最常见的内存泄漏，我们需要了解哪种方式的引用容易被遗忘。</p>
+<h4 id="常见-JavaScript-内存泄漏"><a href="#常见-JavaScript-内存泄漏" class="headerlink" title="常见 JavaScript 内存泄漏"></a>常见 JavaScript 内存泄漏</h4><h5 id="意外的全局变量"><a href="#意外的全局变量" class="headerlink" title="意外的全局变量"></a>意外的全局变量</h5><p>JavaScript 处理未定义变量的方式比较宽松：未定义的变量会在全局对象创建一个新变量。在浏览器中，全局对象是 window 。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function foo(arg) &#123;</div><div class="line">    bar = &quot;this is a hidden global variable&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>真相是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function foo(arg) &#123;</div><div class="line">    window.bar = &quot;this is an explicit global variable&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>函数 foo 内部忘记使用 var ，意外创建了一个全局变量。此例泄漏了一个简单的字符串，无伤大雅，但是有更糟的情况。</p>
+<p>另一种意外的全局变量可能由 this 创建：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function foo() &#123;</div><div class="line">    this.variable = &quot;potential accidental global&quot;;</div><div class="line">&#125;</div><div class="line">// Foo 调用自己，this 指向了全局对象（window）</div><div class="line">// 而不是 undefined</div><div class="line">foo();</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>在 JavaScript 文件头部加上 ‘use strict’，可以避免此类错误发生。启用严格模式解析 JavaScript ，避免意外的全局变量。</p>
+</blockquote>
+<p>全局变量注意事项:<br>尽管我们讨论了一些意外的全局变量，但是仍有一些明确的全局变量产生的垃圾。它们被定义为不可回收（除非定义为空或重新分配）。尤其当全局变量用于临时存储和处理大量信息时，需要多加小心。如果必须使用全局变量存储大量数据时，确保用完以后把它设置为 null 或者重新定义。与全局变量相关的增加内存消耗的一个主因是缓存。缓存数据是为了重用，缓存必须有一个大小上限才有用。高内存消耗导致缓存突破上限，因为缓存内容无法被回收。</p>
+<h5 id="被遗忘的计时器或回调函数"><a href="#被遗忘的计时器或回调函数" class="headerlink" title="被遗忘的计时器或回调函数"></a>被遗忘的计时器或回调函数</h5><p>在 JavaScript 中使用 setInterval 非常平常。一段常见的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var someResource = getData();</div><div class="line">setInterval(function() &#123;</div><div class="line">    var node = document.getElementById(&apos;Node&apos;);</div><div class="line">    if(node) &#123;</div><div class="line">        // 处理 node 和 someResource</div><div class="line">        node.innerHTML = JSON.stringify(someResource));</div><div class="line">    &#125;</div><div class="line">&#125;, 1000);</div></pre></td></tr></table></figure></p>
+<p>此例说明了什么：与节点或数据关联的计时器不再需要，<em>node</em> 对象可以删除，整个回调函数也不需要了。可是，计时器回调函数仍然没被回收（计时器停止才会被回收）。同时，<em>someResource</em> 如果存储了大量的数据，也是无法被回收的。</p>
+<p>对于观察者的例子，一旦它们不再需要（或者关联的对象变成不可达），明确地移除它们非常重要。老的 IE 6 是无法处理循环引用的。如今，即使没有明确移除它们，一旦观察者对象变成不可达，大部分浏览器是可以回收观察者处理函数的。</p>
+<p>观察者代码示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var element = document.getElementById(&apos;button&apos;);</div><div class="line">function onClick(event) &#123;</div><div class="line">    element.innerHTML = &apos;text&apos;;</div><div class="line">&#125;</div><div class="line">element.addEventListener(&apos;click&apos;, onClick);   // =&gt; 循环调用</div></pre></td></tr></table></figure></p>
+<p><strong>对象观察者和循环引用注意事项</strong><br>老版本的 IE 是无法检测 DOM 节点与 JavaScript 代码之间的循环引用，会导致内存泄漏。如今，现代的浏览器（包括 IE 和 Microsoft Edge）使用了更先进的垃圾回收算法，已经可以正确检测和处理循环引用了。换言之，回收节点内存时，不必非要调用 removeEventListener 了。</p>
+<h5 id="脱离-DOM-的引用"><a href="#脱离-DOM-的引用" class="headerlink" title="脱离 DOM 的引用"></a>脱离 DOM 的引用</h5><p>有时，保存 DOM 节点内部数据结构很有用。假如你想快速更新表格的几行内容，把每一行 DOM 存成字典（JSON 键值对）或者数组很有意义。此时，同样的 DOM 元素存在两个引用：一个在 DOM 树中，另一个在字典中。将来你决定删除这些行时，需要把两个引用都清除.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">var elements = &#123;</div><div class="line">    button: document.getElementById(&apos;button&apos;),</div><div class="line">    image: document.getElementById(&apos;image&apos;),</div><div class="line">    text: document.getElementById(&apos;text&apos;)</div><div class="line">&#125;;</div><div class="line">function doStuff() &#123;</div><div class="line">    image.src = &apos;http://some.url/image&apos;;</div><div class="line">    button.click();</div><div class="line">    console.log(text.innerHTML);</div><div class="line">    // 更多逻辑</div><div class="line">&#125;</div><div class="line">function removeButton() &#123;</div><div class="line">    // 按钮是 body 的后代元素</div><div class="line">    document.body.removeChild(document.getElementById(&apos;button&apos;));</div><div class="line">    // 此时，仍旧存在一个全局的 #button 的引用</div><div class="line">    // elements 字典。button 元素仍旧在内存中，不能被 GC 回收。</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>此外还要考虑 DOM 树内部或子节点的引用问题。假如你的 JavaScript 代码中保存了表格某一个 \<td> 的引用。将来决定删除整个表格的时候，直觉认为 GC 会回收除了已保存的 \</td><td> 以外的其它节点。实际情况并非如此：此 \</td><td> 是表格的子节点，子元素与父元素是引用关系。由于代码保留了 \</td><td> 的引用，导致整个表格仍待在内存中。保存 DOM 元素引用的时候，要小心谨慎。</td></p>
+<h5 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h5><blockquote>
+<p>如果闭包的作用域中保存着一个 HTML 元素，则该元素无法被销毁。(下面代码来自高程)</p>
+</blockquote>
+<p>闭包是 JavaScript 开发的一个关键方面：匿名函数可以访问父级作用域的变量。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function assgin() &#123;</div><div class="line">    var ele = document.getElementById(&apos;someEle&apos;);</div><div class="line">    ele.onclick = function()&#123;</div><div class="line">        alert(ele.id);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>以上代码创建了一个作为 ele 元素事件处理程序的闭包，而这个闭包有创建了一个循环的引用，由于匿名函数保存了一个 assgin() 的活动对象的引用 ，因此无法减少对 ele 的引用次数 , 只要匿名函数存在，ele的引用次数至少是 1。我们可以稍微改写一下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function assgin() &#123;</div><div class="line">    var ele = document.getElementById(&apos;someEle&apos;);</div><div class="line">    var id = ele.id</div><div class="line">    ele.onclick = function()&#123;</div><div class="line">        alert(id);</div><div class="line">    &#125;</div><div class="line">    ele = null;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>上面代码中，通过把 ele.id 的一个副本保存在一个变量中，并且在比保重引用该变量消除了循环引用，但是这样还不能解决内存泄露，<em>闭包会引用包含函数的整个活动对象</em>，而其中包含着 ele ，即使闭包不直接引用 ele ，包含函数的活动对象中也会保存 一个引用，因此需要把 ele 变量设置为 null ,这样就解除了对 DOM 对象的引用，减少其引用数，确保能正常回收。</p>
+<p>关于内存的发现 chrome 的使用~暂时没有使用过，看不太明白，就不 copy 了。</p>
+<h3 id="上述内容-copy-自下面二者："><a href="#上述内容-copy-自下面二者：" class="headerlink" title="上述内容 copy 自下面二者："></a>上述内容 copy 自下面二者：</h3><p><a href="http://www.ruanyifeng.com/blog/2017/04/memory-leak.html" target="_blank" rel="external">JavaScript 内存泄漏教程-阮一峰</a><br><a href="https://jinlong.github.io/2016/05/01/4-Types-of-Memory-Leaks-in-JavaScript-and-How-to-Get-Rid-Of-Them/" target="_blank" rel="external">4类 JavaScript 内存泄漏及如何避免</a></p>
+<h2 id="ajax-原生实现"><a href="#ajax-原生实现" class="headerlink" title="ajax 原生实现"></a>ajax 原生实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var xhr = createXHR()</div><div class="line">xhr.onreadystatechange = function() &#123;</div><div class="line">    if(xhr.readyState == 4) &#123;</div><div class="line">        if(xhr.status == 200) &#123;</div><div class="line">            console.log(xhr.responeText)</div><div class="line">            //do sth...</div><div class="line">        &#125; else &#123;</div><div class="line">            console.log(&apos;request fail&apos; + xhr.status)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">xhr.open(&apos;get&apos;, &apos;hello.com&apos;, true)</div><div class="line">xhr.send(null);</div></pre></td></tr></table></figure>
+<h2 id="闭包的理解"><a href="#闭包的理解" class="headerlink" title="闭包的理解"></a>闭包的理解</h2><p>闭包是指有权访问另一个函数作用域中的变量的函数。<br><a href="http://hexin.life/2017/04/15/title-7/">闭包的应用</a></p>
+<h2 id="html中一段文本内容-hdslakddnska8das-，将文本中含有数组-‘d’-‘a’-‘‘-‘8’-中的内容标记为红色文本"><a href="#html中一段文本内容-hdslakddnska8das-，将文本中含有数组-‘d’-‘a’-‘‘-‘8’-中的内容标记为红色文本" class="headerlink" title="html中一段文本内容 hdslakddnska8das ，将文本中含有数组[‘d’, ‘a’, ‘‘, ‘8’] 中的内容标记为红色文本"></a>html中一段文本内容 hdslakd<em>dnska8das ，将文本中含有数组[‘d’, ‘a’, ‘</em>‘, ‘8’] 中的内容标记为红色文本</h2><h2 id="原生JS创建这样的-dom-结构-lt-div-id-’hello’-gt-lt-p-class-’hi’-gt-hi-girl-lt-p-gt-lt-div-gt"><a href="#原生JS创建这样的-dom-结构-lt-div-id-’hello’-gt-lt-p-class-’hi’-gt-hi-girl-lt-p-gt-lt-div-gt" class="headerlink" title="原生JS创建这样的 dom 结构 &lt; div id=’hello’&gt; &lt; p class=’hi’&gt;hi girl&lt; p&gt;&lt; /div&gt;"></a>原生JS创建这样的 dom 结构 &lt; div id=’hello’&gt; &lt; p class=’hi’&gt;hi girl&lt; p&gt;&lt; /div&gt;</h2><h2 id="创建一个函数对-JS-基础类型-function-boolean-array-number-string-object-进行值复制"><a href="#创建一个函数对-JS-基础类型-function-boolean-array-number-string-object-进行值复制" class="headerlink" title="创建一个函数对 JS 基础类型 ( function, boolean, array, number, string, object) 进行值复制"></a>创建一个函数对 JS 基础类型 ( function, boolean, array, number, string, object) 进行值复制</h2><h2 id="url-输入到页面完成经历了什么"><a href="#url-输入到页面完成经历了什么" class="headerlink" title="url 输入到页面完成经历了什么"></a>url 输入到页面完成经历了什么</h2><h1 id="选择题"><a href="#选择题" class="headerlink" title="选择题"></a>选择题</h1><h2 id="执行顺序"><a href="#执行顺序" class="headerlink" title="执行顺序"></a>执行顺序</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">var input = document.getElementById(&apos;cls&apos;)</div><div class="line"></div><div class="line">input.onmouseup = function() &#123;</div><div class="line">    console.log(&apos;onmouseup&apos;)</div><div class="line">&#125;</div><div class="line">input.onmousedown = function() &#123;</div><div class="line">    console.log(&apos;onmousedown&apos;)</div><div class="line">&#125;</div><div class="line">input.onclick = function() &#123;</div><div class="line">    console.log(&apos;onclick&apos;)</div><div class="line">&#125;</div><div class="line">input.onfocus = function() &#123;</div><div class="line">    console.log(&apos;onfocus&apos;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>onmousedown =&gt; onfocus =&gt; onmouseup =&gt; onclick</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/as
+    
+    </summary>
+    
+      <category term="2017笔试" scheme="http:%5C%5Chexin.life/categories/2017%E7%AC%94%E8%AF%95/"/>
+    
+    
+      <category term="笔试" scheme="http:%5C%5Chexin.life/tags/%E7%AC%94%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>面试准备</title>
     <link href="http:%5C%5Chexin.life/2017/07/29/title-21/"/>
     <id>http:\\hexin.life/2017/07/29/title-21/</id>
     <published>2017-07-29T08:09:22.000Z</published>
-    <updated>2017-08-01T08:58:26.160Z</updated>
+    <updated>2017-08-01T11:14:16.661Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="使用-typeof-能得到哪些基础类型"><a href="#使用-typeof-能得到哪些基础类型" class="headerlink" title="使用 typeof 能得到哪些基础类型"></a>使用 typeof 能得到哪些基础类型</h2><ul>
 <li>undefined</li>
@@ -407,6 +486,10 @@
 <li><a href="https://github.com/ivonzhang/Front-End-Developer-Questions/wiki" target="_blank" rel="external">前端面试题及答案汇总</a></li>
 <li><a href="http://blog.csdn.net/xllily_11/article/details/70899191" target="_blank" rel="external">2017年前端面试题最新汇总</a></li>
 <li><a href="http://developer.51cto.com/art/201504/474298.htm" target="_blank" rel="external">30个你 “ 不可能全部会做 ” 的javascript题目及答案</a></li>
+<li><a href="https://elemefe.github.io/node-interview/#/" target="_blank" rel="external">Node interview of ElemeFE</a></li>
+<li><a href="http://ife.baidu.com/college/detail/id/8" target="_blank" rel="external">百度糯米前端技术学院</a></li>
+<li><a href="https://www.nowcoder.com/contestRoom" target="_blank" rel="external">newcode 牛客网</a></li>
+<li><a href="http://www.lintcode.com/zh-cn/problem/" target="_blank" rel="external">lint-code</a></li>
 </ul>
 <blockquote>
 <p>知识整理及总结多来于网络及他人博客，由于时间原因，不能每一个知识点都完整的整理出来，因此附带了参考/学习链接。也等于一个知识点的梳理。</p>

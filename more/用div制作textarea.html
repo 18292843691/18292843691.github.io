@@ -99,7 +99,7 @@
 <meta property="og:url" content="http:\\hexin.life/more/用div制作textarea.html">
 <meta property="og:site_name" content="dayDream&#39;s blog">
 <meta property="og:description" content="Document 	 		.div-text{ 			min-height: 20px; 			min-width: 80px; 		}  		.div-text{ 			margin: 50px; 			padding-left: 3px; 			width: 100px; 			border: 1px solid #ccc; 			resize: both; 			overfl">
-<meta property="og:updated_time" content="2017-08-01T08:05:06.798Z">
+<meta property="og:updated_time" content="2017-08-01T15:40:55.115Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="dayDream&#39;s blog">
 <meta name="twitter:description" content="Document 	 		.div-text{ 			min-height: 20px; 			min-width: 80px; 		}  		.div-text{ 			margin: 50px; 			padding-left: 3px; 			width: 100px; 			border: 1px solid #ccc; 			resize: both; 			overfl">
@@ -329,19 +329,35 @@
 			resize: both;
 			overflow: hidden;
 		}
-		div{
-			resize: both;
-		}
 	</style>
 </head>
 <body>
 	<div contenteditable="true" ,="" class="div-text">
-		hello world
+		i am div
 	</div>
 	<div contenteditable="true" ,="" class="div-text">
-		hello world
+		i am div too
 	</div>
-	<div> slslda</div>
+	
+	
+	<input type="text" id="cls" ,="" value="i am input"> 
+	
+	<script>
+		var input = document.getElementById('cls')
+
+		input.onmouseup = function() {
+			console.log('onmouseup')
+		}
+		input.onmousedown = function() {
+			console.log('onmousedown')
+		}
+		input.onclick = function() {
+			console.log('onclick')
+		}
+		input.onfocus = function() {
+			console.log('onfocus')
+		}
+	</script>
 </body>
 </html>
     
@@ -395,7 +411,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -406,7 +422,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -417,7 +433,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
