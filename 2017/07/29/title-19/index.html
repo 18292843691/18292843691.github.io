@@ -1,4 +1,114 @@
-<!DOCTYPE html><html class="theme-next mist" lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"><link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css"><link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css"><link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css"><meta name="keywords" content="JavaScript,"><link rel="alternate" href="/atom.xml" title="dayDream's blog" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1"><meta name="description" content="apply 和 call在 JavaScript 中, 函数是对象。JavaScript 函数有它的属性和方法。call() 和 apply() 是预定义的函数方法。 两个方法可用于调用函数，两个方法的第一个参数必须是对象本身。例1；12345678910111213var jaw = &amp;#123;     name: &amp;apos;jaw&amp;apos;,     sayHello: functi"><meta name="keywords" content="JavaScript"><meta property="og:type" content="article"><meta property="og:title" content="JS练习之--模拟call_apply"><meta property="og:url" content="http:\\hexin.life/2017/07/29/title-19/index.html"><meta property="og:site_name" content="dayDream&#39;s blog"><meta property="og:description" content="apply 和 call在 JavaScript 中, 函数是对象。JavaScript 函数有它的属性和方法。call() 和 apply() 是预定义的函数方法。 两个方法可用于调用函数，两个方法的第一个参数必须是对象本身。例1；12345678910111213var jaw = &amp;#123;     name: &amp;apos;jaw&amp;apos;,     sayHello: functi"><meta property="og:updated_time" content="2017-07-29T08:13:37.274Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="JS练习之--模拟call_apply"><meta name="twitter:description" content="apply 和 call在 JavaScript 中, 函数是对象。JavaScript 函数有它的属性和方法。call() 和 apply() 是预定义的函数方法。 两个方法可用于调用函数，两个方法的第一个参数必须是对象本身。例1；12345678910111213var jaw = &amp;#123;     name: &amp;apos;jaw&amp;apos;,     sayHello: functi"><script type="text/javascript" id="hexo.configurations">var NexT = window.NexT || {};
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next mist" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JavaScript," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="dayDream's blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="apply 和 call在 JavaScript 中, 函数是对象。JavaScript 函数有它的属性和方法。call() 和 apply() 是预定义的函数方法。 两个方法可用于调用函数，两个方法的第一个参数必须是对象本身。例1；12345678910111213var jaw = &amp;#123;     name: &amp;apos;jaw&amp;apos;,     sayHello: functi">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS练习之--模拟call_apply">
+<meta property="og:url" content="http:\\hexin.life/2017/07/29/title-19/index.html">
+<meta property="og:site_name" content="dayDream&#39;s blog">
+<meta property="og:description" content="apply 和 call在 JavaScript 中, 函数是对象。JavaScript 函数有它的属性和方法。call() 和 apply() 是预定义的函数方法。 两个方法可用于调用函数，两个方法的第一个参数必须是对象本身。例1；12345678910111213var jaw = &amp;#123;     name: &amp;apos;jaw&amp;apos;,     sayHello: functi">
+<meta property="og:updated_time" content="2017-08-01T07:25:47.724Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS练习之--模拟call_apply">
+<meta name="twitter:description" content="apply 和 call在 JavaScript 中, 函数是对象。JavaScript 函数有它的属性和方法。call() 和 apply() 是预定义的函数方法。 两个方法可用于调用函数，两个方法的第一个参数必须是对象本身。例1；12345678910111213var jaw = &amp;#123;     name: &amp;apos;jaw&amp;apos;,     sayHello: functi">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
@@ -16,9 +126,706 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
-  };</script><link rel="canonical" href="http:\\hexin.life/2017/07/29/title-19/"><title>JS练习之--模拟call_apply | dayDream's blog</title></head><body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"><div class="container sidebar-position-left page-post-detail"><div class="headband"></div><header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-brand-wrapper"><div class="site-meta"><div class="custom-logo-site-title"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">dayDream's blog</span> <span class="logo-line-after"><i></i></span></a></div><p class="site-subtitle"></p></div><div class="site-nav-toggle"><button><span class="btn-bar"></span> <span class="btn-bar"></span> <span class="btn-bar"></span></button></div></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i><br>分类</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i><br>标签</a></li><li class="menu-item menu-item-search"><a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li></ul><div class="site-search"><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class="search-icon"><i class="fa fa-search"></i> </span><span class="popup-btn-close"><i class="fa fa-times-circle"></i></span><div class="local-search-input-wrapper"><input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input"></div></div><div id="local-search-result"></div></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><link itemprop="mainEntityOfPage" href="http:\\hexin.life/2017/07/29/title-19/"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="白日梦想家"><meta itemprop="description" content=""><meta itemprop="image" content="/images/avatar.jpg"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="dayDream's blog"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">JS练习之--模拟call_apply</h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i> </span><span class="post-meta-item-text">发表于</span> <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-29T15:35:46+08:00">2017-07-29 </time></span><span class="post-category"><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-folder-o"></i> </span><span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">前端</span></a></span></span></div></header><div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"></script><script src="/assets/js/APlayer.min.js"></script><h2 id="apply-和-call"><a href="#apply-和-call" class="headerlink" title="apply 和 call"></a>apply 和 call</h2><p>在 JavaScript 中, 函数是对象。JavaScript 函数有它的属性和方法。<br>call() 和 apply() 是预定义的函数方法。 两个方法可用于调用函数，两个方法的第一个参数必须是对象本身。<br>例1；<br></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var jaw = &#123; </div><div class="line">    name: &apos;jaw&apos;, </div><div class="line">    sayHello: function(age) &#123; </div><div class="line">        console.log(&apos;hello i am &apos; + this.name + &quot; i&apos;m &quot; + age + &apos; years old &apos;) </div><div class="line">    &#125; </div><div class="line">&#125;;</div><div class="line"></div><div class="line">var liu = &#123; </div><div class="line">    name: &apos;liu&apos; </div><div class="line">&#125;;</div><div class="line">jaw.sayHello(22); // hello i am jaw i&apos;m 22 years old</div><div class="line">jaw.sayHello.apply(liu, [24]);  //hello i am liu i&apos;m 24 years old </div><div class="line">jaw.sayHello.call(liu, 23);  //hello i am liu i&apos;m 23 years old</div></pre></td></tr></table></figure><p></p><p>例2：<br></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function a()&#123;</div><div class="line">    y=function()&#123;</div><div class="line">    x=2;</div><div class="line">&#125;; </div><div class="line">return function()&#123;</div><div class="line">    var x=3;y();console.log(this.x)</div><div class="line">&#125;.apply(this, arguments)&#125; </div><div class="line">a();    //2</div></pre></td></tr></table></figure><p></p><p>两个方法都使用了对象本身作为第一个参数。 两者的区别在于第二个参数：</p><ul><li>apply传入的是一个参数数组，也就是将多个参数组合成为一个数组传入，</li><li>call则作为call的参数传入（从第二个参数开始）。</li></ul><p>在 JavaScript 严格模式(strict mode)下, 在调用函数时第一个参数会成为 this 的值， 即使该参数不是一个对象。<br>在 JavaScript 非严格模式(non-strict mode)下, 如果第一个参数的值是 null 或 undefined, 它将使用全局对象替代。</p><blockquote><p>通过 call() 或 apply() 方法你可以设置 this 的值, 且作为已存在对象的新方法调用。</p></blockquote><h2 id="apply-模拟实现"><a href="#apply-模拟实现" class="headerlink" title="apply 模拟实现"></a>apply 模拟实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">Function.prototype.applyOne = function (context) &#123;</div><div class="line">    var context = context || window;     //如果没有参数时指向window</div><div class="line">    var args = arguments[1];               //获取传入的数组</div><div class="line">    var fn = testSymbol(context);</div><div class="line"></div><div class="line">    context[fn] = this;                	//fn属性不存在</div><div class="line">    </div><div class="line">    if(args == void 0) &#123;          //没有参数即直接运行</div><div class="line">        return context[fn]();</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    var fnStr = &apos;context[fn](&apos;;             </div><div class="line">     </div><div class="line">    for (var i = 0; i &lt; args.length; i++) &#123;</div><div class="line">     	fnStr += i == args.length - 1 ? args[i] : args[i] + &apos;,&apos;;</div><div class="line">     &#125;;            </div><div class="line">     	fnStr += &apos;)&apos;;           //得到context[fn](arg1,arg2,arg3....)</div><div class="line">     	var returnValue = eval(fnStr);      //</div><div class="line">     	delete context[fn];            //删除这个属性</div><div class="line">     	return returnValue;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">//简单模拟es6的Symbol保证属性的唯一性</div><div class="line">function testSymbol(obj) &#123;            </div><div class="line">    var unquie_obj = &apos;00&apos; + Math.random();</div><div class="line">    if (obj.hasOwnProperty(unquie_obj)) &#123;</div><div class="line">        arguments.callee(obj);</div><div class="line">    &#125; else &#123;</div><div class="line">        return unquie_obj;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><h2 id="这里对-call-进行模拟实现"><a href="#这里对-call-进行模拟实现" class="headerlink" title="这里对 call 进行模拟实现"></a>这里对 call 进行模拟实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//call</div><div class="line">Function.prototype.callOne = function (context) &#123;</div><div class="line">    return this.applyOne(([].shift.applyOne(arguments)),arguments);        //将参数依次弹出即可</div><div class="line">&#125;</div></pre></td></tr></table></figure></div><div></div><div></div><div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong> 白日梦想家</li><li class="post-copyright-link"><strong>本文链接：</strong> <a href="http:\\hexin.life/2017/07/29/title-19/" title="JS练习之--模拟call_apply">http:\\hexin.life/2017/07/29/title-19/</a></li><li class="post-copyright-license"><strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！</li></ul></div><footer class="post-footer"><div class="post-tags"><a href="/tags/JavaScript/" rel="tag"># JavaScript</a></div><div class="post-nav"><div class="post-nav-next post-nav-item"><a href="/2017/07/27/title-18/" rel="next" title="HTTP 表单编码 enctype"><i class="fa fa-chevron-left"></i> HTTP 表单编码 enctype</a></div><span class="post-nav-divider"></span><div class="post-nav-prev post-nav-item"><a href="/2017/07/29/title-20/" rel="prev" title="字符串的乘法">字符串的乘法 <i class="fa fa-chevron-right"></i></a></div></div></footer></article><div class="post-spread"></div></div></div><div class="comments" id="comments"><div id="uyan_frame"></div></div></div><div class="sidebar-toggle"><div class="sidebar-toggle-line-wrap"><span class="sidebar-toggle-line sidebar-toggle-line-first"></span> <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span> <span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id="sidebar" class="sidebar"><div class="sidebar-inner"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">文章目录</li><li class="sidebar-nav-overview" data-target="site-overview">站点概览</li></ul><section class="site-overview sidebar-panel"><div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person"><img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="白日梦想家"><p class="site-author-name" itemprop="name">白日梦想家</p><p class="site-description motion-element" itemprop="description">那些一起做的白日梦，你还记得么</p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href="/archives/"><span class="site-state-item-count">18</span> <span class="site-state-item-name">日志</span></a></div><div class="site-state-item site-state-categories"><a href="/categories/index.html"><span class="site-state-item-count">7</span> <span class="site-state-item-name">分类</span></a></div><div class="site-state-item site-state-tags"><a href="/tags/index.html"><span class="site-state-item-count">12</span> <span class="site-state-item-name">标签</span></a></div></nav><div class="feed-link motion-element"><a href="/atom.xml" rel="alternate"><i class="fa fa-rss"></i> RSS</a></div><div class="links-of-author motion-element"><span class="links-of-author-item"><a href="https://github.com/18292843691" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i> GitHub </a></span><span class="links-of-author-item"><a href="mailto:hexin_9508@163.com" target="_blank" title="邮箱"><i class="fa fa-fw fa-mail"></i> 邮箱</a></span></div><div class="cc-license motion-element" itemprop="license"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a></div></section><!--noindex--><section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active"><div class="post-toc"><div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#apply-和-call"><span class="nav-number">1.</span> <span class="nav-text">apply 和 call</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#apply-模拟实现"><span class="nav-number">2.</span> <span class="nav-text">apply 模拟实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#这里对-call-进行模拟实现"><span class="nav-number">3.</span> <span class="nav-text">这里对 call 进行模拟实现</span></a></li></ol></div></div></section><!--/noindex--></div></aside></div></main><footer id="footer" class="footer"><div class="footer-inner"><div class="copyright">&copy; <span itemprop="copyrightYear">2017</span> <span class="with-love"><i class="fa fa-heart"></i> </span><span class="author" itemprop="copyrightHolder">白日梦想家</span></div><div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div><div class="theme-info">主题 - <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a></div><div class="busuanzi-count"><script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><span class="site-pv"><i class="fa fa-eye"></i> <span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span></div></div></footer><div class="back-to-top"><i class="fa fa-arrow-up"></i></div></div><script type="text/javascript">if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http:\\hexin.life/2017/07/29/title-19/"/>
+
+
+
+
+
+  <title>JS练习之--模拟call_apply | dayDream's blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">dayDream's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http:\\hexin.life/2017/07/29/title-19/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="白日梦想家">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="dayDream's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JS练习之--模拟call_apply</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-29T15:35:46+08:00">
+                2017-07-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><h2 id="apply-和-call"><a href="#apply-和-call" class="headerlink" title="apply 和 call"></a>apply 和 call</h2><p>在 JavaScript 中, 函数是对象。JavaScript 函数有它的属性和方法。<br>call() 和 apply() 是预定义的函数方法。 两个方法可用于调用函数，两个方法的第一个参数必须是对象本身。<br>例1；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var jaw = &#123; </div><div class="line">    name: &apos;jaw&apos;, </div><div class="line">    sayHello: function(age) &#123; </div><div class="line">        console.log(&apos;hello i am &apos; + this.name + &quot; i&apos;m &quot; + age + &apos; years old &apos;) </div><div class="line">    &#125; </div><div class="line">&#125;;</div><div class="line"></div><div class="line">var liu = &#123; </div><div class="line">    name: &apos;liu&apos; </div><div class="line">&#125;;</div><div class="line">jaw.sayHello(22); // hello i am jaw i&apos;m 22 years old</div><div class="line">jaw.sayHello.apply(liu, [24]);  //hello i am liu i&apos;m 24 years old </div><div class="line">jaw.sayHello.call(liu, 23);  //hello i am liu i&apos;m 23 years old</div></pre></td></tr></table></figure></p>
+<p>例2：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function a()&#123;</div><div class="line">    y=function()&#123;</div><div class="line">    x=2;</div><div class="line">&#125;; </div><div class="line">return function()&#123;</div><div class="line">    var x=3;y();console.log(this.x)</div><div class="line">&#125;.apply(this, arguments)&#125; </div><div class="line">a();    //2</div></pre></td></tr></table></figure></p>
+<p>两个方法都使用了对象本身作为第一个参数。 两者的区别在于第二个参数：</p>
+<ul>
+<li>apply传入的是一个参数数组，也就是将多个参数组合成为一个数组传入，</li>
+<li>call则作为call的参数传入（从第二个参数开始）。</li>
+</ul>
+<p>在 JavaScript 严格模式(strict mode)下, 在调用函数时第一个参数会成为 this 的值， 即使该参数不是一个对象。<br>在 JavaScript 非严格模式(non-strict mode)下, 如果第一个参数的值是 null 或 undefined, 它将使用全局对象替代。</p>
+<blockquote>
+<p>通过 call() 或 apply() 方法你可以设置 this 的值, 且作为已存在对象的新方法调用。</p>
+</blockquote>
+<h2 id="apply-模拟实现"><a href="#apply-模拟实现" class="headerlink" title="apply 模拟实现"></a>apply 模拟实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">Function.prototype.applyOne = function (context) &#123;</div><div class="line">    var context = context || window;     //如果没有参数时指向window</div><div class="line">    var args = arguments[1];               //获取传入的数组</div><div class="line">    var fn = testSymbol(context);</div><div class="line"></div><div class="line">    context[fn] = this;                	//fn属性不存在</div><div class="line">    </div><div class="line">    if(args == void 0) &#123;          //没有参数即直接运行</div><div class="line">        return context[fn]();</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    var fnStr = &apos;context[fn](&apos;;             </div><div class="line">     </div><div class="line">    for (var i = 0; i &lt; args.length; i++) &#123;</div><div class="line">     	fnStr += i == args.length - 1 ? args[i] : args[i] + &apos;,&apos;;</div><div class="line">     &#125;;            </div><div class="line">     	fnStr += &apos;)&apos;;           //得到context[fn](arg1,arg2,arg3....)</div><div class="line">     	var returnValue = eval(fnStr);      //</div><div class="line">     	delete context[fn];            //删除这个属性</div><div class="line">     	return returnValue;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">//简单模拟es6的Symbol保证属性的唯一性</div><div class="line">function testSymbol(obj) &#123;            </div><div class="line">    var unquie_obj = &apos;00&apos; + Math.random();</div><div class="line">    if (obj.hasOwnProperty(unquie_obj)) &#123;</div><div class="line">        arguments.callee(obj);</div><div class="line">    &#125; else &#123;</div><div class="line">        return unquie_obj;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="这里对-call-进行模拟实现"><a href="#这里对-call-进行模拟实现" class="headerlink" title="这里对 call 进行模拟实现"></a>这里对 call 进行模拟实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//call</div><div class="line">Function.prototype.callOne = function (context) &#123;</div><div class="line">    return this.applyOne(([].shift.applyOne(arguments)),arguments);        //将参数依次弹出即可</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="这里对-bind-进行模拟实现"><a href="#这里对-bind-进行模拟实现" class="headerlink" title="这里对 bind 进行模拟实现"></a>这里对 bind 进行模拟实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Function.prototype.bindOne = function() &#123;</div><div class="line">    var _this = this,                        // 保存原函数</div><div class="line">            context = [].shift.call(arguments), // 保存需要绑定的this上下文</div><div class="line">            args = [].slice.call(arguments);    // 剩余的参数转为数组</div><div class="line">        return function () &#123;                    // 返回一个新函数</div><div class="line">            _this.apply(context,[].concat.call(args, [].slice.call(arguments)));</div><div class="line">        &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      白日梦想家
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http:\\hexin.life/2017/07/29/title-19/" title="JS练习之--模拟call_apply">http:\\hexin.life/2017/07/29/title-19/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/27/title-18/" rel="next" title="HTTP 表单编码 enctype">
+                <i class="fa fa-chevron-left"></i> HTTP 表单编码 enctype
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/29/title-20/" rel="prev" title="字符串的乘法">
+                字符串的乘法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="白日梦想家" />
+          <p class="site-author-name" itemprop="name">白日梦想家</p>
+           
+              <p class="site-description motion-element" itemprop="description">那些一起做的白日梦，你还记得么</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/18292843691" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:hexin_9508@163.com" target="_blank" title="邮箱">
+                  
+                    <i class="fa fa-fw fa-mail"></i>
+                  
+                  邮箱
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+
+        
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#apply-和-call"><span class="nav-number">1.</span> <span class="nav-text">apply 和 call</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#apply-模拟实现"><span class="nav-number">2.</span> <span class="nav-text">apply 模拟实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#这里对-call-进行模拟实现"><span class="nav-number">3.</span> <span class="nav-text">这里对 call 进行模拟实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#这里对-bind-进行模拟实现"><span class="nav-number">4.</span> <span class="nav-text">这里对 bind 进行模拟实现</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">白日梦想家</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
-  }</script><script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script><script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script><script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script><script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script><script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script><script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script><script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script><script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script><script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script><script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script><script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script><!-- UY BEGIN --><script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2139345"></script><!-- UY END --><script type="text/javascript">// Popup Window;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2139345"></script>
+      <!-- UY END -->
+    
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
     var isfetched = false;
     var isXml = true;
     // Search DB path;
@@ -331,4 +1138,24 @@
       if (shouldDismissSearchPopup) {
         onPopupClose();
       }
-    });</script></body></html>
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
