@@ -93,16 +93,16 @@
 
 
 
-<meta name="description" content="Document          .mark {         color: red;     }             baidu               function createElement() {         var body = document.body;         var div = document.createElement">
+<meta name="description" content="Document          .mark {         color: red;     }             baidu               function createElement() {         var body = document.body;          var fragment = document.createD">
 <meta property="og:type" content="website">
 <meta property="og:title" content="dayDream&#39;s blog">
 <meta property="og:url" content="http:\\hexin.life/more/pdd.html">
 <meta property="og:site_name" content="dayDream&#39;s blog">
-<meta property="og:description" content="Document          .mark {         color: red;     }             baidu               function createElement() {         var body = document.body;         var div = document.createElement">
-<meta property="og:updated_time" content="2017-08-02T11:32:04.960Z">
+<meta property="og:description" content="Document          .mark {         color: red;     }             baidu               function createElement() {         var body = document.body;          var fragment = document.createD">
+<meta property="og:updated_time" content="2017-08-04T02:01:33.032Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="dayDream&#39;s blog">
-<meta name="twitter:description" content="Document          .mark {         color: red;     }             baidu               function createElement() {         var body = document.body;         var div = document.createElement">
+<meta name="twitter:description" content="Document          .mark {         color: red;     }             baidu               function createElement() {         var body = document.body;          var fragment = document.createD">
 
 
 
@@ -310,7 +310,7 @@
 
     
     
-      <script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><!DOCTYPE html>
+      <link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -329,22 +329,28 @@
     <script>
     function createElement() {
         var body = document.body;
+
+        var fragment = document.createDocumentFragment()
+
         var div = document.createElement('div')
         div.setAttribute('id', 'hello')
 
-        body.appendChild(div)
+        fragment.appendChild(div)
 
         var p = document.createElement('p')
         p.className = 'textToMark'
         p.innerHTML = 'hdslakddnska8das'
 
-        div.appendChild(p)
+        div.appendChild(p);
+        body.appendChild(fragment)
     }
     createElement();
+
 
     /************************************************/
 
     const textToMark = document.querySelector('.textToMark');
+   
 
     const text = textToMark.innerHTML;
 
@@ -355,7 +361,7 @@
     });
 
     textToMark.innerHTML = newtext;
-
+/---------------------------------------------------------/
     // const arr = ['d', 'a', '*', '8'];
 
     // const newText = text.split('');
@@ -455,7 +461,7 @@
     function one () {
     	this.name = 1;
     	return function two () {
-    		this.name = 2;
+    		    name = 2;
     		return function three() {
     			var name = 3;
     			console.log(this.name);
