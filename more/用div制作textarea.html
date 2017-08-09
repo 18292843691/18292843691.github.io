@@ -99,7 +99,7 @@
 <meta property="og:url" content="http:\\hexin.life/more/用div制作textarea.html">
 <meta property="og:site_name" content="dayDream&#39;s blog">
 <meta property="og:description" content="Document 	 		.div-text{ 			min-height: 20px; 			min-width: 80px; 		}  		.div-text{ 			margin: 50px; 			padding-left: 3px; 			width: 100px; 			border: 1px solid #ccc; 			resize: both; 			overfl">
-<meta property="og:updated_time" content="2017-08-01T15:40:55.116Z">
+<meta property="og:updated_time" content="2017-08-08T15:30:40.639Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="dayDream&#39;s blog">
 <meta name="twitter:description" content="Document 	 		.div-text{ 			min-height: 20px; 			min-width: 80px; 		}  		.div-text{ 			margin: 50px; 			padding-left: 3px; 			width: 100px; 			border: 1px solid #ccc; 			resize: both; 			overfl">
@@ -310,7 +310,7 @@
 
     
     
-      <link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><!DOCTYPE html>
+      <script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -338,13 +338,16 @@
 	<div contenteditable="true" ,="" class="div-text">
 		i am div too
 	</div>
-	
+		<div class="come">
+			hello
+		</div>
 	
 	<input type="text" id="cls" ,="" value="i am input"> 
 	
 	<script>
 		var input = document.getElementById('cls')
 
+		// Input 按下的触发
 		input.onmouseup = function() {
 			console.log('onmouseup')
 		}
@@ -357,6 +360,69 @@
 		input.onfocus = function() {
 			console.log('onfocus')
 		}
+
+		// dom 的建立与添加
+		var div = document.querySelector('.come');
+
+		var p1 = document.createElement('p')
+		p1.innerHTML = 'p1'
+		p1.className = 'p1'
+
+		div.appendChild(p1)
+
+		var p2 = document.createElement('p')
+		p2.innerHTML = 'p2'
+		p2.classList.add('p2');
+
+		div.appendChild(p2)
+
+		var p2c = document.querySelector('.p2');
+
+		// 事件冒泡
+		// p2c.addEventListener('click', function(e) {
+		// 	e.stopPropagation()
+		// 	alert('p2')
+		// })
+
+		var body = document.body
+
+		// 事件代理
+		// body.addEventListener('click', function(e) {
+
+		// 	var target = e.target
+		// 	// console.log(target.nodeName)
+		// 	if(target.nodeName === 'P') {
+		// 		alert(target.innerHTML)
+		// 	}
+			
+		// })
+
+
+		// 事件代理及事件绑定的封装
+		function bindEvent(elem, type, selector, fn) {
+			if(fn == null) {
+				fn = selector
+				selector = null
+			}
+			elem.addEventListener(type, function(e) {
+				var target
+				if(selector) {  // 代理
+					target = e.target
+					if(target.matches(selector)) {
+						fn.call(target, e)
+					}
+				} else {   // 不是代理
+					fn(e)
+				}
+			})
+		}
+
+		bindEvent(body, 'click', 'p', function(e) {
+			console.log(this.innerHTML)
+		})
+		bindEvent(p2c, 'click', function(e) {
+			console.log(p2c.innerHTML)
+		})
 	</script>
 </body>
 </html>
@@ -411,7 +477,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -433,7 +499,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

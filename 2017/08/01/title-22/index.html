@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="dayDream&#39;s blog">
 <meta property="og:description" content="简答题：settimeout 与 setInterval的区别， 及对他们的内存的分析区别 setTimeout是在一段时间后调用指定函数（仅一次） setInterval是每隔一段时间调用指定函数（N次）1234567function run()&amp;#123;    // 其他代码    setTimeout(function()&amp;#123;        run();    &amp;#125;,">
 <meta property="og:image" content="http://or3233yyd.bkt.clouddn.com//17-8-2/50845409.jpg">
-<meta property="og:updated_time" content="2017-08-04T03:24:28.246Z">
+<meta property="og:updated_time" content="2017-08-09T17:20:47.856Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2017拼多多前端笔试">
 <meta name="twitter:description" content="简答题：settimeout 与 setInterval的区别， 及对他们的内存的分析区别 setTimeout是在一段时间后调用指定函数（仅一次） setInterval是每隔一段时间调用指定函数（N次）1234567function run()&amp;#123;    // 其他代码    setTimeout(function()&amp;#123;        run();    &amp;#125;,">
@@ -398,7 +398,7 @@
       
 
       
-        <link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><h1 id="简答题："><a href="#简答题：" class="headerlink" title="简答题："></a>简答题：</h1><h2 id="settimeout-与-setInterval的区别，-及对他们的内存的分析"><a href="#settimeout-与-setInterval的区别，-及对他们的内存的分析" class="headerlink" title="settimeout 与 setInterval的区别， 及对他们的内存的分析"></a>settimeout 与 setInterval的区别， 及对他们的内存的分析</h2><h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><ol>
+        <script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><h1 id="简答题："><a href="#简答题：" class="headerlink" title="简答题："></a>简答题：</h1><h2 id="settimeout-与-setInterval的区别，-及对他们的内存的分析"><a href="#settimeout-与-setInterval的区别，-及对他们的内存的分析" class="headerlink" title="settimeout 与 setInterval的区别， 及对他们的内存的分析"></a>settimeout 与 setInterval的区别， 及对他们的内存的分析</h2><h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><ol>
 <li>setTimeout是在一段时间后调用指定函数（仅一次）</li>
 <li>setInterval是每隔一段时间调用指定函数（N次）<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function run()&#123;</div><div class="line">    // 其他代码</div><div class="line">    setTimeout(function()&#123;</div><div class="line">        run();</div><div class="line">    &#125;, 10000);</div><div class="line">&#125;</div><div class="line">run();</div></pre></td></tr></table></figure>
 </li>
@@ -475,7 +475,7 @@
 </ul>
 <h2 id="创建一个函数对-JS-基础类型-function-boolean-array-number-string-object-进行值复制"><a href="#创建一个函数对-JS-基础类型-function-boolean-array-number-string-object-进行值复制" class="headerlink" title="创建一个函数对 JS 基础类型 ( function, boolean, array, number, string, object) 进行值复制"></a><a href="http://hexin.life/more/pdd.html">创建一个函数对 JS 基础类型 ( function, boolean, array, number, string, object) 进行值复制</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">function valueToCopy (valueBeCopy) &#123;</div><div class="line">    var copyValue;</div><div class="line">    if (typeof (+valueBeCopy) === &apos;number&apos; &amp;&amp; typeof valueBeCopy !== &apos;object&apos;) &#123;</div><div class="line">        copyValue = +valueBeCopy;</div><div class="line">    &#125; else if (typeof valueBeCopy === &apos;string&apos;) &#123;</div><div class="line">        copyValue = parseInt(copyValue);</div><div class="line">    &#125; else if (typeof valueBeCopy === &apos;object&apos;)&#123;</div><div class="line">        if(Array.isArray(valueBeCopy)) &#123;</div><div class="line">            copyValue = valueBeCopy.slice();</div><div class="line">        &#125;</div><div class="line">        copyValue = JSON.parse(JSON.stringify(valueBeCopy))</div><div class="line">    &#125; </div><div class="line">        copyValue = valueBeCopy;</div><div class="line">    // console.log(copyValue)</div><div class="line">    return copyValue;   </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><img src="http://or3233yyd.bkt.clouddn.com//17-8-2/50845409.jpg" alt="test img"></p>
-<h2 id="url-输入到页面完成经历了什么"><a href="#url-输入到页面完成经历了什么" class="headerlink" title="url 输入到页面完成经历了什么"></a>url 输入到页面完成经历了什么</h2><p>感觉这篇文章非常非常详细了~太长了，过段时间再整理(抄袭~)<br><a href="http://www.kuqin.com/shuoit/20170324/353413.html" target="_blank" rel="external">老生常谈-从输入url到页面展示到底发生了什么</a></p>
+<h2 id="url-输入到页面完成经历了什么"><a href="#url-输入到页面完成经历了什么" class="headerlink" title="url 输入到页面完成经历了什么"></a><a href="http://hexin.life/2017/08/10/title-23/">url 输入到页面完成经历了什么</a></h2><p><a href="http://hexin.life/2017/08/10/title-23/">专门整理一篇尽可能详细的~</a></p>
 <h1 id="选择题"><a href="#选择题" class="headerlink" title="选择题"></a><a href="http://hexin.life/more/pdd.html">选择题</a></h1><h2 id="执行顺序"><a href="#执行顺序" class="headerlink" title="执行顺序"></a>执行顺序</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">var input = document.getElementById(&apos;cls&apos;)</div><div class="line"></div><div class="line">input.onmouseup = function() &#123;</div><div class="line">    console.log(&apos;onmouseup&apos;)</div><div class="line">&#125;</div><div class="line">input.onmousedown = function() &#123;</div><div class="line">    console.log(&apos;onmousedown&apos;)</div><div class="line">&#125;</div><div class="line">input.onclick = function() &#123;</div><div class="line">    console.log(&apos;onclick&apos;)</div><div class="line">&#125;</div><div class="line">input.onfocus = function() &#123;</div><div class="line">    console.log(&apos;onfocus&apos;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <blockquote>
 <p>onmousedown =&gt; onfocus =&gt; onmouseup =&gt; onclick</p>
@@ -649,7 +649,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -671,7 +671,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http:%5C%5Chexin.life/"/>
-  <updated>2017-08-04T03:24:28.246Z</updated>
+  <updated>2017-08-09T17:20:47.856Z</updated>
   <id>http:\\hexin.life/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http:%5C%5Chexin.life/2017/08/01/title-22/"/>
     <id>http:\\hexin.life/2017/08/01/title-22/</id>
     <published>2017-08-01T13:33:52.000Z</published>
-    <updated>2017-08-04T03:24:28.246Z</updated>
+    <updated>2017-08-09T17:20:47.856Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><h1 id="简答题："><a href="#简答题：" class="headerlink" title="简答题："></a>简答题：</h1><h2 id="settimeout-与-setInterval的区别，-及对他们的内存的分析"><a href="#settimeout-与-setInterval的区别，-及对他们的内存的分析" class="headerlink" title="settimeout 与 setInterval的区别， 及对他们的内存的分析"></a>settimeout 与 setInterval的区别， 及对他们的内存的分析</h2><h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><ol>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><h1 id="简答题："><a href="#简答题：" class="headerlink" title="简答题："></a>简答题：</h1><h2 id="settimeout-与-setInterval的区别，-及对他们的内存的分析"><a href="#settimeout-与-setInterval的区别，-及对他们的内存的分析" class="headerlink" title="settimeout 与 setInterval的区别， 及对他们的内存的分析"></a>settimeout 与 setInterval的区别， 及对他们的内存的分析</h2><h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><ol>
 <li>setTimeout是在一段时间后调用指定函数（仅一次）</li>
 <li>setInterval是每隔一段时间调用指定函数（N次）<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function run()&#123;</div><div class="line">    // 其他代码</div><div class="line">    setTimeout(function()&#123;</div><div class="line">        run();</div><div class="line">    &#125;, 10000);</div><div class="line">&#125;</div><div class="line">run();</div></pre></td></tr></table></figure>
 </li>
@@ -99,7 +99,7 @@
 </ul>
 <h2 id="创建一个函数对-JS-基础类型-function-boolean-array-number-string-object-进行值复制"><a href="#创建一个函数对-JS-基础类型-function-boolean-array-number-string-object-进行值复制" class="headerlink" title="创建一个函数对 JS 基础类型 ( function, boolean, array, number, string, object) 进行值复制"></a><a href="http://hexin.life/more/pdd.html">创建一个函数对 JS 基础类型 ( function, boolean, array, number, string, object) 进行值复制</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">function valueToCopy (valueBeCopy) &#123;</div><div class="line">    var copyValue;</div><div class="line">    if (typeof (+valueBeCopy) === &apos;number&apos; &amp;&amp; typeof valueBeCopy !== &apos;object&apos;) &#123;</div><div class="line">        copyValue = +valueBeCopy;</div><div class="line">    &#125; else if (typeof valueBeCopy === &apos;string&apos;) &#123;</div><div class="line">        copyValue = parseInt(copyValue);</div><div class="line">    &#125; else if (typeof valueBeCopy === &apos;object&apos;)&#123;</div><div class="line">        if(Array.isArray(valueBeCopy)) &#123;</div><div class="line">            copyValue = valueBeCopy.slice();</div><div class="line">        &#125;</div><div class="line">        copyValue = JSON.parse(JSON.stringify(valueBeCopy))</div><div class="line">    &#125; </div><div class="line">        copyValue = valueBeCopy;</div><div class="line">    // console.log(copyValue)</div><div class="line">    return copyValue;   </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><img src="http://or3233yyd.bkt.clouddn.com//17-8-2/50845409.jpg" alt="test img"></p>
-<h2 id="url-输入到页面完成经历了什么"><a href="#url-输入到页面完成经历了什么" class="headerlink" title="url 输入到页面完成经历了什么"></a>url 输入到页面完成经历了什么</h2><p>感觉这篇文章非常非常详细了~太长了，过段时间再整理(抄袭~)<br><a href="http://www.kuqin.com/shuoit/20170324/353413.html" target="_blank" rel="external">老生常谈-从输入url到页面展示到底发生了什么</a></p>
+<h2 id="url-输入到页面完成经历了什么"><a href="#url-输入到页面完成经历了什么" class="headerlink" title="url 输入到页面完成经历了什么"></a><a href="http://hexin.life/2017/08/10/title-23/">url 输入到页面完成经历了什么</a></h2><p><a href="http://hexin.life/2017/08/10/title-23/">专门整理一篇尽可能详细的~</a></p>
 <h1 id="选择题"><a href="#选择题" class="headerlink" title="选择题"></a><a href="http://hexin.life/more/pdd.html">选择题</a></h1><h2 id="执行顺序"><a href="#执行顺序" class="headerlink" title="执行顺序"></a>执行顺序</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">var input = document.getElementById(&apos;cls&apos;)</div><div class="line"></div><div class="line">input.onmouseup = function() &#123;</div><div class="line">    console.log(&apos;onmouseup&apos;)</div><div class="line">&#125;</div><div class="line">input.onmousedown = function() &#123;</div><div class="line">    console.log(&apos;onmousedown&apos;)</div><div class="line">&#125;</div><div class="line">input.onclick = function() &#123;</div><div class="line">    console.log(&apos;onclick&apos;)</div><div class="line">&#125;</div><div class="line">input.onfocus = function() &#123;</div><div class="line">    console.log(&apos;onfocus&apos;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <blockquote>
 <p>onmousedown =&gt; onfocus =&gt; onmouseup =&gt; onclick</p>
@@ -137,7 +137,7 @@
     
     <summary type="html">
     
-      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/as
+      &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/as
     
     </summary>
     
@@ -153,9 +153,9 @@
     <link href="http:%5C%5Chexin.life/2017/07/29/title-21/"/>
     <id>http:\\hexin.life/2017/07/29/title-21/</id>
     <published>2017-07-29T08:09:22.000Z</published>
-    <updated>2017-08-02T16:24:06.165Z</updated>
+    <updated>2017-08-08T08:16:09.296Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="使用-typeof-能得到哪些基础类型"><a href="#使用-typeof-能得到哪些基础类型" class="headerlink" title="使用 typeof 能得到哪些基础类型"></a>使用 typeof 能得到哪些基础类型</h2><ul>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="使用-typeof-能得到哪些基础类型"><a href="#使用-typeof-能得到哪些基础类型" class="headerlink" title="使用 typeof 能得到哪些基础类型"></a>使用 typeof 能得到哪些基础类型</h2><ul>
 <li>undefined</li>
 <li>boolean</li>
 <li>Number</li>
@@ -163,10 +163,13 @@
 <li>Object          =&gt; null, object, array</li>
 <li><p>Function</p>
 <h2 id="何时使用-何时使用"><a href="#何时使用-何时使用" class="headerlink" title="何时使用 === 何时使用 =="></a>何时使用 === 何时使用 ==</h2></li>
-<li><p>需要判断类型是否相等时使用全等(===)</p>
+<li><p>不需要判断类型是否相等，即需要隐式类型转换的时候使用 ==<br>判断对象中属性是否存在</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">if(obj.a == nul)  // =&gt; 等同于  obj.a === null || obj.a === undefined</div><div class="line">// =&gt; jquery 推荐写法(源码)</div></pre></td></tr></table></figure>
 </li>
-<li>不需要判断类型是否相等，即需要隐式类型转换的时候使用 ==<br>##window.onload 和 DOMContentLoaded 的区别</li>
+<li><p>其他情况全部用 ===</p>
+</li>
 </ul>
+<p>##window.onload 和 DOMContentLoaded 的区别</p>
 <p>###window.onload</p>
 <ul>
 <li>window.onload 需要等到全部的资源加载完成才会触发，不能够编写多个，编写多个时只会执行最后一个,该方法可以绑定到任意元素上</li>
@@ -274,6 +277,9 @@
 </blockquote>
 <p>然后网上搜了一下，发现有人整理的很全，就拉过来学习吧</p>
 <p><a href="http://blog.csdn.net/q1056843325/article/details/53223914" target="_blank" rel="external"> 七种方案解决JavaScript交换两个变量值的问题</a></p>
+<h2 id="实现对对象和数组的-forEach"><a href="#实现对对象和数组的-forEach" class="headerlink" title="实现对对象和数组的 forEach"></a>实现对对象和数组的 forEach</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">function forEach(obj, index, value, fn) &#123;</div><div class="line">    if (obj == null) return;</div><div class="line">    if (!fn) &#123;</div><div class="line">        if (typeof obj === &apos;function&apos; &amp;&amp; obj.call) &#123;</div><div class="line">            fn = Function</div><div class="line">        &#125; else if (typeof obj.forEach === &apos;function&apos; &amp;&amp; obj.forEach != arguments.callee) &#123;</div><div class="line">            // 如果对象内部已经实现 forEach ，例如数组</div><div class="line">            obj.forEach(index, value)</div><div class="line">            return;</div><div class="line">        &#125; else if (typeof obj.length == &apos;number&apos;) &#123;</div><div class="line">            // 如果是数组或者类数组的对象</div><div class="line">            _Array_forEach(obj, index, value)</div><div class="line">            return;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    _Function_forEach(fn || Object, obj, index, value)</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">function _Array_forEach(arr, index, value) &#123;</div><div class="line">    if(arr == null) return ;</div><div class="line">    let i = 0,</div><div class="line">        len = arr.length;</div><div class="line">    if(typeof arr === &apos;string&apos;) &#123;</div><div class="line">        for(; i &lt; len; i++) &#123;</div><div class="line">            index.call(value, arr.charAt(i), i, arr)</div><div class="line">        &#125;</div><div class="line">    &#125; else &#123;</div><div class="line">        for(; i &lt; len; i++) &#123;</div><div class="line">            index.call(value, arr[i], i, arr)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">function _Function_forEach (fn, obj, index, value) &#123;</div><div class="line">    for(let key in obj) &#123;</div><div class="line">        if(obj.hasOwnProperty(key))</div><div class="line">            index.call(value, obj[key], key, obj)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>采自 大神司徒正美<a href="http://www.cnblogs.com/rubylouvre/archive/2009/11/10/1599978.html" target="_blank" rel="external">javascript 的forEach函数</a></p>
+<h2 id="实现对时间-xxxx-xx-xx-的获取"><a href="#实现对时间-xxxx-xx-xx-的获取" class="headerlink" title="实现对时间 xxxx-xx-xx 的获取"></a>实现对时间 xxxx-xx-xx 的获取</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">function formatDate(date) &#123;</div><div class="line">    if (!date) &#123;</div><div class="line">        date = new Date()</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    const year = date.getFullYear(),</div><div class="line">        month = (date.getMonth() + 1),         // month 是从 0 开始</div><div class="line">        day = date.getDate(),</div><div class="line">        hours = date.getHours(),</div><div class="line">        minutes = date.getMinutes(),</div><div class="line">        seconds = date.getSeconds();</div><div class="line"></div><div class="line"></div><div class="line">    return year + &apos;-&apos; + month + &apos;-&apos; + day</div><div class="line">&#125;</div><div class="line"></div><div class="line">var date = new Date()</div><div class="line">var formatDate = formatDate(date)</div><div class="line">console.log(formatDate)</div><div class="line">2017-8-8</div></pre></td></tr></table></figure>
 <h1 id="HTML-知识"><a href="#HTML-知识" class="headerlink" title="HTML 知识"></a>HTML 知识</h1><h2 id="用-div-实现-textarea"><a href="#用-div-实现-textarea" class="headerlink" title="用 div 实现 textarea"></a><a href="http://hexin.life/more/用div制作textarea.html">用 div 实现 textarea</a></h2><blockquote>
 <p>Textarea 对象代表 HTML 表单中的一个文本域 (text-area)。</p>
 </blockquote>
@@ -551,7 +557,7 @@
     
     <summary type="html">
     
-      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/as
+      &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/as
     
     </summary>
     
@@ -586,6 +592,41 @@
     
     </summary>
     
+    
+  </entry>
+  
+  <entry>
+    <title>JS练习之--模拟call_apply</title>
+    <link href="http:%5C%5Chexin.life/2017/07/29/title-19/"/>
+    <id>http:\\hexin.life/2017/07/29/title-19/</id>
+    <published>2017-07-29T07:35:46.000Z</published>
+    <updated>2017-08-01T07:25:47.725Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><h2 id="apply-和-call"><a href="#apply-和-call" class="headerlink" title="apply 和 call"></a>apply 和 call</h2><p>在 JavaScript 中, 函数是对象。JavaScript 函数有它的属性和方法。<br>call() 和 apply() 是预定义的函数方法。 两个方法可用于调用函数，两个方法的第一个参数必须是对象本身。<br>例1；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var jaw = &#123; </div><div class="line">    name: &apos;jaw&apos;, </div><div class="line">    sayHello: function(age) &#123; </div><div class="line">        console.log(&apos;hello i am &apos; + this.name + &quot; i&apos;m &quot; + age + &apos; years old &apos;) </div><div class="line">    &#125; </div><div class="line">&#125;;</div><div class="line"></div><div class="line">var liu = &#123; </div><div class="line">    name: &apos;liu&apos; </div><div class="line">&#125;;</div><div class="line">jaw.sayHello(22); // hello i am jaw i&apos;m 22 years old</div><div class="line">jaw.sayHello.apply(liu, [24]);  //hello i am liu i&apos;m 24 years old </div><div class="line">jaw.sayHello.call(liu, 23);  //hello i am liu i&apos;m 23 years old</div></pre></td></tr></table></figure></p>
+<p>例2：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function a()&#123;</div><div class="line">    y=function()&#123;</div><div class="line">    x=2;</div><div class="line">&#125;; </div><div class="line">return function()&#123;</div><div class="line">    var x=3;y();console.log(this.x)</div><div class="line">&#125;.apply(this, arguments)&#125; </div><div class="line">a();    //2</div></pre></td></tr></table></figure></p>
+<p>两个方法都使用了对象本身作为第一个参数。 两者的区别在于第二个参数：</p>
+<ul>
+<li>apply传入的是一个参数数组，也就是将多个参数组合成为一个数组传入，</li>
+<li>call则作为call的参数传入（从第二个参数开始）。</li>
+</ul>
+<p>在 JavaScript 严格模式(strict mode)下, 在调用函数时第一个参数会成为 this 的值， 即使该参数不是一个对象。<br>在 JavaScript 非严格模式(non-strict mode)下, 如果第一个参数的值是 null 或 undefined, 它将使用全局对象替代。</p>
+<blockquote>
+<p>通过 call() 或 apply() 方法你可以设置 this 的值, 且作为已存在对象的新方法调用。</p>
+</blockquote>
+<h2 id="apply-模拟实现"><a href="#apply-模拟实现" class="headerlink" title="apply 模拟实现"></a>apply 模拟实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">Function.prototype.applyOne = function (context) &#123;</div><div class="line">    var context = context || window;     //如果没有参数时指向window</div><div class="line">    var args = arguments[1];               //获取传入的数组</div><div class="line">    var fn = testSymbol(context);</div><div class="line"></div><div class="line">    context[fn] = this;                	//fn属性不存在</div><div class="line">    </div><div class="line">    if(args == void 0) &#123;          //没有参数即直接运行</div><div class="line">        return context[fn]();</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    var fnStr = &apos;context[fn](&apos;;             </div><div class="line">     </div><div class="line">    for (var i = 0; i &lt; args.length; i++) &#123;</div><div class="line">     	fnStr += i == args.length - 1 ? args[i] : args[i] + &apos;,&apos;;</div><div class="line">     &#125;;            </div><div class="line">     	fnStr += &apos;)&apos;;           //得到context[fn](arg1,arg2,arg3....)</div><div class="line">     	var returnValue = eval(fnStr);      //</div><div class="line">     	delete context[fn];            //删除这个属性</div><div class="line">     	return returnValue;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">//简单模拟es6的Symbol保证属性的唯一性</div><div class="line">function testSymbol(obj) &#123;            </div><div class="line">    var unquie_obj = &apos;00&apos; + Math.random();</div><div class="line">    if (obj.hasOwnProperty(unquie_obj)) &#123;</div><div class="line">        arguments.callee(obj);</div><div class="line">    &#125; else &#123;</div><div class="line">        return unquie_obj;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="这里对-call-进行模拟实现"><a href="#这里对-call-进行模拟实现" class="headerlink" title="这里对 call 进行模拟实现"></a>这里对 call 进行模拟实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//call</div><div class="line">Function.prototype.callOne = function (context) &#123;</div><div class="line">    return this.applyOne(([].shift.applyOne(arguments)),arguments);        //将参数依次弹出即可</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="这里对-bind-进行模拟实现"><a href="#这里对-bind-进行模拟实现" class="headerlink" title="这里对 bind 进行模拟实现"></a>这里对 bind 进行模拟实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Function.prototype.bindOne = function() &#123;</div><div class="line">    var _this = this,                        // 保存原函数</div><div class="line">            context = [].shift.call(arguments), // 保存需要绑定的this上下文</div><div class="line">            args = [].slice.call(arguments);    // 剩余的参数转为数组</div><div class="line">        return function () &#123;                    // 返回一个新函数</div><div class="line">            _this.apply(context,[].concat.call(args, [].slice.call(arguments)));</div><div class="line">        &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/as
+    
+    </summary>
+    
+      <category term="前端" scheme="http:%5C%5Chexin.life/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="http:%5C%5Chexin.life/tags/JavaScript/"/>
     
   </entry>
   
@@ -797,16 +838,252 @@
     <link href="http:%5C%5Chexin.life/2017/07/11/title-16/"/>
     <id>http:\\hexin.life/2017/07/11/title-16/</id>
     <published>2017-07-11T13:32:07.000Z</published>
-    <updated>2017-07-11T13:32:07.654Z</updated>
+    <updated>2017-08-09T14:07:43.186Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script>]]></content>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script>]]></content>
     
     <summary type="html">
     
-      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/as
+      &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/as
     
     </summary>
     
+      <category term="前端" scheme="http:%5C%5Chexin.life/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="面试前夕" scheme="http:%5C%5Chexin.life/tags/%E9%9D%A2%E8%AF%95%E5%89%8D%E5%A4%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>url 从输入到页面渲染完成到底发生了什么</title>
+    <link href="http:%5C%5Chexin.life/2017/07/11/title-23/"/>
+    <id>http:\\hexin.life/2017/07/11/title-23/</id>
+    <published>2017-07-11T13:32:07.000Z</published>
+    <updated>2017-08-09T17:17:11.968Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><h1 id="开始上网，输入-url"><a href="#开始上网，输入-url" class="headerlink" title="开始上网，输入 url"></a>开始上网，输入 url</h1><p>当我们开始输入 url 的时候，浏览器就已经开始匹配 url ，从历史纪录，书签等，找到已经输入的字符串可能对应的 url ，然后给出智能提示，自动补全等。<br><img src="http://or3233yyd.bkt.clouddn.com//17-8-9/69469932.jpg" alt=""></p>
+<h1 id="解析URL"><a href="#解析URL" class="headerlink" title="解析URL"></a>解析URL</h1><ul>
+<li><p>浏览器通过 URL 能够知道下面的信息：</p>
+<ul>
+<li>Protocol “http”<br>使用HTTP协议</li>
+<li>Resource “/“<br>请求的资源是主页(index)<h1 id="输入的是-URL-还是搜索的关键字？"><a href="#输入的是-URL-还是搜索的关键字？" class="headerlink" title="输入的是 URL 还是搜索的关键字？"></a>输入的是 URL 还是搜索的关键字？</h1>当协议或主机名不合法时，浏览器会将地址栏中输入的文字传给默认的搜索引擎。大部分情况下，在把文字传递给搜索引擎的时候，URL会带有特定的一串字符，用来告诉搜索引擎这次搜索来自这个特定浏览器。<h1 id="转换非-ASCII-的-Unicode-字符"><a href="#转换非-ASCII-的-Unicode-字符" class="headerlink" title="转换非 ASCII 的 Unicode 字符"></a>转换非 ASCII 的 Unicode 字符</h1></li>
+</ul>
+</li>
+<li>浏览器检查输入是否含有不是 a-z， A-Z，0-9， - 或者 . 的字符</li>
+<li>这里主机名是 google.com ，所以没有非ASCII的字符；如果有的话，浏览器会对主机名部分使用 Punycode 编码<h1 id="检查-HSTS-列表"><a href="#检查-HSTS-列表" class="headerlink" title="检查 HSTS 列表"></a>检查 HSTS 列表</h1></li>
+<li>浏览器检查自带的“预加载 HSTS（HTTP严格传输安全）”列表，这个列表里包含了那些请求浏览器只使用HTTPS进行连接的网站</li>
+<li>如果网站在这个列表里，浏览器会使用 HTTPS 而不是 HTTP 协议，否则，最初的请求会使用HTTP协议发送</li>
+<li>注意，一个网站哪怕不在 HSTS 列表里，也可以要求浏览器对自己使用 HSTS 政策进行访问。浏览器向网站发出第一个 HTTP 请求之后，网站会返回浏览器一个响应，请求浏览器只使用 HTTPS 发送请求。然而，就是这第一个 HTTP 请求，却可能会使用户受到 <a href="http://en.wikipedia.org/wiki/SSL_stripping" target="_blank" rel="external">downgrade attack</a> 的威胁，这也是为什么现代浏览器都预置了 HSTS 列表。<h1 id="浏览器查找-url-的-Ip-地址"><a href="#浏览器查找-url-的-Ip-地址" class="headerlink" title="浏览器查找 url 的 Ip 地址"></a>浏览器查找 url 的 Ip 地址</h1></li>
+</ul>
+<ol>
+<li>浏览器检查域名是否在缓存当中（要查看 Chrome 当中的缓存， 打开 chrome://net-internals/#dns）。</li>
+<li>首先查看本地硬盘的 host 文件，查看其中有没有和这个域名对应的规则，如果找到，就直接使用 host 中的 ip 地址。</li>
+<li>如果 host 中没能找到对应的 ip 地址，浏览器会发出一个 DNS 请求到本地 DNS 服务器，即网络接入提供商(中国移动，中国电信等)</li>
+<li>本地 DNS 服务器查询它的缓存记录，如果有就直接返回查询结果，此过程是递归查询，如果没有则会向 DNS 根服务器查询</li>
+<li>跟服务器没有相应的记录时，就告诉本地 DNS 服务器可以去域名服务器查询，并告知域名服务器的 IP，</li>
+<li>本地服务器向域名服务器发出请求，在下图中请求的对象是 .com 服务器， .com 服务器收到请求后，也不会直接返回对应关系，而是告诉本地 DNS 服务器，你所查询的域名的服务器的地址。</li>
+<li>本地服务器向查询的域名服务器发出请求，此时能收到相应的域名和 IP 的地址，本地 DNS 不仅要把返回的 IP 和域名返回给用户还要把这个关系保存到缓存中，以防下次用户请求时，可以快速返回结果，加快了网络的访问。</li>
+</ol>
+<p><img src="http://or3233yyd.bkt.clouddn.com//17-8-9/12752710.jpg" alt="域名解析-盗图"></p>
+<blockquote>
+<p><a href="https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F" target="_blank" rel="external">关于 DNS</a></p>
+</blockquote>
+<h1 id="浏览器向-Web-服务器发出-HTTP-请求"><a href="#浏览器向-Web-服务器发出-HTTP-请求" class="headerlink" title="浏览器向 Web 服务器发出 HTTP 请求"></a>浏览器向 Web 服务器发出 HTTP 请求</h1><p>拿到域名对应的 IP 地址之后，浏览器会以随机一个( 1024 &lt; 端口号 &lt; 65535 ) 向 Web 服务器 ( nginx ) 的 80 端口号发出 TCP 的连接请求，经过各种路由设备(局域网除外)，<br>到达网卡，进入到内核的 TCP/IP 协议栈( 识别连接请求，解封包等 )，最终到达 Web 应用程序，建立起了 TCP/IP 连接。</p>
+<p><img src="http://or3233yyd.bkt.clouddn.com//17-8-9/51034741.jpg" alt=""></p>
+<p>建立起 TCP 连接之后，发起一个 HTTP 请求 ( 一般常用是 get post )。<br>一般一个 HTTP 请求包含：</p>
+<ul>
+<li>请求的 url 协议/版本</li>
+<li>请求头 request header</li>
+<li>请求体 request body</li>
+</ul>
+<p><img src="http://or3233yyd.bkt.clouddn.com//17-8-9/16138101.jpg" alt=""></p>
+<p><img src="http://or3233yyd.bkt.clouddn.com//17-8-9/65736963.jpg" alt=""></p>
+<blockquote>
+<p>最后一个请求头后面是空行，发送回车符和换行符，通知服务器以下不再是请求头</p>
+</blockquote>
+<p><img src="http://or3233yyd.bkt.clouddn.com//17-8-9/26447488.jpg" alt=""></p>
+<blockquote>
+<p><a href="https://github.com/jawil/blog/issues/14" target="_blank" rel="external">TCP 三次握手与四次挥手</a><br> <a href="http://blog.csdn.net/whuslei/article/details/6667471/" target="_blank" rel="external">TCP协议中的三次握手和四次挥手(图解)</a></p>
+</blockquote>
+<h1 id="服务器的永久重定向响应"><a href="#服务器的永久重定向响应" class="headerlink" title="服务器的永久重定向响应"></a>服务器的永久重定向响应</h1><p>服务器给浏览器响应一个 301 的永久重定向，这样浏览器访问 <a href="http://www.google.com" target="_blank" rel="external">http://www.google.com</a> 而不是 <a href="http://google.com" target="_blank" rel="external">http://google.com</a> ，这是由于搜索引擎排名的原因，比如我的网站为了输入方便，在进行 DNS 解析时，将 <a href="http://www.hexin.life" target="_blank" rel="external">http://www.hexin.life</a> 和 <a href="http://hexin.life">http://hexin.life</a> 定位到了同一网站下，搜素引擎会认为他们是俩个网站，从而造成搜索排名下降。而当 301 重定向之后，搜素引擎便会把含  www 的和不含的放在同一个网站排名中，而且使用 www 和非 www 时，也会缓存多次，所以会进行 301 的重定向。</p>
+<blockquote>
+<p><a href="https://aotu.io/notes/2016/01/28/3xx-of-http-status/" target="_blank" rel="external">你所知道的3xx状态码</a></p>
+</blockquote>
+<h1 id="浏览器跟踪重定向地址"><a href="#浏览器跟踪重定向地址" class="headerlink" title="浏览器跟踪重定向地址"></a>浏览器跟踪重定向地址</h1><p>再次向正确地址发送 HTTP 请求</p>
+<h1 id="服务器处理请求"><a href="#服务器处理请求" class="headerlink" title="服务器处理请求"></a>服务器处理请求</h1><p>经过千辛万苦，终于将 http 发送到了我们的服务器。后端接到 TCP 报文开始，他会对 tcp 连接进行处理，对 HTTP 根据协议进行解析，按照报文格式一步一步封装成 HTTP request 对象，供上层使用。</p>
+<p><img src="http://or3233yyd.bkt.clouddn.com//17-8-9/67016800.jpg" alt=""></p>
+<p>大一点的网站会请求到<a href="https://github.com/moonbingbing/openresty-best-practices/blob/master/ngx/reverse_proxy.md" target="_blank" rel="external">反向代理</a>中，因为网站访问量越来越大，网站速度也就变慢了，此时客户端不再直接通过 HTTP 协议访问某网站的应用服务器，而是先请求到 Nginx ， Nginx 再请求应用服务器，然后再将结果返回给客户端，这里 Nginx 的作用时反向代理服务器，同时如果一台服务器挂了，只要其他服务器还在正常运行，网站就能正常使用。</p>
+<p><img src="http://www.2cto.com/uploadfile/Collfiles/20150518/201505180932502.jpg?_=6547807" alt=""></p>
+<h1 id="服务器返回-HTTP-请求"><a href="#服务器返回-HTTP-请求" class="headerlink" title="服务器返回 HTTP 请求"></a>服务器返回 HTTP 请求</h1><p>响应类似请求：</p>
+<ul>
+<li>状态行</li>
+<li>响应头</li>
+<li>响应体</li>
+</ul>
+<p><img src="./1502292587253.png" alt="Alt text"></p>
+<h2 id="响应状态码"><a href="#响应状态码" class="headerlink" title="响应状态码"></a>响应状态码</h2><ol>
+<li>1xx：信息性状态码，表示服务器已接收了客户端请求，客户端可继续发送请求。</li>
+</ol>
+<ul>
+<li><p>100 Continue</p>
+</li>
+<li><p>101 Switching Protocols</p>
+</li>
+</ul>
+<ol>
+<li>2xx：成功状态码，表示服务器已成功接收到请求并进行处理。</li>
+</ol>
+<ul>
+<li><p>200 OK 表示客户端请求成功</p>
+</li>
+<li><p>204 No Content 成功，但不返回任何实体的主体部分</p>
+</li>
+<li><p>206 Partial Content 成功执行了一个范围（Range）请求</p>
+</li>
+</ul>
+<ol>
+<li>3xx：重定向状态码，表示服务器要求客户端重定向。</li>
+</ol>
+<ul>
+<li><p>301 Moved Permanently 永久性重定向，响应报文的Location首部应该有该资源的新URL</p>
+</li>
+<li><p>302 Found 临时性重定向，响应报文的Location首部给出的URL用来临时定位资源</p>
+</li>
+<li><p>303 See Other 请求的资源存在着另一个URI，客户端应使用GET方法定向获取请求的资源</p>
+</li>
+<li><p>304 Not Modified 服务器内容没有更新，可以直接读取浏览器缓存</p>
+</li>
+<li><p>307 Temporary Redirect 临时重定向。与302 Found含义一样。302禁止POST变换为GET，但实际使用时并不一定，307则更多浏览器可能会遵循这一标准，但也依赖于浏览器具体实现</p>
+</li>
+</ul>
+<ol>
+<li>4xx：客户端错误状态码，表示客户端的请求有非法内容。</li>
+</ol>
+<ul>
+<li><p>400 Bad Request 表示客户端请求有语法错误，不能被服务器所理解</p>
+</li>
+<li><p>401 Unauthonzed 表示请求未经授权，该状态代码必须与 WWW-Authenticate 报头域一起使用</p>
+</li>
+<li><p>403 Forbidden 表示服务器收到请求，但是拒绝提供服务，通常会在响应正文中给出不提供服务的原因</p>
+</li>
+<li><p>404 Not Found 请求的资源不存在，例如，输入了错误的URL</p>
+</li>
+</ul>
+<ol>
+<li>5xx：服务器错误状态码，表示服务器未能正常处理客户端的请求而出现意外错误。</li>
+</ol>
+<ul>
+<li><p>500 Internel Server Error 表示服务器发生不可预期的错误，导致无法完成客户端的请求</p>
+</li>
+<li><p>503 Service Unavailable 表示服务器当前不能够处理客户端的请求，在一段时间之后，服务器可能会恢复正常</p>
+</li>
+</ul>
+<blockquote>
+<p><a href="https://zh.wikipedia.org/wiki/HTTP%E7%8A%B6%E6%80%81%E7%A0%81" target="_blank" rel="external">HTTP状态码</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status" target="_blank" rel="external">HTTP response codes</a><br><a href="http://www.alloyteam.com/2016/07/httphttp2-0spdyhttps-reading-this-is-enough/" target="_blank" rel="external">HTTP,HTTP2.0,SPDY,HTTPS你应该知道的一些事</a></p>
+</blockquote>
+<h1 id="浏览器渲染-html"><a href="#浏览器渲染-html" class="headerlink" title="浏览器渲染 html"></a>浏览器渲染 html</h1><p>浏览器在解析html文件时，会”自上而下“加载，并在加载过程中进行解析渲染。在解析过程中，如果遇到请求外部资源时，如图片、外链的CSS、iconfont等，请求过程是异步的，并不会影响html文档进行加载。</p>
+<ol>
+<li>首先是解析 HTML 构建 DOM 树 =&gt; </li>
+<li>解析 CSS 解析为 CSSOM =&gt;</li>
+<li>结合 DOM  和 CSSOM 生成 render tree(每个节点的视觉信息) =&gt;</li>
+<li>生成布局 layout =&gt;</li>
+<li>将布局绘制到屏幕 </li>
+</ol>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015091501.png" alt=""></p>
+<p>这五步中，三四步比较慢生成布局和绘制合成渲染<br><img src="http://7tszky.com1.z0.glb.clouddn.com/Fs-4pQMkTCUIeOj0XjSDdZkHzs0N" alt=""></p>
+<p>当文档加载过程中遇到js文件，html文档会挂起渲染（加载解析渲染同步）的线程，不仅要等待文档中js文件加载完毕，还要等待解析执行完毕，才可以恢复html文档的渲染线程。因为JS有可能会修改DOM，最为经典的document.write，这意味着，在JS执行完成前，后续所有资源的下载可能是没有必要的，这是js阻塞后续资源下载的根本原因。所以我明平时的代码中，js是放在html文档末尾的。</p>
+<p>DOM 树<br><img src="http://7tszky.com1.z0.glb.clouddn.com/FvpCzlwc6Hk2RSNfE8P0Ro-kHtCj" alt=""></p>
+<blockquote>
+<p>DOM 树中的每一个需要显示的节点再渲染树中至少存在一个对应的节点，隐藏的 DOM 元素则没有对应节点，渲染树中的节点被称为 “帧（frames）”或“盒（boxes）”，<br>符合 CSS 模型的定义，一旦DOM 树和渲染树构建完成，浏览器就开始显示绘制元素</p>
+</blockquote>
+<p>很多时候，密集的重新渲染是无法避免的，比如scroll事件的回调函数和网页动画。<br>网页动画的每一帧（frame）都是一次重新渲染。每秒低于24帧的动画，人眼就能感受到停顿。一般的网页动画，需要达到每秒30帧到60帧的频率，才能比较流畅。如果能达到每秒70帧甚至80帧，就会极其流畅。</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015091509.jpg" alt=""></p>
+<p>大多数显示器的刷新频率是60Hz，为了与系统一致，以及节省电力，浏览器会自动按照这个频率，刷新动画（如果可以做到的话）。<br>所以，如果网页动画能够做到每秒60帧，就会跟显示器同步刷新，达到最佳的视觉效果。这意味着，一秒之内进行60次重新渲染，每次重新渲染的时间不能超过16.66毫秒。</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015091511.png" alt=""></p>
+<p>一秒之间能够完成多少次重新渲染，这个指标就被称为”刷新率”，英文为FPS（frame per second）。60次重新渲染，就是60FPS。<br>如果想达到60帧的刷新率，就意味着JavaScript线程每个任务的耗时，必须少于16毫秒。一个解决办法是使用Web Worker，主线程只用于UI渲染，然后跟UI渲染不相干的任务，都放在Worker线程。</p>
+<h2 id="DOM-解析"><a href="#DOM-解析" class="headerlink" title="DOM 解析"></a>DOM 解析</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;title&gt;Web page parsing&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">        &lt;h1&gt;Web page parsing&lt;/h1&gt;</div><div class="line">        &lt;p&gt;This is an example Web page.&lt;/p&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p>DOM 解析成这样<br><img src="http://7tszky.com1.z0.glb.clouddn.com/FvpCzlwc6Hk2RSNfE8P0Ro-kHtCj" alt=""></p>
+<h2 id="CSS-解析"><a href="#CSS-解析" class="headerlink" title="CSS 解析"></a>CSS 解析</h2><p>假设有下面这样的 DOM 结构<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;doc&gt;</div><div class="line">&lt;title&gt;A few quotes&lt;/title&gt;</div><div class="line">&lt;para&gt;</div><div class="line">  Franklin said that &lt;quote&gt;&quot;A penny saved is a penny earned.&quot;&lt;/quote&gt;</div><div class="line">&lt;/para&gt;</div><div class="line">&lt;para&gt;</div><div class="line">  FDR said &lt;quote&gt;&quot;We have nothing to fear but &lt;span&gt;fear itself.&lt;/span&gt;&quot;&lt;/quote&gt;</div><div class="line">&lt;/para&gt;</div><div class="line">&lt;/doc&gt;</div></pre></td></tr></table></figure></p>
+<p>CSS 文档<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> /* rule 1 */ doc &#123; display: block; text-indent: 1em; &#125;</div><div class="line">/* rule 2 */ title &#123; display: block; font-size: 3em; &#125;</div><div class="line">/* rule 3 */ para &#123; display: block; &#125;</div><div class="line">/* rule 4 */ [class=&quot;emph&quot;] &#123; font-style: italic; &#125;</div></pre></td></tr></table></figure></p>
+<p>CSS Rule tree 时这样<br><img src="http://7tszky.com1.z0.glb.clouddn.com/FsMdOZZS2iL7mLQ2xczi4xDsSGxQ" alt=""></p>
+<blockquote>
+<ul>
+<li>图中的第4条规则出现了两次，一次是独立的，一次是在规则3的子结点。所以，我们可以知道，建立CSS Rule Tree是需要比照着DOM Tree来的。CSS匹配DOM Tree主要是从右到左解析CSS的Selector，好多人以为这个事会比较快，其实并不一定。关键还看我们的CSS的Selector怎么写了。</li>
+<li>CSS匹配HTML元素是一个相当复杂和有性能问题的事情。所以，你就会在N多地方看到很多人都告诉你，DOM树要小，CSS尽量用id和class，千万不要过渡层叠下去</li>
+</ul>
+</blockquote>
+<p>通过这俩个树我们可以得到一个叫 Style Context Tree<br><img src="http://7tszky.com1.z0.glb.clouddn.com/FtvQWJEJtFB2uLArF0JIb-wVjpZ7" alt=""></p>
+<blockquote>
+<p>所以，Firefox基本上来说是通过CSS 解析 生成 CSS Rule Tree，然后，通过比对DOM生成Style Context Tree，然后Firefox通过把Style Context Tree和其Render Tree（Frame Tree）关联上，就完成了。注意：Render Tree会把一些不可见的结点去除掉。而Firefox中所谓的Frame就是一个DOM结点，不要被其名字所迷惑了。</p>
+</blockquote>
+<p><img src="http://7tszky.com1.z0.glb.clouddn.com/FsFHqgtq4u-cfnruLkusj1qOqwh6" alt=""><br><em>在 Firefox 中，系统会针对 DOM 更新注册展示层，作为侦听器。展示层将框架创建工作委托给FrameConstructor，由该构造器解析样式（请参阅样式计算）并创建框架。<br>在 WebKit 中，解析样式和创建呈现器的过程称为“附加”。每个 DOM 节点都有一个“attach”方法。附加是同步进行的，将节点插入 DOM 树需要调用新的节点“attach”方法</em></p>
+<h2 id="渲染"><a href="#渲染" class="headerlink" title="渲染"></a>渲染</h2><ol>
+<li><a href="http://blog.csdn.net/xllily_11/article/details/54426119" target="_blank" rel="external">计算 CSS 样式</a></li>
+<li>构建 render tree</li>
+<li>Layout </li>
+<li>开始绘制</li>
+</ol>
+<p><img src="http://7tszky.com1.z0.glb.clouddn.com/Fv8mWt_14BnfBbe_pllVfN-WzfHG" alt=""></p>
+<blockquote>
+<p>上图流程中有很多连接线，这表示了Javascript动态修改了DOM属性或是CSS属会导致重新Layout，有些改变不会，就是那些指到天上的箭头，比如，修改后的CSS rule没有被匹配到，等。</p>
+</blockquote>
+<h2 id="Repaint"><a href="#Repaint" class="headerlink" title="Repaint"></a>Repaint</h2><p>屏幕的一部分要重画，比如某个元素的 CSS 背景变了，但尺寸没有变</p>
+<h2 id="Reflow"><a href="#Reflow" class="headerlink" title="Reflow"></a>Reflow</h2><p>当  DOM 的变化影响了元素的几何属性 =&gt; 比如改变边框宽度或者给段落增加文字，导致行数增加 =&gt; 浏览器需要重新计算元素的几何属性，同样其他元素的几何属性和位置也会收到影响，浏览器会使渲染树中受到影响部分失效，并重新构造渲染树，发生重排，完成重排后，浏览器会重新绘制受影响部分的元素到屏幕中，也会发生重绘。</p>
+<ul>
+<li>样式表越简单，重排和重绘就越快。</li>
+<li>重排和重绘的DOM元素层级越高，成本就越高。</li>
+<li>table元素的重排和重绘成本，要高于div元素<h3 id="发生重绘"><a href="#发生重绘" class="headerlink" title="发生重绘"></a>发生重绘</h3></li>
+<li>当你增加、删除、修改DOM结点时，会导致Reflow或Repaint</li>
+<li>当你移动DOM的位置，或是搞个动画的时候。(元素位置发生改变)</li>
+<li>当你修改CSS样式的时候。或者页面渲染初始化</li>
+<li>当你Resize窗口的时候（移动端没有这个问题），或是滚动的时候。</li>
+<li>当你修改网页的默认字体时。</li>
+<li>元素尺寸发生改变(边距， 高度等)</li>
+<li>注：display:none会触发reflow，而visibility:hidden只会触发repaint，因为没有发现位置变化。<h3 id="渲染树的变化的排队与刷新"><a href="#渲染树的变化的排队与刷新" class="headerlink" title="渲染树的变化的排队与刷新"></a>渲染树的变化的排队与刷新</h3>由于每次重排都行会产生消耗，大多数浏览器通过队列化修改并批量执行来优化重排过程，然而，你可能会不知不觉的强制刷新对了要求计划立刻执行，获取布局的信息会导致队列刷新</li>
+<li>offsetTop, offsetBottom, offsetWidth, offsetHeight</li>
+<li>scrollTop,  scrollBottom, scrollWidth, scrollHeight</li>
+<li>clientTop,  clientBottom, clientWidth, clientHeight</li>
+<li>getComputedStyle() =&gt;( currentStyle in IE)<br>以上属性和方法需要返回最新的布局信息，因此浏览器不得不执行渲染队列中的‘待处理变化’并触发重排以返回正确的值。<blockquote>
+<p>“重绘”不一定需要”重排” —- “重排”必然导致”重绘”</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="最小化重绘和重排"><a href="#最小化重绘和重排" class="headerlink" title="最小化重绘和重排"></a>最小化重绘和重排</h3><ul>
+<li>改变样式 =&gt; 不要一条条地改变样式，多个改变合并 =&gt; 直接更换 CSS 的 Class </li>
+<li>批量修改 DOM =&gt; 使元素脱离文档流(隐藏显示，使用文档片段，拷贝到一个脱离文档的节点中完成后再替换) =&gt; 修改 =&gt; 带回文档</li>
+<li>动画使用绝对定位，使用拖放代理</li>
+<li>缓存布局信息 =&gt; 偏移量，滚动位置， 计算出的样式等 获取一次后赋值给局部遍历</li>
+<li>事件委托 =&gt; 减少事件处理器的数量</li>
+</ul>
+<h1 id="浏览器请求嵌在-HTML-中的资源-图片，视频音频，-CSS，-JavaScript-等"><a href="#浏览器请求嵌在-HTML-中的资源-图片，视频音频，-CSS，-JavaScript-等" class="headerlink" title="浏览器请求嵌在 HTML 中的资源(图片，视频音频， CSS， JavaScript 等)"></a>浏览器请求嵌在 HTML 中的资源(图片，视频音频， CSS， JavaScript 等)</h1><p>其实这个步骤可以并列在步骤8中，在浏览器显示HTML时，它会注意到需要获取其他地址内容的标签。这时，浏览器会发送一个获取请求来重新获得这些文件。比如我要获取外图片，CSS，JS文件等，类似于下面的链接：</p>
+<p>图片：<a href="http://or3233yyd.bkt.clouddn.com//17-8-9/67016800.jpg" target="_blank" rel="external">http://or3233yyd.bkt.clouddn.com//17-8-9/67016800.jpg</a></p>
+<p>CSS式样表：<a href="https://cdn.bootcss.com/animate.css/3.5.2/animate.css" target="_blank" rel="external">https://cdn.bootcss.com/animate.css/3.5.2/animate.css</a></p>
+<p>JavaScript 文件：<a href="https://cdn.bootcss.com/jquery/3.2.1/core.js" target="_blank" rel="external">https://cdn.bootcss.com/jquery/3.2.1/core.js</a></p>
+<p>　　这些地址都要经历一个和HTML读取类似的过程。所以浏览器会在DNS中查找这些域名，发送请求，重定向等等…</p>
+<p>不像动态页面，静态文件会允许浏览器对其进行缓存。有的文件可能会不需要与服务器通讯，而从缓存中直接读取，或者可以放到CDN中</p>
+<h1 id="转载整理："><a href="#转载整理：" class="headerlink" title="转载整理："></a>转载整理：</h1><p><img src="http://fex.baidu.com/img/what-happen/nwind-weibo.png" alt=""></p>
+<ul>
+<li><a href="http://www.kuqin.com/shuoit/20170324/353413.html" target="_blank" rel="external">老生常谈从输入url 到页面展示到底发生了什么</a></li>
+<li><a href="https://github.com/skyline75489/what-happens-when-zh_CN" target="_blank" rel="external">当···时发生了什么？=&gt; 推荐 </a></li>
+<li><a href="http://blog.csdn.net/xllily_11/article/details/54426119" target="_blank" rel="external">作为前端你不得不知-浏览器的工作原理：网络浏览器幕后揭秘</a></li>
+<li><a href="https://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/#Parsing_general" target="_blank" rel="external">浏览器的工作原理：新式网络浏览器幕后揭秘 – more than </a></li>
+<li><a href="http://fex.baidu.com/blog/2014/05/what-happen/" target="_blank" rel="external">从输入 URL 到页面加载完成的过程中都发生了什么事情？=&gt; 太恐怖，涉及硬件，感兴趣就去挑战吧</a></li>
+<li><a href="http://imweb.io/topic/56841c864c44bcc56092e3fa" target="_blank" rel="external">浏览器渲染原理</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2015/09/web-page-performance-in-depth.html" target="_blank" rel="external">网页性能管理详解</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/as
+    
+    </summary>
+    
+      <category term="前端" scheme="http:%5C%5Chexin.life/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="面试前夕" scheme="http:%5C%5Chexin.life/tags/%E9%9D%A2%E8%AF%95%E5%89%8D%E5%A4%95/"/>
     
   </entry>
   
