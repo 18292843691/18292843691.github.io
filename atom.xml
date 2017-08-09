@@ -153,9 +153,9 @@
     <link href="http:%5C%5Chexin.life/2017/07/29/title-21/"/>
     <id>http:\\hexin.life/2017/07/29/title-21/</id>
     <published>2017-07-29T08:09:22.000Z</published>
-    <updated>2017-08-08T08:16:09.296Z</updated>
+    <updated>2017-08-09T17:28:12.693Z</updated>
     
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="使用-typeof-能得到哪些基础类型"><a href="#使用-typeof-能得到哪些基础类型" class="headerlink" title="使用 typeof 能得到哪些基础类型"></a>使用 typeof 能得到哪些基础类型</h2><ul>
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="使用-typeof-能得到哪些基础类型"><a href="#使用-typeof-能得到哪些基础类型" class="headerlink" title="使用 typeof 能得到哪些基础类型"></a>使用 typeof 能得到哪些基础类型</h2><ul>
 <li>undefined</li>
 <li>boolean</li>
 <li>Number</li>
@@ -543,12 +543,17 @@
 <h1 id="CSS-HTML-写作习惯-规范-网易NEC规范"><a href="#CSS-HTML-写作习惯-规范-网易NEC规范" class="headerlink" title="CSS HTML 写作习惯/规范-网易NEC规范"></a><a href="http://nec.netease.com/" target="_blank" rel="external">CSS HTML 写作习惯/规范-网易NEC规范</a></h1><h1 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h1></blockquote>
 <h1 id="功能类"><a href="#功能类" class="headerlink" title="功能类"></a>功能类</h1><h2 id="实现联动"><a href="#实现联动" class="headerlink" title="实现联动"></a><a href="http://hexin.life/more/linkage.html">实现联动</a></h2><h2 id="放大镜"><a href="#放大镜" class="headerlink" title="放大镜"></a><a href="http://hexin.life/more/mangnifyLens.html">放大镜</a></h2><h1 id="面试题整理"><a href="#面试题整理" class="headerlink" title="面试题整理"></a>面试题整理</h1><ul>
 <li><a href="https://github.com/ivonzhang/Front-End-Developer-Questions/wiki" target="_blank" rel="external">前端面试题及答案汇总</a></li>
+<li><a href="http://www.runoob.com/w3cnote/front-end-development.html" target="_blank" rel="external">前端开发面试题集锦</a></li>
 <li><a href="http://blog.csdn.net/xllily_11/article/details/70899191" target="_blank" rel="external">2017年前端面试题最新汇总</a></li>
 <li><a href="http://developer.51cto.com/art/201504/474298.htm" target="_blank" rel="external">30个你 “ 不可能全部会做 ” 的javascript题目及答案</a></li>
-<li><a href="https://elemefe.github.io/node-interview/#/" target="_blank" rel="external">Node interview of ElemeFE</a></li>
 <li><a href="http://ife.baidu.com/college/detail/id/8" target="_blank" rel="external">百度糯米前端技术学院</a></li>
 <li><a href="https://www.nowcoder.com/contestRoom" target="_blank" rel="external">newcode 牛客网</a></li>
 <li><a href="http://www.lintcode.com/zh-cn/problem/" target="_blank" rel="external">lint-code</a></li>
+<li><a href="https://github.com/fex-team/interview-questions" target="_blank" rel="external">百度 FEX 的面试过程</a></li>
+<li><a href="https://elemefe.github.io/node-interview/#/" target="_blank" rel="external">Node interview of 饿了么</a></li>
+<li><a href="https://github.com/h5bp/Front-end-Developer-Interview-Questions" target="_blank" rel="external">Front-end-Developer-Interview-Questions</a></li>
+<li><a href="https://github.com/5Mi/wumi_blog/issues/69" target="_blank" rel="external">一些个面试题与js知识点</a></li>
+<li><a href="https://segmentfault.com/bookmark/1230000009049633" target="_blank" rel="external">面试题</a></li>
 </ul>
 <blockquote>
 <p>知识整理及总结多来于网络及他人博客，由于时间原因，不能每一个知识点都完整的整理出来，因此附带了参考/学习链接。也等于一个知识点的梳理。</p>
@@ -557,7 +562,7 @@
     
     <summary type="html">
     
-      &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/as
+      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/as
     
     </summary>
     
