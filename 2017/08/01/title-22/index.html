@@ -398,7 +398,7 @@
       
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><h1 id="简答题："><a href="#简答题：" class="headerlink" title="简答题："></a>简答题：</h1><h2 id="settimeout-与-setInterval的区别，-及对他们的内存的分析"><a href="#settimeout-与-setInterval的区别，-及对他们的内存的分析" class="headerlink" title="settimeout 与 setInterval的区别， 及对他们的内存的分析"></a>settimeout 与 setInterval的区别， 及对他们的内存的分析</h2><h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><ol>
+        <link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><h1 id="简答题："><a href="#简答题：" class="headerlink" title="简答题："></a>简答题：</h1><h2 id="settimeout-与-setInterval的区别，-及对他们的内存的分析"><a href="#settimeout-与-setInterval的区别，-及对他们的内存的分析" class="headerlink" title="settimeout 与 setInterval的区别， 及对他们的内存的分析"></a>settimeout 与 setInterval的区别， 及对他们的内存的分析</h2><h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><ol>
 <li>setTimeout是在一段时间后调用指定函数（仅一次）</li>
 <li>setInterval是每隔一段时间调用指定函数（N次）<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function run()&#123;</div><div class="line">    // 其他代码</div><div class="line">    setTimeout(function()&#123;</div><div class="line">        run();</div><div class="line">    &#125;, 10000);</div><div class="line">&#125;</div><div class="line">run();</div></pre></td></tr></table></figure>
 </li>
