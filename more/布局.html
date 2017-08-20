@@ -93,16 +93,16 @@
 
 
 
-<meta name="description" content="Document 	 		.div-text{ 			min-height: 20px; 			min-width: 80px; 		}  		.div-text{ 			margin: 50px; 			padding-left: 3px; 			width: 100px; 			border: 1px solid #ccc; 			resize: both; 			overfl">
+<meta name="description" content="Document          body,     html {         padding: 0;         margin: 0;         min-width: 700px;     }      .layout {         margin-top: 20px;     }      .layout article div {">
 <meta property="og:type" content="website">
 <meta property="og:title" content="dayDream&#39;s blog">
-<meta property="og:url" content="http:\\hexin.life/more/用div制作textarea.html">
+<meta property="og:url" content="http:\\hexin.life/more/布局.html">
 <meta property="og:site_name" content="dayDream&#39;s blog">
-<meta property="og:description" content="Document 	 		.div-text{ 			min-height: 20px; 			min-width: 80px; 		}  		.div-text{ 			margin: 50px; 			padding-left: 3px; 			width: 100px; 			border: 1px solid #ccc; 			resize: both; 			overfl">
-<meta property="og:updated_time" content="2017-08-12T05:54:45.658Z">
+<meta property="og:description" content="Document          body,     html {         padding: 0;         margin: 0;         min-width: 700px;     }      .layout {         margin-top: 20px;     }      .layout article div {">
+<meta property="og:updated_time" content="2017-08-20T15:13:29.020Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="dayDream&#39;s blog">
-<meta name="twitter:description" content="Document 	 		.div-text{ 			min-height: 20px; 			min-width: 80px; 		}  		.div-text{ 			margin: 50px; 			padding-left: 3px; 			width: 100px; 			border: 1px solid #ccc; 			resize: both; 			overfl">
+<meta name="twitter:description" content="Document          body,     html {         padding: 0;         margin: 0;         min-width: 700px;     }      .layout {         margin-top: 20px;     }      .layout article div {">
 
 
 
@@ -130,7 +130,7 @@
 
 
 
-  <link rel="canonical" href="http:\\hexin.life/more/用div制作textarea.html"/>
+  <link rel="canonical" href="http:\\hexin.life/more/布局.html"/>
 
 
 
@@ -312,155 +312,292 @@
     
       <link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<style>
-		.div-text{
-			min-height: 20px;
-			min-width: 80px;
-		}
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    body,
+    html {
+        padding: 0;
+        margin: 0;
+        min-width: 700px;
+    }
 
-		.div-text{
-			margin: 50px;
-			padding-left: 3px;
-			width: 100px;
-			border: 1px solid #ccc;
-			resize: both;
-			overflow: hidden;
-		}
-	</style>
+    .layout {
+        margin-top: 20px;
+    }
+
+    .layout article div {
+        min-height: 100px;
+    }
+
+    .container4,
+    .container5 {
+        margin-top: 20px;
+        height: 100px;
+    }
+    /* 圣杯布局 */
+
+    .container4 {
+        margin-left: 300px;
+        margin-right: 300px;
+    }
+
+    .left4,
+    .right4,
+    .center4 {
+        float: left;
+        position: relative;
+        height: 100px;
+    }
+
+    .left4 {
+        width: 300px;
+        right: 300px;
+        margin-left: -100%;
+        background-color: red;
+    }
+
+    .center4 {
+        width: 100%;
+        background: green;
+    }
+
+    .right4 {
+        width: 300px;
+        margin-left: -300px;
+        left: 300px;
+        background: blue;
+    }
+    /* 双飞翼 */
+
+    .main5 {
+        float: left;
+        width: 100%;
+    }
+
+    .center5 {
+        height: 100px;
+        margin-left: 300px;
+        margin-right: 300px;
+        background-color: green;
+    }
+
+    .left5 {
+        float: left;
+        width: 300px;
+        height: 100px;
+        margin-left: -100%;
+        background-color: red;
+    }
+
+    .right5 {
+        float: left;
+        width: 300px;
+        height: 100px;
+        margin-left: -300px;
+        background-color: blue;
+    }
+    /* flex 布局*/
+
+    .container6 {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .right6,
+    .left6 {
+        flex: 0 0 300px;
+        height: 100px;
+        background: blue;
+    }
+
+    .center6 {
+        flex: 1;
+        height: 100px;
+        background: red;
+    }
+    </style>
 </head>
+
 <body>
-	<div contenteditable="true" ,="" class="div-text">
-		i am div
-	</div>
-	<div contenteditable="true" ,="" class="div-text">
-		i am div too
-	</div>
-		<div class="come">
-			hello
-		</div>
-	
-	<input type="text" id="cls" ,="" value="i am input"> 
-	
-	<script>
-		var input = document.getElementById('cls')
+    <div class="container4">
+        <div class="center4">圣杯布局</div>
+        <div class="left4">left4</div>
+        <div class="right4">right4</div>
+    </div>
+    <div class="container5">
+        <div class="main5">
+            <div class="center5">
+                双飞翼
+            </div>
+        </div>
+        <div class="left5">left5</div>
+        <div class="right5">right5</div>
+    </div>
+    <!-- 浮动布局 -->
+    <section class="layout float">
+        <style>
+        .layout.float .left {
+            float: left;
+            width: 300px;
+            background: red;
+        }
 
-		// Input 按下的触发
-		input.onmouseup = function() {
-			console.log('onmouseup')
-		}
-		input.onmousedown = function() {
-			console.log('onmousedown')
-		}
-		input.onclick = function() {
-			console.log('onclick')
-		}
-		input.onfocus = function() {
-			console.log('onfocus')
-		}
+        .layout.float .right {
+            float: right;
+            width: 300px;
+            background: blue;
+        }
 
-		// dom 的建立与添加
-		var div = document.querySelector('.come');
+        .layout.float .center {
+            background: green;
+        }
+        </style>
+        <article class="left-right-center">
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="center">
+                 浮动解决方案 
+            </div>
+        </article>
+    </section>
+    <!-- 绝对定位 -->
+    <section class="layout absolute">
+        <style>
+        .layout.absolute .left-center-right>div {
+            position: absolute;
+        }
 
-		var p1 = document.createElement('p')
-		p1.innerHTML = 'p1'
-		p1.className = 'p1'
+        .layout.absolute .left {
+            left: 0;
+            width: 300px;
+            background: red;
+        }
 
-		div.appendChild(p1)
+        .layout.absolute .center {
+            left: 300px;
+            right: 300px;
+            background: green;
+        }
 
-		var p2 = document.createElement('p')
-		p2.innerHTML = 'p2'
-		p2.classList.add('p2');
+        .layout.absolute .right {
+            right: 0;
+            width: 300px;
+            background: blue;
+        }
+        </style>
+        <article class="left-center-right">
+            <div class="left"></div>
+            <div class="center">
+                 绝对定位 
+            </div>
+            <div class="right"></div>
+        </article>
+    </section>
+    <!-- flex 布局 -->
+    <section class="layout flexbox">
+        <style>
+        .layout.flexbox .left-center-right {
+            margin-top: 140px;
+            display: flex;
+        }
 
-		div.appendChild(p2)
+        .layout.flexbox .left {
+            flex: 0 0 300px;
+            background: red;
+        }
 
-		var p2c = document.querySelector('.p2');
+        .layout.flexbox .center {
+            flex: 1;
+            background: green;
+        }
 
-		// 事件冒泡
-		// p2c.addEventListener('click', function(e) {
-		// 	e.stopPropagation()
-		// 	alert('p2')
-		// })
+        .layout.flexbox .right {
+            flex: 0 0 300px;
+            background: blue;
+        }
+        </style>
+        <article class="left-center-right">
+            <div class="left"></div>
+            <div class="center">
+                 flex 布局
+            </div>
+            <div class="right"></div>
+        </article>
+    </section>
+    <!-- 表格布局 table -->
+    <section class="layout table">
+        <style>
+        .layout.table .left-center-right {
+            width: 100%;
+            display: table;
+            height: 100px;
+        }
 
-		var body = document.body
+        .layout.table .left-center-right>div {
+            display: table-cell;
+        }
 
-		// 事件代理
-		// body.addEventListener('click', function(e) {
+        .layout.table .left {
+            width: 300px;
+            background: red;
+        }
 
-		// 	var target = e.target
-		// 	// console.log(target.nodeName)
-		// 	if(target.nodeName === 'P') {
-		// 		alert(target.innerHTML)
-		// 	}
-			
-		// })
+        .layout.table .center {
+            background: green;
+        }
 
+        .layout.table .right {
+            width: 300px;
+            background: blue;
+        }
+        </style>
+        <article class="left-center-right">
+            <div class="left"></div>
+            <div class="center">
+                表格布局
+            </div>
+            <div class="right"></div>
+        </article>
+    </section>
+    <!-- 网格布局 -->
+    <section class="layout grid">
+        <style>
+        .layout.grid .left-center-right {
+            display: grid;
+            /* 网格宽度 */
+            width: 100%;
+            /* 行高 */
+            grid-template-rows: 100px;
+            /* 3列 */
+            grid-template-columns: 300px auto 300px;
+            /* 左:300 , 中:自动, 右:300 */
+        }
 
-		// 事件代理及事件绑定的封装
-		function bindEvent(elem, type, selector, fn) {
-			if(fn == null) {
-				fn = selector
-				selector = null
-			}
-			elem.addEventListener(type, function(e) {
-				var target
-				if(selector) {  // 代理
-					target = e.target
-					if(target.matches(selector)) {
-						fn.call(target, e)
-					}
-				} else {   // 不是代理
-					fn(e)
-				}
-			})
-		}
+        .layout.grid .left {
+            background: red;
+        }
 
-		bindEvent(body, 'click', 'p', function(e) {
-			console.log(this.innerHTML)
-		})
-		bindEvent(p2c, 'click', function(e) {
-			console.log(p2c.innerHTML)
-		})
+        .layout.grid .center {
+            background: green;
+        }
 
-
-/**************************************/
-
-function SortCard (n, k, arr) {
-	let arrTmp = [];
-
-	sort(n, arr, arrTmp);
-
-    while(--k > 0){    	
-    	SortCard(n, k--, arrTmp) 
-    	k--;
-    }
-   
-    arrTmp = arrTmp.reverse().join(' ');
-    console.log(arrTmp) 	
-    return arrTmp
-}
-
-function sort (n, arr, arrTmp) {
-	let arr1 = [],
-        arr2 = [];
-
-    	arr1 = arr.slice(0, n);
-    	arr2 = arr.slice(n, arr.length);  
-
-    while (arr1.length !== 0 || arr2.length !== 0) {
-        arrTmp.push(arr2.pop())
-    	arrTmp.push(arr1.pop())
-    }
-	return arrTmp
-}
-
-var arr = [1, 2, 3, 4, 5, 6]
-SortCard(3, 4, arr)
-
-	</script>
+        .layout.grid .right {
+            background: blue;
+        }
+        </style>
+        <article class="left-center-right">
+            <div class="left"></div>
+            <div class="center">
+                网格布局
+            </div>
+            <div class="right"></div>
+        </article>
+    </section>
 </body>
+
 </html>
     
   </div>
