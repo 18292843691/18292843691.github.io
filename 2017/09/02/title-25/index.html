@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next mist" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="性能优化," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="dayDream's blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="减少 HTTP 请求 减少请求资源大小 DNS 缓存 相同资源缓存 CDN  服务端渲染  资源合并与压缩html 压缩 在线网站压缩(x) nodejs提供 构建工具 后端模板引擎渲染  css 压缩 无效代码删除 CS 语义合并  js 压缩和混乱 无效字符删除，删除注释，代码语义的缩减和优化，代码保护 文件合并 开启 gizp问题 首屏渲染 缓存失效  CSS Js 的加载与执行htm">
+<meta name="keywords" content="性能优化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="性能优化">
+<meta property="og:url" content="http:\\hexin.life/2017/09/02/title-25/index.html">
+<meta property="og:site_name" content="dayDream&#39;s blog">
+<meta property="og:description" content="减少 HTTP 请求 减少请求资源大小 DNS 缓存 相同资源缓存 CDN  服务端渲染  资源合并与压缩html 压缩 在线网站压缩(x) nodejs提供 构建工具 后端模板引擎渲染  css 压缩 无效代码删除 CS 语义合并  js 压缩和混乱 无效字符删除，删除注释，代码语义的缩减和优化，代码保护 文件合并 开启 gizp问题 首屏渲染 缓存失效  CSS Js 的加载与执行htm">
+<meta property="og:updated_time" content="2017-09-02T06:50:11.817Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="性能优化">
+<meta name="twitter:description" content="减少 HTTP 请求 减少请求资源大小 DNS 缓存 相同资源缓存 CDN  服务端渲染  资源合并与压缩html 压缩 在线网站压缩(x) nodejs提供 构建工具 后端模板引擎渲染  css 压缩 无效代码删除 CS 语义合并  js 压缩和混乱 无效字符删除，删除注释，代码语义的缩减和优化，代码保护 文件合并 开启 gizp问题 首屏渲染 缓存失效  CSS Js 的加载与执行htm">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http:\\hexin.life/2017/09/02/title-25/"/>
+
+
+
+
+
+  <title>性能优化 | dayDream's blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    var host = 'hexin.life'
+    if ((host == window.location.host) && (window.location.protocol !== 'https:')) {
+          window.location.protocol = 'https';
+    }
+  </script>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">dayDream's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http:\\hexin.life/2017/09/02/title-25/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="白日梦想家">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="dayDream's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">性能优化</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-02T14:49:19+08:00">
+                2017-09-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/面试/" itemprop="url" rel="index">
+                    <span itemprop="name">面试</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><ul>
+<li>减少 HTTP 请求</li>
+<li>减少请求资源大小</li>
+<li>DNS 缓存</li>
+<li>相同资源缓存</li>
+<li>CDN </li>
+<li>服务端渲染</li>
+</ul>
+<h1 id="资源合并与压缩"><a href="#资源合并与压缩" class="headerlink" title="资源合并与压缩"></a>资源合并与压缩</h1><h2 id="html-压缩"><a href="#html-压缩" class="headerlink" title="html 压缩"></a>html 压缩</h2><ul>
+<li>在线网站压缩(x)</li>
+<li>nodejs提供</li>
+<li>构建工具</li>
+<li>后端模板引擎渲染</li>
+</ul>
+<h2 id="css-压缩"><a href="#css-压缩" class="headerlink" title="css 压缩"></a>css 压缩</h2><ul>
+<li>无效代码删除</li>
+<li>CS 语义合并</li>
+</ul>
+<h2 id="js-压缩和混乱"><a href="#js-压缩和混乱" class="headerlink" title="js 压缩和混乱"></a>js 压缩和混乱</h2><ul>
+<li>无效字符删除，删除注释，代码语义的缩减和优化，代码保护</li>
+<li>文件合并</li>
+<li>开启 gizp<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3></li>
+<li>首屏渲染</li>
+<li>缓存失效</li>
+</ul>
+<h1 id="CSS-Js-的加载与执行"><a href="#CSS-Js-的加载与执行" class="headerlink" title="CSS Js 的加载与执行"></a>CSS Js 的加载与执行</h1><h2 id="html-渲染"><a href="#html-渲染" class="headerlink" title="html 渲染"></a>html 渲染</h2><ul>
+<li>顺序执行，并发加载(并发度)</li>
+<li>顺否阻塞 -&gt; css / js 阻塞页面渲染</li>
+<li>依赖关系 -&gt; JavaScript 异步加载等</li>
+<li>引入方式(css/js) -&gt; link(css) -&gt; defer / async -&gt; 动态异步加载</li>
+</ul>
+<p>词法分析 -&gt; 从上到下<br>并发加载 -&gt; 外部资源<br>并发上限 -&gt; 某个域名下并发请求上限</p>
+<h2 id="CSS-阻塞"><a href="#CSS-阻塞" class="headerlink" title="CSS 阻塞"></a>CSS 阻塞</h2><ul>
+<li>head (link) 引入 会阻塞页面的渲染</li>
+<li>css 阻塞 JS 执行(js 可能会依赖(修改) css 样式)</li>
+<li>css 不阻塞外部脚本加载<h2 id="JavaScript-阻塞"><a href="#JavaScript-阻塞" class="headerlink" title="JavaScript 阻塞"></a>JavaScript 阻塞</h2></li>
+<li>直接引入会阻塞页面渲染</li>
+<li>js 不阻塞资源的加载(webkit 预加载)</li>
+<li>js 顺序执行，阻塞后续 js 逻辑的执行</li>
+</ul>
+<h1 id="懒加载和预加载"><a href="#懒加载和预加载" class="headerlink" title="懒加载和预加载"></a>懒加载和预加载</h1><h2 id="懒加载-src-gt-占位符"><a href="#懒加载-src-gt-占位符" class="headerlink" title="懒加载(src -&gt; 占位符)"></a>懒加载(src -&gt; 占位符)</h2><ul>
+<li>图片进入可视区域后请求图片资源(data-original)</li>
+<li>对于电商图片很多，页面很长的业务场景</li>
+<li>减少无效资源的加载</li>
+<li>并发加载资源过多会阻塞 JS 的加载，影响网站使用</li>
+</ul>
+<ol>
+<li>判断图片高度进入可视区域</li>
+<li>插件<h2 id="预加载"><a href="#预加载" class="headerlink" title="预加载"></a>预加载</h2></li>
+</ol>
+<ul>
+<li>图片等资源在使用之前提前请求</li>
+<li>资源使用时能从缓存中加载</li>
+<li>页面展示的依赖关系维护(音乐等)</li>
+</ul>
+<hr>
+<ol>
+<li>img src 设置 display: none; 实现预加载</li>
+<li><p>使用 image 对象 -&gt; 利用 JS 加载时执行 -&gt; 跨域问题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var image = new Image()</div><div class="line">image.src = &apos;http://www.somepic.com/somepic&apos;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Ajax</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">var ajax = new XMLHttpRequest()</div><div class="line">ajax.onreadystatechange = callback;</div><div class="line">ajax.onprogress = progressCallback;</div><div class="line"></div><div class="line">ajax.open(&apos;get&apos;, &apos;http://somepic.com/somepic&apos;, true)</div><div class="line"></div><div class="line">ajax.send()</div><div class="line"></div><div class="line">function callback () &#123;</div><div class="line">    if(ajax.readyState === 4 &amp;&amp; ajax.status === 200) &#123;</div><div class="line">        var responseText = ajax.responseText;</div><div class="line">    &#125; else &#123;</div><div class="line">        console.log(&apos;Request was unsuccessful: &apos; + ajax.status)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function progressCallback (e) &#123;</div><div class="line">    e = e || window.event;</div><div class="line">    if (e.lengthCromputable) &#123;</div><div class="line">    console.log(&apos;Recived &apos; + e.loaded + &apos; of &apos; + e.total + &apos; bytes.&apos;)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>插件</p>
+</li>
+</ol>
+<h1 id="图片优化"><a href="#图片优化" class="headerlink" title="图片优化"></a>图片优化</h1><ul>
+<li>图片有损压缩 jpeg / png8 -&gt; png24 -&gt; png32</li>
+<li>图片选择合适的种类 </li>
+<li>CSS 雪碧图 -&gt; 减少 HTTP 请求 -&gt; 单张图片过大，一次加载较慢</li>
+<li>image inline 图片的内容以 base64 内嵌 html 中 -&gt; 减少 HTTP 请求数  &lt; 8/4 kb</li>
+<li>矢量图 svg =&gt; iconfont 解决 icon 问题</li>
+</ul>
+<h1 id="重绘与回流"><a href="#重绘与回流" class="headerlink" title="重绘与回流"></a>重绘与回流</h1><h2 id="回流"><a href="#回流" class="headerlink" title="回流"></a>回流</h2><ul>
+<li>页面盒模型相关的属性<ul>
+<li>width </li>
+<li>height </li>
+<li>padding </li>
+<li>margin </li>
+<li>display </li>
+<li>border  </li>
+<li>border-width </li>
+<li>border-height</li>
+</ul>
+</li>
+<li>定位及浮动属性<ul>
+<li>top</li>
+<li>left</li>
+<li>rigjt</li>
+<li>bottom</li>
+<li>position</li>
+<li>float</li>
+<li>clear</li>
+</ul>
+</li>
+<li>改变节点内部文字结构<ul>
+<li>text-align</li>
+<li>overflow-y</li>
+<li>font-weight</li>
+<li>overflow</li>
+<li>line-height</li>
+<li>vertival-align</li>
+<li>white-space</li>
+<li>font-size<h2 id="重绘"><a href="#重绘" class="headerlink" title="重绘"></a>重绘</h2></li>
+</ul>
+</li>
+<li>color</li>
+<li>border-style</li>
+<li>border-radius</li>
+<li>text-decoration</li>
+<li>background</li>
+<li>background-image</li>
+<li>background-position</li>
+<li>background-repeat</li>
+<li>background-size</li>
+<li>outline</li>
+<li>outline-color</li>
+<li>outline-style</li>
+<li>outline-width</li>
+<li>box-shadow</li>
+</ul>
+<blockquote>
+<p>频繁重回和回流的的 DOM 单独作为一个独立图层，它的重绘和回流影响只有这个图层之中<br>如： gif</p>
+</blockquote>
+<h3 id="chrome-创建图层-的条件"><a href="#chrome-创建图层-的条件" class="headerlink" title="chrome 创建图层(的条件)"></a>chrome 创建图层(的条件)</h3><ol>
+<li>3D 或透视变换 CSS 属性</li>
+<li>使用加速视频解码的 <code>&lt;video&gt;</code></li>
+<li>拥有 3D (webGl) 上下文或者加速的 2D 上下文的 <code>&lt;canvas&gt;</code>节点</li>
+<li>混合插件 如：flash</li>
+<li>对自己的 opacity 做 CSS 动画或使用一个动画 webkit 变换的元素</li>
+<li>拥有加速的 CSS 过滤器的元素 -&gt; tranlate3d</li>
+<li>元素包含一个复合层的后代节点 -&gt; 一个元素拥有自己的子元素，子元素在自己的层</li>
+<li><p>元素有一个 z-index 较低 或者包含复合层的兄弟元素 -&gt; 在复合层上渲染</p>
+</li>
+<li><p>用translate替代top改变</p>
+</li>
+<li>用opacity替代visibility</li>
+<li>不要一条一条地修改 DOM 的样式，预先定义好 class，然后修改 DOM 的 className</li>
+<li>把 DOM 离线后修改，比如：先把 DOM 给 display:none (有一次 Reflow)，然后你修改100次，然后再把它显示出来</li>
+<li>不要把 DOM 结点的属性值放在一个循环里当成循环里的变量</li>
+<li>不要使用 table 布局，可能很小的一个小改动会造成整个 table 的重新布局</li>
+<li>动画实现的速度的选择</li>
+<li>对于动画新建图层</li>
+<li>启用 GPU 硬件加速</li>
+</ol>
+<blockquote>
+<ol>
+<li>避免触发或减少重绘 / 回流</li>
+<li>将重绘和回流影响范围限制在 <em>单独的图层内</em></li>
+</ol>
+</blockquote>
+<h1 id="浏览器缓存"><a href="#浏览器缓存" class="headerlink" title="浏览器缓存"></a>浏览器缓存</h1><h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><ul>
+<li>因为HTTP请求无状态，所以需要cookie去维持客户端状态</li>
+<li>过期时间 expire<h2 id="cookie的生成方式"><a href="#cookie的生成方式" class="headerlink" title="cookie的生成方式"></a>cookie的生成方式</h2></li>
+</ul>
+<ol>
+<li>http response header中的set-cookie</li>
+<li>js中可以通过document.cookie可以读写cookie</li>
+</ol>
+<ul>
+<li>仅仅作为浏览器存储（大小4KB左右，能力被localstorage替代）</li>
+<li>cookie中在相关域名下面 -&gt; cdn的流量损耗</li>
+<li>httponly</li>
+</ul>
+<h2 id="LocalStorage"><a href="#LocalStorage" class="headerlink" title="LocalStorage"></a>LocalStorage</h2><ul>
+<li>HTML5设计出来专门用于浏览器存储的</li>
+<li>大小为5M左右</li>
+<li>仅在客户端使用，不和服务端进行通信</li>
+<li>接口封装较好</li>
+<li>浏览器本地缓存方案</li>
+</ul>
+<h2 id="SessionStorage"><a href="#SessionStorage" class="headerlink" title="SessionStorage"></a>SessionStorage</h2><ul>
+<li>会话级别的浏览器存储</li>
+<li>大小为5M左右</li>
+<li>仅在客户端使用，不和服务端进行通信</li>
+<li>接口封装较好</li>
+<li>对于表单信息的维护</li>
+</ul>
+<h2 id="IndexedDB"><a href="#IndexedDB" class="headerlink" title="IndexedDB"></a>IndexedDB</h2><p>IndexedDB 是一种低级API，用于客户端存储大量结构化数据。该API使用索引来实现对该数据的高性能搜索。虽然 Web Storage 对于存储较少量的数据很有用，但对于存储更大量的结构化数据来说，这种方法不太有用。IndexedDB提供了一个解决方案。<br>为应用创建离线版本</p>
+<h2 id="PWA"><a href="#PWA" class="headerlink" title="PWA"></a>PWA</h2><p>PWA (Progressive Web Apps) 是一种 Web App 新模型，并不是具体指某一种前沿的技术或者某一个单一的知识点，我们从英文缩写来看就能看出来，这是一个渐进式的 Web App，是通过一系列新的 Web 特性，配合优秀的 UI 交互设计，逐步的增强 Web App 的用户体验。</p>
+<p>可靠：在没有网络的环境中也能提供基本的页面访问，而不会出现“未连接到互联网”的页面。<br>快速：针对网页渲染及网络数据访问有较好优化。<br>融入（Engaging）：应用可以被增加到手机桌面，并且和普通应用一样有全屏、推送等特性。</p>
+<h2 id="Service-Worker"><a href="#Service-Worker" class="headerlink" title="Service Worker"></a>Service Worker</h2><p>Service Worker 是一个脚本，浏览器独立于当前网页，将其在后台运行,为实现一些不依赖页面或者用户交互的特性打开了一扇大门。在未来这些特性将包括推送消息,背景后台同步， geofencing（地理围栏定位），但它将推出的第一个首要特性，就是拦截和处理网络请求的能力，包括以编程方式来管理被缓存的响应。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      白日梦想家
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http:\\hexin.life/2017/09/02/title-25/" title="性能优化">http:\\hexin.life/2017/09/02/title-25/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/性能优化/" rel="tag"># 性能优化</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/01/title-22/" rel="next" title="2017拼多多前端笔试">
+                <i class="fa fa-chevron-left"></i> 2017拼多多前端笔试
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/02/title-26/" rel="prev" title="web安全">
+                web安全 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="白日梦想家" />
+          <p class="site-author-name" itemprop="name">白日梦想家</p>
+           
+              <p class="site-description motion-element" itemprop="description">那些一起做的白日梦，你还记得么</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/18292843691" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:hexin_9508@163.com" target="_blank" title="邮箱">
+                  
+                    <i class="fa fa-fw fa-mail"></i>
+                  
+                  邮箱
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+
+        
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#资源合并与压缩"><span class="nav-number">1.</span> <span class="nav-text">资源合并与压缩</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#html-压缩"><span class="nav-number">1.1.</span> <span class="nav-text">html 压缩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css-压缩"><span class="nav-number">1.2.</span> <span class="nav-text">css 压缩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js-压缩和混乱"><span class="nav-number">1.3.</span> <span class="nav-text">js 压缩和混乱</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题"><span class="nav-number">1.3.1.</span> <span class="nav-text">问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS-Js-的加载与执行"><span class="nav-number">2.</span> <span class="nav-text">CSS Js 的加载与执行</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#html-渲染"><span class="nav-number">2.1.</span> <span class="nav-text">html 渲染</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-阻塞"><span class="nav-number">2.2.</span> <span class="nav-text">CSS 阻塞</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-阻塞"><span class="nav-number">2.3.</span> <span class="nav-text">JavaScript 阻塞</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#懒加载和预加载"><span class="nav-number">3.</span> <span class="nav-text">懒加载和预加载</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#懒加载-src-gt-占位符"><span class="nav-number">3.1.</span> <span class="nav-text">懒加载(src -> 占位符)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#预加载"><span class="nav-number">3.2.</span> <span class="nav-text">预加载</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图片优化"><span class="nav-number">4.</span> <span class="nav-text">图片优化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#重绘与回流"><span class="nav-number">5.</span> <span class="nav-text">重绘与回流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#回流"><span class="nav-number">5.1.</span> <span class="nav-text">回流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重绘"><span class="nav-number">5.2.</span> <span class="nav-text">重绘</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#chrome-创建图层-的条件"><span class="nav-number">5.2.1.</span> <span class="nav-text">chrome 创建图层(的条件)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#浏览器缓存"><span class="nav-number">6.</span> <span class="nav-text">浏览器缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie"><span class="nav-number">6.1.</span> <span class="nav-text">cookie</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie的生成方式"><span class="nav-number">6.2.</span> <span class="nav-text">cookie的生成方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LocalStorage"><span class="nav-number">6.3.</span> <span class="nav-text">LocalStorage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SessionStorage"><span class="nav-number">6.4.</span> <span class="nav-text">SessionStorage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IndexedDB"><span class="nav-number">6.5.</span> <span class="nav-text">IndexedDB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PWA"><span class="nav-number">6.6.</span> <span class="nav-text">PWA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Service-Worker"><span class="nav-number">6.7.</span> <span class="nav-text">Service Worker</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">白日梦想家</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2139345"></script>
+      <!-- UY END -->
+    
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

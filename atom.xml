@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http:%5C%5Chexin.life/"/>
-  <updated>2017-08-09T17:20:47.856Z</updated>
+  <updated>2017-09-03T16:47:06.151Z</updated>
   <id>http:\\hexin.life/</id>
   
   <author>
@@ -14,6 +14,348 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>web安全</title>
+    <link href="http:%5C%5Chexin.life/2017/09/02/title-26/"/>
+    <id>http:\\hexin.life/2017/09/02/title-26/</id>
+    <published>2017-09-02T06:49:42.000Z</published>
+    <updated>2017-09-03T16:47:06.151Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><h1 id="代码层面"><a href="#代码层面" class="headerlink" title="代码层面"></a>代码层面</h1><h1 id="架构层面"><a href="#架构层面" class="headerlink" title="架构层面"></a>架构层面</h1><h1 id="运维层面"><a href="#运维层面" class="headerlink" title="运维层面"></a>运维层面</h1><p>安全问题</p>
+<ul>
+<li>用户密码被盗取</li>
+<li>用户身份被盗用</li>
+<li>用户资料被盗取</li>
+<li>网站数据库泄露</li>
+</ul>
+<h2 id="xss"><a href="#xss" class="headerlink" title="xss"></a>xss</h2><h2 id="反射型"><a href="#反射型" class="headerlink" title="反射型"></a>反射型</h2><ul>
+<li>HTML 标签 <script>alert(document.cookie)</script></li>
+<li>HTML 属性 -&gt; &lt;img class=’#{class}&gt; =&gt; <img class="hello" onload="alert(document.cookie)"></li>
+<li>script </li>
+<li><p>富文本</p>
+<h3 id="浏览器防御"><a href="#浏览器防御" class="headerlink" title="浏览器防御"></a>浏览器防御</h3><p>并不是所有浏览器都有防御功能<br>浏览器只能防御出现的 script 标签和其他标签，不能防御从 SCRIPT 取值或者富文本类</p>
+<h3 id="转义-gt-输入-输出"><a href="#转义-gt-输入-输出" class="headerlink" title="转义 -&gt; 输入 / 输出"></a>转义 -&gt; 输入 / 输出</h3></li>
+</ul>
+<ol>
+<li>&amp; =&gt; &amp; -&gt; 放在最前面</li>
+<li>html 标签</li>
+</ol>
+<ul>
+<li>转义 &lt;  &gt; =&gt; &lt;  &gt;</li>
+</ul>
+<ol>
+<li>HTML 属性 -&gt; 双引号 -&gt; 单引号 -&gt; 空格 =&gt; 实体 or 安全字符集</li>
+</ol>
+<ul>
+<li>转义 “ “ ‘’  =&gt; &quto; &#39; &#32;</li>
+</ul>
+<ol>
+<li><p>script 转义</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">\\ =&gt; \\\\</div><div class="line">&quot; =&gt; \&quot;</div></pre></td></tr></table></figure>
+<p>4.1. json encode<br>JSON.stringify(data)</p>
+</li>
+<li>富文本</li>
+</ol>
+<ul>
+<li><p>黑名单 拉黑 / 禁止部分标签和属性 script / a / img / 等等…</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt; do somesth... &lt;/script&gt; =&gt; html.replace(/&lt;\s*\/?script\s*&gt;/g, &apos;&apos;)   </div><div class="line">&lt;a href=&apos;javascript:alert(1)&apos;&gt; =&gt; html.replace(/javascript:[^&apos;&quot;]*/g, &apos;&apos;)</div><div class="line">&lt;img src=&apos;123&apos; onerror=&apos;dosth...&apos;&gt; =&gt; html.replace(/onerror\s*=\s*[&apos;&quot;]?[^&apos;&quot;]*[&apos;&quot;]?/g, &apos;&apos;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>白名单 保留部分标签和属性 -&gt; 将 html 解析 dom -&gt; 遍历将允许 DOM 之外的标签 / 属性删除</p>
+<h3 id="XSS-库-第三方库"><a href="#XSS-库-第三方库" class="headerlink" title="XSS 库 - 第三方库"></a>XSS 库 - 第三方库</h3><h3 id="CSP-内容安全策略-gt-用于指定哪些内容可执行不可执行"><a href="#CSP-内容安全策略-gt-用于指定哪些内容可执行不可执行" class="headerlink" title="CSP 内容安全策略 -&gt; 用于指定哪些内容可执行不可执行"></a>CSP 内容安全策略 -&gt; 用于指定哪些内容可执行不可执行</h3><p>HTTP 头</p>
+</li>
+<li>child-src connect-src default-src</li>
+<li>font-src frame-src img-src</li>
+<li>manifest-src media-src object-src</li>
+<li><p>script-src style-src worker-src</p>
+</li>
+<li><p><host-source> 域名  <scheme-source> 协议 ‘self’ 和页面同域</scheme-source></host-source></p>
+</li>
+<li>‘unsafe-inline’ 页面内容 ‘unsafe-eval’ eval 函数 ‘none’ 页面任何内容不执行</li>
+<li>nonce-<base64-value>  <hash-source> hash 相同才会执行</hash-source></base64-value></li>
+<li>‘strict-dynamic’ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ctx.set(`Connect-Security-Policy:`, `default-src &apos;self&apos;`)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="csrf-跨站请求伪造-Cross-Site-Request-Forgy"><a href="#csrf-跨站请求伪造-Cross-Site-Request-Forgy" class="headerlink" title="csrf 跨站请求伪造 Cross Site Request Forgy"></a>csrf 跨站请求伪造 Cross Site Request Forgy</h1><ul>
+<li>利用用户登陆态(cookies)</li>
+<li>用户不知情</li>
+<li>完成业务请求</li>
+<li>盗取资金</li>
+<li>冒充发帖评论等…</li>
+<li>毁坏网站声誉<br>…<h2 id="防御"><a href="#防御" class="headerlink" title="防御"></a>防御</h2></li>
+<li>禁止第三方网站的 cookies -&gt;     sampsite-strict(添加到cookies) 只有 chrome 和 opera 支持</li>
+<li>验证码 / token </li>
+<li>referer<h1 id="cookies"><a href="#cookies" class="headerlink" title="cookies"></a>cookies</h1><ul>
+<li>前端数据储存</li>
+<li>后端通过 http 头设置</li>
+<li>请求时通过 HTTP 头传给后端</li>
+<li>前端可读写</li>
+<li>遵守同源策略</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var cookies = document.cookies</div><div class="line">cookies = &quot;userId=&apos;123&apos;&quot;</div></pre></td></tr></table></figure>
+<ul>
+<li>Domain: localhost</li>
+<li>Path: /</li>
+<li>Expires: session =&gt; 只在会话期间有效</li>
+<li>Size: 16</li>
+<li>http-only: 只能通过 http 来设置 cookies，即 JavaScript 不能设置 cookies</li>
+<li>secure: 只能在 https 协议中使用</li>
+<li>same-site: 是否允许其他第三方网站的请求可以使用 -&gt; 只有 chorme 支持</li>
+</ul>
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><ul>
+<li>储存个性化设置</li>
+<li>未登录时用户的唯一标识</li>
+<li>存储已经登录用户的凭证<ul>
+<li>用户 Id + 签名</li>
+<li>SessionId </li>
+</ul>
+</li>
+<li>储存其他业务数据<h2 id="安全策略"><a href="#安全策略" class="headerlink" title="安全策略"></a>安全策略</h2></li>
+<li>签名防篡改 -&gt; 不可逆</li>
+<li>加密-私有变换 -&gt; 可逆</li>
+<li>http-only =&gt; XSS</li>
+<li>secure =&gt; https 防窃听</li>
+<li>same-site =&gt; CSRF </li>
+</ul>
+<h1 id="点击劫持"><a href="#点击劫持" class="headerlink" title="点击劫持"></a>点击劫持</h1><ul>
+<li>iframe 内嵌 -&gt; opacity: 0<h2 id="防御-1"><a href="#防御-1" class="headerlink" title="防御"></a>防御</h2></li>
+<li><p>JavaScript 禁止内嵌</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if (top.location != window.location) &#123;</div><div class="line">    top.location = window.location;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>如果禁止了 JavaScript =&gt; X-FRAME-OPTIONS</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// SAME-ROIGIN 同一个网站</div><div class="line">// SAMEORIGIN 同一个域</div><div class="line">// ALLOW-FROM 只能网站内嵌</div><div class="line">// DENY 不允许内嵌</div><div class="line">ctx.set(&apos;X-FRAME-OPTIONS&apos;, &apos;DENY&apos;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="传输安全"><a href="#传输安全" class="headerlink" title="传输安全"></a>传输安全</h1><ul>
+<li>HTTPS<ul>
+<li>证书不被伪造</li>
+<li>证书私钥不被泄露</li>
+<li>域名管理权不被泄露</li>
+<li>CA 坚守原则</li>
+</ul>
+</li>
+</ul>
+<h1 id="用户密码安全"><a href="#用户密码安全" class="headerlink" title="用户密码安全"></a>用户密码安全</h1><h1 id="SQL-注入"><a href="#SQL-注入" class="headerlink" title="SQL 注入"></a>SQL 注入</h1><h1 id="信息泄露"><a href="#信息泄露" class="headerlink" title="信息泄露"></a>信息泄露</h1>]]></content>
+    
+    <summary type="html">
+    
+      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/as
+    
+    </summary>
+    
+      <category term="面试" scheme="http:%5C%5Chexin.life/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+      <category term="安全" scheme="http:%5C%5Chexin.life/tags/%E5%AE%89%E5%85%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>性能优化</title>
+    <link href="http:%5C%5Chexin.life/2017/09/02/title-25/"/>
+    <id>http:\\hexin.life/2017/09/02/title-25/</id>
+    <published>2017-09-02T06:49:19.000Z</published>
+    <updated>2017-09-02T06:50:11.817Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><ul>
+<li>减少 HTTP 请求</li>
+<li>减少请求资源大小</li>
+<li>DNS 缓存</li>
+<li>相同资源缓存</li>
+<li>CDN </li>
+<li>服务端渲染</li>
+</ul>
+<h1 id="资源合并与压缩"><a href="#资源合并与压缩" class="headerlink" title="资源合并与压缩"></a>资源合并与压缩</h1><h2 id="html-压缩"><a href="#html-压缩" class="headerlink" title="html 压缩"></a>html 压缩</h2><ul>
+<li>在线网站压缩(x)</li>
+<li>nodejs提供</li>
+<li>构建工具</li>
+<li>后端模板引擎渲染</li>
+</ul>
+<h2 id="css-压缩"><a href="#css-压缩" class="headerlink" title="css 压缩"></a>css 压缩</h2><ul>
+<li>无效代码删除</li>
+<li>CS 语义合并</li>
+</ul>
+<h2 id="js-压缩和混乱"><a href="#js-压缩和混乱" class="headerlink" title="js 压缩和混乱"></a>js 压缩和混乱</h2><ul>
+<li>无效字符删除，删除注释，代码语义的缩减和优化，代码保护</li>
+<li>文件合并</li>
+<li>开启 gizp<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3></li>
+<li>首屏渲染</li>
+<li>缓存失效</li>
+</ul>
+<h1 id="CSS-Js-的加载与执行"><a href="#CSS-Js-的加载与执行" class="headerlink" title="CSS Js 的加载与执行"></a>CSS Js 的加载与执行</h1><h2 id="html-渲染"><a href="#html-渲染" class="headerlink" title="html 渲染"></a>html 渲染</h2><ul>
+<li>顺序执行，并发加载(并发度)</li>
+<li>顺否阻塞 -&gt; css / js 阻塞页面渲染</li>
+<li>依赖关系 -&gt; JavaScript 异步加载等</li>
+<li>引入方式(css/js) -&gt; link(css) -&gt; defer / async -&gt; 动态异步加载</li>
+</ul>
+<p>词法分析 -&gt; 从上到下<br>并发加载 -&gt; 外部资源<br>并发上限 -&gt; 某个域名下并发请求上限</p>
+<h2 id="CSS-阻塞"><a href="#CSS-阻塞" class="headerlink" title="CSS 阻塞"></a>CSS 阻塞</h2><ul>
+<li>head (link) 引入 会阻塞页面的渲染</li>
+<li>css 阻塞 JS 执行(js 可能会依赖(修改) css 样式)</li>
+<li>css 不阻塞外部脚本加载<h2 id="JavaScript-阻塞"><a href="#JavaScript-阻塞" class="headerlink" title="JavaScript 阻塞"></a>JavaScript 阻塞</h2></li>
+<li>直接引入会阻塞页面渲染</li>
+<li>js 不阻塞资源的加载(webkit 预加载)</li>
+<li>js 顺序执行，阻塞后续 js 逻辑的执行</li>
+</ul>
+<h1 id="懒加载和预加载"><a href="#懒加载和预加载" class="headerlink" title="懒加载和预加载"></a>懒加载和预加载</h1><h2 id="懒加载-src-gt-占位符"><a href="#懒加载-src-gt-占位符" class="headerlink" title="懒加载(src -&gt; 占位符)"></a>懒加载(src -&gt; 占位符)</h2><ul>
+<li>图片进入可视区域后请求图片资源(data-original)</li>
+<li>对于电商图片很多，页面很长的业务场景</li>
+<li>减少无效资源的加载</li>
+<li>并发加载资源过多会阻塞 JS 的加载，影响网站使用</li>
+</ul>
+<ol>
+<li>判断图片高度进入可视区域</li>
+<li>插件<h2 id="预加载"><a href="#预加载" class="headerlink" title="预加载"></a>预加载</h2></li>
+</ol>
+<ul>
+<li>图片等资源在使用之前提前请求</li>
+<li>资源使用时能从缓存中加载</li>
+<li>页面展示的依赖关系维护(音乐等)</li>
+</ul>
+<hr>
+<ol>
+<li>img src 设置 display: none; 实现预加载</li>
+<li><p>使用 image 对象 -&gt; 利用 JS 加载时执行 -&gt; 跨域问题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var image = new Image()</div><div class="line">image.src = &apos;http://www.somepic.com/somepic&apos;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Ajax</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">var ajax = new XMLHttpRequest()</div><div class="line">ajax.onreadystatechange = callback;</div><div class="line">ajax.onprogress = progressCallback;</div><div class="line"></div><div class="line">ajax.open(&apos;get&apos;, &apos;http://somepic.com/somepic&apos;, true)</div><div class="line"></div><div class="line">ajax.send()</div><div class="line"></div><div class="line">function callback () &#123;</div><div class="line">    if(ajax.readyState === 4 &amp;&amp; ajax.status === 200) &#123;</div><div class="line">        var responseText = ajax.responseText;</div><div class="line">    &#125; else &#123;</div><div class="line">        console.log(&apos;Request was unsuccessful: &apos; + ajax.status)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function progressCallback (e) &#123;</div><div class="line">    e = e || window.event;</div><div class="line">    if (e.lengthCromputable) &#123;</div><div class="line">    console.log(&apos;Recived &apos; + e.loaded + &apos; of &apos; + e.total + &apos; bytes.&apos;)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>插件</p>
+</li>
+</ol>
+<h1 id="图片优化"><a href="#图片优化" class="headerlink" title="图片优化"></a>图片优化</h1><ul>
+<li>图片有损压缩 jpeg / png8 -&gt; png24 -&gt; png32</li>
+<li>图片选择合适的种类 </li>
+<li>CSS 雪碧图 -&gt; 减少 HTTP 请求 -&gt; 单张图片过大，一次加载较慢</li>
+<li>image inline 图片的内容以 base64 内嵌 html 中 -&gt; 减少 HTTP 请求数  &lt; 8/4 kb</li>
+<li>矢量图 svg =&gt; iconfont 解决 icon 问题</li>
+</ul>
+<h1 id="重绘与回流"><a href="#重绘与回流" class="headerlink" title="重绘与回流"></a>重绘与回流</h1><h2 id="回流"><a href="#回流" class="headerlink" title="回流"></a>回流</h2><ul>
+<li>页面盒模型相关的属性<ul>
+<li>width </li>
+<li>height </li>
+<li>padding </li>
+<li>margin </li>
+<li>display </li>
+<li>border  </li>
+<li>border-width </li>
+<li>border-height</li>
+</ul>
+</li>
+<li>定位及浮动属性<ul>
+<li>top</li>
+<li>left</li>
+<li>rigjt</li>
+<li>bottom</li>
+<li>position</li>
+<li>float</li>
+<li>clear</li>
+</ul>
+</li>
+<li>改变节点内部文字结构<ul>
+<li>text-align</li>
+<li>overflow-y</li>
+<li>font-weight</li>
+<li>overflow</li>
+<li>line-height</li>
+<li>vertival-align</li>
+<li>white-space</li>
+<li>font-size<h2 id="重绘"><a href="#重绘" class="headerlink" title="重绘"></a>重绘</h2></li>
+</ul>
+</li>
+<li>color</li>
+<li>border-style</li>
+<li>border-radius</li>
+<li>text-decoration</li>
+<li>background</li>
+<li>background-image</li>
+<li>background-position</li>
+<li>background-repeat</li>
+<li>background-size</li>
+<li>outline</li>
+<li>outline-color</li>
+<li>outline-style</li>
+<li>outline-width</li>
+<li>box-shadow</li>
+</ul>
+<blockquote>
+<p>频繁重回和回流的的 DOM 单独作为一个独立图层，它的重绘和回流影响只有这个图层之中<br>如： gif</p>
+</blockquote>
+<h3 id="chrome-创建图层-的条件"><a href="#chrome-创建图层-的条件" class="headerlink" title="chrome 创建图层(的条件)"></a>chrome 创建图层(的条件)</h3><ol>
+<li>3D 或透视变换 CSS 属性</li>
+<li>使用加速视频解码的 <code>&lt;video&gt;</code></li>
+<li>拥有 3D (webGl) 上下文或者加速的 2D 上下文的 <code>&lt;canvas&gt;</code>节点</li>
+<li>混合插件 如：flash</li>
+<li>对自己的 opacity 做 CSS 动画或使用一个动画 webkit 变换的元素</li>
+<li>拥有加速的 CSS 过滤器的元素 -&gt; tranlate3d</li>
+<li>元素包含一个复合层的后代节点 -&gt; 一个元素拥有自己的子元素，子元素在自己的层</li>
+<li><p>元素有一个 z-index 较低 或者包含复合层的兄弟元素 -&gt; 在复合层上渲染</p>
+</li>
+<li><p>用translate替代top改变</p>
+</li>
+<li>用opacity替代visibility</li>
+<li>不要一条一条地修改 DOM 的样式，预先定义好 class，然后修改 DOM 的 className</li>
+<li>把 DOM 离线后修改，比如：先把 DOM 给 display:none (有一次 Reflow)，然后你修改100次，然后再把它显示出来</li>
+<li>不要把 DOM 结点的属性值放在一个循环里当成循环里的变量</li>
+<li>不要使用 table 布局，可能很小的一个小改动会造成整个 table 的重新布局</li>
+<li>动画实现的速度的选择</li>
+<li>对于动画新建图层</li>
+<li>启用 GPU 硬件加速</li>
+</ol>
+<blockquote>
+<ol>
+<li>避免触发或减少重绘 / 回流</li>
+<li>将重绘和回流影响范围限制在 <em>单独的图层内</em></li>
+</ol>
+</blockquote>
+<h1 id="浏览器缓存"><a href="#浏览器缓存" class="headerlink" title="浏览器缓存"></a>浏览器缓存</h1><h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><ul>
+<li>因为HTTP请求无状态，所以需要cookie去维持客户端状态</li>
+<li>过期时间 expire<h2 id="cookie的生成方式"><a href="#cookie的生成方式" class="headerlink" title="cookie的生成方式"></a>cookie的生成方式</h2></li>
+</ul>
+<ol>
+<li>http response header中的set-cookie</li>
+<li>js中可以通过document.cookie可以读写cookie</li>
+</ol>
+<ul>
+<li>仅仅作为浏览器存储（大小4KB左右，能力被localstorage替代）</li>
+<li>cookie中在相关域名下面 -&gt; cdn的流量损耗</li>
+<li>httponly</li>
+</ul>
+<h2 id="LocalStorage"><a href="#LocalStorage" class="headerlink" title="LocalStorage"></a>LocalStorage</h2><ul>
+<li>HTML5设计出来专门用于浏览器存储的</li>
+<li>大小为5M左右</li>
+<li>仅在客户端使用，不和服务端进行通信</li>
+<li>接口封装较好</li>
+<li>浏览器本地缓存方案</li>
+</ul>
+<h2 id="SessionStorage"><a href="#SessionStorage" class="headerlink" title="SessionStorage"></a>SessionStorage</h2><ul>
+<li>会话级别的浏览器存储</li>
+<li>大小为5M左右</li>
+<li>仅在客户端使用，不和服务端进行通信</li>
+<li>接口封装较好</li>
+<li>对于表单信息的维护</li>
+</ul>
+<h2 id="IndexedDB"><a href="#IndexedDB" class="headerlink" title="IndexedDB"></a>IndexedDB</h2><p>IndexedDB 是一种低级API，用于客户端存储大量结构化数据。该API使用索引来实现对该数据的高性能搜索。虽然 Web Storage 对于存储较少量的数据很有用，但对于存储更大量的结构化数据来说，这种方法不太有用。IndexedDB提供了一个解决方案。<br>为应用创建离线版本</p>
+<h2 id="PWA"><a href="#PWA" class="headerlink" title="PWA"></a>PWA</h2><p>PWA (Progressive Web Apps) 是一种 Web App 新模型，并不是具体指某一种前沿的技术或者某一个单一的知识点，我们从英文缩写来看就能看出来，这是一个渐进式的 Web App，是通过一系列新的 Web 特性，配合优秀的 UI 交互设计，逐步的增强 Web App 的用户体验。</p>
+<p>可靠：在没有网络的环境中也能提供基本的页面访问，而不会出现“未连接到互联网”的页面。<br>快速：针对网页渲染及网络数据访问有较好优化。<br>融入（Engaging）：应用可以被增加到手机桌面，并且和普通应用一样有全屏、推送等特性。</p>
+<h2 id="Service-Worker"><a href="#Service-Worker" class="headerlink" title="Service Worker"></a>Service Worker</h2><p>Service Worker 是一个脚本，浏览器独立于当前网页，将其在后台运行,为实现一些不依赖页面或者用户交互的特性打开了一扇大门。在未来这些特性将包括推送消息,背景后台同步， geofencing（地理围栏定位），但它将推出的第一个首要特性，就是拦截和处理网络请求的能力，包括以编程方式来管理被缓存的响应。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/as
+    
+    </summary>
+    
+      <category term="面试" scheme="http:%5C%5Chexin.life/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+      <category term="性能优化" scheme="http:%5C%5Chexin.life/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
   
   <entry>
     <title>2017拼多多前端笔试</title>
@@ -2029,222 +2371,6 @@ D:. public/
     
     
       <category term="转载" scheme="http:%5C%5Chexin.life/tags/%E8%BD%AC%E8%BD%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSS学习笔记(Placeholder及CSS_hack)</title>
-    <link href="http:%5C%5Chexin.life/2017/03/31/title-2/"/>
-    <id>http:\\hexin.life/2017/03/31/title-2/</id>
-    <published>2017-03-31T15:09:45.000Z</published>
-    <updated>2017-04-15T05:39:55.256Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><p><blockquote class="blockquote-center">相信你所相信的，坚持你所坚持的</blockquote></p>
-<h1 id="IE8以下图片出现蓝色边框"><a href="#IE8以下图片出现蓝色边框" class="headerlink" title="IE8以下图片出现蓝色边框"></a>IE8以下图片出现蓝色边框</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">img&#123;</div><div class="line">        <span class="attr">border</span>:<span class="number">0</span>;  <span class="comment">/*或者border:none;*/</span></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<h1 id="如何使文本以大写字母开头？"><a href="#如何使文本以大写字母开头？" class="headerlink" title="如何使文本以大写字母开头？"></a>如何使文本以大写字母开头？</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">text-transform:capitalize;</div></pre></td></tr></table></figure>
-<h1 id="强制设置以最新版本IE渲染"><a href="#强制设置以最新版本IE渲染" class="headerlink" title="强制设置以最新版本IE渲染"></a>强制设置以最新版本IE渲染</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge"</span> /&gt;</div><div class="line">    <span class="comment">//我写的页面在IE8之下全部乱掉了，用这个强制用最新版本的IE渲染</span></div></pre></td></tr></table></figure>
-<h1 id="chrome浏览器点击input框时出现边框"><a href="#chrome浏览器点击input框时出现边框" class="headerlink" title="chrome浏览器点击input框时出现边框"></a>chrome浏览器点击input框时出现边框</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//虽然我觉得还挺好看的--! </span></div><div class="line">input&#123;    <span class="attr">outline</span>:none; <span class="comment">//outline:0;    &#125;</span></div></pre></td></tr></table></figure>
-<a id="more"></a>
-<hr>
-<h1 id="IE8及以下不支持Placeholder解决方案（基于JQ）"><a href="#IE8及以下不支持Placeholder解决方案（基于JQ）" class="headerlink" title="IE8及以下不支持Placeholder解决方案（基于JQ）"></a><a href="http://www.cnblogs.com/digdeep/p/4424487.html" target="_blank" rel="external">IE8及以下不支持Placeholder解决方案</a>（基于JQ）</h1><pre><code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">&lt;!doctype html&gt;</div><div class="line">    &lt;html&gt;</div><div class="line">    &lt;header&gt;</div><div class="line">    &lt;meta charset="utf-8"&gt;</div><div class="line">    &lt;title&gt;&lt;/title&gt;</div><div class="line">    &lt;style type="text/css"&gt;</div><div class="line">         *&#123;margin:0;padding:0;&#125;</div><div class="line">        form &#123;margin:50px;&#125;</div><div class="line">        input &#123;display:block;margin:0 0 6px 0;&#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">    &lt;/header&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">        &lt;form&gt;</div><div class="line">            用户名：&lt;input name="name" placeholder="请输入用户名"/&gt;</div><div class="line">            密码：&lt;input name="password" placeholder="请输入登陆密码"/&gt;</div><div class="line">        &lt;/form&gt;</div><div class="line">            &lt;script type="text/javascript" src="jquery-1.11.1.min.js"&gt;&lt;/script&gt;</div><div class="line">            &lt;script type="text/javascript"&gt;</div><div class="line">            $(function()&#123;</div><div class="line">                function placeholderSupport() &#123;    // 判断浏览器是否支持 placeholder</div><div class="line">                    return 'placeholder' in document.createElement('input');</div><div class="line">                &#125;</div><div class="line">                </div><div class="line">                if(!placeholderSupport())&#123;</div><div class="line">                    $(document).on('focus', '[placeholder]',function() &#123;</div><div class="line">                        var input = $(this);</div><div class="line">                        if (input.val() == input.attr('placeholder')) &#123;</div><div class="line">                            input.val('');</div><div class="line">                            input.removeClass('placeholder');</div><div class="line">                        &#125;</div><div class="line">                    &#125;);</div><div class="line">                    $(document).on('blur', '[placeholder]',function() &#123;</div><div class="line">                        var input = $(this);</div><div class="line">                        if (input.val() == '' || input.val() == input.attr('placeholder')) &#123;</div><div class="line">                            input.addClass('placeholder');</div><div class="line">                            input.val(input.attr('placeholder'));</div><div class="line">                        &#125;</div><div class="line">                    &#125;);</div><div class="line">                    $('[placeholder]').blur();</div><div class="line">                &#125;;</div><div class="line">            &#125;);</div><div class="line">    &lt;/script&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">    &lt;/html&gt;</div></pre></td></tr></table></figure>
-</code></pre><hr>
-<h1 id="常见CSS-hack"><a href="#常见CSS-hack" class="headerlink" title="常见CSS hack"></a>常见<a href="http://baike.baidu.com/item/css%20hack" target="_blank" rel="external">CSS hack</a></h1><p><em>不管是什么方法，书写的顺序都是Firefox的写在前面，IE7的写在中间，IE6的写在最后</em><br><strong>（1）方式一 条件注释法</strong></p>
-<p> <em>只在IE下生效</em></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[<span class="keyword">if</span> IE]&gt;</div><div class="line">    这段文字只在IE浏览器显示</div><div class="line">    &lt;![endif]--&gt;</div></pre></td></tr></table></figure>
-<p><em>只在IE6下生效</em></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[<span class="keyword">if</span> IE <span class="number">6</span>]&gt;</div><div class="line">    这段文字只在IE6浏览器显示</div><div class="line">    &lt;![endif]--&gt;</div></pre></td></tr></table></figure>
-<p><em>只在IE6以上版本生效</em></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[<span class="keyword">if</span> gte IE <span class="number">6</span>]&gt;</div><div class="line">    这段文字只在IE6以上(包括)版本IE浏览器显示</div><div class="line">    &lt;![endif]--&gt;</div></pre></td></tr></table></figure>
-<p><em>只在IE8上不生效</em></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[<span class="keyword">if</span> ! IE <span class="number">8</span>]&gt;</div><div class="line">    这段文字在非IE8浏览器显示</div><div class="line">    &lt;![endif]--&gt;</div></pre></td></tr></table></figure>
-<p><em>非IE浏览器生效</em></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[<span class="keyword">if</span> !IE]&gt;</div><div class="line">    这段文字只在非IE浏览器显示</div><div class="line">    &lt;![endif]--&gt;</div></pre></td></tr></table></figure>
-<p><strong>（2）方式二 类内属性前缀法</strong></p>
-<p>在标准模式中：</p>
-<ul>
-<li>“-″减号是IE6专有的hack</li>
-<li>“\9″ IE6/IE7/IE8/IE9/IE10都生效</li>
-<li>“\0″ IE8/IE9/IE10都生效，是IE8/9/10的hack</li>
-<li>“\9\0″ 只对IE9/IE10生效，是IE9/10的hack</li>
-</ul>
-<ul>
-<li>IE6能识别 *，但不能识别 !important</li>
-<li>IE7能识别 *，也能识别!important</li>
-<li>FF不能识别 *，但能识别!important,下划线_</li>
-<li>IE6支持下划线</li>
-<li>IE7和firefox均不支持下划线</li>
-</ul>
-<p><strong>（3）CSS hack方式三：选择器前缀法</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">*html     <span class="comment">//*前缀只对IE6生效</span></div><div class="line">    *+html    <span class="comment">//*+前缀只对IE7生效 </span></div><div class="line">    @media screen\<span class="number">9</span>&#123;...&#125;    <span class="comment">//只对IE6/7生效</span></div><div class="line">    @media \<span class="number">0</span>screen &#123;body &#123; <span class="attr">background</span>: red; &#125;&#125;    <span class="comment">//只对IE8有效</span></div><div class="line">    @media \<span class="number">0</span>screen\,screen\<span class="number">9</span>&#123;body &#123; <span class="attr">background</span>: blue; &#125;&#125;    <span class="comment">//只对IE6/7/8有效</span></div><div class="line">    @media screen\<span class="number">0</span> &#123;body &#123; <span class="attr">background</span>: green; &#125;&#125;    <span class="comment">//只对IE8/9/10有效</span></div><div class="line">    @media screen and (min-width:<span class="number">0</span>\<span class="number">0</span>) &#123;body &#123; <span class="attr">background</span>: gray; &#125;&#125;     <span class="comment">//只对IE9/10有效</span></div><div class="line">    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) &#123;body &#123; <span class="attr">background</span>: orange; &#125;&#125;     <span class="comment">//只对IE10有效等等</span></div></pre></td></tr></table></figure>
-<p><strong>以: “ #demo {width:100px;} “为例;</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#demo &#123;width:100px;&#125; /*被FIREFOX,IE6,IE7执行.*/</div><div class="line">    *html #demo &#123;width:120px;&#125; /*会被IE6执行,之前的定义会被后来的覆盖,所以#demo的宽度在IE6就为120px; */</div><div class="line">    *+html #demo &#123;width:130px;&#125; /*会被IE7执行*/</div><div class="line">    所以最后,#demo的宽度在三个浏览器的解释为: FIREFOX:100px; ie6:120px; ie7:130px;</div></pre></td></tr></table></figure>
-<p><strong>IE8 最新css hack：</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="string">"\9"</span>　例:<span class="string">"border:1px\9;"</span>    <span class="comment">//这里的"\9"可以区别所有IE和FireFox.（只针对IE9 Hack）</span></div><div class="line">        <span class="string">"\0"</span>　<span class="comment">//IE8识别，--&gt;IE6、IE7不能.</span></div><div class="line">        <span class="string">"*"</span>　<span class="comment">//IE6、IE7可以识别.--&gt;IE8、FireFox不能.</span></div><div class="line">        <span class="string">"_"</span>　<span class="comment">//IE6可以识别"_",--&gt;IE7、IE8、FireFox不能.</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>Placeholder源自网上资料，点击标题即进入原网址，本人新手，没怎么用过hack，从百度百科整理一部分，作为以后查询方便，如果有什么问题，希望大神多多指点。</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;blockquote class=&quot;blockquote-center&quot;&gt;相信你所相信的，坚持你所坚持的&lt;/blockquote&gt;&lt;/p&gt;
-&lt;h1 id=&quot;IE8以下图片出现蓝色边框&quot;&gt;&lt;a href=&quot;#IE8以下图片出现蓝色边框&quot; class=&quot;headerlink&quot; title=&quot;IE8以下图片出现蓝色边框&quot;&gt;&lt;/a&gt;IE8以下图片出现蓝色边框&lt;/h1&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;img&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;attr&quot;&gt;border&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;  &lt;span class=&quot;comment&quot;&gt;/*或者border:none;*/&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h1 id=&quot;如何使文本以大写字母开头？&quot;&gt;&lt;a href=&quot;#如何使文本以大写字母开头？&quot; class=&quot;headerlink&quot; title=&quot;如何使文本以大写字母开头？&quot;&gt;&lt;/a&gt;如何使文本以大写字母开头？&lt;/h1&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;text-transform:capitalize;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h1 id=&quot;强制设置以最新版本IE渲染&quot;&gt;&lt;a href=&quot;#强制设置以最新版本IE渲染&quot; class=&quot;headerlink&quot; title=&quot;强制设置以最新版本IE渲染&quot;&gt;&lt;/a&gt;强制设置以最新版本IE渲染&lt;/h1&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;meta http-equiv=&lt;span class=&quot;string&quot;&gt;&quot;X-UA-Compatible&quot;&lt;/span&gt; content=&lt;span class=&quot;string&quot;&gt;&quot;IE=edge&quot;&lt;/span&gt; /&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//我写的页面在IE8之下全部乱掉了，用这个强制用最新版本的IE渲染&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h1 id=&quot;chrome浏览器点击input框时出现边框&quot;&gt;&lt;a href=&quot;#chrome浏览器点击input框时出现边框&quot; class=&quot;headerlink&quot; title=&quot;chrome浏览器点击input框时出现边框&quot;&gt;&lt;/a&gt;chrome浏览器点击input框时出现边框&lt;/h1&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//虽然我觉得还挺好看的--! &lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;input&amp;#123;    &lt;span class=&quot;attr&quot;&gt;outline&lt;/span&gt;:none; &lt;span class=&quot;comment&quot;&gt;//outline:0;    &amp;#125;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="前端" scheme="http:%5C%5Chexin.life/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="CSS学习笔记" scheme="http:%5C%5Chexin.life/tags/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HEXO+GitHub搭建个人博客</title>
-    <link href="http:%5C%5Chexin.life/2017/03/28/title-1/"/>
-    <id>http:\\hexin.life/2017/03/28/title-1/</id>
-    <published>2017-03-28T15:15:03.000Z</published>
-    <updated>2017-06-06T09:25:34.820Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script> <blockquote class="blockquote-center">白日做的梦要靠自己追</blockquote>
-
-<blockquote>
-<p>一直想有一个自己的博客，前段时间看到HEXO+GitHub傻瓜式搭建，就利用周末花了俩天时间搭建了一个自己的博客。花俩天时间是因为走了太多弯路~搞了太多错误，在这里把流程梳理一下，希望大家不要像我一样走弯路，顺便填入第一篇博客0.0，没有基础的同学也可以利用它搭建自己的博客，我觉得博客不一定要写技术，用来当做自己的私人空间也是很不错的。这里特别感谢<a href="http://chasen-g.cn/" target="_blank" rel="external">Chasen’s </a>，帮我解决了好多问题。 </p>
-</blockquote>
-<hr>
-<h2 id="关于HEXO"><a href="#关于HEXO" class="headerlink" title="关于HEXO"></a>关于HEXO</h2><blockquote>
-<p>hexo是一款基于<a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a>的静态博客框架，可以生成静态文件并且一键部署到 github pages 上，并且他可以使用 markdown 来编写文章，十分方便。</p>
-</blockquote>
-<h2 id="搭建前环境准备"><a href="#搭建前环境准备" class="headerlink" title="搭建前环境准备"></a>搭建前环境准备</h2><p>安装<a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a><br>进入官网，他会自动提取你的电脑型号，有俩个版本下载，左边的是稳定版，右边的是一直更新的前沿版，我们这里随便选择一个就好了，我个人选择了右边的</p>
-<p><img src="http://i1.piimg.com/567571/f11f62b5f567f034.png" alt="node下载"></p>
-<ol>
-<li>直接下载即可，只有13MB大小，然后一路默认安装就好了</li>
-<li>安装好以后按 win+r 打开运行输入CMD（开始栏输入CMD也一样）</li>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">输入 node -v</div></pre></td></tr></table></figure>
-</li>
-<li><p>输出版本号即安装成功，我这里是v7.6.0版本<br><img src="http://i2.muimg.com/567571/9d667d081fc1c3b3.png" alt="这里写图片描述"></p>
-</li>
-</ol>
-<h2 id="接下来安装git"><a href="#接下来安装git" class="headerlink" title="接下来安装git"></a>接下来安装<a href="https://git-scm.com/downloads" target="_blank" rel="external">git</a></h2><p>同上进入git  然后点击下载然后默认安装即可（30MB左右），安装好以后右键会有</p>
-<blockquote>
-<p>git gui here<br>git bush here</p>
-</blockquote>
-<p><img src="http://i4.buimg.com/567571/241888e67827ea3e.png" alt="这里写图片描述"><br>不懂git命令也没关系，跟着命令走就可以了，但是学习会对开发很有帮助的，推荐几个网址吧：</p>
-<blockquote>
-<ul>
-<li><a href="https://git-scm.com/docs" target="_blank" rel="external">Git-Reference</a>(官网首选,当然是英文的)</li>
-<li><a href="http://www.bootcss.com/p/git-guide/" target="_blank" rel="external">git-简易指南</a>（中文简易指南，基本命令够用了）</li>
-<li><a href="http://opiece.me/2015/04/06/git-basic-commands/" target="_blank" rel="external">git-常用的基础命令</a></li>
-</ul>
-</blockquote>
-<h2 id="然后是编辑器Sublime-Text（多选）"><a href="#然后是编辑器Sublime-Text（多选）" class="headerlink" title="然后是编辑器Sublime Text（多选）"></a>然后是编辑器<a href="http://www.sublimetext.com/" target="_blank" rel="external">Sublime Text</a>（多选）</h2><blockquote>
-<p><a href="http://www.vscode.org/" target="_blank" rel="external">VS Code</a> 微软新发编辑器，虽然是新发，但是功能异常强大<br><a href="https://atom.io/" target="_blank" rel="external">Atom</a> 由GitHub打造的属于“ 21 ” 世纪的代码编辑器<br><a href="https://notepad-plus-plus.org/" target="_blank" rel="external">Notepad++</a> 一款强大的编辑器</p>
-</blockquote>
-<p>我这里用的是<a href="http://www.sublimetext.com/" target="_blank" rel="external">sublime text3</a>，很有程序员风格的编辑器，很多插件与快捷键，特别好用，推荐一下。（中文支持不太好，用习惯就好了）。<br>不用sublime也可以，如果熟悉vim的话可以直接用vim编辑</p>
-<h2 id="注册github"><a href="#注册github" class="headerlink" title="注册github"></a>注册<a href="https://github.com/" target="_blank" rel="external">github</a></h2><p>  对于没有<a href="https://github.com/" target="_blank" rel="external">GitHub</a>的同学，在这里申请一个<a href="https://github.com/" target="_blank" rel="external">GitHub</a>账号吧，这个很简单，直接注册，邮箱验证就好了。<br> 申请好以后新建一个自己的仓库</p>
-<p>  <img src="http://i2.muimg.com/567571/2841bb7050ab8a1a.png" alt="github仓库创建"></p>
-<blockquote>
-<p>这里注意上面俩个箭头，<strong><em> 命名必须要一致，后面的名字要以 github.io 结尾 </em></strong></p>
-</blockquote>
-<p> <img src="http://i2.muimg.com/567571/ff8cffca9cb304a6.png" alt="引用块内容"></p>
-<p> <strong> 我当初就因为这里搞错了，导致一直到下面的步骤得重新来，这里先把hexo与github联系起来再说 </strong></p>
-<p> <img src="http://i4.buimg.com/567571/26dca9ec927dae3e.png" alt="引用块内容"></p>
-<h2 id="把git与你的github联系起来"><a href="#把git与你的github联系起来" class="headerlink" title="把git与你的github联系起来"></a>把git与你的github联系起来</h2><blockquote>
-<p>右键git bush here 输入命令绑定你的邮箱和名字，这里是我的~替换成自己的即可<br><img src="http://i2.muimg.com/567571/42e1a5a0bfa86767.png" alt="这里写图片描述"></p>
-</blockquote>
-<h2 id="接下来生成秘钥"><a href="#接下来生成秘钥" class="headerlink" title="接下来生成秘钥"></a>接下来生成秘钥</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C <span class="string">"XXX@XXX.com"</span></div></pre></td></tr></table></figure>
-<p><strong> 这里C是大写！！！</strong><br><img src="http://ww3.sinaimg.cn/large/0060lm7Tgy1fe2sakgczdj30f103t74e.jpg" alt="这里写图片描述"></p>
-<p>如图然后连续按回车即可<br>然后在#user_id/.ssh目录下会生成两个文件，id_rsa.pub 和 id_rsa. </p>
-<p><img src="http://ww3.sinaimg.cn/large/0060lm7Tgy1fe2rtqy319j30jj05paar.jpg" alt="我这里是默认安装的，直接在C盘用户，管理员，.SSH文件下"></p>
-<p>利用编辑器打开rsa文件，将里面的内容copy，复制在github，在SSH设置页面添加刚才的SSH文件也就是id_rsa.pub的内容即可。</p>
-<p><img src="http://ww2.sinaimg.cn/large/0060lm7Tgy1fe2rtqy15pj30tx0cjjsr.jpg" alt="在github中选择setting--&gt;ssh and GPG 添加SSH"> </p>
-<p>这里会验证一下github的密码</p>
-<p>最后来验证一下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -T git@github.com</div></pre></td></tr></table></figure></p>
-<p>如果成功他让你输入yes然后会返回一个成功的信息<br><img src="http://ww4.sinaimg.cn/large/0060lm7Tgy1fe2sgxkqvvj30fn051mxg.jpg" alt="这里写图片描述"></p>
-<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p><strong> 不要着急，马上就可以看到属于你的博客了~ </strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-cli -g</div></pre></td></tr></table></figure>
-<ol>
-<li>然后可以利用 Git 一路 cd 到 hexo 的安装目录，或者进去目录，右键 git bush here 即可（hexo init 的文件夹必须为空文件夹）</li>
-<li>目录初始化完毕后，在根目录执行下面命令安装提交的命令。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save-dev</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p><strong>然后依次执行</strong></p>
-<blockquote>
-<ol>
-<li>hexo init      # 初始化      </li>
-<li>hexo g         # 完整命令为hexo generate，生成静态文件</li>
-<li>hexo s      #完整命令为hexo server，打开本地服务</li>
-</ol>
-<p><strong>日后方便提交和防止出错</strong></p>
-<ul>
-<li>hexo clean     #清理临时文件</li>
-<li>hexo d -g    #快速生成并提交</li>
-</ul>
-</blockquote>
-<p>打开本地服务，这时候打开浏览器输入</p>
-<blockquote>
-<p><a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a></p>
-</blockquote>
-<p>看看你博客页面吧~官方默认会有一篇 hello world，当然 ，现在还只是本地的。只有你自己能看到</p>
-<h2 id="将静态页面提交到github"><a href="#将静态页面提交到github" class="headerlink" title="将静态页面提交到github"></a>将静态页面提交到github</h2><p> 此时就用到了编辑器，打开_config.yml文件，直接拖入编辑器即可自行修改</p>
-<p> 没有编辑器的同学， 可以cd(进入的意思)到hexo的文件夹下，输入 vim _config.yml<br> 然后直接移动下图的位置，按键盘“ a ”，来插入文本，然后就可以修改了，修改完之后按 ESC ，然后按“ Shif ” 加 “ ：”，输入“ wq ”，意思是保存加退出，如果直接退出就输入“ q ”即可。</p>
-<p> <img src="http://ww3.sinaimg.cn/large/0060lm7Tgy1fe2rpumoeuj30iv0d5tal.jpg" alt="这里写图片描述"><br> <img src="http://ww1.sinaimg.cn/large/0060lm7Tgy1fe2rpulywmj30io09pwfe.jpg" alt="这里写图片描述">  </p>
-<blockquote>
-<p>然后修改如下：<br>将repo后面的内容改成自己的(没有独立新建分支的话branch可以不写)</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">      type: git</div><div class="line">      repo: git@github.com:yourself/yourself.github.io.git</div><div class="line">      branch: master</div></pre></td></tr></table></figure>
-<p>提交到 github<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d -g       #组合命令，命令等同于hexo g  再 hexo d</div></pre></td></tr></table></figure></p>
-<p>这时候 github 已经有了你提交的内容( public 文件夹下的内容 ), 然后输入你开始的 github 仓库名字，例如 <em>*</em>.github.io</p>
-<p>就可以看到你的博客页面了…</p>
-<h2 id="关于主题安装"><a href="#关于主题安装" class="headerlink" title="关于主题安装"></a>关于主题安装</h2><p>主题有好多种，这里我推荐<a href="http://theme-next.iissnan.com/" target="_blank" rel="external">NEXT</a>,简洁，大方，支持多语言，一句代码即可下载NEXT最新版，如果需要其他的可以上官网查找喜欢的，添加方式是一样的。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https:<span class="comment">//github.com/iissnan/hexo-theme-next themes/next</span></div></pre></td></tr></table></figure>
-<p> 然后打开 _config.yml文件，如图找到theme修改为next即可</p>
-<p><img src="http://i2.muimg.com/567571/767faa63e5360b89.png" alt="这里写图片描述"> </p>
-<blockquote>
-<p>我这里推荐一下<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">yilia</a>。更多好看主题可以去官网搜寻（也可以自己写哦~）。</p>
-</blockquote>
-<h2 id="关于文章发布"><a href="#关于文章发布" class="headerlink" title="关于文章发布"></a>关于文章发布</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">new</span> <span class="string">"title"</span>    <span class="comment">// hexo new "中文标题"</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>注意这里如果发布文章是中文的话，最好标题中出现中文：hexo new “中文标题” （不然可能会出现文章乱码）<br>自动生成md文件在 source/_post 下，也可以自己创建为 .md ，注意编码格式用 UTF-8 同样是防止乱码。</p>
-</blockquote>
-<p><img src="http://i2.muimg.com/567571/deb80ae44a521f7e.png" alt="这里写图片描述"> </p>
-<blockquote>
-<p>然后打开你的 title-n.md 文件编写文章就可以了，文章需要是 markdown 格式，可以用 markdown 格式的编辑器编写，也可以找在线的 markdown 编辑器，例如 CSDN ，<a href="https://maxiang.io/" target="_blank" rel="external">马克飞象</a>等等…可以离线使用，支持导出为 MD ，HTML 格式，很方便。<br>关于添加图片，我推荐<a href="http://jiantuku.com/" target="_blank" rel="external">极简图床</a>，简单方便。</p>
-</blockquote>
-<p><strong><em> hexo 常用命令( # 后为注释 ) </em></strong></p>
-<blockquote>
-<p>hexo init                    # 初始化<br>hexo clean                # 清理临时文件<br>hexo g                     # 完整命令为 hexo generate ，生成静态文件<br>hexo s                     # 完整命令为 hexo server ，打开本地服务<br>hexo d                     # 完整命令为 hexo deploy ，用于将本地文件发布到 github 上<br>hexo new “postName”        # 新建文章<br>hexo new page “pageName”    # 新建页面<br>hexo help                    # 帮助</p>
-</blockquote>
-<hr>
-<p>有什么建议或者改正，希望大家在下面留言，期望同大家共同交流，进步。</p>
-<p>另外推荐几篇大神的 blog ：</p>
-<ul>
-<li><a href="http://www.zipperary.com/categories/hexo/" target="_blank" rel="external">hexo 系列教程</a> </li>
-<li><a href="https://hexo.io/docs/" target="_blank" rel="external">HEXO 官方文档</a> </li>
-<li><a href="https://zespia.tw/blog/2012/10/11/hexo-debut/" target="_blank" rel="external">Hexo 作者博客</a>  </li>
-<li><a href="http://ibruce.info/2013/11/22/hexo-your-blog/" target="_blank" rel="external">hexo 你的博客|不如</a> </li>
-<li><a href="http://opiece.me/2015/04/09/hexo-guide/" target="_blank" rel="external">使用 hexo 搭建个人博客</a> </li>
-<li><a href="http://wiki.jikexueyuan.com/project/hexo-document/" target="_blank" rel="external">极客学院提供的中文文档</a> </li>
-<li><a href="http://chasen-g.cn/" target="_blank" rel="external">帮了我很大忙的 Chasen’s</a></li>
-<li><a href="http://myzchi.com/2015/05/02/hexo-github%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B%E6%80%BB%E7%BB%93/" target="_blank" rel="external">hexo + github 搭建过程总结</a> </li>
-<li><a href="https://linghucong.js.org/2016/04/15/2016-04-15-hexo-github-pages-blog/" target="_blank" rel="external">手把手教你使用 hexo+github 搭建个人博客</a>  </li>
-<li><a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank" rel="external">搭建一个免费的，无限流量的 blog（阮一峰）</a></li>
-</ul>
-<blockquote class="blockquote-center">相信你所相信的，坚持你所坚持的</blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/as
-    
-    </summary>
-    
-      <category term="hexo" scheme="http:%5C%5Chexin.life/categories/hexo/"/>
-    
-    
-      <category term="hexo" scheme="http:%5C%5Chexin.life/tags/hexo/"/>
     
   </entry>
   

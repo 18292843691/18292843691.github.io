@@ -99,7 +99,7 @@
 <meta property="og:url" content="http:\\hexin.life/more/用div制作textarea.html">
 <meta property="og:site_name" content="dayDream&#39;s blog">
 <meta property="og:description" content="Document 	 		.div-text{ 			min-height: 20px; 			min-width: 80px; 		}  		.div-text{ 			margin: 50px; 			padding-left: 3px; 			width: 100px; 			border: 1px solid #ccc; 			resize: both; 			overfl">
-<meta property="og:updated_time" content="2017-08-12T05:54:45.658Z">
+<meta property="og:updated_time" content="2017-08-22T16:44:01.722Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="dayDream&#39;s blog">
 <meta name="twitter:description" content="Document 	 		.div-text{ 			min-height: 20px; 			min-width: 80px; 		}  		.div-text{ 			margin: 50px; 			padding-left: 3px; 			width: 100px; 			border: 1px solid #ccc; 			resize: both; 			overfl">
@@ -152,9 +152,15 @@
 
 
 
+  <script>
+    var host = 'hexin.life'
+    if ((host == window.location.host) && (window.location.protocol !== 'https:')) {
+          window.location.protocol = 'https';
+    }
+  </script>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -164,7 +170,7 @@
   <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -396,7 +402,10 @@
 		// 	}
 			
 		// })
-
+		// 
+		// div.addEventListener('click', function(e){
+		// 	console.log(e.path)  冒泡
+		// })
 
 		// 事件代理及事件绑定的封装
 		function bindEvent(elem, type, selector, fn) {
@@ -513,7 +522,7 @@ SortCard(3, 4, arr)
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -524,7 +533,7 @@ SortCard(3, 4, arr)
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -535,7 +544,7 @@ SortCard(3, 4, arr)
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
