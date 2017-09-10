@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http:%5C%5Chexin.life/"/>
-  <updated>2017-09-04T14:12:29.088Z</updated>
+  <updated>2017-09-06T12:02:44.687Z</updated>
   <id>http:\\hexin.life/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http:%5C%5Chexin.life/2017/09/02/title-26/"/>
     <id>http:\\hexin.life/2017/09/02/title-26/</id>
     <published>2017-09-02T06:49:42.000Z</published>
-    <updated>2017-09-04T14:12:29.088Z</updated>
+    <updated>2017-09-06T12:02:44.687Z</updated>
     
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><h1 id="代码层面"><a href="#代码层面" class="headerlink" title="代码层面"></a>代码层面</h1><h1 id="架构层面"><a href="#架构层面" class="headerlink" title="架构层面"></a>架构层面</h1><h1 id="运维层面"><a href="#运维层面" class="headerlink" title="运维层面"></a>运维层面</h1><p>安全问题</p>
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><h1 id="代码层面"><a href="#代码层面" class="headerlink" title="代码层面"></a>代码层面</h1><h1 id="架构层面"><a href="#架构层面" class="headerlink" title="架构层面"></a>架构层面</h1><h1 id="运维层面"><a href="#运维层面" class="headerlink" title="运维层面"></a>运维层面</h1><p>安全问题</p>
 <ul>
 <li>用户密码被盗取</li>
 <li>用户身份被盗用</li>
@@ -73,7 +73,8 @@
 </li>
 <li>‘unsafe-inline’ 页面内容 ‘unsafe-eval’ eval 函数 ‘none’ 页面任何内容不执行</li>
 <li>nonce-<base64-value>  <hash-source> hash 相同才会执行</hash-source></base64-value></li>
-<li>‘strict-dynamic’ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ctx.set(`Connect-Security-Policy:`, `default-src &apos;self&apos;`)</div></pre></td></tr></table></figure>
+<li><p>‘strict-dynamic’ </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ctx.set(`Connect-Security-Policy:`, `default-src &apos;self&apos;`)</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h1 id="csrf-跨站请求伪造-Cross-Site-Request-Forgy"><a href="#csrf-跨站请求伪造-Cross-Site-Request-Forgy" class="headerlink" title="csrf 跨站请求伪造 Cross Site Request Forgy"></a>csrf 跨站请求伪造 Cross Site Request Forgy</h1><ul>
@@ -82,17 +83,18 @@
 <li>完成业务请求</li>
 <li>盗取资金</li>
 <li>冒充发帖评论等…</li>
-<li>毁坏网站声誉<br>…<h2 id="防御"><a href="#防御" class="headerlink" title="防御"></a>防御</h2></li>
+<li><p>毁坏网站声誉<br>…</p>
+<h2 id="防御"><a href="#防御" class="headerlink" title="防御"></a>防御</h2></li>
 <li>禁止第三方网站的 cookies -&gt;     sampsite-strict(添加到cookies) 只有 chrome 和 opera 支持</li>
 <li>验证码 / token </li>
-<li>referer<h1 id="cookies"><a href="#cookies" class="headerlink" title="cookies"></a>cookies</h1><ul>
+<li>referer</li>
+</ul>
+<h1 id="cookies"><a href="#cookies" class="headerlink" title="cookies"></a>cookies</h1><ul>
 <li>前端数据储存</li>
 <li>后端通过 http 头设置</li>
 <li>请求时通过 HTTP 头传给后端</li>
 <li>前端可读写</li>
 <li>遵守同源策略</li>
-</ul>
-</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var cookies = document.cookies</div><div class="line">cookies = &quot;userId=&apos;123&apos;&quot;</div></pre></td></tr></table></figure>
 <ul>
@@ -112,7 +114,9 @@
 <li>SessionId </li>
 </ul>
 </li>
-<li>储存其他业务数据<h2 id="安全策略"><a href="#安全策略" class="headerlink" title="安全策略"></a>安全策略</h2></li>
+<li>储存其他业务数据</li>
+</ul>
+<h2 id="安全策略"><a href="#安全策略" class="headerlink" title="安全策略"></a>安全策略</h2><ul>
 <li>签名防篡改 -&gt; 不可逆</li>
 <li>加密-私有变换 -&gt; 可逆</li>
 <li>http-only =&gt; XSS</li>
@@ -120,24 +124,26 @@
 <li>same-site =&gt; CSRF </li>
 </ul>
 <h1 id="点击劫持"><a href="#点击劫持" class="headerlink" title="点击劫持"></a>点击劫持</h1><ul>
-<li>iframe 内嵌 -&gt; opacity: 0<h2 id="防御-1"><a href="#防御-1" class="headerlink" title="防御"></a>防御</h2></li>
+<li>iframe 内嵌 -&gt; opacity: 0</li>
+</ul>
+<h2 id="防御-1"><a href="#防御-1" class="headerlink" title="防御"></a>防御</h2><ul>
 <li><p>JavaScript 禁止内嵌</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if (top.location != window.location) &#123;</div><div class="line">    top.location = window.location;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>如果禁止了 JavaScript =&gt; X-FRAME-OPTIONS</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// SAME-ROIGIN 同一个网站</div><div class="line">// SAMEORIGIN 同一个域</div><div class="line">// ALLOW-FROM 只能网站内嵌</div><div class="line">// DENY 不允许内嵌</div><div class="line">ctx.set(&apos;X-FRAME-OPTIONS&apos;, &apos;DENY&apos;)</div></pre></td></tr></table></figure>
 </li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// SAME-ROIGIN 同一个网站</div><div class="line">// SAMEORIGIN 同一个域</div><div class="line">// ALLOW-FROM 只能网站内嵌</div><div class="line">// DENY 不允许内嵌</div><div class="line">ctx.set(&apos;X-FRAME-OPTIONS&apos;, &apos;DENY&apos;)</div></pre></td></tr></table></figure>
 <h1 id="传输安全"><a href="#传输安全" class="headerlink" title="传输安全"></a>传输安全</h1><h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><ul>
 <li>插入广告</li>
 <li>重定向广告</li>
-<li>无法防御 XSS / CSRF<h2 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h2><ul>
+<li>无法防御 XSS / CSRF</li>
+</ul>
+<h2 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h2><ul>
 <li>证书不被伪造</li>
 <li>证书私钥不被泄露</li>
 <li>域名管理权不被泄露</li>
 <li>CA 坚守原则</li>
-</ul>
-</li>
 </ul>
 <h1 id="用户密码安全"><a href="#用户密码安全" class="headerlink" title="用户密码安全"></a>用户密码安全</h1><ul>
 <li>密码的作用 =&gt; 比对，只有用户知道 <ul>
@@ -162,33 +168,69 @@
 </ul>
 </li>
 <li>密码的替代</li>
-<li>生物特征密码的问题<ol>
+<li><p>生物特征密码的问题</p>
+<ol>
 <li>指纹 唇纹 人脸 虹膜 声控 …</li>
 </ol>
 <ul>
 <li>方便</li>
 <li>容易泄露</li>
-<li>相似性 - 碰撞<h1 id="SQL-注入"><a href="#SQL-注入" class="headerlink" title="SQL 注入"></a>SQL 注入</h1><h2 id="关系型数据库"><a href="#关系型数据库" class="headerlink" title="关系型数据库"></a>关系型数据库</h2></li>
+<li>相似性 - 碰撞</li>
 </ul>
 </li>
+</ul>
+<h1 id="SQL-注入"><a href="#SQL-注入" class="headerlink" title="SQL 注入"></a>SQL 注入</h1><h2 id="关系型数据库"><a href="#关系型数据库" class="headerlink" title="关系型数据库"></a>关系型数据库</h2><ul>
 <li>存放结构化数据</li>
 <li>可高效操作大量数据</li>
 <li>方便处理数据库之间的关系</li>
-<li>常见：access / sqlite / mySql / msSql Server<h2 id="防御-2"><a href="#防御-2" class="headerlink" title="防御"></a>防御</h2></li>
+<li>常见：access / sqlite / mySql / msSql Server</li>
+</ul>
+<h2 id="防御-2"><a href="#防御-2" class="headerlink" title="防御"></a>防御</h2><ul>
 <li>关闭错误输出</li>
 <li>检查数据类型</li>
 <li>数据进行转义</li>
 <li>参数化查询</li>
-<li>ORM 对象关系映射<h2 id="NoSql"><a href="#NoSql" class="headerlink" title="NoSql"></a>NoSql</h2></li>
+<li>ORM 对象关系映射</li>
+</ul>
+<h2 id="NoSql"><a href="#NoSql" class="headerlink" title="NoSql"></a>NoSql</h2><ul>
 <li>检查数据类型    </li>
 <li>类型转换</li>
-<li>写完整的条件<h1 id="信息泄露"><a href="#信息泄露" class="headerlink" title="信息泄露"></a>信息泄露</h1></li>
+<li>写完整的条件</li>
+</ul>
+<h2 id="上传问题"><a href="#上传问题" class="headerlink" title="上传问题"></a>上传问题</h2><ul>
+<li>限制上传后缀</li>
+<li>文件类型MIME检查 type：image / png …</li>
+<li>文件头检查</li>
+<li>程序输出</li>
+<li>权限互斥 =&gt; 可写与可执行互斥</li>
+</ul>
+<h1 id="信息泄露"><a href="#信息泄露" class="headerlink" title="信息泄露"></a>信息泄露</h1><ul>
+<li>错误信息失控</li>
+<li>SQL 注入</li>
+<li>水平权限控=控制不当 -&gt; a 控制 b</li>
+<li>xss / csrf<br>…</li>
+</ul>
+<h2 id="OAuth-思想"><a href="#OAuth-思想" class="headerlink" title="OAuth 思想"></a>OAuth 思想</h2><ul>
+<li>用户授权</li>
+<li>授权行为不泄露敏感信息</li>
+<li><p>授权会过期</p>
+</li>
+<li><p>不允许批量读取数据</p>
+</li>
+</ul>
+<h1 id="拒绝服务-DOS-攻击"><a href="#拒绝服务-DOS-攻击" class="headerlink" title="拒绝服务 DOS 攻击"></a>拒绝服务 DOS 攻击</h1><ul>
+<li>模拟正常用户</li>
+<li>大量占用服务器资源</li>
+</ul>
+<h1 id="重放攻击"><a href="#重放攻击" class="headerlink" title="重放攻击"></a>重放攻击</h1><ul>
+<li>请求被窃听或记录</li>
+<li>再次发出请求 =&gt; 多次消费 / 登陆态被盗取 / 多次抽奖 / 投票…</li>
 </ul>
 ]]></content>
     
     <summary type="html">
     
-      &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/as
+      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/as
     
     </summary>
     
@@ -1576,37 +1618,15 @@
   </entry>
   
   <entry>
-    <title>前端性能优化</title>
-    <link href="http:%5C%5Chexin.life/2017/07/11/title-16/"/>
-    <id>http:\\hexin.life/2017/07/11/title-16/</id>
-    <published>2017-07-11T13:32:07.000Z</published>
-    <updated>2017-08-09T14:07:43.186Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script>]]></content>
-    
-    <summary type="html">
-    
-      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/as
-    
-    </summary>
-    
-      <category term="前端" scheme="http:%5C%5Chexin.life/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="面试前夕" scheme="http:%5C%5Chexin.life/tags/%E9%9D%A2%E8%AF%95%E5%89%8D%E5%A4%95/"/>
-    
-  </entry>
-  
-  <entry>
     <title>盒模型 行内元素及块级元素区别</title>
     <link href="http:%5C%5Chexin.life/2017/07/11/title-15/"/>
     <id>http:\\hexin.life/2017/07/11/title-15/</id>
     <published>2017-07-11T13:30:56.000Z</published>
-    <updated>2017-07-13T07:43:24.216Z</updated>
+    <updated>2017-09-09T08:25:55.464Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><h1 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h1><p><img src="https://developer.mozilla.org/files/72/boxmodel%20(1" alt="">.png)</p>
 <p>在一个文档中，每个元素都被表示为一个矩形的盒子。确定这些盒子的尺寸, 属性 — 像它的颜色，背景，边框方面 — 和位置是渲染引擎的目标。</p>
-<p>在CSS中，使用标准盒模型描述这些矩形盒子中的每一个。这个模型描述了元素所占空间的内容。每个盒子有四个边：外边距边, 边框边, 内填充边 与 内容边。 </p>
+<p>在CSS中，使用标准盒模型描述这些矩形盒子中的每一个。这个模型描述了元素所占空间的内容。每个盒子有四个边：外边距边, 边框边, 内填充边 与 内容边。</p>
 <h2 id="盒模型-1"><a href="#盒模型-1" class="headerlink" title="盒模型"></a>盒模型</h2><p><img src="http://www.runoob.com/images/box-model.gif" alt=""></p>
 <ul>
 <li><p>内容区域content area 是包含元素真实内容的区域。它通常包含背景、颜色或者图片等，位于内容边界的内部，它的大小为内容宽度 或 content-box宽及内容高度或content-box高。</p>
@@ -1645,6 +1665,51 @@
 </li>
 </ul>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">*, *<span class="selector-pseudo">:before</span>, *<span class="selector-pseudo">:after</span> &#123;</div><div class="line">  <span class="attribute">-moz-box-sizing</span>: border-box;</div><div class="line">  <span class="attribute">-webkit-box-sizing</span>: border-box;</div><div class="line">  <span class="attribute">box-sizing</span>: border-box;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="box-sizing"><a href="#box-sizing" class="headerlink" title="box-sizing"></a>box-sizing</h2><h2 id="标准模型-IE-模型及区别"><a href="#标准模型-IE-模型及区别" class="headerlink" title="标准模型 + IE 模型及区别"></a>标准模型 + IE 模型及区别</h2><p> 标准模型<br> <img src="http://or3233yyd.bkt.clouddn.com//17-8-22/63670011.jpg" alt=""></p>
+<p> 只有 content 的宽高</p>
+<p> IE 模型<br> <img src="http://or3233yyd.bkt.clouddn.com//17-8-22/66702568.jpg" alt=""></p>
+<p> 包含了 border 和 padding 的宽高</p>
+<h2 id="CSS-如何设置这俩种模型"><a href="#CSS-如何设置这俩种模型" class="headerlink" title="CSS 如何设置这俩种模型"></a>CSS 如何设置这俩种模型</h2><p>  box-sizing: content-box  浏览器默认<br>  box-sizing: border-box</p>
+<ul>
+<li>content-box<br>默认值，标准盒子模型。 width 与 height 只包括内容的宽和高， 不包括边框（border），内边距（padding），外边距（margin）。注意: 内边距, 边框 &amp; 外边距 都在这个盒子的外部。 比如. 如果 .box {width: 350px}; 而且 {border: 10px solid black;} 那么在浏览器中的渲染的实际宽度将是370px;</li>
+</ul>
+<blockquote>
+<p>尺寸计算公式：width = 内容的宽度，height = 内容的高度。宽度和高度都不包含内容的边框（border）和内边距（padding）。</p>
+</blockquote>
+<ul>
+<li>border-box<br>width 和 height 属性包括内容，内边距和边框，但不包括外边距。这是当文档处于Quirks模式时InternetExplorer使用的盒模型。注意，填充和边框将在盒子内 , 例如, .box {width: 350px; border:10pxsolidblack;}导致在浏览器中呈现的宽度为350px的盒子。内容框不能为负，并且被分配到0，使得不可能使用border-box使元素消失。</li>
+</ul>
+<blockquote>
+<p>这里的维度计算为：<br>width = border + padding + 内容的  width，<br>height = border + padding + 内容的 height。</p>
+</blockquote>
+<h2 id="JS获取这俩种模型对应的宽和高"><a href="#JS获取这俩种模型对应的宽和高" class="headerlink" title="JS获取这俩种模型对应的宽和高"></a>JS获取这俩种模型对应的宽和高</h2><ul>
+<li>dom.style.width/height         =&gt; 只能取出内联样式的宽高</li>
+<li>dom.currentStyle.width/height  =&gt; 渲染以后的样式    IE…</li>
+<li>window.getComputedStyle(btn).height  =&gt; FireFox chrome…</li>
+<li><p>dom.getBoundingClientRect()    =&gt; 可获得x, y, top, bottom, left, right, height, width 六个属性<br>根据视窗(viewport)计算元素的绝对位置</p>
+<h2 id="根据盒模型解释边距重叠"><a href="#根据盒模型解释边距重叠" class="headerlink" title="根据盒模型解释边距重叠"></a>根据盒模型解释边距重叠</h2><p>发生外边距塌陷的三种基本情况:</p>
+<h3 id="相邻的兄弟姐妹元素"><a href="#相邻的兄弟姐妹元素" class="headerlink" title="相邻的兄弟姐妹元素"></a>相邻的兄弟姐妹元素</h3><p>毗邻的两个兄弟元素之间的外边距会塌陷（除非后者兄弟姐妹需要清除过去的浮动）。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;p style=&quot;margin-bottom: 30px;&quot;&gt;这个段落的下外边距被合并...&lt;/p&gt;</div><div class="line">&lt;p style=&quot;margin-top: 20px;&quot;&gt;...这个段落的上外边距被合并。&lt;/p&gt;</div></pre></td></tr></table></figure>
+<p>可以发现这两个段落中间的距离，不是 ”上面段落的下边距“ 与 ”下面段落的上边距“ 的 求和 ，而是两者中的较大者（在此示例中为30px）。</p>
+<h3 id="块级父元素与其第一个-最后一个子元素"><a href="#块级父元素与其第一个-最后一个子元素" class="headerlink" title="块级父元素与其第一个/最后一个子元素"></a>块级父元素与其第一个/最后一个子元素</h3><p>如果块级父元素中，不存在上边框、上内边距、内联元素、清除浮动这四条属性（也可以说，当上边框宽度及上内边距距离为0时），那么这个 块级元素和其第一个子元素的上边距就可以说”挨到了一起“。此时这个块级父元素和其第一个子元素就会发生上外边距合并现象，换句话说，此 时这个父元素对外展现出来的外边距将直接变成这个父元素和其第一个子元素的margin-top的较大者。<br>类似的，若块级父元素的 margin-bottom 与它的最后一个子元素的margin-bottom 之间没有父元素的 border、padding、inline  content、height、min-height、 max-height 分隔时，就会发生 下外边距合并 现象。</p>
+<h3 id="空块元素"><a href="#空块元素" class="headerlink" title="空块元素"></a>空块元素</h3><p>如果存在一个空的块级元素，其 border、padding、inline、content、height、min-height都不存在。那么此时它的上下边距中间将没有任何阻隔，此时它的上下外边距将会合并。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;p style=&quot;margin-bottom: 0px;&quot;&gt;这个段落的和下面段落的距离将为20px&lt;/p&gt;</div><div class="line">&lt;div style=&quot;margin-top: 20px; margin-bottom: 20px;&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;p style=&quot;margin-top: 0px;&quot;&gt;这个段落的和上面段落的距离将为20px&lt;/p&gt;</div></pre></td></tr></table></figure>
+<p>当以上情形同时出现时，外边距合并会更加复杂（会比较两个以上外边距来最终计算出真实的边距值）。</p>
+<p>即使外边距为0，这些规则也仍旧生效。因此，无论父元素的外边距是否为0，第一个或者最后一个子元素的外边距会被父元素的外边距”截断”( 根据上面的规则)，在负外边距的情况下，合并后的外边距为最大正外边距与最小负外边距之和。</p>
+<p>当有负边距存在时，合并后的外边距将是最大正边距加上最小负边距（即负边距中绝对值最大的一个）。</p>
+<p>如两个兄弟元素，上面的元素的下边距为 20px ，下面的元素的上边距为 -20px ，那么发生外边距合并后，这两个元素的实际距离将变成 0px  。</p>
+</li>
+</ul>
+<p>BFC会阻止元素外边距合并。</p>
+<h2 id="BFC-IFC-gt-块级格式化上下文-内联元素的格式化上下文"><a href="#BFC-IFC-gt-块级格式化上下文-内联元素的格式化上下文" class="headerlink" title="BFC / IFC  =&gt; 块级格式化上下文 / 内联元素的格式化上下文"></a>BFC / IFC  =&gt; 块级格式化上下文 / 内联元素的格式化上下文</h2><h3 id="BFC-原理：-渲染原理"><a href="#BFC-原理：-渲染原理" class="headerlink" title="BFC 原理：(渲染原理)"></a>BFC 原理：(渲染原理)</h3><p>  BFC 元素的垂直方向的边距会发生重叠<br>  BFC 这个元素不会与浮动元素的 box 重叠，清除浮动<br>  独立的容器，外面元素和里面元素互不影响<br>  计算 BFC 高度时，浮动元素也会参与计算</p>
+<h3 id="如何创建-BFC"><a href="#如何创建-BFC" class="headerlink" title="如何创建 BFC"></a>如何创建 BFC</h3><ul>
+<li>设置浮动</li>
+<li>position 值不为 static relative</li>
+<li>display table / table-cell / table-caction</li>
+<li><p>overflow hidden auto</p>
+<h2 id="BFC-使用场景"><a href="#BFC-使用场景" class="headerlink" title="BFC 使用场景"></a>BFC 使用场景</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div></pre></td><td class="code"><pre><div class="line">&lt;!-- BFC 垂直方向边距重叠 --&gt;</div><div class="line"> &lt;section id=&quot;sec&quot;&gt;</div><div class="line"> &lt;style&gt;</div><div class="line"> html,body&#123;</div><div class="line">   padding: 0;</div><div class="line">   margin: 0;</div><div class="line"> &#125;</div><div class="line"> #sec&#123;</div><div class="line">   background: yellow;</div><div class="line">   /* 增加 overflow: hidden 解决边距重叠*/</div><div class="line">   overflow: hidden;</div><div class="line"> &#125;</div><div class="line"> .child&#123;</div><div class="line">   height: 100px;</div><div class="line">   margin-top: 10px;</div><div class="line">   background: #f00;</div><div class="line"> &#125;</div><div class="line"> &lt;/style&gt;</div><div class="line">   &lt;article class=&quot;child&quot;&gt;</div><div class="line"></div><div class="line">   &lt;/article&gt;</div><div class="line"> &lt;/section&gt;</div><div class="line"></div><div class="line"> &lt;!-- BFC 垂直方向边距重叠 --&gt;</div><div class="line"> &lt;section id=&quot;margin&quot;&gt;</div><div class="line"> &lt;style&gt;</div><div class="line">   #margin &#123;</div><div class="line">     background: pink;</div><div class="line">     overflow: hidden;</div><div class="line">   &#125;</div><div class="line">   #margin&gt;p &#123;</div><div class="line">     margin: 5px auto 25px;</div><div class="line">     background: red;</div><div class="line">   &#125;</div><div class="line"> &lt;/style&gt;</div><div class="line">   &lt;p&gt;1&lt;/p&gt;</div><div class="line">   &lt;!-- 增加父级元素设置 overflow 建立 BFC 取消边距重叠 --&gt;</div><div class="line">   &lt;div style=&quot;overflow: hidden;&quot;&gt;</div><div class="line">     &lt;p&gt;2&lt;/p&gt;</div><div class="line">   &lt;/div&gt;</div><div class="line">   &lt;p&gt;3&lt;/p&gt;</div><div class="line"> &lt;/section&gt;</div><div class="line"></div><div class="line"> &lt;!-- BFC 不与浮动元素重叠 --&gt;</div><div class="line"> &lt;section id=&quot;layout&quot;&gt;</div><div class="line"> &lt;style&gt;</div><div class="line">   #layout &#123;</div><div class="line">     margin-top: 20px;</div><div class="line">     background: green;</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   #layout .left &#123;</div><div class="line">     float: left;</div><div class="line">     width: 100px;</div><div class="line">     height: 100px;</div><div class="line">     background: pink;</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   #layout .right &#123;</div><div class="line">     height: 110px;</div><div class="line">     background: blue;</div><div class="line">     /* 增加 overflow: auto; .left 重叠消失 */</div><div class="line">     overflow: auto;</div><div class="line">   &#125;</div><div class="line"> &lt;/style&gt;</div><div class="line">   &lt;div class=&quot;left&quot;&gt;&lt;/div&gt;</div><div class="line">   &lt;div class=&quot;right&quot;&gt;&lt;/div&gt;</div><div class="line"> &lt;/section&gt;</div><div class="line"></div><div class="line"> &lt;!-- BFC 子元素即使是 float 也会参与高度计算 --&gt;</div><div class="line"> &lt;section id=&quot;float&quot;&gt;</div><div class="line"> &lt;style&gt;</div><div class="line">   #float &#123;</div><div class="line">     margin-top: 20px;</div><div class="line">     background: blue;</div><div class="line">     /* 设置浮动 非none / overflow: auto / hidden，父级元素高度参与计算，原为 0 */</div><div class="line">     float: left;</div><div class="line">     /*overflow: hidden;*/</div><div class="line">     /*overflow: auto;*/</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   #float .float &#123;</div><div class="line">     float: left;;</div><div class="line">     font-size: 30px;</div><div class="line">   &#125;</div><div class="line"> &lt;/style&gt;</div><div class="line">   &lt;div class=&quot;float&quot;&gt;</div><div class="line">     我是浮动元素</div><div class="line">   &lt;/div&gt;</div><div class="line"> &lt;/section&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
 <h2 id="浏览器的兼容性问题"><a href="#浏览器的兼容性问题" class="headerlink" title="浏览器的兼容性问题"></a>浏览器的兼容性问题</h2><ul>
 <li>一旦为页面设置了恰当的 DTD，大多数浏览器都会按照上面的图示来呈现内容。然而 IE 5 和 6 的呈现却是不正确的。根据 W3C 的规范，元素内容占据的空间是由 width 属性设置的，而内容周围的 padding 和 border 值是另外计算的。不幸的是，IE5.X 和 6 在怪异模式中使用自己的非标准模型。这些浏览器的 width 属性不是内容的宽度，而是内容、内边距和边框的宽度的总和。</li>
 </ul>
@@ -1671,15 +1736,16 @@
 </ul>
 </li>
 </ol>
-<blockquote>
+<p>&gt;</p>
 <ul>
 <li>设置宽度width 无效。</li>
 <li>设置高度height 无效，可以通过 <a href="http://www.zhangxinxu.com/wordpress/2009/11/css%E8%A1%8C%E9%AB%98line-height%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%8F%8A%E5%BA%94%E7%94%A8/" target="_blank" rel="external">line-height</a> 来设置。</li>
 <li>设置 margin 只有左右 margin 有效，上下无效。</li>
-<li>设置 padding 只有左右 padding 有效，上下则无效。<em>注意元素范围是增大了，但是对元素周围的内容是没影响的.</em></li>
+<li><p>设置 padding 只有左右 padding 有效，上下则无效。<em>注意元素范围是增大了，但是对元素周围的内容是没影响的.</em></p>
+<p>如果你要将行内元素变成块级元素，那么就只需要在该标签上加上样式</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">display</span><span class="selector-pseudo">:block</span>;</div></pre></td></tr></table></figure>
+</li>
 </ul>
-</blockquote>
-<p> 如果你要将行内元素变成块级元素，那么就只需要在该标签上加上样式<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">display</span><span class="selector-pseudo">:block</span>;</div></pre></td></tr></table></figure></p>
 <p>块级元素可以用样式控制其高、宽的值。</p>
 <h4 id="若既想让元素在行内显示，又能设置宽高"><a href="#若既想让元素在行内显示，又能设置宽高" class="headerlink" title="若既想让元素在行内显示，又能设置宽高"></a>若既想让元素在行内显示，又能设置宽高</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">display</span>: <span class="selector-tag">inline-block</span></div></pre></td></tr></table></figure>
 <p>行内元素不可以控制宽和高，除非你想将它转变成为块级元素。它的宽和高，是随标签里的内容而变化。</p>
@@ -1706,30 +1772,30 @@
 </ol>
 <ul>
 <li>article [HTML5] 文章内容。</li>
-<li>aside [HTML5] 伴随内容。 </li>
-<li>audio [HTML5] 音频播放。 </li>
+<li>aside [HTML5] 伴随内容。</li>
+<li>audio [HTML5] 音频播放。</li>
 <li>blockquote 块引用。</li>
-<li>canvas [HTML5] 绘制图形。 </li>
-<li>dd 定义列表中定义条目描述。 </li>
-<li>div 文档分区。 </li>
-<li>dl 定义列表。 </li>
-<li>fieldset 表单元素分组。 </li>
-<li>figcaption [HTML5] 图文信息组标题 </li>
-<li>figure [HTML5] 图文信息组 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/figcaption" target="_blank" rel="external">(参照 figcaption)</a>。 </li>
-<li>footer [HTML5] 区段尾或页尾。 </li>
-<li>form 表单。 </li>
-<li>h1, h2, h3, h4, h5, h6 标题级别 1-6. </li>
-<li>header [HTML5] 区段头或页头。 </li>
-<li>hgroup [HTML5] 标题组。 </li>
-<li>hr 水平分割线。 </li>
-<li>noscript 不支持脚本或禁用脚本时显示的内容。 </li>
+<li>canvas [HTML5] 绘制图形。</li>
+<li>dd 定义列表中定义条目描述。</li>
+<li>div 文档分区。</li>
+<li>dl 定义列表。</li>
+<li>fieldset 表单元素分组。</li>
+<li>figcaption [HTML5] 图文信息组标题</li>
+<li>figure [HTML5] 图文信息组 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/figcaption" target="_blank" rel="external">(参照 figcaption)</a>。</li>
+<li>footer [HTML5] 区段尾或页尾。</li>
+<li>form 表单。</li>
+<li>h1, h2, h3, h4, h5, h6 标题级别 1-6.</li>
+<li>header [HTML5] 区段头或页头。</li>
+<li>hgroup [HTML5] 标题组。</li>
+<li>hr 水平分割线。</li>
+<li>noscript 不支持脚本或禁用脚本时显示的内容。</li>
 <li>ol 有序列表。</li>
-<li>output [HTML5] 表单输出。 </li>
-<li>p 行。 pre 预格式化文本。 </li>
-<li>section [HTML5] 一个页面区段。 </li>
-<li>table 表格。 </li>
-<li>tfoot 表脚注。 </li>
-<li>ul 无序列表。 </li>
+<li>output [HTML5] 表单输出。</li>
+<li>p 行。 pre 预格式化文本。</li>
+<li>section [HTML5] 一个页面区段。</li>
+<li>table 表格。</li>
+<li>tfoot 表脚注。</li>
+<li>ul 无序列表。</li>
 <li><p>video [HTML5] 视频。</p>
 <h2 id="可变元素"><a href="#可变元素" class="headerlink" title="可变元素"></a>可变元素</h2><blockquote>
 <p>可变元素为根据上下文语境决定该元素为块元素或者内联元素。</p>
@@ -2418,6 +2484,76 @@ D:. public/
     
     
       <category term="转载" scheme="http:%5C%5Chexin.life/tags/%E8%BD%AC%E8%BD%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS学习笔记(Placeholder及CSS_hack)</title>
+    <link href="http:%5C%5Chexin.life/2017/03/31/title-2/"/>
+    <id>http:\\hexin.life/2017/03/31/title-2/</id>
+    <published>2017-03-31T15:09:45.000Z</published>
+    <updated>2017-04-15T05:39:55.256Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><p><blockquote class="blockquote-center">相信你所相信的，坚持你所坚持的</blockquote></p>
+<h1 id="IE8以下图片出现蓝色边框"><a href="#IE8以下图片出现蓝色边框" class="headerlink" title="IE8以下图片出现蓝色边框"></a>IE8以下图片出现蓝色边框</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">img&#123;</div><div class="line">        <span class="attr">border</span>:<span class="number">0</span>;  <span class="comment">/*或者border:none;*/</span></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h1 id="如何使文本以大写字母开头？"><a href="#如何使文本以大写字母开头？" class="headerlink" title="如何使文本以大写字母开头？"></a>如何使文本以大写字母开头？</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">text-transform:capitalize;</div></pre></td></tr></table></figure>
+<h1 id="强制设置以最新版本IE渲染"><a href="#强制设置以最新版本IE渲染" class="headerlink" title="强制设置以最新版本IE渲染"></a>强制设置以最新版本IE渲染</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge"</span> /&gt;</div><div class="line">    <span class="comment">//我写的页面在IE8之下全部乱掉了，用这个强制用最新版本的IE渲染</span></div></pre></td></tr></table></figure>
+<h1 id="chrome浏览器点击input框时出现边框"><a href="#chrome浏览器点击input框时出现边框" class="headerlink" title="chrome浏览器点击input框时出现边框"></a>chrome浏览器点击input框时出现边框</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//虽然我觉得还挺好看的--! </span></div><div class="line">input&#123;    <span class="attr">outline</span>:none; <span class="comment">//outline:0;    &#125;</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
+<hr>
+<h1 id="IE8及以下不支持Placeholder解决方案（基于JQ）"><a href="#IE8及以下不支持Placeholder解决方案（基于JQ）" class="headerlink" title="IE8及以下不支持Placeholder解决方案（基于JQ）"></a><a href="http://www.cnblogs.com/digdeep/p/4424487.html" target="_blank" rel="external">IE8及以下不支持Placeholder解决方案</a>（基于JQ）</h1><pre><code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">&lt;!doctype html&gt;</div><div class="line">    &lt;html&gt;</div><div class="line">    &lt;header&gt;</div><div class="line">    &lt;meta charset="utf-8"&gt;</div><div class="line">    &lt;title&gt;&lt;/title&gt;</div><div class="line">    &lt;style type="text/css"&gt;</div><div class="line">         *&#123;margin:0;padding:0;&#125;</div><div class="line">        form &#123;margin:50px;&#125;</div><div class="line">        input &#123;display:block;margin:0 0 6px 0;&#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">    &lt;/header&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">        &lt;form&gt;</div><div class="line">            用户名：&lt;input name="name" placeholder="请输入用户名"/&gt;</div><div class="line">            密码：&lt;input name="password" placeholder="请输入登陆密码"/&gt;</div><div class="line">        &lt;/form&gt;</div><div class="line">            &lt;script type="text/javascript" src="jquery-1.11.1.min.js"&gt;&lt;/script&gt;</div><div class="line">            &lt;script type="text/javascript"&gt;</div><div class="line">            $(function()&#123;</div><div class="line">                function placeholderSupport() &#123;    // 判断浏览器是否支持 placeholder</div><div class="line">                    return 'placeholder' in document.createElement('input');</div><div class="line">                &#125;</div><div class="line">                </div><div class="line">                if(!placeholderSupport())&#123;</div><div class="line">                    $(document).on('focus', '[placeholder]',function() &#123;</div><div class="line">                        var input = $(this);</div><div class="line">                        if (input.val() == input.attr('placeholder')) &#123;</div><div class="line">                            input.val('');</div><div class="line">                            input.removeClass('placeholder');</div><div class="line">                        &#125;</div><div class="line">                    &#125;);</div><div class="line">                    $(document).on('blur', '[placeholder]',function() &#123;</div><div class="line">                        var input = $(this);</div><div class="line">                        if (input.val() == '' || input.val() == input.attr('placeholder')) &#123;</div><div class="line">                            input.addClass('placeholder');</div><div class="line">                            input.val(input.attr('placeholder'));</div><div class="line">                        &#125;</div><div class="line">                    &#125;);</div><div class="line">                    $('[placeholder]').blur();</div><div class="line">                &#125;;</div><div class="line">            &#125;);</div><div class="line">    &lt;/script&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">    &lt;/html&gt;</div></pre></td></tr></table></figure>
+</code></pre><hr>
+<h1 id="常见CSS-hack"><a href="#常见CSS-hack" class="headerlink" title="常见CSS hack"></a>常见<a href="http://baike.baidu.com/item/css%20hack" target="_blank" rel="external">CSS hack</a></h1><p><em>不管是什么方法，书写的顺序都是Firefox的写在前面，IE7的写在中间，IE6的写在最后</em><br><strong>（1）方式一 条件注释法</strong></p>
+<p> <em>只在IE下生效</em></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[<span class="keyword">if</span> IE]&gt;</div><div class="line">    这段文字只在IE浏览器显示</div><div class="line">    &lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+<p><em>只在IE6下生效</em></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[<span class="keyword">if</span> IE <span class="number">6</span>]&gt;</div><div class="line">    这段文字只在IE6浏览器显示</div><div class="line">    &lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+<p><em>只在IE6以上版本生效</em></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[<span class="keyword">if</span> gte IE <span class="number">6</span>]&gt;</div><div class="line">    这段文字只在IE6以上(包括)版本IE浏览器显示</div><div class="line">    &lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+<p><em>只在IE8上不生效</em></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[<span class="keyword">if</span> ! IE <span class="number">8</span>]&gt;</div><div class="line">    这段文字在非IE8浏览器显示</div><div class="line">    &lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+<p><em>非IE浏览器生效</em></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[<span class="keyword">if</span> !IE]&gt;</div><div class="line">    这段文字只在非IE浏览器显示</div><div class="line">    &lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+<p><strong>（2）方式二 类内属性前缀法</strong></p>
+<p>在标准模式中：</p>
+<ul>
+<li>“-″减号是IE6专有的hack</li>
+<li>“\9″ IE6/IE7/IE8/IE9/IE10都生效</li>
+<li>“\0″ IE8/IE9/IE10都生效，是IE8/9/10的hack</li>
+<li>“\9\0″ 只对IE9/IE10生效，是IE9/10的hack</li>
+</ul>
+<ul>
+<li>IE6能识别 *，但不能识别 !important</li>
+<li>IE7能识别 *，也能识别!important</li>
+<li>FF不能识别 *，但能识别!important,下划线_</li>
+<li>IE6支持下划线</li>
+<li>IE7和firefox均不支持下划线</li>
+</ul>
+<p><strong>（3）CSS hack方式三：选择器前缀法</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">*html     <span class="comment">//*前缀只对IE6生效</span></div><div class="line">    *+html    <span class="comment">//*+前缀只对IE7生效 </span></div><div class="line">    @media screen\<span class="number">9</span>&#123;...&#125;    <span class="comment">//只对IE6/7生效</span></div><div class="line">    @media \<span class="number">0</span>screen &#123;body &#123; <span class="attr">background</span>: red; &#125;&#125;    <span class="comment">//只对IE8有效</span></div><div class="line">    @media \<span class="number">0</span>screen\,screen\<span class="number">9</span>&#123;body &#123; <span class="attr">background</span>: blue; &#125;&#125;    <span class="comment">//只对IE6/7/8有效</span></div><div class="line">    @media screen\<span class="number">0</span> &#123;body &#123; <span class="attr">background</span>: green; &#125;&#125;    <span class="comment">//只对IE8/9/10有效</span></div><div class="line">    @media screen and (min-width:<span class="number">0</span>\<span class="number">0</span>) &#123;body &#123; <span class="attr">background</span>: gray; &#125;&#125;     <span class="comment">//只对IE9/10有效</span></div><div class="line">    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) &#123;body &#123; <span class="attr">background</span>: orange; &#125;&#125;     <span class="comment">//只对IE10有效等等</span></div></pre></td></tr></table></figure>
+<p><strong>以: “ #demo {width:100px;} “为例;</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#demo &#123;width:100px;&#125; /*被FIREFOX,IE6,IE7执行.*/</div><div class="line">    *html #demo &#123;width:120px;&#125; /*会被IE6执行,之前的定义会被后来的覆盖,所以#demo的宽度在IE6就为120px; */</div><div class="line">    *+html #demo &#123;width:130px;&#125; /*会被IE7执行*/</div><div class="line">    所以最后,#demo的宽度在三个浏览器的解释为: FIREFOX:100px; ie6:120px; ie7:130px;</div></pre></td></tr></table></figure>
+<p><strong>IE8 最新css hack：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="string">"\9"</span>　例:<span class="string">"border:1px\9;"</span>    <span class="comment">//这里的"\9"可以区别所有IE和FireFox.（只针对IE9 Hack）</span></div><div class="line">        <span class="string">"\0"</span>　<span class="comment">//IE8识别，--&gt;IE6、IE7不能.</span></div><div class="line">        <span class="string">"*"</span>　<span class="comment">//IE6、IE7可以识别.--&gt;IE8、FireFox不能.</span></div><div class="line">        <span class="string">"_"</span>　<span class="comment">//IE6可以识别"_",--&gt;IE7、IE8、FireFox不能.</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>Placeholder源自网上资料，点击标题即进入原网址，本人新手，没怎么用过hack，从百度百科整理一部分，作为以后查询方便，如果有什么问题，希望大神多多指点。</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;blockquote class=&quot;blockquote-center&quot;&gt;相信你所相信的，坚持你所坚持的&lt;/blockquote&gt;&lt;/p&gt;
+&lt;h1 id=&quot;IE8以下图片出现蓝色边框&quot;&gt;&lt;a href=&quot;#IE8以下图片出现蓝色边框&quot; class=&quot;headerlink&quot; title=&quot;IE8以下图片出现蓝色边框&quot;&gt;&lt;/a&gt;IE8以下图片出现蓝色边框&lt;/h1&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;img&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;attr&quot;&gt;border&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;  &lt;span class=&quot;comment&quot;&gt;/*或者border:none;*/&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;如何使文本以大写字母开头？&quot;&gt;&lt;a href=&quot;#如何使文本以大写字母开头？&quot; class=&quot;headerlink&quot; title=&quot;如何使文本以大写字母开头？&quot;&gt;&lt;/a&gt;如何使文本以大写字母开头？&lt;/h1&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;text-transform:capitalize;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;强制设置以最新版本IE渲染&quot;&gt;&lt;a href=&quot;#强制设置以最新版本IE渲染&quot; class=&quot;headerlink&quot; title=&quot;强制设置以最新版本IE渲染&quot;&gt;&lt;/a&gt;强制设置以最新版本IE渲染&lt;/h1&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;meta http-equiv=&lt;span class=&quot;string&quot;&gt;&quot;X-UA-Compatible&quot;&lt;/span&gt; content=&lt;span class=&quot;string&quot;&gt;&quot;IE=edge&quot;&lt;/span&gt; /&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//我写的页面在IE8之下全部乱掉了，用这个强制用最新版本的IE渲染&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;chrome浏览器点击input框时出现边框&quot;&gt;&lt;a href=&quot;#chrome浏览器点击input框时出现边框&quot; class=&quot;headerlink&quot; title=&quot;chrome浏览器点击input框时出现边框&quot;&gt;&lt;/a&gt;chrome浏览器点击input框时出现边框&lt;/h1&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//虽然我觉得还挺好看的--! &lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;input&amp;#123;    &lt;span class=&quot;attr&quot;&gt;outline&lt;/span&gt;:none; &lt;span class=&quot;comment&quot;&gt;//outline:0;    &amp;#125;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http:%5C%5Chexin.life/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="CSS学习笔记" scheme="http:%5C%5Chexin.life/tags/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   

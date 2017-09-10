@@ -100,7 +100,7 @@
 <meta property="og:url" content="http:\\hexin.life/2017/09/02/title-26/index.html">
 <meta property="og:site_name" content="dayDream&#39;s blog">
 <meta property="og:description" content="代码层面架构层面运维层面安全问题  用户密码被盗取 用户身份被盗用 用户资料被盗取 网站数据库泄露  xss反射型 HTML 标签 alert(document.cookie) HTML 属性 -&amp;gt; &amp;lt;img class=’#{class}&amp;gt; =&amp;gt;  script  富文本 浏览器防御并不是所有浏览器都有防御功能浏览器只能防御出现的 script 标签和其他标签，不能防">
-<meta property="og:updated_time" content="2017-09-04T14:12:29.088Z">
+<meta property="og:updated_time" content="2017-09-06T12:02:44.687Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="web安全">
 <meta name="twitter:description" content="代码层面架构层面运维层面安全问题  用户密码被盗取 用户身份被盗用 用户资料被盗取 网站数据库泄露  xss反射型 HTML 标签 alert(document.cookie) HTML 属性 -&amp;gt; &amp;lt;img class=’#{class}&amp;gt; =&amp;gt;  script  富文本 浏览器防御并不是所有浏览器都有防御功能浏览器只能防御出现的 script 标签和其他标签，不能防">
@@ -405,7 +405,7 @@
       
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><h1 id="代码层面"><a href="#代码层面" class="headerlink" title="代码层面"></a>代码层面</h1><h1 id="架构层面"><a href="#架构层面" class="headerlink" title="架构层面"></a>架构层面</h1><h1 id="运维层面"><a href="#运维层面" class="headerlink" title="运维层面"></a>运维层面</h1><p>安全问题</p>
+        <link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><h1 id="代码层面"><a href="#代码层面" class="headerlink" title="代码层面"></a>代码层面</h1><h1 id="架构层面"><a href="#架构层面" class="headerlink" title="架构层面"></a>架构层面</h1><h1 id="运维层面"><a href="#运维层面" class="headerlink" title="运维层面"></a>运维层面</h1><p>安全问题</p>
 <ul>
 <li>用户密码被盗取</li>
 <li>用户身份被盗用</li>
@@ -456,7 +456,8 @@
 </li>
 <li>‘unsafe-inline’ 页面内容 ‘unsafe-eval’ eval 函数 ‘none’ 页面任何内容不执行</li>
 <li>nonce-<base64-value>  <hash-source> hash 相同才会执行</hash-source></base64-value></li>
-<li>‘strict-dynamic’ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ctx.set(`Connect-Security-Policy:`, `default-src &apos;self&apos;`)</div></pre></td></tr></table></figure>
+<li><p>‘strict-dynamic’ </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ctx.set(`Connect-Security-Policy:`, `default-src &apos;self&apos;`)</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h1 id="csrf-跨站请求伪造-Cross-Site-Request-Forgy"><a href="#csrf-跨站请求伪造-Cross-Site-Request-Forgy" class="headerlink" title="csrf 跨站请求伪造 Cross Site Request Forgy"></a>csrf 跨站请求伪造 Cross Site Request Forgy</h1><ul>
@@ -465,17 +466,18 @@
 <li>完成业务请求</li>
 <li>盗取资金</li>
 <li>冒充发帖评论等…</li>
-<li>毁坏网站声誉<br>…<h2 id="防御"><a href="#防御" class="headerlink" title="防御"></a>防御</h2></li>
+<li><p>毁坏网站声誉<br>…</p>
+<h2 id="防御"><a href="#防御" class="headerlink" title="防御"></a>防御</h2></li>
 <li>禁止第三方网站的 cookies -&gt;     sampsite-strict(添加到cookies) 只有 chrome 和 opera 支持</li>
 <li>验证码 / token </li>
-<li>referer<h1 id="cookies"><a href="#cookies" class="headerlink" title="cookies"></a>cookies</h1><ul>
+<li>referer</li>
+</ul>
+<h1 id="cookies"><a href="#cookies" class="headerlink" title="cookies"></a>cookies</h1><ul>
 <li>前端数据储存</li>
 <li>后端通过 http 头设置</li>
 <li>请求时通过 HTTP 头传给后端</li>
 <li>前端可读写</li>
 <li>遵守同源策略</li>
-</ul>
-</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var cookies = document.cookies</div><div class="line">cookies = &quot;userId=&apos;123&apos;&quot;</div></pre></td></tr></table></figure>
 <ul>
@@ -495,7 +497,9 @@
 <li>SessionId </li>
 </ul>
 </li>
-<li>储存其他业务数据<h2 id="安全策略"><a href="#安全策略" class="headerlink" title="安全策略"></a>安全策略</h2></li>
+<li>储存其他业务数据</li>
+</ul>
+<h2 id="安全策略"><a href="#安全策略" class="headerlink" title="安全策略"></a>安全策略</h2><ul>
 <li>签名防篡改 -&gt; 不可逆</li>
 <li>加密-私有变换 -&gt; 可逆</li>
 <li>http-only =&gt; XSS</li>
@@ -503,24 +507,26 @@
 <li>same-site =&gt; CSRF </li>
 </ul>
 <h1 id="点击劫持"><a href="#点击劫持" class="headerlink" title="点击劫持"></a>点击劫持</h1><ul>
-<li>iframe 内嵌 -&gt; opacity: 0<h2 id="防御-1"><a href="#防御-1" class="headerlink" title="防御"></a>防御</h2></li>
+<li>iframe 内嵌 -&gt; opacity: 0</li>
+</ul>
+<h2 id="防御-1"><a href="#防御-1" class="headerlink" title="防御"></a>防御</h2><ul>
 <li><p>JavaScript 禁止内嵌</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if (top.location != window.location) &#123;</div><div class="line">    top.location = window.location;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>如果禁止了 JavaScript =&gt; X-FRAME-OPTIONS</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// SAME-ROIGIN 同一个网站</div><div class="line">// SAMEORIGIN 同一个域</div><div class="line">// ALLOW-FROM 只能网站内嵌</div><div class="line">// DENY 不允许内嵌</div><div class="line">ctx.set(&apos;X-FRAME-OPTIONS&apos;, &apos;DENY&apos;)</div></pre></td></tr></table></figure>
 </li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// SAME-ROIGIN 同一个网站</div><div class="line">// SAMEORIGIN 同一个域</div><div class="line">// ALLOW-FROM 只能网站内嵌</div><div class="line">// DENY 不允许内嵌</div><div class="line">ctx.set(&apos;X-FRAME-OPTIONS&apos;, &apos;DENY&apos;)</div></pre></td></tr></table></figure>
 <h1 id="传输安全"><a href="#传输安全" class="headerlink" title="传输安全"></a>传输安全</h1><h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><ul>
 <li>插入广告</li>
 <li>重定向广告</li>
-<li>无法防御 XSS / CSRF<h2 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h2><ul>
+<li>无法防御 XSS / CSRF</li>
+</ul>
+<h2 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h2><ul>
 <li>证书不被伪造</li>
 <li>证书私钥不被泄露</li>
 <li>域名管理权不被泄露</li>
 <li>CA 坚守原则</li>
-</ul>
-</li>
 </ul>
 <h1 id="用户密码安全"><a href="#用户密码安全" class="headerlink" title="用户密码安全"></a>用户密码安全</h1><ul>
 <li>密码的作用 =&gt; 比对，只有用户知道 <ul>
@@ -545,27 +551,63 @@
 </ul>
 </li>
 <li>密码的替代</li>
-<li>生物特征密码的问题<ol>
+<li><p>生物特征密码的问题</p>
+<ol>
 <li>指纹 唇纹 人脸 虹膜 声控 …</li>
 </ol>
 <ul>
 <li>方便</li>
 <li>容易泄露</li>
-<li>相似性 - 碰撞<h1 id="SQL-注入"><a href="#SQL-注入" class="headerlink" title="SQL 注入"></a>SQL 注入</h1><h2 id="关系型数据库"><a href="#关系型数据库" class="headerlink" title="关系型数据库"></a>关系型数据库</h2></li>
+<li>相似性 - 碰撞</li>
 </ul>
 </li>
+</ul>
+<h1 id="SQL-注入"><a href="#SQL-注入" class="headerlink" title="SQL 注入"></a>SQL 注入</h1><h2 id="关系型数据库"><a href="#关系型数据库" class="headerlink" title="关系型数据库"></a>关系型数据库</h2><ul>
 <li>存放结构化数据</li>
 <li>可高效操作大量数据</li>
 <li>方便处理数据库之间的关系</li>
-<li>常见：access / sqlite / mySql / msSql Server<h2 id="防御-2"><a href="#防御-2" class="headerlink" title="防御"></a>防御</h2></li>
+<li>常见：access / sqlite / mySql / msSql Server</li>
+</ul>
+<h2 id="防御-2"><a href="#防御-2" class="headerlink" title="防御"></a>防御</h2><ul>
 <li>关闭错误输出</li>
 <li>检查数据类型</li>
 <li>数据进行转义</li>
 <li>参数化查询</li>
-<li>ORM 对象关系映射<h2 id="NoSql"><a href="#NoSql" class="headerlink" title="NoSql"></a>NoSql</h2></li>
+<li>ORM 对象关系映射</li>
+</ul>
+<h2 id="NoSql"><a href="#NoSql" class="headerlink" title="NoSql"></a>NoSql</h2><ul>
 <li>检查数据类型    </li>
 <li>类型转换</li>
-<li>写完整的条件<h1 id="信息泄露"><a href="#信息泄露" class="headerlink" title="信息泄露"></a>信息泄露</h1></li>
+<li>写完整的条件</li>
+</ul>
+<h2 id="上传问题"><a href="#上传问题" class="headerlink" title="上传问题"></a>上传问题</h2><ul>
+<li>限制上传后缀</li>
+<li>文件类型MIME检查 type：image / png …</li>
+<li>文件头检查</li>
+<li>程序输出</li>
+<li>权限互斥 =&gt; 可写与可执行互斥</li>
+</ul>
+<h1 id="信息泄露"><a href="#信息泄露" class="headerlink" title="信息泄露"></a>信息泄露</h1><ul>
+<li>错误信息失控</li>
+<li>SQL 注入</li>
+<li>水平权限控=控制不当 -&gt; a 控制 b</li>
+<li>xss / csrf<br>…</li>
+</ul>
+<h2 id="OAuth-思想"><a href="#OAuth-思想" class="headerlink" title="OAuth 思想"></a>OAuth 思想</h2><ul>
+<li>用户授权</li>
+<li>授权行为不泄露敏感信息</li>
+<li><p>授权会过期</p>
+</li>
+<li><p>不允许批量读取数据</p>
+</li>
+</ul>
+<h1 id="拒绝服务-DOS-攻击"><a href="#拒绝服务-DOS-攻击" class="headerlink" title="拒绝服务 DOS 攻击"></a>拒绝服务 DOS 攻击</h1><ul>
+<li>模拟正常用户</li>
+<li>大量占用服务器资源</li>
+</ul>
+<h1 id="重放攻击"><a href="#重放攻击" class="headerlink" title="重放攻击"></a>重放攻击</h1><ul>
+<li>请求被窃听或记录</li>
+<li>再次发出请求 =&gt; 多次消费 / 登陆态被盗取 / 多次抽奖 / 投票…</li>
 </ul>
 
       
@@ -707,7 +749,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -796,7 +838,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#代码层面"><span class="nav-number">1.</span> <span class="nav-text">代码层面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#架构层面"><span class="nav-number">2.</span> <span class="nav-text">架构层面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运维层面"><span class="nav-number">3.</span> <span class="nav-text">运维层面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#xss"><span class="nav-number">3.1.</span> <span class="nav-text">xss</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反射型"><span class="nav-number">3.2.</span> <span class="nav-text">反射型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器防御"><span class="nav-number">3.2.1.</span> <span class="nav-text">浏览器防御</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#转义-gt-输入-输出"><span class="nav-number">3.2.2.</span> <span class="nav-text">转义 -> 输入 / 输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XSS-库-第三方库"><span class="nav-number">3.2.3.</span> <span class="nav-text">XSS 库 - 第三方库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSP-内容安全策略-gt-用于指定哪些内容可执行不可执行"><span class="nav-number">3.2.4.</span> <span class="nav-text">CSP 内容安全策略 -> 用于指定哪些内容可执行不可执行</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#csrf-跨站请求伪造-Cross-Site-Request-Forgy"><span class="nav-number">4.</span> <span class="nav-text">csrf 跨站请求伪造 Cross Site Request Forgy</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#防御"><span class="nav-number">4.1.</span> <span class="nav-text">防御</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cookies"><span class="nav-number">5.</span> <span class="nav-text">cookies</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#作用"><span class="nav-number">5.1.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安全策略"><span class="nav-number">5.2.</span> <span class="nav-text">安全策略</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#点击劫持"><span class="nav-number">6.</span> <span class="nav-text">点击劫持</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#防御-1"><span class="nav-number">6.1.</span> <span class="nav-text">防御</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#传输安全"><span class="nav-number">7.</span> <span class="nav-text">传输安全</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP"><span class="nav-number">7.1.</span> <span class="nav-text">HTTP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTPS"><span class="nav-number">7.2.</span> <span class="nav-text">HTTPS</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用户密码安全"><span class="nav-number">8.</span> <span class="nav-text">用户密码安全</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL-注入"><span class="nav-number">9.</span> <span class="nav-text">SQL 注入</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关系型数据库"><span class="nav-number">9.1.</span> <span class="nav-text">关系型数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#防御-2"><span class="nav-number">9.2.</span> <span class="nav-text">防御</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NoSql"><span class="nav-number">9.3.</span> <span class="nav-text">NoSql</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#信息泄露"><span class="nav-number">10.</span> <span class="nav-text">信息泄露</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#代码层面"><span class="nav-number">1.</span> <span class="nav-text">代码层面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#架构层面"><span class="nav-number">2.</span> <span class="nav-text">架构层面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运维层面"><span class="nav-number">3.</span> <span class="nav-text">运维层面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#xss"><span class="nav-number">3.1.</span> <span class="nav-text">xss</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反射型"><span class="nav-number">3.2.</span> <span class="nav-text">反射型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器防御"><span class="nav-number">3.2.1.</span> <span class="nav-text">浏览器防御</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#转义-gt-输入-输出"><span class="nav-number">3.2.2.</span> <span class="nav-text">转义 -> 输入 / 输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XSS-库-第三方库"><span class="nav-number">3.2.3.</span> <span class="nav-text">XSS 库 - 第三方库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSP-内容安全策略-gt-用于指定哪些内容可执行不可执行"><span class="nav-number">3.2.4.</span> <span class="nav-text">CSP 内容安全策略 -> 用于指定哪些内容可执行不可执行</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#csrf-跨站请求伪造-Cross-Site-Request-Forgy"><span class="nav-number">4.</span> <span class="nav-text">csrf 跨站请求伪造 Cross Site Request Forgy</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#防御"><span class="nav-number">4.1.</span> <span class="nav-text">防御</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cookies"><span class="nav-number">5.</span> <span class="nav-text">cookies</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#作用"><span class="nav-number">5.1.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安全策略"><span class="nav-number">5.2.</span> <span class="nav-text">安全策略</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#点击劫持"><span class="nav-number">6.</span> <span class="nav-text">点击劫持</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#防御-1"><span class="nav-number">6.1.</span> <span class="nav-text">防御</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#传输安全"><span class="nav-number">7.</span> <span class="nav-text">传输安全</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP"><span class="nav-number">7.1.</span> <span class="nav-text">HTTP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTPS"><span class="nav-number">7.2.</span> <span class="nav-text">HTTPS</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用户密码安全"><span class="nav-number">8.</span> <span class="nav-text">用户密码安全</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL-注入"><span class="nav-number">9.</span> <span class="nav-text">SQL 注入</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关系型数据库"><span class="nav-number">9.1.</span> <span class="nav-text">关系型数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#防御-2"><span class="nav-number">9.2.</span> <span class="nav-text">防御</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NoSql"><span class="nav-number">9.3.</span> <span class="nav-text">NoSql</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上传问题"><span class="nav-number">9.4.</span> <span class="nav-text">上传问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#信息泄露"><span class="nav-number">10.</span> <span class="nav-text">信息泄露</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#OAuth-思想"><span class="nav-number">10.1.</span> <span class="nav-text">OAuth 思想</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#拒绝服务-DOS-攻击"><span class="nav-number">11.</span> <span class="nav-text">拒绝服务 DOS 攻击</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#重放攻击"><span class="nav-number">12.</span> <span class="nav-text">重放攻击</span></a></li></ol></div>
             
 
           </div>
