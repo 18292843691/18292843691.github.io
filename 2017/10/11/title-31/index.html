@@ -75,7 +75,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -94,12 +94,13 @@
 
 
 <meta name="description" content="js 数组 数组是类似列表的对象，在原型中提供了遍历以及改变其中元素的很多方法。 数组的长度及其中元素的类型都是不固定的。因为数组的长度可读可写，有时数组中的元素也不是在连续的位置，所以JavaScript 数组不一定是密集的。通常情况下，这是一些方便的特性；如果这些特性不适用于你的特定使用场景，你可以考虑使用固定类型数组。 向 Array 构造函数传入一个在 0 到 2^32-1 之间的整数">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript 的数组(未整理)">
 <meta property="og:url" content="http:\\hexin.life/2017/10/11/title-31/index.html">
 <meta property="og:site_name" content="dayDream&#39;s blog">
 <meta property="og:description" content="js 数组 数组是类似列表的对象，在原型中提供了遍历以及改变其中元素的很多方法。 数组的长度及其中元素的类型都是不固定的。因为数组的长度可读可写，有时数组中的元素也不是在连续的位置，所以JavaScript 数组不一定是密集的。通常情况下，这是一些方便的特性；如果这些特性不适用于你的特定使用场景，你可以考虑使用固定类型数组。 向 Array 构造函数传入一个在 0 到 2^32-1 之间的整数">
-<meta property="og:updated_time" content="2017-10-10T16:23:56.750Z">
+<meta property="og:updated_time" content="2017-10-10T16:36:22.451Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript 的数组(未整理)">
 <meta name="twitter:description" content="js 数组 数组是类似列表的对象，在原型中提供了遍历以及改变其中元素的很多方法。 数组的长度及其中元素的类型都是不固定的。因为数组的长度可读可写，有时数组中的元素也不是在连续的位置，所以JavaScript 数组不一定是密集的。通常情况下，这是一些方便的特性；如果这些特性不适用于你的特定使用场景，你可以考虑使用固定类型数组。 向 Array 构造函数传入一个在 0 到 2^32-1 之间的整数">
@@ -358,6 +359,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -391,95 +414,68 @@
 <li>当你在 array 上使用一个合法的数组下标，而且该下标超出了当前数组的大小的时候，引擎会根据其值自动更新 array 的length属性</li>
 <li>减小 array 的length属性会删掉超出的元素</li>
 </ul>
-<h2 id="使用正则匹配的结果来创建数组"><a href="#使用正则匹配的结果来创建数组" class="headerlink" title="使用正则匹配的结果来创建数组"></a>使用正则匹配的结果来创建数组</h2><p>正则表达式与字符串之间的匹配结果可以创建一个数组。这个数组包含了正则匹配的属性与匹配结果。<figure class="highlight plain"><figcaption><span>与```String.replace```的返回值就是这样的数组。下面的例子可以帮助理解这些属性和元素。</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure></p>
-<p>// Match one d followed by one or more b’s followed by one d<br>// Remember matched b’s and the following d<br>// 忽略大小写</p>
-<p>myRe = /d(b+)(d)/i;<br>myArray = myRe.exec(“cdbBdbsbz”);<br>// [“dbBd”, “bB”, “d”, index: 1, input: “cdbBdbsbz”]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">该正则匹配返回的属性/元素列表：</div></pre></td></tr></table></figure></p>
-<p>Property/Element    说明                                                                      例子<br>input               原始的输入字符串，只读属性。                                              cdbBdbsbz<br>index               匹配的子字符串的第一个字符在原始字符串中的位置（从0开始的索引，只读）。   1<br>[0]                 最后一次匹配的元素,只读。   dbBd<br>[1], …[n]         出现在正则匹配中的子匹配（如果有）。                                      [1]: bB</p>
-<pre><code>[2]: d
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">方法:  For methods available on Array instances, see Methods of Array instances.</div><div class="line"></div><div class="line">- Array.from()</div><div class="line">从类数组或者迭代对象（iterable object）中创建一个新的数组实例。</div><div class="line">- Array.isArray()</div><div class="line">假如一个变量是数组则返回true，否则返回false。</div><div class="line"></div><div class="line">## 数组实例</div><div class="line">所有数组实例继承自 Array.prototype。Array 构造函数的原型对象是可修改的，其会影响所有的数组实例。</div><div class="line"></div><div class="line">### 属性</div><div class="line">- Array.prototype.constructor</div><div class="line">所有的数组实例都继承了这个属性，它的值就是 Array，表明了所有的数组都是由 Array 构造出来的。</div><div class="line">- Array.prototype.length</div><div class="line">因为 Array.prototype 也是个数组，所以它也有 length 属性，这个值为 0，因为它是个空数组</div><div class="line"></div><div class="line"></div><div class="line">### 方法</div><div class="line">1. Mutator 方法</div><div class="line">下面的这些方法会改变调用它们的对象自身的值：</div><div class="line"></div><div class="line">- Array.prototype.copyWithin()</div><div class="line">在数组内部，将一段元素序列拷贝到另一段元素序列上，覆盖原有的值。</div><div class="line">- Array.prototype.fill()</div><div class="line">将数组中指定区间的所有元素的值，都替换成某个固定的值。</div><div class="line">- Array.prototype.pop()</div><div class="line">删除数组的最后一个元素，并返回这个元素。</div><div class="line">- Array.prototype.push()</div><div class="line">在数组的末尾增加一个或多个元素，并返回数组的新长度。</div><div class="line">- Array.prototype.reverse()</div><div class="line">颠倒数组中元素的排列顺序，即原先的第一个变为最后一个，原先的最后一个变为第一个。</div><div class="line">- Array.prototype.shift()</div><div class="line">删除数组的第一个元素，并返回这个元素。</div><div class="line">- Array.prototype.sort() =&gt; v8 中，对于长度小于 22 的数组进行插入排序， 大于 22 的数组进行快速排序</div><div class="line">对数组元素进行排序，并返回当前数组。</div><div class="line">- Array.prototype.splice()</div><div class="line">在任意的位置给数组添加或删除任意个元素。</div><div class="line">- Array.prototype.unshift()</div><div class="line">在数组的开头增加一个或多个元素，并返回数组的新长度。</div><div class="line"></div><div class="line">2. Accessor 方法</div><div class="line">下面的这些方法绝对不会改变调用它们的对象的值，只会返回一个新的数组或者返回一个其它的期望值。</div><div class="line"></div><div class="line">- Array.prototype.concat()</div><div class="line">返回一个由当前数组和其它若干个数组或者若干个非数组值组合而成的新数组。</div><div class="line">- Array.prototype.includes()</div><div class="line">判断当前数组是否包含某指定的值，如果是返回 true，否则返回 false。</div><div class="line">- Array.prototype.join()</div><div class="line">连接所有数组元素组成一个字符串。</div><div class="line">- Array.prototype.slice()</div><div class="line">抽取当前数组中的一段元素组合成一个新数组。</div><div class="line">- Array.prototype.toString()</div><div class="line">返回一个由所有数组元素组合而成的字符串。遮蔽了原型链上的 Object.prototype.toString() 方法。</div><div class="line">- Array.prototype.toLocaleString()</div><div class="line">返回一个由所有数组元素组合而成的本地化后的字符串。遮蔽了原型链上的 Object.prototype.toLocaleString() 方法。</div><div class="line">- Array.prototype.indexOf()</div><div class="line">返回数组中第一个与指定值相等的元素的索引，如果找不到这样的元素，则返回 -1。</div><div class="line">- Array.prototype.lastIndexOf()</div><div class="line">返回数组中最后一个（从右边数第一个）与指定值相等的元素的索引，如果找不到这样的元素，则返回 -1。</div><div class="line"></div><div class="line">3. Iteration 方法 * 代表处于实验阶段</div><div class="line">在下面的众多遍历方法中，有很多方法都需要指定一个回调函数作为参数。在回调函数执行之前，数组的长度会被缓存在某个地方，所以，如果你在回调函数中为当前数组添加了新的元素，那么那些新添加的元素是不会被遍历到的。此外，如果在回调函数中对当前数组进行了其它修改，比如改变某个元素的值或者删掉某个元素，那么随后的遍历操作可能会受到未预期的影响。总之，不要尝试在遍历过程中对原数组进行任何修改，虽然规范对这样的操作进行了详细的定义，但为了可读性和可维护性，请不要这样做。</div><div class="line"></div><div class="line">- Array.prototype.forEach()</div><div class="line">为数组中的每个元素执行一次回调函数。</div><div class="line">- Array.prototype.entries() *</div><div class="line">返回一个数组迭代器对象，该迭代器会包含所有数组元素的键值对。</div><div class="line">- Array.prototype.every()</div><div class="line">如果数组中的每个元素都满足测试函数，则返回 true，否则返回 false。</div><div class="line">- Array.prototype.some()</div><div class="line">如果数组中至少有一个元素满足测试函数，则返回 true，否则返回 false。</div><div class="line">- Array.prototype.filter()</div><div class="line">将所有在过滤函数中返回 true 的数组元素放进一个新数组中并返回。</div><div class="line">- Array.prototype.find() *</div><div class="line">找到第一个满足测试函数的元素并返回那个元素的值，如果找不到，则返回 undefined。</div><div class="line">- Array.prototype.findIndex() *</div><div class="line">找到第一个满足测试函数的元素并返回那个元素的索引，如果找不到，则返回 -1。</div><div class="line">- Array.prototype.keys() *</div><div class="line">返回一个数组迭代器对象，该迭代器会包含所有数组元素的键。</div><div class="line">- Array.prototype.map()</div><div class="line">返回一个由回调函数的返回值组成的新数组。</div><div class="line">- Array.prototype.reduce()</div><div class="line">从左到右为每个数组元素执行一次回调函数，并把上次回调函数的返回值放在一个暂存器中传给下次回调函数，并返回最后一次回调函数的返回值。</div><div class="line">- Array.prototype.reduceRight()</div><div class="line">从右到左为每个数组元素执行一次回调函数，并把上次回调函数的返回值放在一个暂存器中传给下次回调函数，并返回最后一次回调函数的返回值。</div><div class="line">- Array.prototype.values() *</div><div class="line">返回一个数组迭代器对象，该迭代器会包含所有数组元素的值。</div><div class="line">- Array.prototype[@@iterator]() *</div><div class="line">和上面的 values() 方法是同一个函数。</div><div class="line"></div><div class="line">## 识别数组</div></pre></td></tr></table></figure>
-<p>// Array.isArray(arr)</p>
-<p>Array.prototype._isArray1 = function () {<br>    return typeof arr === ‘object’ &amp;&amp; arr.constructor === Array;<br>}</p>
-<p>Array.prototype._isArray2 = function () {<br>    return Object.prototype.toString.call(arr).slice(8, 13) === ‘Array’<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">## 构建 m * n 维矩阵  初始化 x;</div></pre></td></tr></table></figure></p>
-<p>Array.mate = function (m, n, x) {<br>    var a,<br>        i,<br>        j,<br>        res = [];<br>    for(i = 0; i &lt; m; i++) {<br>        a = [];<br>        for(j = 0; j &lt; n; j++) {<br>            a[j] = x;<br>        }<br>        res[i] = a;<br>    }<br>    return res<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">## B 站笔试第二题，从 input 获取 N ，在页面内创建 N * N 的小方块，要求，小方块在鼠标放上时显示红色，离开时恢复，点击后显示蓝色，离开时不变，再次点击时恢复。</div></pre></td></tr></table></figure></p>
-<p><body></body></p>
-<p><input type="number" id="inp" placeholder="input number and enter"><br></p>
-<p><script><br>  (function () {<br>        let inp = document.getElementById(‘inp’),<br>            val;</p>
-<pre><code>    inp.addEventListener(&apos;keyup&apos;, function (e) {
-        if (e.keyCode === 13) {
-            val = inp.value;
-            createEle(val);
-            inp.value = &apos;&apos;;
-        }
-    })
-
-    function createEle (val) {
-        val = parseInt(val);
-
-        if (val &gt; 0) {
-            if (document.querySelector(&apos;.uul&apos;)) {
-                document.body.removeChild(document.querySelector(&apos;.uul&apos;));
-            }
-            var dom = document.createDocumentFragment(),
-                ul = document.createElement(&apos;ul&apos;);
-                ul.className = &apos;uul&apos;;
-            var array = [],
-                body = document.body,
-                div;
-
-            for (let i = 0; i &lt; val; i++) {
-                for (let j = 0; j &lt; val; j++) {
-                    div = document.createElement(&apos;li&apos;);
-                    div.className = &apos;blockItem&apos;;
-                    div.style.top = i * 25 + &apos;px&apos;;
-                    div.style.left = j * 25 + &apos;px&apos;;
-                    ul.appendChild(div);
-                }
-            }
-            dom.appendChild(ul);
-            //console.log(&apos;dom: &apos;+ dom);
-            body.appendChild(dom);
-
-            //var block = document.getElementsByClassName(&apos;blockItem&apos;);
-            bindEvent(body);
-        } else {
-            inp.value = &apos;&apos;;
-            console.log(&apos;you should input some number&apos;)
-            //throw new Error(&apos;you should input some number&apos;)
-        }
-    }
-
-    function bindEvent (body) {
-        body.addEventListener(&apos;mouseover&apos;, function(e) {
-            //console.log(&apos;mouseover li&apos;)
-            if (e.target.nodeName === &apos;LI&apos;) {
-                if (e.target.style.background !== &apos;blue&apos;)
-                    e.target.style.background = &apos;red&apos;;
-            }
-        })
-
-        body.addEventListener(&apos;mouseout&apos;, function(e) {
-            //console.log(&apos;mouseout li&apos;)
-            if (e.target.nodeName === &apos;LI&apos;) {
-                if (e.target.style.background !== &apos;blue&apos;)
-                    e.target.style.background = &apos;&apos;;
-            }
-        })
-
-        body.addEventListener(&apos;click&apos;, function(e) {
-            if (e.target.nodeName === &apos;LI&apos;) {
-                if (e.target.style.background !== &apos;blue&apos;){
-                    e.target.style.background = &apos;blue&apos;;
-                }
-                 else {
-                    e.target.style.background = &apos;&apos;;
-                }
-            }
-        })
-    }
-})()
-</code></pre><p></script></p>
-<p><style><br>    .uul {<br>        display: block;<br>        position: absolute;<br>        left: 300px;<br>        margin-left: 300px;<br>    }<br>    .blockItem{<br>        background: #ccc;<br>        list-style: none;<br>        position: absolute;<br>    }<br></style><br>```</p>
-
+<h2 id="使用正则匹配的结果来创建数组"><a href="#使用正则匹配的结果来创建数组" class="headerlink" title="使用正则匹配的结果来创建数组"></a>使用正则匹配的结果来创建数组</h2><p>正则表达式与字符串之间的匹配结果可以创建一个数组。这个数组包含了正则匹配的属性与匹配结果。 RegExp.exec ， String.match ， 与 String.replace 的返回值就是这样的数组。下面的例子可以帮助理解这些属性和元素。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// Match one d followed by one or more b&apos;s followed by one d</div><div class="line">// Remember matched b&apos;s and the following d</div><div class="line">// 忽略大小写</div><div class="line"></div><div class="line">myRe = /d(b+)(d)/i;</div><div class="line">myArray = myRe.exec(&quot;cdbBdbsbz&quot;);</div><div class="line">// [&quot;dbBd&quot;, &quot;bB&quot;, &quot;d&quot;, index: 1, input: &quot;cdbBdbsbz&quot;]</div></pre></td></tr></table></figure>
+<p>该正则匹配返回的属性/元素列表：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Property/Element    说明                                                                      例子</div><div class="line">input               原始的输入字符串，只读属性。                                              cdbBdbsbz</div><div class="line">index               匹配的子字符串的第一个字符在原始字符串中的位置（从0开始的索引，只读）。   1</div><div class="line">[0]                 最后一次匹配的元素,只读。   dbBd</div><div class="line">[1], ...[n]         出现在正则匹配中的子匹配（如果有）。                                      [1]: bB</div><div class="line">                                                                                              [2]: d</div></pre></td></tr></table></figure>
+<p>方法:  For methods available on Array instances, see Methods of Array instances.</p>
+<ul>
+<li>Array.from()<br>从类数组或者迭代对象（iterable object）中创建一个新的数组实例。</li>
+<li>Array.isArray()<br>假如一个变量是数组则返回true，否则返回false。</li>
+</ul>
+<h2 id="数组实例"><a href="#数组实例" class="headerlink" title="数组实例"></a>数组实例</h2><p>所有数组实例继承自 Array.prototype。Array 构造函数的原型对象是可修改的，其会影响所有的数组实例。</p>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><ul>
+<li>Array.prototype.constructor<br>所有的数组实例都继承了这个属性，它的值就是 Array，表明了所有的数组都是由 Array 构造出来的。</li>
+<li>Array.prototype.length<br>因为 Array.prototype 也是个数组，所以它也有 length 属性，这个值为 0，因为它是个空数组</li>
+</ul>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><ol>
+<li>Mutator 方法<br>下面的这些方法会改变调用它们的对象自身的值：</li>
+</ol>
+<ul>
+<li>Array.prototype.copyWithin()<br>在数组内部，将一段元素序列拷贝到另一段元素序列上，覆盖原有的值。</li>
+<li>Array.prototype.fill()<br>将数组中指定区间的所有元素的值，都替换成某个固定的值。</li>
+<li>Array.prototype.pop()<br>删除数组的最后一个元素，并返回这个元素。</li>
+<li>Array.prototype.push()<br>在数组的末尾增加一个或多个元素，并返回数组的新长度。</li>
+<li>Array.prototype.reverse()<br>颠倒数组中元素的排列顺序，即原先的第一个变为最后一个，原先的最后一个变为第一个。</li>
+<li>Array.prototype.shift()<br>删除数组的第一个元素，并返回这个元素。</li>
+<li>Array.prototype.sort() =&gt; v8 中，对于长度小于 22 的数组进行插入排序， 大于 22 的数组进行快速排序<br>对数组元素进行排序，并返回当前数组。</li>
+<li>Array.prototype.splice()<br>在任意的位置给数组添加或删除任意个元素。</li>
+<li>Array.prototype.unshift()<br>在数组的开头增加一个或多个元素，并返回数组的新长度。</li>
+</ul>
+<ol>
+<li>Accessor 方法<br>下面的这些方法绝对不会改变调用它们的对象的值，只会返回一个新的数组或者返回一个其它的期望值。</li>
+</ol>
+<ul>
+<li>Array.prototype.concat()<br>返回一个由当前数组和其它若干个数组或者若干个非数组值组合而成的新数组。</li>
+<li>Array.prototype.includes()<br>判断当前数组是否包含某指定的值，如果是返回 true，否则返回 false。</li>
+<li>Array.prototype.join()<br>连接所有数组元素组成一个字符串。</li>
+<li>Array.prototype.slice()<br>抽取当前数组中的一段元素组合成一个新数组。</li>
+<li>Array.prototype.toString()<br>返回一个由所有数组元素组合而成的字符串。遮蔽了原型链上的 Object.prototype.toString() 方法。</li>
+<li>Array.prototype.toLocaleString()<br>返回一个由所有数组元素组合而成的本地化后的字符串。遮蔽了原型链上的 Object.prototype.toLocaleString() 方法。</li>
+<li>Array.prototype.indexOf()<br>返回数组中第一个与指定值相等的元素的索引，如果找不到这样的元素，则返回 -1。</li>
+<li>Array.prototype.lastIndexOf()<br>返回数组中最后一个（从右边数第一个）与指定值相等的元素的索引，如果找不到这样的元素，则返回 -1。</li>
+</ul>
+<ol>
+<li>Iteration 方法 * 代表处于实验阶段<br>在下面的众多遍历方法中，有很多方法都需要指定一个回调函数作为参数。在回调函数执行之前，数组的长度会被缓存在某个地方，所以，如果你在回调函数中为当前数组添加了新的元素，那么那些新添加的元素是不会被遍历到的。此外，如果在回调函数中对当前数组进行了其它修改，比如改变某个元素的值或者删掉某个元素，那么随后的遍历操作可能会受到未预期的影响。总之，不要尝试在遍历过程中对原数组进行任何修改，虽然规范对这样的操作进行了详细的定义，但为了可读性和可维护性，请不要这样做。</li>
+</ol>
+<ul>
+<li>Array.prototype.forEach()<br>为数组中的每个元素执行一次回调函数。</li>
+<li>Array.prototype.entries() *<br>返回一个数组迭代器对象，该迭代器会包含所有数组元素的键值对。</li>
+<li>Array.prototype.every()<br>如果数组中的每个元素都满足测试函数，则返回 true，否则返回 false。</li>
+<li>Array.prototype.some()<br>如果数组中至少有一个元素满足测试函数，则返回 true，否则返回 false。</li>
+<li>Array.prototype.filter()<br>将所有在过滤函数中返回 true 的数组元素放进一个新数组中并返回。</li>
+<li>Array.prototype.find() *<br>找到第一个满足测试函数的元素并返回那个元素的值，如果找不到，则返回 undefined。</li>
+<li>Array.prototype.findIndex() *<br>找到第一个满足测试函数的元素并返回那个元素的索引，如果找不到，则返回 -1。</li>
+<li>Array.prototype.keys() *<br>返回一个数组迭代器对象，该迭代器会包含所有数组元素的键。</li>
+<li>Array.prototype.map()<br>返回一个由回调函数的返回值组成的新数组。</li>
+<li>Array.prototype.reduce()<br>从左到右为每个数组元素执行一次回调函数，并把上次回调函数的返回值放在一个暂存器中传给下次回调函数，并返回最后一次回调函数的返回值。</li>
+<li>Array.prototype.reduceRight()<br>从右到左为每个数组元素执行一次回调函数，并把上次回调函数的返回值放在一个暂存器中传给下次回调函数，并返回最后一次回调函数的返回值。</li>
+<li>Array.prototype.values() *<br>返回一个数组迭代器对象，该迭代器会包含所有数组元素的值。</li>
+<li>Array.prototype<a href="">@@iterator</a> *<br>和上面的 values() 方法是同一个函数。</li>
+</ul>
+<h2 id="识别数组"><a href="#识别数组" class="headerlink" title="识别数组"></a>识别数组</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// Array.isArray(arr)</div><div class="line"></div><div class="line">Array.prototype._isArray1 = function () &#123;</div><div class="line">    return typeof arr === &apos;object&apos; &amp;&amp; arr.constructor === Array;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Array.prototype._isArray2 = function () &#123;</div><div class="line">    return Object.prototype.toString.call(arr).slice(8, 13) === &apos;Array&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="构建-m-n-维矩阵-初始化-x"><a href="#构建-m-n-维矩阵-初始化-x" class="headerlink" title="构建 m * n 维矩阵  初始化 x;"></a>构建 m * n 维矩阵  初始化 x;</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">Array.mate = function (m, n, x) &#123;</div><div class="line">    var a,</div><div class="line">        i,</div><div class="line">        j,</div><div class="line">        res = [];</div><div class="line">    for(i = 0; i &lt; m; i++) &#123;</div><div class="line">        a = [];</div><div class="line">        for(j = 0; j &lt; n; j++) &#123;</div><div class="line">            a[j] = x;</div><div class="line">        &#125;</div><div class="line">        res[i] = a;</div><div class="line">    &#125;</div><div class="line">    return res</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="B-站笔试第二题，从-input-获取-N-，在页面内创建-N-N-的小方块，要求，小方块在鼠标放上时显示红色，离开时恢复，点击后显示蓝色，离开时不变，再次点击时恢复。"><a href="#B-站笔试第二题，从-input-获取-N-，在页面内创建-N-N-的小方块，要求，小方块在鼠标放上时显示红色，离开时恢复，点击后显示蓝色，离开时不变，再次点击时恢复。" class="headerlink" title="B 站笔试第二题，从 input 获取 N ，在页面内创建 N * N 的小方块，要求，小方块在鼠标放上时显示红色，离开时恢复，点击后显示蓝色，离开时不变，再次点击时恢复。"></a>B 站笔试第二题，从 input 获取 N ，在页面内创建 N * N 的小方块，要求，小方块在鼠标放上时显示红色，离开时恢复，点击后显示蓝色，离开时不变，再次点击时恢复。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">&lt;input type=&quot;number&quot; id=&quot;inp&quot; placeholder=&quot;input number and enter&quot;&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;script&gt;</div><div class="line">  (function () &#123;</div><div class="line">        let inp = document.getElementById(&apos;inp&apos;),</div><div class="line">            val;</div><div class="line"></div><div class="line">        inp.addEventListener(&apos;keyup&apos;, function (e) &#123;</div><div class="line">            if (e.keyCode === 13) &#123;</div><div class="line">                val = inp.value;</div><div class="line">                createEle(val);</div><div class="line">                inp.value = &apos;&apos;;</div><div class="line">            &#125;</div><div class="line">        &#125;)</div><div class="line"></div><div class="line">        function createEle (val) &#123;</div><div class="line">            val = parseInt(val);</div><div class="line"></div><div class="line">            if (val &gt; 0) &#123;</div><div class="line">                if (document.querySelector(&apos;.uul&apos;)) &#123;</div><div class="line">                    document.body.removeChild(document.querySelector(&apos;.uul&apos;));</div><div class="line">                &#125;</div><div class="line">                var dom = document.createDocumentFragment(),</div><div class="line">                    ul = document.createElement(&apos;ul&apos;);</div><div class="line">                    ul.className = &apos;uul&apos;;</div><div class="line">                var array = [],</div><div class="line">                    body = document.body,</div><div class="line">                    div;</div><div class="line"></div><div class="line">                for (let i = 0; i &lt; val; i++) &#123;</div><div class="line">                    for (let j = 0; j &lt; val; j++) &#123;</div><div class="line">                        div = document.createElement(&apos;li&apos;);</div><div class="line">                        div.className = &apos;blockItem&apos;;</div><div class="line">                        div.style.top = i * 25 + &apos;px&apos;;</div><div class="line">                        div.style.left = j * 25 + &apos;px&apos;;</div><div class="line">                        ul.appendChild(div);</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                dom.appendChild(ul);</div><div class="line">                //console.log(&apos;dom: &apos;+ dom);</div><div class="line">                body.appendChild(dom);</div><div class="line"></div><div class="line">                //var block = document.getElementsByClassName(&apos;blockItem&apos;);</div><div class="line">                bindEvent(body);</div><div class="line">            &#125; else &#123;</div><div class="line">                inp.value = &apos;&apos;;</div><div class="line">                console.log(&apos;you should input some number&apos;)</div><div class="line">                //throw new Error(&apos;you should input some number&apos;)</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        function bindEvent (body) &#123;</div><div class="line">            body.addEventListener(&apos;mouseover&apos;, function(e) &#123;</div><div class="line">                //console.log(&apos;mouseover li&apos;)</div><div class="line">                if (e.target.nodeName === &apos;LI&apos;) &#123;</div><div class="line">                    if (e.target.style.background !== &apos;blue&apos;)</div><div class="line">                        e.target.style.background = &apos;red&apos;;</div><div class="line">                &#125;</div><div class="line">            &#125;)</div><div class="line"></div><div class="line">            body.addEventListener(&apos;mouseout&apos;, function(e) &#123;</div><div class="line">                //console.log(&apos;mouseout li&apos;)</div><div class="line">                if (e.target.nodeName === &apos;LI&apos;) &#123;</div><div class="line">                    if (e.target.style.background !== &apos;blue&apos;)</div><div class="line">                        e.target.style.background = &apos;&apos;;</div><div class="line">                &#125;</div><div class="line">            &#125;)</div><div class="line"></div><div class="line">            body.addEventListener(&apos;click&apos;, function(e) &#123;</div><div class="line">                if (e.target.nodeName === &apos;LI&apos;) &#123;</div><div class="line">                    if (e.target.style.background !== &apos;blue&apos;)&#123;</div><div class="line">                        e.target.style.background = &apos;blue&apos;;</div><div class="line">                    &#125;</div><div class="line">                     else &#123;</div><div class="line">                        e.target.style.background = &apos;&apos;;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;)</div><div class="line">        &#125;</div><div class="line">    &#125;)()</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;style&gt;</div><div class="line">    .uul &#123;</div><div class="line">        display: block;</div><div class="line">        position: absolute;</div><div class="line">        left: 300px;</div><div class="line">        margin-left: 300px;</div><div class="line">    &#125;</div><div class="line">    .blockItem&#123;</div><div class="line">        background: #ccc;</div><div class="line">        list-style: none;</div><div class="line">        position: absolute;</div><div class="line">    &#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -520,6 +516,12 @@
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
       
 
       
@@ -624,7 +626,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -635,7 +637,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -702,7 +704,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#js-数组"><span class="nav-number">1.</span> <span class="nav-text">js 数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用正则匹配的结果来创建数组"><span class="nav-number">1.1.</span> <span class="nav-text">使用正则匹配的结果来创建数组</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#js-数组"><span class="nav-number">1.</span> <span class="nav-text">js 数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用正则匹配的结果来创建数组"><span class="nav-number">1.1.</span> <span class="nav-text">使用正则匹配的结果来创建数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组实例"><span class="nav-number">1.2.</span> <span class="nav-text">数组实例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#属性"><span class="nav-number">1.2.1.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法"><span class="nav-number">1.2.2.</span> <span class="nav-text">方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#识别数组"><span class="nav-number">1.3.</span> <span class="nav-text">识别数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构建-m-n-维矩阵-初始化-x"><span class="nav-number">1.4.</span> <span class="nav-text">构建 m * n 维矩阵  初始化 x;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-站笔试第二题，从-input-获取-N-，在页面内创建-N-N-的小方块，要求，小方块在鼠标放上时显示红色，离开时恢复，点击后显示蓝色，离开时不变，再次点击时恢复。"><span class="nav-number">1.5.</span> <span class="nav-text">B 站笔试第二题，从 input 获取 N ，在页面内创建 N * N 的小方块，要求，小方块在鼠标放上时显示红色，离开时恢复，点击后显示蓝色，离开时不变，再次点击时恢复。</span></a></li></ol></li></ol></div>
             
 
           </div>

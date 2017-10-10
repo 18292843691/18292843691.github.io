@@ -93,16 +93,16 @@
 
 
 
-<meta name="description" content="var lists = function () {     var List = function (head) {         this.data = head;         this.next = null;     }      var _head = new List(&amp;apos;head&amp;apos;);      this.insertList = function (hea">
+<meta name="description" content="title: JS 实现链表date: 2017-10-11 00:20:38tags:categories: 单链表的 JS 简单实现123456789101112131415161718192021222324252627282930313233343536373839404142434445464748var lists = function () &amp;#123;    var List">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS 实现链表">
+<meta property="og:title" content="dayDream&#39;s blog">
 <meta property="og:url" content="http:\\hexin.life/2017/10/11/title-29/index.html">
 <meta property="og:site_name" content="dayDream&#39;s blog">
-<meta property="og:description" content="var lists = function () {     var List = function (head) {         this.data = head;         this.next = null;     }      var _head = new List(&amp;apos;head&amp;apos;);      this.insertList = function (hea">
-<meta property="og:updated_time" content="2017-10-10T16:21:36.774Z">
+<meta property="og:description" content="title: JS 实现链表date: 2017-10-11 00:20:38tags:categories: 单链表的 JS 简单实现123456789101112131415161718192021222324252627282930313233343536373839404142434445464748var lists = function () &amp;#123;    var List">
+<meta property="og:updated_time" content="2017-10-10T16:34:03.908Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS 实现链表">
-<meta name="twitter:description" content="var lists = function () {     var List = function (head) {         this.data = head;         this.next = null;     }      var _head = new List(&amp;apos;head&amp;apos;);      this.insertList = function (hea">
+<meta name="twitter:title" content="dayDream&#39;s blog">
+<meta name="twitter:description" content="title: JS 实现链表date: 2017-10-11 00:20:38tags:categories: 单链表的 JS 简单实现123456789101112131415161718192021222324252627282930313233343536373839404142434445464748var lists = function () &amp;#123;    var List">
 
 
 
@@ -136,7 +136,7 @@
 
 
 
-  <title>JS 实现链表 | dayDream's blog</title>
+  <title> | dayDream's blog</title>
   
 
 
@@ -335,7 +335,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JS 实现链表</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -382,55 +382,9 @@
       
 
       
-        <link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><pre><code>var lists = function () {
-    var List = function (head) {
-        this.data = head;
-        this.next = null;
-    }
-
-    var _head = new List(&apos;head&apos;);
-
-    this.insertList = function (head) {
-        var newList = new List(head);
-        insert(_head, newList)
-        this.head = _head;
-    }
-
-    // 头插法
-    function insert (head, newList) {
-        newList.next = head.next;
-        head.next = newList;
-    }
-
-    // 正序打印
-    this.print = function () {
-        head = Object.assign({}, this.head);
-        while(head.next) {
-            console.log(head.next.data);
-            head.next = head.next.next;
-        }
-    }
-
-    // 逆序输出
-    this.reverse = function () {
-        head = Object.assign({}, this.head);
-        var res = []
-        while(head.next) {
-            res.push(head.next);
-            head.next = head.next.next;
-        }
-        while (res.length &gt; 0) {
-            console.log(res.pop().data)
-        }
-    }
-}
-
-var list = new lists();
-var nodes = [1,2,3,4,5,6,7];
-nodes.forEach((value) =&gt; {
-    list.insertList(value);
-})
-</code></pre><p>```</p>
+        <link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><hr>
+<p>title: JS 实现链表<br>date: 2017-10-11 00:20:38<br>tags:<br>categories:</p>
+<h1 id="单链表的-JS-简单实现"><a href="#单链表的-JS-简单实现" class="headerlink" title="单链表的 JS 简单实现"></a>单链表的 JS 简单实现</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">var lists = function () &#123;</div><div class="line">    var List = function (head) &#123;</div><div class="line">        this.data = head;</div><div class="line">        this.next = null;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    var _head = new List(&apos;head&apos;);</div><div class="line"></div><div class="line">    this.insertList = function (head) &#123;</div><div class="line">        var newList = new List(head);</div><div class="line">        insert(_head, newList)</div><div class="line">        this.head = _head;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // 头插法</div><div class="line">    function insert (head, newList) &#123;</div><div class="line">        newList.next = head.next;</div><div class="line">        head.next = newList;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // 正序打印</div><div class="line">    this.print = function () &#123;</div><div class="line">        head = Object.assign(&#123;&#125;, this.head);</div><div class="line">        while(head.next) &#123;</div><div class="line">            console.log(head.next.data);</div><div class="line">            head.next = head.next.next;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // 逆序输出</div><div class="line">    this.reverse = function () &#123;</div><div class="line">        head = Object.assign(&#123;&#125;, this.head);</div><div class="line">        var res = []</div><div class="line">        while(head.next) &#123;</div><div class="line">            res.push(head.next);</div><div class="line">            head.next = head.next.next;</div><div class="line">        &#125;</div><div class="line">        while (res.length &gt; 0) &#123;</div><div class="line">            console.log(res.pop().data)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var list = new lists();</div><div class="line">var nodes = [1,2,3,4,5,6,7];</div><div class="line">nodes.forEach((value) =&gt; &#123;</div><div class="line">    list.insertList(value);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -459,7 +413,7 @@ nodes.forEach((value) =&gt; {
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http:\\hexin.life/2017/10/11/title-29/" title="JS 实现链表">http:\\hexin.life/2017/10/11/title-29/</a>
+      <a href="http:\\hexin.life/2017/10/11/title-29/" title="">http:\\hexin.life/2017/10/11/title-29/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -544,8 +498,17 @@ nodes.forEach((value) =&gt; {
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -571,7 +534,7 @@ nodes.forEach((value) =&gt; {
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -582,7 +545,7 @@ nodes.forEach((value) =&gt; {
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -639,6 +602,22 @@ nodes.forEach((value) =&gt; {
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#单链表的-JS-简单实现"><span class="nav-number">1.</span> <span class="nav-text">单链表的 JS 简单实现</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
