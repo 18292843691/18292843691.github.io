@@ -132,15 +132,13 @@
   </entry>
   
   <entry>
-    <title></title>
+    <title>JS 实现单链表</title>
     <link href="http:%5C%5Chexin.life/2017/10/11/title-29/"/>
     <id>http:\\hexin.life/2017/10/11/title-29/</id>
-    <published>2017-10-10T16:20:38.082Z</published>
-    <updated>2017-10-10T16:34:03.908Z</updated>
+    <published>2017-10-10T16:20:38.000Z</published>
+    <updated>2017-10-11T15:37:39.450Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><hr>
-<p>title: JS 实现链表<br>date: 2017-10-11 00:20:38<br>tags:<br>categories:</p>
-<h1 id="单链表的-JS-简单实现"><a href="#单链表的-JS-简单实现" class="headerlink" title="单链表的 JS 简单实现"></a>单链表的 JS 简单实现</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">var lists = function () &#123;</div><div class="line">    var List = function (head) &#123;</div><div class="line">        this.data = head;</div><div class="line">        this.next = null;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    var _head = new List(&apos;head&apos;);</div><div class="line"></div><div class="line">    this.insertList = function (head) &#123;</div><div class="line">        var newList = new List(head);</div><div class="line">        insert(_head, newList)</div><div class="line">        this.head = _head;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // 头插法</div><div class="line">    function insert (head, newList) &#123;</div><div class="line">        newList.next = head.next;</div><div class="line">        head.next = newList;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // 正序打印</div><div class="line">    this.print = function () &#123;</div><div class="line">        head = Object.assign(&#123;&#125;, this.head);</div><div class="line">        while(head.next) &#123;</div><div class="line">            console.log(head.next.data);</div><div class="line">            head.next = head.next.next;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // 逆序输出</div><div class="line">    this.reverse = function () &#123;</div><div class="line">        head = Object.assign(&#123;&#125;, this.head);</div><div class="line">        var res = []</div><div class="line">        while(head.next) &#123;</div><div class="line">            res.push(head.next);</div><div class="line">            head.next = head.next.next;</div><div class="line">        &#125;</div><div class="line">        while (res.length &gt; 0) &#123;</div><div class="line">            console.log(res.pop().data)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var list = new lists();</div><div class="line">var nodes = [1,2,3,4,5,6,7];</div><div class="line">nodes.forEach((value) =&gt; &#123;</div><div class="line">    list.insertList(value);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><h1 id="单链表的-JS-简单实现"><a href="#单链表的-JS-简单实现" class="headerlink" title="单链表的 JS 简单实现"></a>单链表的 JS 简单实现</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">var lists = function () &#123;</div><div class="line">    var List = function (head) &#123;</div><div class="line">        this.data = head;</div><div class="line">        this.next = null;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    var _head = new List(&apos;head&apos;);</div><div class="line"></div><div class="line">    this.insertList = function (head) &#123;</div><div class="line">        var newList = new List(head);</div><div class="line">        insert(_head, newList)</div><div class="line">        this.head = _head;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // 头插法</div><div class="line">    function insert (head, newList) &#123;</div><div class="line">        newList.next = head.next;</div><div class="line">        head.next = newList;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // 正序打印</div><div class="line">    this.print = function () &#123;</div><div class="line">        head = Object.assign(&#123;&#125;, this.head);</div><div class="line">        while(head.next) &#123;</div><div class="line">            console.log(head.next.data);</div><div class="line">            head.next = head.next.next;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // 逆序输出</div><div class="line">    this.reverse = function () &#123;</div><div class="line">        head = Object.assign(&#123;&#125;, this.head);</div><div class="line">        var res = []</div><div class="line">        while(head.next) &#123;</div><div class="line">            res.push(head.next);</div><div class="line">            head.next = head.next.next;</div><div class="line">        &#125;</div><div class="line">        while (res.length &gt; 0) &#123;</div><div class="line">            console.log(res.pop().data)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var list = new lists();</div><div class="line">var nodes = [1,2,3,4,5,6,7];</div><div class="line">nodes.forEach((value) =&gt; &#123;</div><div class="line">    list.insertList(value);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 ]]></content>
     
     <summary type="html">
@@ -149,73 +147,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>HTTP 协议</title>
-    <link href="http:%5C%5Chexin.life/2017/10/10/title-28/"/>
-    <id>http:\\hexin.life/2017/10/10/title-28/</id>
-    <published>2017-10-09T17:11:24.000Z</published>
-    <updated>2017-10-10T16:35:58.830Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><h1 id="http-协议的主要特点"><a href="#http-协议的主要特点" class="headerlink" title="http 协议的主要特点"></a>http 协议的主要特点</h1><ul>
-<li>简单快速 =&gt; 统一资源 URI</li>
-<li>灵活 =&gt; 可传输不同数据类型</li>
-<li>无连接 =&gt; 连接一次便断掉</li>
-<li>无状态 =&gt; 不会记忆</li>
-</ul>
-<h1 id="http-报文的组成成分"><a href="#http-报文的组成成分" class="headerlink" title="http 报文的组成成分"></a>http 报文的组成成分</h1><p>建立在TCP连接上</p>
-<p>请求报文：<br>    请求行<br>        http方法 / 页面地址 HTTP协议 / HTTP版本<br>        =&gt; get / HTTP/1.1<br>    请求头<br>        key-value =&gt;<br>        host: www.baidu.com<br>        Connection: keep-alive<br>        Pragma: no-cache<br>        …<br>    空行<br>        请求头结束<br>    请求体</p>
-<p>响应报文：<br>    状态行<br>        HTTP/1.1 200 OK<br>    响应头<br>        Server: nginx<br>        Date: Sat, 22 Jul 2017 22:22:22 GMT<br>        Content-Type: text/html; charset=utf-8<br>        …<br>    空行<br>    响应体</p>
-<h1 id="HTTP-方法"><a href="#HTTP-方法" class="headerlink" title="HTTP 方法"></a>HTTP 方法</h1><p>GET - 获取资源<br>POST- 传输资源<br>PUT - 更新资源<br>DELETE - 删除资源<br>HEAD - 获得报文首部</p>
-<h1 id="post-和-get-的区别"><a href="#post-和-get-的区别" class="headerlink" title="post 和 get 的区别"></a>post 和 get 的区别</h1><ul>
-<li>get 在浏览器回退时是无害的，而 post 会再次提交请求</li>
-<li>get 产生的 url 地址可以被缓存，而 post 不行</li>
-<li>get 会被浏览器主动缓存， 而 post 不会，除非手动设置</li>
-<li>get 只能进行 url 编码，而 post 支持多种</li>
-<li>get 请求参数会被完整的保留在历史纪录中，而 post 中的参数不会</li>
-<li>get 请求在 url 中参数有长度限制，post 没有 =&gt;  get url 参数太长会被截断</li>
-<li>对参数的数据类型，get 只支持 ASCLL 字符，post 没有限制</li>
-<li>get 比 post 更 <code>不</code>安全， 因为参数直接暴露在 url 中，所以不能用来传递敏感信息</li>
-<li>get 参数通过 url 传递，post 放在 request body 中</li>
-</ul>
-<h1 id="HTTP-状态码"><a href="#HTTP-状态码" class="headerlink" title="HTTP 状态码"></a>HTTP 状态码</h1><p>1xx: 这一类型的状态码，代表请求已被接受，需要继续处理。这类响应是临时响应，只包含状态行和某些可选的响应头信息，并以空行结束。<br>2xx: 成功<br>    206 Partial Content: 服务器已经成功处理了部分GET请求。类似于FlashGet或者迅雷这类的HTTP 下载工具都是使用此类响应实现断点续传或者将一个大文档分解为多个下载段同时下载。<br>3xx: 重定向<br>    301: 请求的页面已经转移了新的 url,永久重定向<br>    302: 请求的页面已经 临时 转移至了新的 url<br>    303: 对应当前请求的响应可以在另一个URI上被找到，当响应于POST（或PUT / DELETE）接收到响应时，客户端应该假定服务器已经收到数据，并且应该使用单独的GET消息发出重定向。[23]这个方法的存在主要是为了允许由脚本激活的POST请求输出重定向到一个新的资源。这个新的URI不是原始资源的替代引用。同时，303响应禁止被缓存。当然，第二个请求（重定向）可能被缓存。<br>    304: 客户端有缓冲的文档并发送了一个条件性额度请求，服务器告诉客户端，原来请求的文档没有发生改变，可以继续使用</p>
-<pre><code>![](https://img.aotu.io/wengeek/cache.png)
-
-307: 在这种情况下，请求应该与另一个URI重复，但后续的请求应仍使用原始的URI。 与302相反，当重新发出原始请求时，不允许更改请求方法。 例如，应该使用另一个POST请求来重复POST请求。
-308: 请求和所有将来的请求应该使用另一个URI重复。 307和308重复302和301的行为，但不允许HTTP方法更改。 例如，将表单提交给永久重定向的资源可能会顺利进行。
-</code></pre><blockquote>
-<p>1、从上面的状态码中，你可能注意到302、303和307状态码之间存在一些交叉，那么，它们之间存在哪些细微差别？<br>303和307是HTTP/1.1新增加的状态码，它们是对HTTP1.0中的302状态码的细化。当HTTP/1.0客户端发起一个POST请求，并在响应中收到302重定向状态码时，它会接受Location首部的重定向URL，并向那个URL发起一个GET请求。透过以上的状态码介绍，我们可以发现HTTP/1.1规范使用303状态码来实现同样的行为。为了避开这个问题，对于HTTP/1.1客户端，用307状态码来代替302状态码进行临时重定向。<br>在HTTP/1.1中，302理论上是可以被303和307代替掉的，但为了兼容HTTP/1.0，依然还在广泛使用。</p>
-<p>2、经常可以看到 Cache-Control: no-cache 这样的首部，那么代表的是不缓存么？<br>Cache-Control: no-cache 响应实际上是可以存储到本地缓存区中的，只是在与服务器进行新鲜度再验证之前，缓存不能将其提供给客户端使用。<br>如果需要本地彻底不缓存，需要使用Cache-Control: no-store，表示缓存应该尽快从存储器中删除文档的所有痕迹。</p>
-</blockquote>
-<p>4xx: 客户端错误<br>    400: 客户端有语法错误，不能被服务器所理解<br>    401: 请求未授权，类似于403 Forbidden，401语义即“未认证”，即用户没有必要的凭据。该响应必须包含一个适用于被请求资源的WWW-Authenticate信息头用以询问用户信息。<br>    <em>注意：当网站（通常是网站域名）禁止IP地址时，有些网站状态码显示的401，表示该特定地址被拒绝访问网站</em><br>    403: 请求页面访问被禁止,服务器已经理解请求，但是拒绝执行它。与401响应不同的是，身份验证并不能提供任何帮助，而且这个请求也不应该被重复提交。<br>    404: 请求页面没有找到<br>5xx: 服务器错误<br>    500: 服务器发生不可预期的错误<br>    503: 请求未完成，服务器临时过载或当机，一段时间后可能恢复正常</p>
-<ul>
-<li><a href="https://aotu.io/notes/2016/01/28/3xx-of-http-status/" target="_blank" rel="external">你所知道的3xx状态码</a></li>
-<li><a href="https://zh.wikipedia.org/wiki/HTTP%E7%8A%B6%E6%80%81%E7%A0%81" target="_blank" rel="external">HTTP状态码</a></li>
-</ul>
-<h1 id="什么是持久连接"><a href="#什么是持久连接" class="headerlink" title="什么是持久连接"></a>什么是持久连接</h1><p>http 协议采用‘请求-应答’模式，使用非 keep-alive 模式时，每个请求/应答客户端和服务器都建立一个连接，完成之后立即断开连接<br>使用 keep-alive 时(http/1.1 持久连接，连接重用)， keep-alive 功能使客户端到服务器的连接持续有效，当出现对服务器的后续请求时，，keep-alve 避免了建立或重新建立连接。</p>
-<h1 id="什么是管线化"><a href="#什么是管线化" class="headerlink" title="什么是管线化"></a>什么是管线化</h1><p>某个 持久连接 情况下，某个连接上的消息传递类似于：<br>请求1 -&gt; 响应1 -&gt; 请求2 -&gt; 响应2 -&gt; 请求3 -&gt; 响应3<br>某个连接上的消息变成类似这样：=&gt; 打包一次请求，一次返回响应<br>请求1 -&gt; 请求2 -&gt; 请求3 -&gt; 响应1 -&gt; 响应2 -&gt; 响应3</p>
-<ul>
-<li>管线化通过 持久连接 完成，仅 HTTP/1.1 支持</li>
-<li>只有 GET HEAD 请求可以进行管线化，post 有所限制</li>
-<li>初次创建连接不应启动管线化，因对服务器不一定支持HTTP/1.1版本的协议</li>
-<li>管线化不会影响响应到来顺序。</li>
-<li>HTTP/1.1 要求服务器支持管线化，但并不要求对响应进行管线化处理，只要求   管线化的请求不失败即可</li>
-<li>开启管线化可能并不会带来很大性能提升，很多服务器和代理程序对管线化支持并不好，因此现代浏览器默认不开启管线化支持</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/as
-    
-    </summary>
-    
-      <category term="HTTP" scheme="http:%5C%5Chexin.life/categories/HTTP/"/>
-    
-    
-      <category term="HTTP" scheme="http:%5C%5Chexin.life/tags/HTTP/"/>
     
   </entry>
   
@@ -1432,68 +1363,6 @@
   </entry>
   
   <entry>
-    <title>字符串的乘法</title>
-    <link href="http:%5C%5Chexin.life/2017/07/29/title-20/"/>
-    <id>http:\\hexin.life/2017/07/29/title-20/</id>
-    <published>2017-07-29T07:55:33.000Z</published>
-    <updated>2017-07-30T15:57:00.887Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><ol>
-<li>创建一个n+1的空数组，调用join方法。</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">String</span>.prototype.times = <span class="function"><span class="keyword">function</span>(<span class="params">n</span>) </span>&#123;<span class="comment">//IE6 530-640 FF3 400~550 IE8 840 ~1110   chrome 600~1000</span></div><div class="line">  <span class="keyword">return</span> (<span class="keyword">new</span> <span class="built_in">Array</span>(n+<span class="number">1</span>)).join(<span class="keyword">this</span>);</div><div class="line">&#125;;</div><div class="line"><span class="string">``</span><span class="string">` </span></div><div class="line"></div><div class="line">2. 创建一个对象，拥有length属性，然后利用call()方法去调用数组原型的join方法。这样就不用创建数组了。</div></pre></td></tr></table></figure>
-<p>String.prototype.times = function(n) {//IE6 570~600  FF3 320~430  chrome 550~900 IE8 422~490<br>  return Array.prototype.join.call({length:n+1}, this);<br>};<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">3. 它先把Array.prototype.join与对象缓存起来，这样每次就不用从Array的原型查找join方法与创建对象。</div></pre></td></tr></table></figure></p>
-<p>String.prototype.times = (function(){//IE6 500~600  FF3 322~390 chrome 581~900 IE8 430~500<br>  var join = Array.prototype.join,//利用闭包，每次的结果都非常不稳定，让浏览器无法进行优化<br>  obj = { };<br>  return function(n) {<br>    obj.length = n + 1;<br>    return join.call(obj, this);<br>  }<br>})();<br>```</p>
-<blockquote>
-<p>更多(本人理解有限):<br><a href="http://www.cnblogs.com/rubylouvre/archive/2009/11/08/1598383.html" target="_blank" rel="external">字符串的乘法-司徒正美</a></p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/as
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JS练习之--模拟call_apply</title>
-    <link href="http:%5C%5Chexin.life/2017/07/29/title-19/"/>
-    <id>http:\\hexin.life/2017/07/29/title-19/</id>
-    <published>2017-07-29T07:35:46.000Z</published>
-    <updated>2017-08-01T07:25:47.725Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><h2 id="apply-和-call"><a href="#apply-和-call" class="headerlink" title="apply 和 call"></a>apply 和 call</h2><p>在 JavaScript 中, 函数是对象。JavaScript 函数有它的属性和方法。<br>call() 和 apply() 是预定义的函数方法。 两个方法可用于调用函数，两个方法的第一个参数必须是对象本身。<br>例1；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var jaw = &#123; </div><div class="line">    name: &apos;jaw&apos;, </div><div class="line">    sayHello: function(age) &#123; </div><div class="line">        console.log(&apos;hello i am &apos; + this.name + &quot; i&apos;m &quot; + age + &apos; years old &apos;) </div><div class="line">    &#125; </div><div class="line">&#125;;</div><div class="line"></div><div class="line">var liu = &#123; </div><div class="line">    name: &apos;liu&apos; </div><div class="line">&#125;;</div><div class="line">jaw.sayHello(22); // hello i am jaw i&apos;m 22 years old</div><div class="line">jaw.sayHello.apply(liu, [24]);  //hello i am liu i&apos;m 24 years old </div><div class="line">jaw.sayHello.call(liu, 23);  //hello i am liu i&apos;m 23 years old</div></pre></td></tr></table></figure></p>
-<p>例2：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function a()&#123;</div><div class="line">    y=function()&#123;</div><div class="line">    x=2;</div><div class="line">&#125;; </div><div class="line">return function()&#123;</div><div class="line">    var x=3;y();console.log(this.x)</div><div class="line">&#125;.apply(this, arguments)&#125; </div><div class="line">a();    //2</div></pre></td></tr></table></figure></p>
-<p>两个方法都使用了对象本身作为第一个参数。 两者的区别在于第二个参数：</p>
-<ul>
-<li>apply传入的是一个参数数组，也就是将多个参数组合成为一个数组传入，</li>
-<li>call则作为call的参数传入（从第二个参数开始）。</li>
-</ul>
-<p>在 JavaScript 严格模式(strict mode)下, 在调用函数时第一个参数会成为 this 的值， 即使该参数不是一个对象。<br>在 JavaScript 非严格模式(non-strict mode)下, 如果第一个参数的值是 null 或 undefined, 它将使用全局对象替代。</p>
-<blockquote>
-<p>通过 call() 或 apply() 方法你可以设置 this 的值, 且作为已存在对象的新方法调用。</p>
-</blockquote>
-<h2 id="apply-模拟实现"><a href="#apply-模拟实现" class="headerlink" title="apply 模拟实现"></a>apply 模拟实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">Function.prototype.applyOne = function (context) &#123;</div><div class="line">    var context = context || window;     //如果没有参数时指向window</div><div class="line">    var args = arguments[1];               //获取传入的数组</div><div class="line">    var fn = testSymbol(context);</div><div class="line"></div><div class="line">    context[fn] = this;                	//fn属性不存在</div><div class="line">    </div><div class="line">    if(args == void 0) &#123;          //没有参数即直接运行</div><div class="line">        return context[fn]();</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    var fnStr = &apos;context[fn](&apos;;             </div><div class="line">     </div><div class="line">    for (var i = 0; i &lt; args.length; i++) &#123;</div><div class="line">     	fnStr += i == args.length - 1 ? args[i] : args[i] + &apos;,&apos;;</div><div class="line">     &#125;;            </div><div class="line">     	fnStr += &apos;)&apos;;           //得到context[fn](arg1,arg2,arg3....)</div><div class="line">     	var returnValue = eval(fnStr);      //</div><div class="line">     	delete context[fn];            //删除这个属性</div><div class="line">     	return returnValue;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">//简单模拟es6的Symbol保证属性的唯一性</div><div class="line">function testSymbol(obj) &#123;            </div><div class="line">    var unquie_obj = &apos;00&apos; + Math.random();</div><div class="line">    if (obj.hasOwnProperty(unquie_obj)) &#123;</div><div class="line">        arguments.callee(obj);</div><div class="line">    &#125; else &#123;</div><div class="line">        return unquie_obj;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="这里对-call-进行模拟实现"><a href="#这里对-call-进行模拟实现" class="headerlink" title="这里对 call 进行模拟实现"></a>这里对 call 进行模拟实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//call</div><div class="line">Function.prototype.callOne = function (context) &#123;</div><div class="line">    return this.applyOne(([].shift.applyOne(arguments)),arguments);        //将参数依次弹出即可</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="这里对-bind-进行模拟实现"><a href="#这里对-bind-进行模拟实现" class="headerlink" title="这里对 bind 进行模拟实现"></a>这里对 bind 进行模拟实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Function.prototype.bindOne = function() &#123;</div><div class="line">    var _this = this,                        // 保存原函数</div><div class="line">            context = [].shift.call(arguments), // 保存需要绑定的this上下文</div><div class="line">            args = [].slice.call(arguments);    // 剩余的参数转为数组</div><div class="line">        return function () &#123;                    // 返回一个新函数</div><div class="line">            _this.apply(context,[].concat.call(args, [].slice.call(arguments)));</div><div class="line">        &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/as
-    
-    </summary>
-    
-      <category term="前端" scheme="http:%5C%5Chexin.life/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="JavaScript" scheme="http:%5C%5Chexin.life/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
     <title>HTTP 表单编码 enctype(转)</title>
     <link href="http:%5C%5Chexin.life/2017/07/27/title-18/"/>
     <id>http:\\hexin.life/2017/07/27/title-18/</id>
@@ -2477,6 +2346,189 @@ D:. public/
     
     
       <category term="插件" scheme="http:%5C%5Chexin.life/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS函数闭包</title>
+    <link href="http:%5C%5Chexin.life/2017/04/15/title-7/"/>
+    <id>http:\\hexin.life/2017/04/15/title-7/</id>
+    <published>2017-04-15T13:03:54.000Z</published>
+    <updated>2017-05-04T15:37:52.487Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><blockquote class="blockquote-center">程序是写给人看的，顺带能在机器上运行</blockquote>
+
+
+
+<h1 id="JS循环闭包："><a href="#JS循环闭包：" class="headerlink" title="JS循环闭包："></a>JS循环闭包：</h1><h2 id="应用一"><a href="#应用一" class="headerlink" title="应用一"></a>应用一</h2><h3 id="html-结构"><a href="#html-结构" class="headerlink" title="html 结构"></a>html 结构</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   <span class="tag">&lt;<span class="name">p</span>&gt;</span>test0<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>test1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>test2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>test3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>test4<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="抛出问题"><a href="#抛出问题" class="headerlink" title="抛出问题"></a>抛出问题</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 抛出问题:</span></div><div class="line">                此题的目的是想每次点击对应目标时弹出对应的数字下标 0~4,但实际是无论点击哪个目标都会弹出数字5</div><div class="line">            问题所在:</div><div class="line">                arr 中的每一项的 onclick 均为一个函数实例(Function 对象),这个函数实例也产生了一个闭包域,</div><div class="line">                这个闭包域引用了外部闭包域的变量,其 function scope 的 closure 对象有个名为 i 的引用,</div><div class="line">                外部闭包域的私有变量内容发生变化,内部闭包域得到的值自然会发生改变</div><div class="line">            */</div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">myClosure</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> arr = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>);</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">                arr[i].onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                    alert(i);     <span class="comment">//无论点击哪一个均会弹出5</span></div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+<h3 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">解决方法一：</div><div class="line">        增加若干个对应的闭包域空间(	这里采用的是匿名函数),专门用来存储原先需要引用的内容(下标),不过只限于基本类型(基本类型值传递,对象类型引用传递) </div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">myClosure</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> arr = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>);</div><div class="line"></div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">                (<span class="function"><span class="keyword">function</span> (<span class="params">j</span>) </span>&#123;  </div><div class="line">                arr[i].onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                    alert(j);     </div><div class="line">                    &#125;</div><div class="line">                &#125;)(i);</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*思路：将下标作为对象属性(name:"i",value:i的值)添加到每个数组项(p对象)中*/</span></div><div class="line">此时当前 p 对象的 i 属性并不是对循环体的 i 变量的引用,而是一个独立 p 对象的属性,属性值在声明的时候就确定了(基本类型的值都是存在栈中的,当有一个基本类型变量声明其等于另一个基本变量时,此时并不是两个基本类型变量都指向一个值,而是各自有各自的值,但值是相等的)</div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">myClosure</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> arr = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>);</div><div class="line"></div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">                arr[i].i = i;</div><div class="line">                arr[i].onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                    alert(<span class="keyword">this</span>.i);     </div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+<h3 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*解决思路:</span></div><div class="line">与解决办法一有点相似但却有点不太相似.</div><div class="line">相似点:同样是增加若干个对应的闭包域空间用来存储下标</div><div class="line">不同点:解决办法一是在新增的匿名闭包空间内完成事件的绑定,而此例是将事件绑定在新增的匿名函数返回的函数上。</div><div class="line">此时绑定的函数中的 function scope 中的 closure 对象的 引用 arg 是指向将其返回的匿名函数的私有变量 arg*/</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">myClosure</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> arr = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>);</div><div class="line">            </div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;								</div><div class="line">                arr[i].onclick = (<span class="function"><span class="keyword">function</span> (<span class="params">j</span>) </span>&#123;</div><div class="line">                    </div><div class="line">                    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">                        alert(j);     </div><div class="line">                    &#125;</div><div class="line">                &#125;)(i);</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+<h3 id="方法四"><a href="#方法四" class="headerlink" title="方法四"></a>方法四</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">  <span class="comment">//思路同方法一：</span></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">myClosure</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> arr = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>);</div><div class="line">    </div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">            (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">                    <span class="keyword">var</span> tmp = i;</div><div class="line">                    arr[i].onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;						</div><div class="line">                    alert(tmp);    </div><div class="line">                &#125;</div><div class="line">            &#125;)();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="方法五："><a href="#方法五：" class="headerlink" title="方法五："></a>方法五：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//方法五：es6新语法，let为一个块级作用域</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">myClosure</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> arr = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>);</div><div class="line">        </div><div class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">            arr[i].onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                alert(i);     </div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h1 id="非循环闭包："><a href="#非循环闭包：" class="headerlink" title="非循环闭包："></a>非循环闭包：</h1><h2 id="应用一："><a href="#应用一：" class="headerlink" title="应用一："></a>应用一：</h2><h3 id="html-结构-1"><a href="#html-结构-1" class="headerlink" title="html 结构"></a>html 结构</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;p id="help"&gt;Helpful notes will appear here&lt;/p&gt;</div><div class="line">    &lt;p&gt;E-mail:</div><div class="line">        &lt;input type="text" id="email" name="email"&gt;</div><div class="line">    &lt;/p&gt;</div><div class="line">    &lt;p&gt;Name:</div><div class="line">        &lt;input type="text" id="name" name="name"&gt;</div><div class="line">    &lt;/p&gt;</div><div class="line">    &lt;p&gt;Age:</div><div class="line">        &lt;input type="text" id="age" name="age"&gt;</div><div class="line">    &lt;/p&gt;</div></pre></td></tr></table></figure>
+<h3 id="闭包解决-input-框聚焦动态提示"><a href="#闭包解决-input-框聚焦动态提示" class="headerlink" title="闭包解决 input 框聚焦动态提示"></a>闭包解决 input 框聚焦动态提示</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">showHelp</span>(<span class="params">help</span>) </span>&#123;</div><div class="line">            <span class="built_in">document</span>.getElementById(<span class="string">'help'</span>).innerHTML = help;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">makeHelpCallback</span>(<span class="params">help</span>) </span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;     <span class="comment">//形成闭包</span></div><div class="line">                showHelp(help);</div><div class="line">            &#125;;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">setupHelp</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> helpText = [&#123;</div><div class="line">                <span class="string">'id'</span>: <span class="string">'email'</span>,</div><div class="line">                <span class="string">'help'</span>: <span class="string">'Your e-mail address'</span></div><div class="line">            &#125;, &#123;</div><div class="line">                <span class="string">'id'</span>: <span class="string">'name'</span>,</div><div class="line">                <span class="string">'help'</span>: <span class="string">'Your full name'</span></div><div class="line">            &#125;, &#123;</div><div class="line">                <span class="string">'id'</span>: <span class="string">'age'</span>,</div><div class="line">                <span class="string">'help'</span>: <span class="string">'Your age (you must be over 16)'</span></div><div class="line">            &#125;];</div><div class="line"></div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; helpText.length; i++) &#123;</div><div class="line">                <span class="keyword">var</span> item = helpText[i];</div><div class="line">                <span class="built_in">document</span>.getElementById(item.id).onfocus = makeHelpCallback(item.help);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        setupHelp();</div></pre></td></tr></table></figure>
+<h2 id="应用二"><a href="#应用二" class="headerlink" title="应用二"></a>应用二</h2><h3 id="html-结构-2"><a href="#html-结构-2" class="headerlink" title="html 结构"></a>html 结构</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Some paragraph text<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>some heading 1 text<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>some heading 2 text<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">id</span>=<span class="string">"size-12"</span>&gt;</span>12<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">id</span>=<span class="string">"size-14"</span>&gt;</span>14<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">id</span>=<span class="string">"size-16"</span>&gt;</span>16<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="css"><a href="#css" class="headerlink" title="css"></a>css</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">  body &#123;</div><div class="line">  font-family: Helvetica, Arial, sans-serif;</div><div class="line">  font-size: 12px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">h1 &#123;</div><div class="line">  font-size: 1.5em;</div><div class="line">&#125;</div><div class="line">h2 &#123;</div><div class="line">  font-size: 1.2em;</div><div class="line">&#125;```javascript</div><div class="line">      function makeSizer(size) &#123;</div><div class="line">      return function() &#123;</div><div class="line">        document.body.style.fontSize = size + 'px';</div><div class="line">      &#125;;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    var size12 = makeSizer(12);</div><div class="line">    var size14 = makeSizer(14);</div><div class="line">    var size16 = makeSizer(16);</div><div class="line"></div><div class="line">    document.getElementById('size-12').onclick = size12;</div><div class="line">    document.getElementById('size-14').onclick = size14;</div><div class="line">    document.getElementById('size-16').onclick = size16;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>From:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/cn/docs/Web/JavaScript/Closures" target="_blank" rel="external">闭包-MDN</a> </li>
+<li><a href="https://segmentfault.com/a/1190000003818163" target="_blank" rel="external">9种办法解决JS循环闭包面试经典题之for循环</a></li>
+</ul>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/as
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>HTML 5 Web 存储及WEB应用缓存</title>
+    <link href="http:%5C%5Chexin.life/2017/04/15/title-6/"/>
+    <id>http:\\hexin.life/2017/04/15/title-6/</id>
+    <published>2017-04-15T12:51:20.000Z</published>
+    <updated>2017-04-18T11:54:03.333Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><h1 id="俩种在客户端储存数据的方法"><a href="#俩种在客户端储存数据的方法" class="headerlink" title="俩种在客户端储存数据的方法"></a>俩种在客户端储存数据的方法</h1><ul>
+<li>localStorage - 没有时间限制的数据存储</li>
+<li>sessionStorage - 针对 session 的数据存储</li>
+</ul>
+<p>之前这些都是由cookie完成的，但是cookie不适合大量数据的存储，因为他们由每个服务器的请求来传递，使得cookie速度慢而且效率不高。</p>
+<p>在HTML5中，数据不是由每个服务器请求来传递的，而是只有在请求时使用数据，使得在不影响网站性能的情况下存储大量数据。对于不同的网站，sh数据存储于不同的区域，而且一个网站只能访问其自身的数据。HTML5 通过JavaScript来存储和访问数据。</p>
+<p>#localStorage 方法</p>
+<ul>
+<li>例子对用户访问页面的次数进行计数：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line"><span class="keyword">if</span> (localStorage.pagecount)</div><div class="line">  &#123;</div><div class="line">  localStorage.pagecount=<span class="built_in">Number</span>(localStorage.pagecount) +<span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line"><span class="keyword">else</span></div><div class="line">  &#123;</div><div class="line">  localStorage.pagecount=<span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line"><span class="built_in">document</span>.write(<span class="string">"Visits "</span>+ localStorage.pagecount + <span class="string">" time(s)."</span>);</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<h1 id="sessionStorage-方法"><a href="#sessionStorage-方法" class="headerlink" title="sessionStorage 方法"></a>sessionStorage 方法</h1><blockquote>
+<p>sessionStorage 方法针对一个 session 进行数据存储。当用户关闭浏览器窗口后，数据会被删除。</p>
+</blockquote>
+<ul>
+<li>对用户在当前 session 中访问页面的次数进行计数<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line"><span class="keyword">if</span> (sessionStorage.pagecount)</div><div class="line">  &#123;</div><div class="line">  sessionStorage.pagecount=<span class="built_in">Number</span>(sessionStorage.pagecount) +<span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line"><span class="keyword">else</span></div><div class="line">  &#123;</div><div class="line">  sessionStorage.pagecount=<span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line"><span class="built_in">document</span>.write(<span class="string">"Visits "</span>+sessionStorage.pagecount+<span class="string">" time(s) this session."</span>);</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="HTML-5-应用程序缓存"><a href="#HTML-5-应用程序缓存" class="headerlink" title="HTML 5 应用程序缓存"></a>HTML 5 应用程序缓存</h1><blockquote>
+<p>使用 HTML5，通过创建 cache manifest 文件，可以轻松地创建 web 应用的离线版本。</p>
+<p>什么是应用程序缓存（Application Cache）？ HTML5 引入了应用程序缓存，这意味着 web 应用可进行缓存，并可在没有因特网连接时进行访问。<br>应用程序缓存为应用带来三个优势： </p>
+<ul>
+<li>离线浏览：用户可在应用离线时使用它们 </li>
+<li>速度：已缓存资源加载得更快 </li>
+<li>减少服务器负载：浏览器将只从服务器下载更新过或更改过的资源。 </li>
+</ul>
+</blockquote>
+<p>浏览器支持 所有主流浏览器均支持应用程序缓存，除了Internet Explorer。</p>
+<p><strong>如需启用应用程序缓存，请在文档的 <html> 标签中包含 manifest 属性：</html></strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE HTML&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">html</span> <span class="attr">manifest</span>=<span class="string">"demo.appcache"</span>&gt;</span></span></div><div class="line">//something</div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>每个指定了 manifest 的页面在用户对其访问时都会被缓存。如果未指定 manifest 属性，则页面不会被缓存（除非在 manifest 文件中直接指定了该页面）。<br>manifest 文件的建议的文件扩展名是：”.appcache”。<br>请注意，manifest 文件需要配置正确的 MIME-type，即 “text/cache-manifest”。必须在 web 服务器上进行配置。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p><strong>Manifest 文件</strong><br>manifest 文件是简单的文本文件，它告知浏览器被缓存的内容（以及不缓存的内容）。<br>manifest 文件可分为三个部分：</p>
+</blockquote>
+<hr>
+<blockquote>
+<ol>
+<li><strong>CACHE MANIFEST - 在此标题下列出的文件将在首次下载后进行缓存</strong></li>
+</ol>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">NETWORK:</div><div class="line">login.asp</div></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>2.NETWORK ：在此标题下列出的文件需要与服务器的连接，且不会被缓存</strong></p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">NETWORK:       # NETWORK 小节规定文件 "login.asp" 永远不会被缓存，且离线时是不可用的：</div><div class="line">login.asp  </div><div class="line">/*------------------------------*/</div><div class="line">NETWORK:</div><div class="line">*                        #可以使用星号来指示所有其他资源/文件都需要因特网连接：</div></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>3. FALLBACK：在此标题下列出的文件规定当页面无法访问时的回退页面（比如 404 页面）</strong></p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">FALLBACK:</div><div class="line">/html5/ /404.html    #第一个 URI 是资源，第二个是替补。</div></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="http://www.w3school.com.cn/html5/html_5_app_cache.asp" target="_blank" rel="external">HTML5 Web应用程序缓存-w3school</a></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/as
+    
+    </summary>
+    
+    
+      <category term="[object Object]" scheme="http:%5C%5Chexin.life/tags/object-Object/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>cookie和session</title>
+    <link href="http:%5C%5Chexin.life/2017/04/15/title-5/"/>
+    <id>http:\\hexin.life/2017/04/15/title-5/</id>
+    <published>2017-04-15T05:53:19.000Z</published>
+    <updated>2017-04-18T11:53:51.330Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><blockquote class="blockquote-center">相信你所相信的，坚持你所坚持的</blockquote>
+
+<h1 id="cookies"><a href="#cookies" class="headerlink" title="cookies"></a>cookies</h1><blockquote>
+<p>HTTP 是一个无状态协议，所以客户端每次发出请求时，下一次请求无法得知上一次请求所包含的状态数据，如何能把一个用户的状态数据关联起来呢？即大多都是利用 cookie、session 实现。如浏览器自动保存密码，记住登录状态，网页换肤，新手引导等下次不再提醒功能（我就说我以前换网吧玩总得去禁用那些引导）。<br>比如在淘宝的某个页面中，你进行了登陆操作。当你跳转到商品页时，服务端如何知道你是已经登陆的状态？<br>因此产生了 cookie 来解决这门问题。<a id="more"></a></p>
+</blockquote>
+<p> <img src="http://harttle.com/assets/img/blog/cookie.png" alt="cookie的传输"></p>
+<ul>
+<li>服务器向客户端发送 cookies</li>
+<li>通常使用 HTTP 协议规定的 set-cookie 头操作。</li>
+<li>规范规定 cookies 的格式为vlaue = name 格式，且必须包含这部分</li>
+<li>浏览器将 cookies 保存</li>
+<li><strong>每次浏览器向服务器发送请求都会发送 cookies</strong></li>
+</ul>
+<h2 id="cookies参数"><a href="#cookies参数" class="headerlink" title="cookies参数"></a>cookies参数</h2><ul>
+<li><strong>httpOnly:浏览器下不允许脚本操作document.cookies去更改 cookies,一般情况下设置为 true，可以避免 xss 攻击拿到 cookies</strong></li>
+<li>path: 表示 cookies 影响到的路径，匹配该路径才会发送 cookies</li>
+<li><strong>expires、maxAge</strong>: 告诉浏览器该 cookies 什么时候过期，采用UTC格式的时间，是 cookies  多久后过期的相对时间。（<strong>删除 cookies，在服务端将 maxAge 设为0，或者在客户端将 expires 设为一个过去的时间</strong>），如果不设置这俩个选项，会产生 session cookies，session cookies 是即时的，当用户关闭浏览器时，会自动清除，一般用来保存 session 的 session_id.<h2 id="cookies的缺点"><a href="#cookies的缺点" class="headerlink" title="cookies的缺点"></a>cookies的缺点</h2></li>
+<li>大小和数目被确定，浏览器对一个域的cookies有上限要求，且<strong>每个 cookies 大小不得超过 4kb</strong>。</li>
+<li>存在安全性问题，容易被人拦截。（考虑到安全方面，应使用较安全的session）</li>
+<li>需要指定域，不能够跨域</li>
+<li>cookies 数据太多会影响传输效率，浪费带宽</li>
+<li>有些浏览器禁用 cookies 或者部分手机不支持 cookies<br>广告商可以通过cookies了解到用户经常访问哪些网站，进而提供相应的广告等。</li>
+</ul>
+<h1 id="session"><a href="#session" class="headerlink" title="session"></a>session</h1><blockquote>
+<p>cookies 虽然使用方便,但是 cookies 中所有的数据都可以在客户端被更改，数据很容易被伪造，因此一些重要的数据不能放cookies 中，cookies 数据太多也会影响传输效率，因此产生了 session，session 数据保留在服务器端。(但是当访问增多，会比较占用服务器的性能，考虑到性能方面，减少使用session)</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>当你浏览一个网页时，服务端随机产生一个 1024 比特长的字符串，然后存在你 cookie 中的 connect.sid字段中。当你下次访问时，cookie 会带有这个字符串，然后浏览器就知道你是上次访问过的某某某，然后从服务器的存储中对比取出上次记录在你身上的数据。由于字符串是随机产生的，而且位数足够多，所以也不担心有人能够伪造。</p>
+</blockquote>
+<hr>
+<ul>
+<li>session 的运作通过一个 session_id 来进行。session_id 通常是存放在客户端的 cookie  中，用户提交页面时，会将这一  SessionID 提交到服务器端，来存取 Session 数据。此时用户禁用cookies，session也会失效。</li>
+<li>但是session并不是完全依赖cookie，服务器可以通过URL重写的方式来传递session_id.</li>
+</ul>
+<p>———- &gt; 整理自：</p>
+<blockquote>
+<ul>
+<li><a href="https://github.com/alsotang/node-lessons/tree/master/lesson16" target="_blank" rel="external">cookies 和 session</a></li>
+<li><a href="http://www.cnblogs.com/shiyangxt/articles/1305506.html" target="_blank" rel="external">cookies 和 session 的详解</a></li>
+<li><a href="http://harttle.com/2015/08/10/cookie-session.html" target="_blank" rel="external">cookie 和 session 的机制与安全</a></li>
+<li><a href="http://caibaojian.com/477.html" target="_blank" rel="external">认识cookie与session的区别与应用</a></li>
+</ul>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote class=&quot;blockquote-center&quot;&gt;相信你所相信的，坚持你所坚持的&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;cookies&quot;&gt;&lt;a href=&quot;#cookies&quot; class=&quot;headerlink&quot; title=&quot;cookies&quot;&gt;&lt;/a&gt;cookies&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;HTTP 是一个无状态协议，所以客户端每次发出请求时，下一次请求无法得知上一次请求所包含的状态数据，如何能把一个用户的状态数据关联起来呢？即大多都是利用 cookie、session 实现。如浏览器自动保存密码，记住登录状态，网页换肤，新手引导等下次不再提醒功能（我就说我以前换网吧玩总得去禁用那些引导）。&lt;br&gt;比如在淘宝的某个页面中，你进行了登陆操作。当你跳转到商品页时，服务端如何知道你是已经登陆的状态？&lt;br&gt;因此产生了 cookie 来解决这门问题。
+    
+    </summary>
+    
+      <category term="前端" scheme="http:%5C%5Chexin.life/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="HTTP" scheme="http:%5C%5Chexin.life/tags/HTTP/"/>
     
   </entry>
   
