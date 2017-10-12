@@ -155,7 +155,7 @@
     <link href="http:%5C%5Chexin.life/2017/10/10/title-27/"/>
     <id>http:\\hexin.life/2017/10/10/title-27/</id>
     <published>2017-10-09T17:07:49.000Z</published>
-    <updated>2017-10-12T17:07:42.003Z</updated>
+    <updated>2017-10-12T17:08:37.725Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><h1 id="搜狗"><a href="#搜狗" class="headerlink" title="搜狗"></a>搜狗</h1><p>上来先做题</p>
 <ol>
@@ -191,7 +191,7 @@
 <li>写了博客？博客是用什么建的？用什么语法写的？有没有了解背后的原理？</li>
 <li>有什么要问的吗？<br>记不清了</li>
 </ul>
-<h1 id="西安葡萄城二面"><a href="#西安葡萄城二面" class="headerlink" title="西安葡萄城二面"></a>西安葡萄城二面</h1><ul>
+<h2 id="西安葡萄城二面"><a href="#西安葡萄城二面" class="headerlink" title="西安葡萄城二面"></a>西安葡萄城二面</h2><ul>
 <li>逆序单链表</li>
 <li>二叉树</li>
 <li>100 万个字符，要存储在磁盘中，但是现在磁盘容量不够了，要怎么才能存储进去，读取的时候可以正常读取使用？海量数据处理</li>
