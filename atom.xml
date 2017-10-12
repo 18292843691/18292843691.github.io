@@ -155,7 +155,7 @@
     <link href="http:%5C%5Chexin.life/2017/10/10/title-27/"/>
     <id>http:\\hexin.life/2017/10/10/title-27/</id>
     <published>2017-10-09T17:07:49.000Z</published>
-    <updated>2017-10-12T16:49:54.485Z</updated>
+    <updated>2017-10-12T16:56:35.447Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><h1 id="搜狗"><a href="#搜狗" class="headerlink" title="搜狗"></a>搜狗</h1><p>上来先做题</p>
 <ol>
@@ -189,14 +189,14 @@
 <li>用到了 call ， call 和 apply 的区别</li>
 <li>打印第 k 层的二叉树结点</li>
 <li>写了博客？博客是用什么建的？用什么语法写的？有没有了解背后的原理？</li>
-<li>有什么要问的吗？</li>
+<li>有什么要问的吗？<br>记不清了</li>
 </ul>
 <h1 id="西安葡萄城二面"><a href="#西安葡萄城二面" class="headerlink" title="西安葡萄城二面"></a>西安葡萄城二面</h1><ul>
 <li>逆序单链表</li>
 <li>二叉树</li>
 <li>100 万个字符，要存储在磁盘中，但是现在磁盘容量不够了，要怎么才能存储进去，读取的时候可以正常读取使用？海量数据处理</li>
 </ul>
-<p>总结： 比较久，一些问题记不清了，听说他们公司想招类似全栈的，问了好多数据结构，大数据处理的东西~答得比较渣</p>
+<p>总结： 比较久，一些问题记不清了，听说他们公司想招类似全栈的，问了好多数据结构，大数据处理的东西~答得比较渣，当时挺不爽的，但是想想还是应该多学习。</p>
 <h1 id="富途"><a href="#富途" class="headerlink" title="富途"></a>富途</h1><ul>
 <li>四六级</li>
 <li>数学成绩</li>
@@ -234,6 +234,7 @@
 <li>arr instanceof Array</li>
 <li>Array.isArray(arr)</li>
 <li>toString.call(arr) // [object array]</li>
+<li>typeof arr === ‘object’ &amp;&amp; arr.constructor === Array</li>
 </ul>
 </li>
 <li><p>null 和 undefined 的区别？</p>
@@ -243,7 +244,7 @@
 <li>localStorage 和 sessioStorage 的区别？</li>
 <li>有什么问题？</li>
 </ul>
-<p>睡觉被电话吵醒的~答的比较懵，虽然比较基础，但是是 hr 问的，她估计就是听你能不能说出来，最后通知笔试挂了~ WTF！</p>
+<p>夜猫子，早上还在睡觉被电话吵醒~答的比较懵，比较基础，最后通知笔试挂了~ WTF！</p>
 <h1 id="明略数据"><a href="#明略数据" class="headerlink" title="明略数据"></a>明略数据</h1><ul>
 <li>自我介绍</li>
 <li>平时怎么学习前端的？</li>
